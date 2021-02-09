@@ -13,7 +13,7 @@
 - Install dependencies `yarn install`
 - Start the server `yarn dev`
 
-# Windows
+### Windows
 - Install Nodejs, [download for windows](https://nodejs.org/en/download/)
 - Install yarn form [yarn site](https://classic.yarnpkg.com/en/docs/install/#debian-stable) or if Nodejs is already installed `npm install --global yarn`
 - Fork and clone the project `git clone https://github.com/<YOUR_USERNAME>/aul-forum.git`
