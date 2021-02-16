@@ -1,8 +1,11 @@
-cat secondclass.css html,
+html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 .navbar {
   background: #f2f2f2;
@@ -27,6 +30,7 @@ body {
 }
 main {
   padding: 2rem 20%;
+  flex: 1;
 }
 p {
   font-size: 1.5em;
