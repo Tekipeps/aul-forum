@@ -1,3 +1,4 @@
+@import "../bootstrap/css/bootstrap.min.css";
 html,
 body {
   margin: 0;
@@ -13,10 +14,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 1rem;
+  min-height: 60px;
 }
 .navbar > .logo {
   letter-spacing: 2px;
   padding: 2px 5px;
+  margin: 0;
 }
 .navbar > .logo > span {
   color: gray;
