@@ -1,0 +1,29 @@
+.team-members-heading {
+    text-align: center;
+    text-transform: uppercase;
+}
+.team-list {
+    display: flex;
+    flex-flow: row wrap;
+}
+.person {
+    background-color: whitesmoke;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    margin: 1rem;
+}
+.person > img {
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.person > h3 {
+    padding: 10px;
+    font-size: 1.2em;
+}
+.bio {
+    padding: 0 1rem;
+    font-size: 1rem;
+}
