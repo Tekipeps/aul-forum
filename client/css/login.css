@@ -1,64 +1,93 @@
-
-/* Login Page by Seun Osinowo */
-
-#login-form{
-    background-color:#f2f2f2;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
-    color: #346;
-    font-size: 15px;
-    border: 20px;
-    text-indent: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+:root {
+  --theme: #000077;
 }
 
-#login-form h1{
-    color: #543;
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: var(--theme);
 }
 
-#login-form input{
-    height: 30px;
-    width: 40%;
-    padding: 7px;
-    display: inline-block;
-    border: 10px;
-    align-content: center;
+*:focus {
+  outline: none;
 }
 
-#login-form button{
-    background-color: #000;
-    color: #fff;
-    line-height: 40px;
-    width: 80px;
-    height: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    border: 20px;
+#container {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  width: 700px;
+  height: 500px;
+  background-color: var(--theme);
+}
+#container > div {
+  position: absolute;
+}
+#header {
+  top: 0px;
+  left: 50px;
+  background-color: var(--theme);
+  width: 300px;
+  height: 50px;
+  z-index: 2;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 5px 15px;
+  color: white;
+  font-family: Georgia, sans-serif;
+}
+#form-holder {
+  padding-top: 50px;
+  padding-left: 50px;
+  margin: auto;
+  top: 20px;
+  left: 20px;
+  width: 650px;
+
+  background-color: var(--theme);
+  position: relative;
+  border: 2px solid white;
+  z-index: 1;
 }
 
-#login-form button:hover{
-    background-color: cornsilk;
-    color: #000;
-    cursor: pointer;
+input {
+  width: 500px;
+  height: 60px;
+  font-size: 24px;
+  padding-left: 20px;
+  letter-spacing: 2px;
+  background-color: var(--theme);
+  color: white;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  transition-property: border;
+  transition-duration: 0.5s;
 }
 
-#login-form p{
-    background-color: mintcream;
-    height: 480px;
-    width: 100%;
-    padding: 10px;
+input[type="text"] {
+  text-transform: uppercase;
 }
 
-.logo-login > img {
-    border-radius: 20%;
-    width: 8rem;
+input:hover {
+  border: 1px solid white;
 }
 
-/* End */
+button {
+  width: 500px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #800080;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 15px;
+  font-family: "Times New Roman", Times, serif;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+
+button:hover {
+  background-color: #a00080;
+}
+
+
