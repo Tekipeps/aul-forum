@@ -1,47 +1,56 @@
 :root {
-  --theme: #000077;
+  --theme: #3333ff;
 }
 
-body {
-  background-color: var(--theme);
-}
+
 
 *:focus {
   outline: none;
 }
 
+img {
+  width: 100%;
+  border: 1px solid white;
+}
+
 #container {
   position: absolute;
-  left: 200px;
-  top: 200px;
-  width: 700px;
-  height: 500px;
+  border-radius: 5px;
+  margin: auto;
+  top: 300px;
+  width: 500px;
+  height: 300px;
   background-color: var(--theme);
+}
+form {
+  margin: auto;
+  position: relative;
+  width: 90%;
+  padding: 10px 10px;
 }
 #container > div {
   position: absolute;
 }
-#header {
+#form-header {
   top: 0px;
   left: 50px;
   background-color: var(--theme);
-  width: 300px;
-  height: 50px;
+
+  height: 40px;
   z-index: 2;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 400;
   padding: 5px 15px;
   color: white;
   font-family: Georgia, sans-serif;
 }
 #form-holder {
-  padding-top: 50px;
-  padding-left: 50px;
-  margin: auto;
+  padding-top: 30px;
+  padding-left: 0px;
   top: 20px;
   left: 20px;
-  width: 650px;
-
+  width: 450px;
+  border-radius: 4px;
   background-color: var(--theme);
   position: relative;
   border: 2px solid white;
@@ -49,45 +58,47 @@ body {
 }
 
 input {
-  width: 500px;
-  height: 60px;
-  font-size: 24px;
+  width: 90%;
+  height: 40px;
+  font-size: 18px;
   padding-left: 20px;
   letter-spacing: 2px;
-  background-color: var(--theme);
-  color: white;
-  margin-bottom: 30px;
-  border-radius: 5px;
-  border: 1px solid grey;
-  transition-property: border;
-  transition-duration: 0.5s;
-}
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 2px 2px 0px 0px;
+  border: 2px solid #800080;
 
-input[type="text"] {
-  text-transform: uppercase;
+  transition-property: border;
+  transition-duration: 1s;
 }
 
 input:hover {
-  border: 1px solid white;
+  border: 2px solid #400040;
 }
 
 button {
-  width: 500px;
-  height: 50px;
-  font-size: 20px;
-  background-color: #800080;
+  width: 90%;
+  height: 30px;
+  font-size: 18px;
+  background-color: #500050;
   border: none;
   border-radius: 5px;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-family: "Times New Roman", Times, serif;
   transition-property: background-color;
   transition-duration: 0.5s;
   transition-delay: 0s;
 }
 
-button:hover {
-  background-color: #a00080;
+button > a {
+  color: white;
 }
 
+button > a:hover {
+  color: white;
+}
 
+button:hover {
+  background-color: #600060;
+}

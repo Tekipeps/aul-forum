@@ -7,8 +7,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #3333ff;
 }
 .navbar {
+  
   background: #f2f2f2;
   display: flex;
   justify-content: space-between;
@@ -31,17 +33,30 @@ body {
   width: 40%;
   justify-content: space-around;
 }
+.navbar > ul > li{
+  background-color: #3333ff;
+  border-radius: 3px;
+  
+  text-align: center;
+}
+
+.navbar>ul>li>a{
+  color: #ccc;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 1s;
+  text-transform: none;
+  display:block;
+  width:100px;
+  padding: 5px;
+}
+.navbar>ul>li>a:hover{
+  color:white;
+}
 main {
   padding: 2rem 15%;
   flex: 1;
 }
 p {
   font-size: 1.5em;
-}
-a {
-  color: gray;
-  text-transform: none;
-}
-a:hover {
-  color: black;
 }
