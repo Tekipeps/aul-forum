@@ -1,6 +1,7 @@
 .team-members-heading {
     text-align: center;
-    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
 }
 .team-list {
     display: flex;
@@ -8,11 +9,18 @@
 }
 .person {
     background-color: whitesmoke;
-    width: 250px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     border-radius: 6px;
     margin: 1rem;
+    border:2px solid whitesmoke;
+    transition-property: border;
+    transition-duration: 0.5s;
+}
+
+.person:hover{
+    border:2px solid green;
 }
 .person > img {
     width: 100%;
