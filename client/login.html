@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" href="css/login.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/UIelements/form.css" />
+    <link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body>
     <nav class="navbar">
-      <h3 class="logo">Entrepre<span>neurship</span></h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
+        <h3 class="logo">Entrepre<span>neurship</span></h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
     </nav>
-    <div id="header-image">
-      <img src="./assets/aul photo.jpg" alt="Some shitty photo">
-    </div>
     <main>
-      
-      <div id="container">
-        <div id="form-header">AUL Forum Login</div>
-        <div id="form-holder">
-          <form id="login-form">
-            <input name="matric-no" type="text" placeholder="Matric Number">
-            <input name="password" type="password" placeholder="Password">
-            <button type="submit">LOG IN</button>
-            <button><a href="register.html">Dont have an account?</a></button>
-          </form>
+        <div id="container">
+            <div id="form-header">AUL Forum Login</div>
+            <div id="form-holder">
+                <div id="logo-image">
+                    <img src="./assets/logo.png" />
+                </div>
+                <form id="login-form">
+                    <input name="matric-no" type="text" placeholder="Matric Number" />
+                    <input name="password" type="password" placeholder="Password" />
+                    <button id="login-btn" type="submit">Login</button>
+
+
+                    <button id="register-btn">
+              <a href="register.html">Dont have an account?</a>
+            </button>
+                </form>
+
+            </div>
         </div>
-      </div>
     </main>
-     <script src="js/login.js"></script>           
-  </body>
+    <script src="js/login.js"></script>
+</body>
+
 </html>

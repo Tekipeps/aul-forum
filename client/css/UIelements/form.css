@@ -1,0 +1,64 @@
+body {
+    background-image: url("../../assets/background-images/splash3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--bg-theme);
+}
+
+#container {
+    position: absolute;
+    border-radius: 5px;
+    background-color: var(--bg-theme);
+    border: 1px solid var(--blue-theme);
+    padding: 20px;
+}
+
+#form-header {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    background-color: var(--bg-theme);
+    z-index: 2;
+    font-size: 27px;
+    padding: 5px 15px;
+    color: black;
+    font-family: AllertaStencil;
+}
+
+#form-holder {
+    position: absolute;
+    padding-top: 30px;
+    padding-left: 0px;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid var(--blue-theme);
+    z-index: 1;
+}
+
+input {
+    height: 40px;
+    font-size: 18px;
+    padding-left: 20px;
+    letter-spacing: 2px;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 2px 2px 0px 0px;
+    border: 2px solid var(--purple-theme);
+    transition-property: border;
+    transition-duration: 0.5s;
+}
+
+input:focus {
+    border: 2px solid #6a0777;
+}
+
+button {
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    margin-bottom: 5px;
+    font-family: "Times New Roman", Times, serif;
+    padding: 0px;
+}
