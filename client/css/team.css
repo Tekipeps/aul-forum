@@ -1,12 +1,14 @@
 .team-members-heading {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    color:white;
+    color: white;
 }
+
 .team-list {
     display: flex;
     flex-flow: row wrap;
 }
+
 .person {
     background-color: whitesmoke;
     width: 200px;
@@ -14,23 +16,26 @@
     flex-direction: column;
     border-radius: 6px;
     margin: 1rem;
-    border:2px solid whitesmoke;
+    border: 2px solid var(--purple-theme);
     transition-property: border;
     transition-duration: 0.5s;
 }
 
-.person:hover{
-    border:2px solid green;
+.person:hover {
+    border: 2px solid green;
 }
-.person > img {
+
+.person>img {
     width: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
-.person > h3 {
+
+.person>h3 {
     padding: 10px;
     font-size: 1.2em;
 }
+
 .bio {
     padding: 0 1rem;
     font-size: 1rem;

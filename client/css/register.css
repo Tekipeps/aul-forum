@@ -1,0 +1,33 @@
+#signup-form {
+    width: 550px;
+    padding: 15px;
+}
+
+#form-description {
+    margin: auto;
+    width: 70%;
+    color: var(--purple-theme);
+    padding: 10px;
+    font-family: Advent Pro;
+    font-size: 18px;
+}
+
+#signup-form>input[name="matric-no"],
+#signup-form>input[name="email"] {
+    width: 90%;
+}
+
+#signup-form>input[name="username"],
+#signup-form>input[name="password"] {
+    width: 44.7%;
+}
+
+#signup-form>button {
+    background-color: var(--blue-theme);
+    width: 90%;
+}
+
+#signup-form>button[type="reset"] {
+    width: 30%;
+    background-color: green;
+}

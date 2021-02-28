@@ -1,104 +1,39 @@
-:root {
-  --theme: #3333ff;
+#logo-image {
+    margin: auto;
+    position: relative;
+    height: 120px;
+    width: 100px;
 }
 
-
-
-*:focus {
-  outline: none;
+#logo-image>img {
+    width: 100%;
+    height: 100%;
 }
 
-img {
-  width: 100%;
-  border: 1px solid white;
+#login-form {
+    position: relative;
+    width: 450px;
+    padding: 10px 10px;
 }
 
-#container {
-  position: absolute;
-  border-radius: 5px;
-  margin: auto;
-  top: 300px;
-  width: 500px;
-  height: 300px;
-  background-color: var(--theme);
-}
-form {
-  margin: auto;
-  position: relative;
-  width: 90%;
-  padding: 10px 10px;
-}
-#container > div {
-  position: absolute;
-}
-#form-header {
-  top: 0px;
-  left: 50px;
-  background-color: var(--theme);
-
-  height: 40px;
-  z-index: 2;
-  font-size: 22px;
-  font-weight: 400;
-  padding: 5px 15px;
-  color: white;
-  font-family: Georgia, sans-serif;
-}
-#form-holder {
-  padding-top: 30px;
-  padding-left: 0px;
-  top: 20px;
-  left: 20px;
-  width: 450px;
-  border-radius: 4px;
-  background-color: var(--theme);
-  position: relative;
-  border: 2px solid white;
-  z-index: 1;
+#login-form>input {
+    width: 98%;
 }
 
-input {
-  width: 90%;
-  height: 40px;
-  font-size: 18px;
-  padding-left: 20px;
-  letter-spacing: 2px;
-  background-color: white;
-  margin-bottom: 15px;
-  border-radius: 2px 2px 0px 0px;
-  border: 2px solid #800080;
-
-  transition-property: border;
-  transition-duration: 1s;
+#login-btn {
+    background-color: var(--purple-theme);
+    width: 98%;
 }
 
-input:hover {
-  border: 2px solid #400040;
+#register-btn {
+    background-color: var(--blue-theme);
+    width: 98%;
 }
 
-button {
-  width: 90%;
-  height: 30px;
-  font-size: 18px;
-  background-color: #500050;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  margin-bottom: 5px;
-  font-family: "Times New Roman", Times, serif;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  transition-delay: 0s;
-}
-
-button > a {
-  color: white;
-}
-
-button > a:hover {
-  color: white;
-}
-
-button:hover {
-  background-color: #600060;
+#register-btn>a,
+#register-btn>a:hover {
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
