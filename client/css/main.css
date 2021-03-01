@@ -1,7 +1,7 @@
 @import "../bootstrap/css/bootstrap.min.css";
 :root {
-    --purple-theme: #6a0dad;
-    --blue-theme: #3333ff;
+    --purple-theme: #37173d;
+    --blue-theme: #6f6ffa;
     --nav-theme: #f2f2f2;
     --bg-theme: white;
 }
@@ -16,6 +16,11 @@
     src: url("../assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf");
 }
 
+@font-face {
+    font-family: Quantico;
+    src: url("../assets/fonts/Quantico/Quantico-Regular.otf");
+}
+
 *:focus {
     outline: none;
 }
@@ -28,7 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: var(--bg-theme);
+    background: var(--bg-theme);
 }
 
 a {
@@ -86,10 +91,6 @@ a {
 }
 
 main {
-    padding: 2rem 15%;
+    padding: 2rem 5% 2rem 10%;
     flex: 1;
-}
-
-p {
-    font-size: 1.5em;
 }

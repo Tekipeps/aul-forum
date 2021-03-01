@@ -1,4 +1,20 @@
+#github-link {
+    background-color: #050;
+    border: 1px solid #0a0;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    color: white;
+}
+
+#github-link:hover {
+    background-color: #060;
+}
+
 .team-members-heading {
+    font-size: 1.7rem;
+    margin-top: 30px;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     color: white;
@@ -22,21 +38,29 @@
 }
 
 .person:hover {
-    border: 2px solid green;
+    border: 2px solid grey;
 }
 
 .person>img {
-    width: 100%;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    width: 50%;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 .person>h3 {
     padding: 10px;
     font-size: 1.2em;
+    font-family: Advent Pro;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
 }
 
 .bio {
     padding: 0 1rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
