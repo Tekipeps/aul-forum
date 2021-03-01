@@ -1,16 +1,13 @@
 body {
-    background-image: url("../../assets/background-images/splash3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: var(--bg-theme);
+    background: linear-gradient(0deg, var(--purple-theme), var(--blue-theme), #FFCC70);
 }
 
 #container {
+    border-radius: 2px;
     position: absolute;
-    border-radius: 5px;
     background-color: var(--bg-theme);
-    border: 1px solid var(--blue-theme);
-    padding: 20px;
+    display: flex;
+    flex-flow: row;
 }
 
 #form-header {
@@ -26,12 +23,13 @@ body {
 }
 
 #form-holder {
+    margin: 20px;
     position: absolute;
     padding-top: 30px;
     padding-left: 0px;
     border-radius: 4px;
     position: relative;
-    border: 1px solid var(--blue-theme);
+    border: 1px solid var(--purple-theme);
     z-index: 1;
 }
 
@@ -49,7 +47,7 @@ input {
 }
 
 input:focus {
-    border: 2px solid #6a0777;
+    border: 2px solid grey;
 }
 
 button {
