@@ -1,5 +1,6 @@
 body {
-    background: linear-gradient(0deg, var(--purple-theme), var(--blue-theme), #FFCC70);
+    /*background: linear-gradient(0deg, var(--purple-theme), var(--blue-theme), #FFCC70);*/
+    background: var(--bg-theme);
 }
 
 #container {
@@ -8,6 +9,25 @@ body {
     background-color: var(--bg-theme);
     display: flex;
     flex-flow: row;
+    border: 1px solid var(--purple-theme);
+    margin: 30px auto;
+}
+
+#form-sidebar {
+    width: 550px;
+    font-family: Quantico;
+    background-color: var(--purple-theme);
+    color: white;
+    padding: 20px;
+}
+
+#form-sidebar>p {
+    margin: auto;
+    position: relative;
+    width: 90%;
+    height: 80%;
+    word-wrap: break-word;
+    font-size: 50px;
 }
 
 #form-header {
