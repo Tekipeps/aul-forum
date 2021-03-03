@@ -1,26 +1,26 @@
 #signup-form {
-    width: 550px;
+    width: 500px;
     padding: 15px;
 }
 
 #form-description {
-    margin: auto;
-    width: 70%;
     color: var(--purple-theme);
     padding: 10px;
     font-family: Advent Pro;
     font-size: 18px;
+    margin: auto;
+    width: 400px;
 }
 
 #signup-form>input[name="matric-no"],
 #signup-form>input[name="email"],
 #signup-form>input[name="username"] {
-    width: 90%;
+    width: 98%;
 }
 
 #signup-form>input[name="password"],
 #signup-form>input[name="confirmpassword"] {
-    width: 44.7%;
+    width: 48.6%;
 }
 
 #signup-form>button {
@@ -29,17 +29,18 @@
 
 #signup-form>button[name="signup"] {
     background-color: var(--blue-theme);
-    width: 44%;
+    width: 98%;
 }
 
 #signup-form>button[name="signup-later"] {
-    width: 44%;
+    width: 48%;
     background-color: green;
 }
 
 #signup-form>button[name="team-link"] {
-    width: 50%;
-    background-color: #ccc;
+    margin-top: 4px;
+    width: 44%;
+    background: none;
 }
 
 #signup-form>button[name="team-link"]>a {
@@ -51,3 +52,51 @@
     width: 100%;
     display: block;
 }
+
+#gender-option>p {
+    margin: 0%;
+    color: grey;
+}
+
+#gender-option>div {
+    margin: 0px 0px 10px 10px;
+}
+
+#gender-option input[type="radio"] {
+    display: none;
+}
+
+#gender-option label {
+    display: inline-block;
+}
+
+
+/*input[type="radio"]+* accesses the span tag which comes directly after the input[type="radio"] tag*/
+
+#gender-option input[type="radio"]+span::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: gray;
+}
+
+#gender-option input[type="radio"]:checked+span::before {
+    /*background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent);*/
+    background-image: url("../assets/form-images/purple-tick.jpg");
+    background-size: 80% 80%;
+    border-color: var(--purple-theme);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*
+#gender-option>label>input[type="radio"]:checked+* {
+    color: teal;
+}*/
