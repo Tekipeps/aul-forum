@@ -1,47 +1,96 @@
 @import "../bootstrap/css/bootstrap.min.css";
+:root {
+    --purple-theme: #37173d;
+    --blue-theme: #6f6ffa;
+    --nav-theme: #f2f2f2;
+    --bg-theme: white;
+}
+
+@font-face {
+    font-family: Advent Pro;
+    src: url("../assets/fonts/Advent_Pro/AdventPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: AllertaStencil;
+    src: url("../assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf");
+}
+
+@font-face {
+    font-family: Quantico;
+    src: url("../assets/fonts/Quantico/Quantico-Regular.otf");
+}
+
+*:focus {
+    outline: none;
+}
+
 html,
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--bg-theme);
 }
-.navbar {
-  background: #f2f2f2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 1rem;
-  min-height: 60px;
-}
-.navbar > .logo {
-  letter-spacing: 2px;
-  padding: 2px 5px;
-  margin: 0;
-}
-.navbar > .logo > span {
-  color: gray;
-}
-.navbar > ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  width: 40%;
-  justify-content: space-around;
-}
-main {
-  padding: 2rem 15%;
-  flex: 1;
-}
-p {
-  font-size: 1.5em;
-}
+
 a {
-  color: gray;
-  text-transform: none;
+    text-decoration: none;
 }
-a:hover {
-  color: black;
+
+.navbar {
+    background: var(--nav-theme);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 1rem;
+    min-height: 60px;
+}
+
+.navbar>.logo {
+    letter-spacing: 2px;
+    padding: 2px 5px;
+    margin: 0;
+    font-family: Merriwheather;
+    font-weight: 600;
+}
+
+.navbar>.logo>span {
+    color: gray;
+}
+
+.navbar>ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.navbar>ul>li {
+    /*background-color: #0000ff;*/
+    border-radius: 3px;
+    text-align: center;
+    border: 2px solid var(--nav-theme);
+    transition-property: border;
+    transition-duration: 500ms;
+}
+
+.navbar>ul>li:hover {
+    border: 2px solid var(--purple-theme);
+}
+
+.navbar>ul>li>a {
+    color: var(--purple-theme);
+    display: block;
+    width: 100px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+main {
+    padding: 2rem 5% 2rem 10%;
+    flex: 1;
 }

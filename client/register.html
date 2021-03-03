@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Login</title>
+
+<head>
+    <title>Register</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/UIelements/form.css" />
+    <link rel="stylesheet" href="css/register.css" />
+</head>
+
+<body>
     <nav class="navbar">
-      <h3 class="logo">Entrepre<span>neurship</span></h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
+        <h3 class="logo">Entrepre<span>neurship</span></h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
     </nav>
     <main>
-      register
+        <div id="container">
+            <div id="form-header">AUL Forum Sign Up</div>
+            <div id="form-holder">
+                <div id="form-description">
+                    Create an account to have unlimited access to content from AUL's forum
+                </div>
+                <form id="signup-form">
+                    <input name="matric-no" type="text" placeholder="Matriculation Number" />
+                    <input name="username" type="text" placeholder="Username" />
+                    <input name="password" type="text" placeholder="New Password" />
+                    <input name="confirmpassword" type="password" placeholder="Confirm Password" />
+                    <input name="email" type="email" placeholder="Email Address(optional)" />
+
+                    <button name="signup" type="button">Sign Up</button>
+                    <button name="signup-later" type="button"><a href="index.html">Sign Up Later</a></button>
+                    <button name="team-link" type="button"><a href="team.html">Want to meet our team?</a></button>
+                </form>
+            </div>
+        </div>
     </main>
-  </body>
+</body>
+
 </html>

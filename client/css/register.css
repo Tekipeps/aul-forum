@@ -1,0 +1,53 @@
+#signup-form {
+    width: 550px;
+    padding: 15px;
+}
+
+#form-description {
+    margin: auto;
+    width: 70%;
+    color: var(--purple-theme);
+    padding: 10px;
+    font-family: Advent Pro;
+    font-size: 18px;
+}
+
+#signup-form>input[name="matric-no"],
+#signup-form>input[name="email"],
+#signup-form>input[name="username"] {
+    width: 90%;
+}
+
+#signup-form>input[name="password"],
+#signup-form>input[name="confirmpassword"] {
+    width: 44.7%;
+}
+
+#signup-form>button {
+    display: inline-block;
+}
+
+#signup-form>button[name="signup"] {
+    background-color: var(--blue-theme);
+    width: 44%;
+}
+
+#signup-form>button[name="signup-later"] {
+    width: 44%;
+    background-color: green;
+}
+
+#signup-form>button[name="team-link"] {
+    width: 50%;
+    background-color: #ccc;
+}
+
+#signup-form>button[name="team-link"]>a {
+    color: var(--purple-theme);
+}
+
+#signup-form>button>a {
+    color: white;
+    width: 100%;
+    display: block;
+}
