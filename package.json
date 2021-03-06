@@ -8,6 +8,7 @@
     "start": "dotenv -e .env.production -- node index.js",
     "dev": "dotenv -e .env -- nodemon index.js",
     "db:up": "dotenv -e .env -- prisma db push --preview-feature --accept-data-loss --force-reset && prisma generate && yarn db:seed",
+    "test:db:up": "dotenv -e .env.test.local -- prisma db push --preview-feature --accept-data-loss --force-reset && prisma generate",
     "db:seed": "node prisma/seed.js",
     "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js",
     "test": "jest"

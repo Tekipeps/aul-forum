@@ -32,7 +32,7 @@ class User {
             next(error)
         }
     }
-    async createUser(req, res) {
+    async createUser(req, res, next) {
         try {
             const { username, email, matric, gender, role, password, confirmPass } = req.body
             if (!username || !email || !matric || !gender || !role) {
@@ -46,8 +46,8 @@ class User {
             }
 
             const passwordHash = await bcrypt.hash(password, 12)
-            const user = { username, email, matric, gender, role, password, passwordHash }
-            const savedUser = await prisma.user.create({ data: user, select: { pubUserData } })
+            const user = { username, email, matric, gender, role, passwordHash }
+            const savedUser = await prisma.user.create({ data: user, select: pubUserData  })
             res.json(savedUser)
         } catch (error) {
             next(error)
