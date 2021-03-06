@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
-import "../../css/form.css";
+import "./Login.scss";
+import "../../scss/form.scss";
 import Logo from "../../assets/form-images/logo.png";
 
 export const Login = () => (

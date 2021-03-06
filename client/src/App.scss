@@ -1,24 +1,19 @@
 @import "./bootstrap/css/bootstrap.min.css";
-:root {
-    --purple-theme: #37173d;
-    --blue-theme: #6f6ffa;
-    --nav-theme: #ccc;
-    --bg-theme: white;
-}
-
+@import "variables.scss";
+$font-dir:"./assets/fonts";
 @font-face {
     font-family: Advent Pro;
-    src: url("./assets/fonts/Advent_Pro/AdventPro-Regular.ttf");
+    src: url("#{$font-dir}/Advent_Pro/AdventPro-Regular.ttf");
 }
 
 @font-face {
     font-family: AllertaStencil;
-    src: url("./assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf");
+    src: url("#{$font-dir}/AllertaStencil/AllertaStencil-Regular.ttf");
 }
 
 @font-face {
     font-family: Quantico;
-    src: url("./assets/fonts/Quantico/Quantico-Regular.otf");
+    src: url("#{$font-dir}/Quantico/Quantico-Regular.otf");
 }
 
 *:focus {
@@ -33,7 +28,9 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: var(--bg-theme);
+    background: $bg-theme;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {

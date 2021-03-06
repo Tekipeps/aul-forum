@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import "../css/main.css";
-import "./NavigationBar.css";
+import Logo from "../../assets/form-images/logo.png";
+import "./NavigationBar.scss";
 
 export const NavBar = () => (
   <nav className="navbar">
-    <h3 className="logo">
-      Entrepre<span>neurship</span>
-    </h3>
+    <div className="logo">
+      <img width="40px" height="40px" src={Logo} />
+      <span>AUL Forum</span>
+    </div>
     <ul>
       <li>
         <Link to="/">Home</Link>

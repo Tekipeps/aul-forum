@@ -1,40 +1,35 @@
-body {
-    /*background: linear-gradient(0deg, var(--purple-theme), var(--blue-theme), #FFCC70);*/
-    background: var(--bg-theme);
-}
-
+@import "../variables.scss";
 #container {
     border-radius: 2px;
     position: absolute;
-    background-color: var(--bg-theme);
+    background-color: $bg-theme;
     display: flex;
     flex-flow: row;
-    border: 1px solid var(--purple-theme);
+    border: 1px solid $purple-theme;
     margin: 30px auto;
 }
 
 #form-sidebar {
     width: 550px;
     font-family: Quantico;
-    background-color: var(--purple-theme);
+    background-color: $purple-theme;
     color: white;
     padding: 20px;
-}
-
-#form-sidebar>p {
-    margin: auto;
-    position: relative;
-    width: 90%;
-    height: 80%;
-    word-wrap: break-word;
-    font-size: 50px;
+    >p {
+        margin: auto;
+        position: relative;
+        width: 90%;
+        height: 80%;
+        word-wrap: break-word;
+        font-size: 50px;
+    }
 }
 
 #form-header {
     position: absolute;
     top: 0px;
     left: 50px;
-    background-color: var(--bg-theme);
+    background-color: $bg-theme;
     z-index: 2;
     font-size: 27px;
     padding: 5px 15px;
@@ -49,7 +44,7 @@ body {
     padding-left: 0px;
     border-radius: 4px;
     position: relative;
-    border: 1px solid var(--purple-theme);
+    border: 1px solid $purple-theme;
     z-index: 1;
 }
 
@@ -62,16 +57,14 @@ input[type="email"] {
     letter-spacing: 2px;
     background-color: white;
     margin-bottom: 15px;
+    margin-right: 2px;
     border-radius: 2px 2px 0px 0px;
-    border: 2px solid var(--purple-theme);
+    border: 2px solid $purple-theme;
     transition-property: border;
     transition-duration: 0.5s;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus {
-    border: 2px solid grey;
+    &:focus {
+        border: 2px solid grey;
+    }
 }
 
 button {
