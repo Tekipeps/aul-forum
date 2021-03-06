@@ -1,8 +1,6 @@
 const { prisma } = require('../utils/config')
 const bcrypt = require('bcrypt')
 
-// TODO: Finish CRUD functions for User model
-
 const pubUserData = {
     id: true,
     username: true,
@@ -47,7 +45,7 @@ class User {
 
             const passwordHash = await bcrypt.hash(password, 12)
             const user = { username, email, matric, gender, role, passwordHash }
-            const savedUser = await prisma.user.create({ data: user, select: pubUserData  })
+            const savedUser = await prisma.user.create({ data: user, select: pubUserData })
             res.json(savedUser)
         } catch (error) {
             next(error)
