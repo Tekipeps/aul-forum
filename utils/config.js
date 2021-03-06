@@ -3,16 +3,13 @@ const  { PrismaClient } = require('@prisma/client');
 
 
 const ENV = process.env.NODE_ENV;
+if (ENV === "development") dotenv.config({ path: "../.env"});
+if(ENV === "test") dotenv.config({ path: "../.env.test.local"})
 
-if (ENV != "production") dotenv.config();
-let DB_URI = process.env.DEV_DB_URL;
+const DB_URI = process.env.DB_URL;
 const PORT = Number(process.env.PORT) || 5000;
 
-if (ENV === "production") {
-    DB_URI = process.env.PROD_DB_URL;
-} else if (ENV === "test") {
-    DB_URI = process.env.TEST_DB_URL;
-}
+
 
 const prisma = new PrismaClient({
     datasources: {

@@ -11,9 +11,7 @@ app.use(requestLogger)
 app.use(express.static("client"));
 
 app.get("/api", (_, res) => {
-    res.json({
-        msg: "Welcome to AUL forum API"
-    })
+    res.send(`<code>Welcome to AUL forum API<code>`)
 })
 
 app.use("/api/users", userRoute)
