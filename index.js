@@ -6,5 +6,5 @@ const app = require("./app")
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
-    console.log(`api started on http://localhost:${PORT}/api`);
+    console.log(`API started on http://localhost:${PORT}/api`);
 });
