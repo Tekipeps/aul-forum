@@ -1,45 +1,3 @@
-@import "../bootstrap/css/bootstrap.min.css";
-:root {
-    --purple-theme: #37173d;
-    --blue-theme: #6f6ffa;
-    --nav-theme: #ccc;
-    --bg-theme: white;
-}
-
-@font-face {
-    font-family: Advent Pro;
-    src: url("../assets/fonts/Advent_Pro/AdventPro-Regular.ttf");
-}
-
-@font-face {
-    font-family: AllertaStencil;
-    src: url("../assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf");
-}
-
-@font-face {
-    font-family: Quantico;
-    src: url("../assets/fonts/Quantico/Quantico-Regular.otf");
-}
-
-*:focus {
-    outline: none;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background: var(--bg-theme);
-}
-
-a {
-    text-decoration: none;
-}
-
 .navbar {
     background: var(--nav-theme);
     display: flex;
@@ -89,9 +47,4 @@ a {
     width: 100px;
     padding: 5px;
     font-size: 20px;
-}
-
-main {
-    padding: 0% 0% 0% 10%;
-    flex: 1;
 }

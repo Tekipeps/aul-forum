@@ -20,18 +20,23 @@
 - Install dependencies `yarn install`
 - Start the server `yarn dev`
 
+Download and install postgresql on your computer [here](https://www.postgresql.org/download/)
+
 Add a `.env` file to the root of the project 
 
 DB url format:`postgresql://<USERNAME>:<PASSWORD>@<SERVER>:<PORT>/<DB_NAME>?schema=public`
+
 Note: remove the angle brackets to when adding the parameters.
 
+Example:
 Add the below content to the `.env` file
-```
-DEV_DB_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/aul-forum?schema=public"
-PROD_DB_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/aul-forum?schema=public"
-TEST_DB_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/aul-forum-test?schema=public"
-```
-`DEV_DB_URL` and `PROD_DB_URL` should be the same in development
+> ```
+> DEV_DB_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/aul-forum?schema=public"
+> PROD_DB_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/aul-forum?schema=public"
+> TEST_DB_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/aul-forum-test?schema=public"
+> ```
+Replace `<USERNAME>` and `<PASSWORD>` with the username and passowrd of the database server
+
 <hr>
 
 # License
