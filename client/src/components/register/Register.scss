@@ -1,0 +1,85 @@
+@import "../../variables.scss";
+#signup-form {
+    width: 500px;
+    padding: 15px;
+}
+
+#form-description {
+    color: $purple-theme;
+    padding: 10px;
+    font-family: Advent Pro;
+    font-size: 18px;
+    margin: auto;
+    width: 400px;
+}
+
+#signup-form {
+    >input {
+        &.long {
+            width: 98%;
+        }
+        &.short {
+            width: 48.6%;
+        }
+    }
+    >button {
+        display: inline-block;
+        &[name="signup"] {
+            background-color: $blue-theme;
+            width: 98%;
+        }
+        &[name="signup-later"] {
+            width: 48%;
+            background-color: green;
+        }
+        &[name="team-link"] {
+            margin-top: 4px;
+            width: 44%;
+            background: none;
+            a {
+                color: $purple-theme;
+            }
+        }
+        >a {
+            color: white;
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+#gender-option {
+    >p {
+        margin: 0%;
+        color: grey;
+    }
+    >div {
+        margin: 0px 0px 10px 10px;
+    }
+    label {
+        display: inline-block;
+        margin: 0px 3px;
+        >input[type="radio"] {
+            display: none;
+            +span::before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                width: 1rem;
+                height: 1rem;
+                margin-right: 0.3rem;
+                border-radius: 10%;
+                border-style: solid;
+                border-width: 0.1rem;
+                border-color: gray;
+            }
+        }
+        >input[type="radio"]:checked+span::before {
+            background-image: url("../../assets/form-images/purple-tick.jpg");
+            background-size: 80% 80%;
+            border-color: $purple-theme;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}

@@ -5,7 +5,7 @@ import { Home } from "./components/home/Home";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { Team } from "./components/team/Team";
-import "./App.css";
+import "./App.scss";
 export const App = () => {
   return (
     <Router>

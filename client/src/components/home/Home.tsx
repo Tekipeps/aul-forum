@@ -1,7 +1,7 @@
 import React from "react";
 import PostsSection from "./PostsSection";
 import MembersSection from "./MembersSection";
-import "./Home.css";
+import "./Home.scss";
 
 export const Home = () => (
   <div >

@@ -1,6 +1,6 @@
 import React from "react";
 import TeamMember from "./TeamMember";
-import "./Team.css";
+import "./Team.scss";
 
 export const Team = () => (
   <div>
@@ -16,17 +16,18 @@ export const Team = () => (
           software to solve real world problems."
       />
       <TeamMember
-        name="Emmanuel Itighise"
-        avatarURL={fetchAvatar("emedit.jpeg")}
-        bio="  Hi, My name is Itighise, Emmanuel Edet, and i am a Freelance Frontend
-        Developer."
-      />
-      <TeamMember
         name="Koledoye Abidemi"
         avatarURL={fetchAvatar("bidex.jpg")}
         bio="  I'm a frontend developer. Experienced with Java, TypeScript and
         React.js, I also hate cats...seriously."
       />
+      <TeamMember
+        name="Emmanuel Itighise"
+        avatarURL={fetchAvatar("emedit.jpeg")}
+        bio="  Hi, My name is Itighise, Emmanuel Edet, and i am a Freelance Frontend
+        Developer."
+      />
+      
        <TeamMember
         name="Osinowo Seun"
         avatarURL={fetchAvatar("seun.jpeg")}

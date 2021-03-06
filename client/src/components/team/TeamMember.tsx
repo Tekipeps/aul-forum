@@ -7,7 +7,7 @@ interface Member {
 }
 
 const TeamMember = ({ name,avatarURL, bio }: Member) => (
-  <div className="person">
+  <div className="member">
     <img src={avatarURL} alt="" />
     <h3>{name}</h3>
     <p className="bio">{bio}</p>

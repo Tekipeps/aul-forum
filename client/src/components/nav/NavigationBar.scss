@@ -1,0 +1,51 @@
+@import "../../variables.scss";
+.navbar {
+    background: $nav-theme;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    min-height: 50px;
+    border-bottom: 1px solid $purple-theme;
+    >.logo {
+        >span {
+            letter-spacing: 2px;
+            padding: 2px 5px;
+            margin: 0;
+            font-family: Merriwheather;
+            font-weight: 600;
+            font-size: 22px;
+            display: inline;
+        }
+        >img {
+            border-radius: 15%;
+            padding: 4px;
+            background-color: white;
+            display: inline;
+        }
+    }
+    >ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        width: 40%;
+        justify-content: space-around;
+        >li {
+            border-radius: 3px;
+            text-align: center;
+            border: 2px solid $nav-theme;
+            transition-property: border;
+            transition-duration: 500ms;
+            >a {
+                color: $purple-theme;
+                display: block;
+                width: 100px;
+                padding: 5px;
+                font-size: 20px;
+            }
+            &:hover {
+                border: 2px solid $purple-theme;
+            }
+        }
+    }
+}

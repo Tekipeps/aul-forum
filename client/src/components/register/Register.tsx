@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Register.css";
-import "../../css/form.css";
+import "./Register.scss";
+import "../../scss/form.scss";
 
 export const Register = () => (
   <div id="container">
@@ -15,19 +15,21 @@ export const Register = () => (
         <input
           name="matric-no"
           type="text"
-          placeholder="Matriculation Number"
+          placeholder="Matriculation Number" className="long"
         />
-        <input name="username" type="text" placeholder="Username" />
-        <input name="password" type="text" placeholder="New Password" />
+        <input name="username" type="text" placeholder="Username" className="long" />
+        <input name="password" type="text" placeholder="New Password" className="short"/>
         <input
           name="confirmpassword"
           type="password"
           placeholder="Confirm Password"
+          className="short"
         />
         <input
           name="email"
           type="email"
           placeholder="Email Address(optional)"
+          className="long"
         />
         <div id="gender-option">
           <p>Gender</p>
