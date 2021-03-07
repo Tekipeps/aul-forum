@@ -55,8 +55,10 @@ Download and install postgresql on your computer [here](https://www.postgresql.o
 ## Backend
 - Run `cp .env.example .env.test.local` to create a copy of the environment variables
 - Replace `<USERNAME>`, `<PASSWORD>` and `<DB_PORT>`, `<DB_NAME>` with the username, password, port and name of the 'test' postgres database respectively
-- Run `yarn test:api`
+- Run `yarn test:db:up` to setup test database
+- Run `yarn test:api` to test with jest
 # Contributors
+
 
 | Author                                   | Role                                                    |
 | ---------------------------------------- | -------------------------------------------------------- |

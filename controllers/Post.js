@@ -19,12 +19,12 @@ class Post {
     }
     async createPost(req, res, next) {
         try {
-            const { authorId, title, content } = req.body
-            const author = await prisma.post.findUnique({ where: { id: authorId } })
-            if (!author) {
-                return res.status(400).json({ err: "invalid author" })
-            }
-            const savedPost = await prisma.post.create({ data: { title, content, authorId } })
+            const { title, content } = req.body
+            const { id } = req.user
+            const author = await prisma.user.findUnique({ where: { id } })
+            if (!author) return res.sendStatus(401)
+
+            const savedPost = await prisma.post.create({ data: { title, content, authorId: id } })
             res.json(savedPost)
         } catch (error) {
             next(error)
@@ -32,14 +32,17 @@ class Post {
     }
     async updatePost(req, res, next) {
         try {
-            const { id } = req.params
+            const { id: postId } = req.params
             const data = req.body
+            const { id: userId, role } = req.user
 
-            const post = await prisma.post.findUnique({ where: { id } })
-            if (!post) {
-                return res.status(401).json({ err: "Post not found" })
-            }
+            const post = await prisma.post.findUnique({ where: { id: postId } })
+
+            if (!post) return res.status(400).json({ err: "post not found" })
+            if (post.authorId !== userId || role != "ADMIN") return res.status(401).json({ err: "only the author or an admin can update the post" })
+
             const updatedPost = await prisma.post.update({ where: { id: post.id }, data })
+
             res.json({ updatedPost })
         } catch (error) {
             next(error)
@@ -47,8 +50,13 @@ class Post {
     }
     async deletePost(req, res, next) {
         try {
-            const { id } = req.params
-            await prisma.post.delete({ where: { id } })
+            const { id: postId } = req.params
+            const { id: userId, role } = req.user
+
+            const post = await prisma.post.findUnique({ where: { id: postId } })
+            if (post.authorId !== userId || role != "ADMIN") return res.status(401).json({ err: "only the author or an admin can delete this post" })
+
+            await prisma.post.delete({ where: { id: postId } })
             res.status(204).end()
         } catch (error) {
             next(error)
