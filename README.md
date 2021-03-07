@@ -48,7 +48,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 #### backend
 - Run `cp .env.example .env.test.local` to create a copy of the environment variables
 - Replace `<USERNAME>`, `<PASSWORD>` and `<DB_PORT>`, `<DB_NAME>` with the username, password, port and name of the 'test' postgres database respectively
-- Run `yarn test:api`
+- Run `yarn test:db:up` to setup test database
+- Run `yarn test:api` to test with jest
 ## Contributors
 
 | Author                                   | Roles                                                    |
