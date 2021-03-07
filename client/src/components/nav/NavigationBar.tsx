@@ -7,7 +7,7 @@ export const NavBar = () => (
   <nav className="navbar">
     <div className="logo">
       <img width="40px" height="40px" src={Logo} />
-      <span>AUL Forum</span>
+      <div>AUL Forum</div>
     </div>
     <ul>
       <li>
