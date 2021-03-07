@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json())
 app.use(requestLogger)
-app.use(express.static("client"));
+app.use(express.static("client/build"));
 
 app.get("/api", (_, res) => {
     res.send(`<code>Welcome to AUL forum API<code>`)
