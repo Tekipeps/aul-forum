@@ -10,30 +10,19 @@
     }
 }
 
-#login-form {
-    position: relative;
-    width: 400px;
-    padding: 10px 10px;
-    > input {
-        width: 95%;
+#button-holder > button {
+    &[name='login'] {
+        width: 330px;
+        background-color: $purple-theme;
     }
-}
 
-#login-btn {
-    background-color: $purple-theme;
-    width: 98%;
-    margin-top: 5px auto;
-    height: 35px;
-}
-
-#register-btn {
-    margin-top: 5px;
-    background-color: $blue-theme;
-    width: 98%;
-    > a {
-        color: white;
-        width: 100%;
-        height: 100%;
-        display: block;
+    &[name='register'] {
+        background: none;
+        > a {
+            color: $blue-theme;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
     }
 }

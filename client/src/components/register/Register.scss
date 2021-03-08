@@ -5,50 +5,29 @@
     font-family: Advent Pro;
     font-size: 18px;
     margin: auto;
-    width: 400px;
+    //background:red;
+    width: 300px;
 }
 
-#signup-form {
-    width: 500px;
-    padding: 15px;
-    > input {
-        &.long {
-            width: 95%;
-        }
-        &.short {
-            width: 44.5%;
-        }
+#button-holder > button {
+    &[name='signup'] {
+        width: 300px;
+        background-color: $purple-theme;
     }
-    > button {
-        display: inline-block;
-        &[name='signup'] {
-            background-color: $blue-theme;
-            width: 98%;
-        }
-        &[name='signup-later'] {
-            width: 48%;
-            background-color: green;
-        }
-        &[name='team-link'] {
-            margin-top: 4px;
-            width: 44%;
-            background: none;
-            a {
-                color: $purple-theme;
-            }
-        }
-        > a {
-            color: white;
-            width: 100%;
-            display: block;
+    &[name='signup-later'] {
+        background: none;
+        a {
+            color: $blue-theme;
         }
     }
 }
 
 #gender-option {
+    margin-left: 10px;
     > p {
-        margin: 0%;
+        margin: 5px 0px;
         color: grey;
+        font-size: 19px;
     }
     > div {
         margin: 0px 0px 10px 10px;
