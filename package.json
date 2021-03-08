@@ -1,4 +1,9 @@
 {
+  "husky": {
+    "hooks": {
+      "pre-commit": "cd client && yarn prettier && git add -A"
+    }
+  },
   "dependencies": {
     "@prisma/client": "2.17.0",
     "bcrypt": "^5.0.1",
@@ -15,11 +20,6 @@
     "test:db:up": "dotenv -e .env.test.local -- prisma db push --preview-feature --accept-data-loss --force-reset && prisma generate",
     "db:seed": "node prisma/seed.js",
     "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "cd client && yarn dev && git add -A"
-    }
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
