@@ -29,7 +29,7 @@ model User {
   posts        Post[]
   gender       Gender
   role         Role      @default(USER)
-  commnents    Comment[]
+  comments    Comment[]
 }
 
 model Post {
