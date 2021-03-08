@@ -1,19 +1,19 @@
-@import "./bootstrap/css/bootstrap.min.css";
-@import "variables.scss";
-$font-dir:"./assets/fonts";
+//@import "./bootstrap/css/bootstrap.min.css";
+@import 'variables.scss';
+$font-dir: './assets/fonts';
 @font-face {
     font-family: Advent Pro;
-    src: url("#{$font-dir}/Advent_Pro/AdventPro-Regular.ttf");
+    src: url('#{$font-dir}/Advent_Pro/AdventPro-Regular.ttf');
 }
 
 @font-face {
     font-family: AllertaStencil;
-    src: url("#{$font-dir}/AllertaStencil/AllertaStencil-Regular.ttf");
+    src: url('#{$font-dir}/AllertaStencil/AllertaStencil-Regular.ttf');
 }
 
 @font-face {
     font-family: Quantico;
-    src: url("#{$font-dir}/Quantico/Quantico-Regular.otf");
+    src: url('#{$font-dir}/Quantico/Quantico-Regular.otf');
 }
 
 *:focus {
@@ -25,8 +25,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     height: 100vh;
     background: $bg-theme;
     -webkit-font-smoothing: antialiased;
@@ -38,6 +36,6 @@ a {
 }
 
 main {
-    padding: 0% 0% 0% 10%;
-    flex: 1;
+    padding: 0% 0% 0% 5px;
+    //flex: 1;
 }

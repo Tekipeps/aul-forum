@@ -1,9 +1,4 @@
-@import "../../variables.scss";
-#signup-form {
-    width: 500px;
-    padding: 15px;
-}
-
+@import '../../variables.scss';
 #form-description {
     color: $purple-theme;
     padding: 10px;
@@ -14,25 +9,27 @@
 }
 
 #signup-form {
-    >input {
+    width: 500px;
+    padding: 15px;
+    > input {
         &.long {
-            width: 98%;
+            width: 95%;
         }
         &.short {
-            width: 48.6%;
+            width: 44.5%;
         }
     }
-    >button {
+    > button {
         display: inline-block;
-        &[name="signup"] {
+        &[name='signup'] {
             background-color: $blue-theme;
             width: 98%;
         }
-        &[name="signup-later"] {
+        &[name='signup-later'] {
             width: 48%;
             background-color: green;
         }
-        &[name="team-link"] {
+        &[name='team-link'] {
             margin-top: 4px;
             width: 44%;
             background: none;
@@ -40,7 +37,7 @@
                 color: $purple-theme;
             }
         }
-        >a {
+        > a {
             color: white;
             width: 100%;
             display: block;
@@ -49,20 +46,20 @@
 }
 
 #gender-option {
-    >p {
+    > p {
         margin: 0%;
         color: grey;
     }
-    >div {
+    > div {
         margin: 0px 0px 10px 10px;
     }
     label {
         display: inline-block;
         margin: 0px 3px;
-        >input[type="radio"] {
+        > input[type='radio'] {
             display: none;
-            +span::before {
-                content: "";
+            + span::before {
+                content: '';
                 display: inline-block;
                 vertical-align: middle;
                 width: 1rem;
@@ -74,8 +71,8 @@
                 border-color: gray;
             }
         }
-        >input[type="radio"]:checked+span::before {
-            background-image: url("../../assets/form-images/purple-tick.jpg");
+        > input[type='radio']:checked + span::before {
+            background-image: url('../../assets/form-images/purple-tick.jpg');
             background-size: 80% 80%;
             border-color: $purple-theme;
             background-repeat: no-repeat;

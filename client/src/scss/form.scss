@@ -1,4 +1,9 @@
-@import "../variables.scss";
+@import '../variables.scss';
+@mixin center-absolute-element {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #container {
     border-radius: 2px;
     position: absolute;
@@ -6,22 +11,23 @@
     display: flex;
     flex-flow: row;
     border: 1px solid $purple-theme;
-    margin: 30px auto;
+    margin-top: 30px;
+    @include center-absolute-element;
 }
 
 #form-sidebar {
-    width: 550px;
+    width: 450px;
     font-family: Quantico;
     background-color: $purple-theme;
     color: white;
     padding: 20px;
-    >p {
+    > p {
         margin: auto;
         position: relative;
         width: 90%;
         height: 80%;
         word-wrap: break-word;
-        font-size: 50px;
+        font-size: 43px;
     }
 }
 
@@ -37,7 +43,7 @@
     font-family: AllertaStencil;
 }
 
-#form-holder {
+#form-container {
     margin: 20px;
     position: absolute;
     padding-top: 30px;
@@ -48,9 +54,9 @@
     z-index: 1;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+input[type='text'],
+input[type='password'],
+input[type='email'] {
     height: 40px;
     font-size: 18px;
     padding-left: 20px;
@@ -74,6 +80,6 @@ button {
     border-radius: 2px;
     color: white;
     margin-bottom: 5px;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     padding: 0px;
 }
