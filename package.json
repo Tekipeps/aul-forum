@@ -17,11 +17,7 @@
     "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo \"testing\""
-    }
-  },
+  
   "devDependencies": {
     "dotenv": "^8.2.0",
     "faker": "^5.4.0",
