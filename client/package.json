@@ -7,7 +7,6 @@
         "build": "react-scripts build",
         "prettier": "prettier --write src/**/*.{tsx,scss} src/*.{tsx,scss} public/*.html *.json"
     },
-   
     "dependencies": {
         "node-sass": "^5.0.0",
         "react": "^17.0.1",

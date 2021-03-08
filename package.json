@@ -14,10 +14,13 @@
     "db:up": "dotenv -e .env -- prisma db push --preview-feature --accept-data-loss --force-reset && prisma generate && yarn db:seed",
     "test:db:up": "dotenv -e .env.test.local -- prisma db push --preview-feature --accept-data-loss --force-reset && prisma generate",
     "db:seed": "node prisma/seed.js",
-    "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js",
-    "prepare": "husky install"
+    "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js"
   },
-  
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"testing\""
+    }
+  },
   "devDependencies": {
     "dotenv": "^8.2.0",
     "faker": "^5.4.0",
