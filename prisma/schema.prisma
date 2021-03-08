@@ -21,22 +21,32 @@ enum Role {
 }
 
 model User {
-  id    String     @id @default(uuid())
-  email String  @unique
-  username  String @unique
-  matric String @unique
+  id           String    @id @default(uuid())
+  email        String    @unique
+  username     String    @unique
+  matric       String?   @unique
   passwordHash String
-  posts Post[]
-  gender Gender
-  role Role @default(USER)
+  posts        Post[]
+  gender       Gender
+  role         Role      @default(USER)
+  commnents    Comment[]
 }
 
 model Post {
-  id Int @id @default(autoincrement())
-  author User @relation(fields: [authorId], references:[id])
+  id        Int       @id @default(autoincrement())
+  author    User      @relation(fields: [authorId], references: [id])
+  authorId  String
+  title     String    @db.VarChar(255)
+  content   String
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Comment {
+  id       Int    @id @default(autoincrement())
+  post     Post   @relation(fields: [postId], references: [id])
+  postId   Int
+  author   User   @relation(fields: [authorId], references: [id])
   authorId String
-  title String @db.VarChar(255)
-  content String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
