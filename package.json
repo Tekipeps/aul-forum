@@ -15,10 +15,10 @@
     "test:db:up": "dotenv -e .env.test.local -- prisma db push --preview-feature --accept-data-loss --force-reset && prisma generate",
     "db:seed": "node prisma/seed.js",
     "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js",
-    "foo":"echo \"booiii\""
+    "prettify-client": "cd client && yarn prettier && git add -A"
   },
   "pre-commit": [
-    "foo"
+    "prettify-client"
   ],
   "devDependencies": {
     "dotenv": "^8.2.0",
