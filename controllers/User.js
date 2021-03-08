@@ -15,7 +15,7 @@ class User {
     async getUser(req, res, next) {
         try {
             const { id } = req.params
-            const user = await prisma.user.findUnique({ where: { id }, select: pubUserData })
+            const user = await prisma.user.findUnique({ where: { id }, select: { ...pubUserData, posts: false } })
 
             return res.json(user)
         } catch (error) {
@@ -24,7 +24,7 @@ class User {
     }
     async getUsers(_, res, next) {
         try {
-            const users = await prisma.user.findMany({ select: pubUserData })
+            const users = await prisma.user.findMany({ select: { ...pubUserData, posts: false }, where: { role: "USER" } })
             res.json(users)
         } catch (error) {
             next(error)
@@ -55,13 +55,14 @@ class User {
         try {
 
             const { id } = req.params
+            const authenticatedUser = req.user
             const data = req.body
 
             const user = await prisma.user.findUnique({ where: { id }, select: pubUserData })
-            if (!user) {
-                return res.status(401).json({ err: "User not available" })
-            }
-            const updatedUser = await prisma.user.update({ where: { id: user.id }, data })
+            if (!user) return res.status(400).json({ err: "User not available" })
+            if (user.id != authenticatedUser.id || authenticatedUser.role != "ADMIN") return res.sendStatus(401)
+
+            const updatedUser = await prisma.user.update({ where: { id }, data })
             res.json({ updatedUser })
         } catch (error) {
             next(error)
@@ -70,6 +71,11 @@ class User {
     async deleteUser(req, res, next) {
         try {
             const { id } = req.params
+            const authenticatedUser = req.user
+
+            const user = await prisma.user.findUnique({ where: { id }, select: pubUserData })
+            if (user.id !== authenticatedUser.id || authenticatedUser.role != "ADMIN") return res.sendStatus(401)
+
             await prisma.user.delete({ where: { id } })
             res.status(204).end()
         } catch (error) {
