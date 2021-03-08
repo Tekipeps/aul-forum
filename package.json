@@ -19,7 +19,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "cd client && yarn prettier && git add -A"
+      "pre-commit": "echo \"dude\""
     }
   },
   "devDependencies": {
