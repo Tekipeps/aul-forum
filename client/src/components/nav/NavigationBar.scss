@@ -1,27 +1,25 @@
 @import "../../variables.scss";
 .navbar {
     background: $nav-theme;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 10px;
     min-height: 50px;
     border-bottom: 1px solid $purple-theme;
     >.logo {
-        >span {
+        >div {
+            position: relative;
             letter-spacing: 2px;
-            padding: 2px 5px;
-            margin: 0;
+            padding: 1px 5px;
+            margin: 0px 0px;
             font-family: Merriwheather;
             font-weight: 600;
-            font-size: 22px;
-            display: inline;
+            font-size: 28px;
+            display: inline-block;
         }
         >img {
+            margin: 0;
             border-radius: 15%;
             padding: 4px;
             background-color: white;
-            display: inline;
         }
     }
     >ul {
