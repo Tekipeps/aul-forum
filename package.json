@@ -18,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"testing\""
+      "pre-commit": "cd client && yarn dev && git add -A"
     }
   },
   "devDependencies": {
