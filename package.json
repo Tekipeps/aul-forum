@@ -18,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"dude boy\""
+      "pre-commit": "echo \"dude boyo\""
     }
   },
   "devDependencies": {
