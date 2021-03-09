@@ -4,8 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "react-scripts start",
-        "build": "react-scripts build",
-        "prettier": "prettier --write src/**/*.{tsx,scss} src/*.{tsx,scss} public/*.html *.json"
+        "build": "react-scripts build"
     },
     "dependencies": {
         "node-sass": "^5.0.0",
@@ -19,7 +18,6 @@
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
         "@types/react-router-dom": "^5.1.7",
-        "prettier": "^2.2.1",
         "typescript": "^4.1.2"
     },
     "browserslist": {
