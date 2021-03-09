@@ -1,4 +1,9 @@
-@import "../variables.scss";
+@import '../variables.scss';
+@mixin center-absolute-element {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #container {
     border-radius: 2px;
     position: absolute;
@@ -6,22 +11,25 @@
     display: flex;
     flex-flow: row;
     border: 1px solid $purple-theme;
-    margin: 30px auto;
+    margin-top: 30px;
+    @include center-absolute-element;
 }
 
 #form-sidebar {
-    width: 550px;
+    width: 450px;
     font-family: Quantico;
     background-color: $purple-theme;
     color: white;
-    padding: 20px;
-    >p {
-        margin: auto;
-        position: relative;
+    padding: 0px;
+    position: relative;
+
+    > p {
+        margin-left: 30px;
+        position: absolute;
         width: 90%;
         height: 80%;
         word-wrap: break-word;
-        font-size: 50px;
+        font-size: 45px;
     }
 }
 
@@ -37,7 +45,7 @@
     font-family: AllertaStencil;
 }
 
-#form-holder {
+#form-container {
     margin: 20px;
     position: absolute;
     padding-top: 30px;
@@ -48,32 +56,40 @@
     z-index: 1;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-    height: 40px;
-    font-size: 18px;
-    padding-left: 20px;
-    letter-spacing: 2px;
-    background-color: white;
-    margin-bottom: 15px;
-    margin-right: 2px;
-    border-radius: 2px 2px 0px 0px;
-    border: 2px solid $purple-theme;
-    transition-property: border;
-    transition-duration: 0.5s;
-    &:focus {
-        border: 2px solid grey;
+#form-div {
+    padding: 3px 3px;
+    display: inline-block;
+
+    .text-input > input {
+        width: 330px;
+        padding: 2px 5px;
+        margin: 5px 2px 5px 2px;
+        height: 35px;
+        font-size: 18px;
+        padding-left: 6px;
+        letter-spacing: 2px;
+        background-color: white;
+        //margin-bottom: 15px;
+        border-radius: 2px 2px 0px 0px;
+        border: 1px solid $purple-theme;
+        transition-property: border;
+        transition-duration: 0.5s;
+        &:focus {
+            border: 1px solid grey;
+        }
     }
 }
-
-button {
-    height: 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    margin-bottom: 5px;
-    font-family: "Times New Roman", Times, serif;
-    padding: 0px;
+#button-holder {
+    display: grid;
+    button {
+        margin: 0px auto;
+        padding: 0;
+        height: 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 2px;
+        color: white;
+        margin-bottom: 5px;
+        font-family: 'Times New Roman', Times, serif;
+    }
 }

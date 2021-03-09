@@ -1,68 +1,44 @@
-@import "../../variables.scss";
-#signup-form {
-    width: 500px;
-    padding: 15px;
-}
-
+@import '../../variables.scss';
 #form-description {
     color: $purple-theme;
     padding: 10px;
     font-family: Advent Pro;
     font-size: 18px;
     margin: auto;
-    width: 400px;
+    //background:red;
+    width: 300px;
 }
 
-#signup-form {
-    >input {
-        &.long {
-            width: 98%;
-        }
-        &.short {
-            width: 48.6%;
-        }
+#button-holder > button {
+    &[name='signup'] {
+        width: 300px;
+        background-color: $purple-theme;
     }
-    >button {
-        display: inline-block;
-        &[name="signup"] {
-            background-color: $blue-theme;
-            width: 98%;
-        }
-        &[name="signup-later"] {
-            width: 48%;
-            background-color: green;
-        }
-        &[name="team-link"] {
-            margin-top: 4px;
-            width: 44%;
-            background: none;
-            a {
-                color: $purple-theme;
-            }
-        }
-        >a {
-            color: white;
-            width: 100%;
-            display: block;
+    &[name='signup-later'] {
+        background: none;
+        a {
+            color: $blue-theme;
         }
     }
 }
 
 #gender-option {
-    >p {
-        margin: 0%;
+    margin-left: 10px;
+    > p {
+        margin: 5px 0px;
         color: grey;
+        font-size: 19px;
     }
-    >div {
+    > div {
         margin: 0px 0px 10px 10px;
     }
     label {
         display: inline-block;
         margin: 0px 3px;
-        >input[type="radio"] {
+        > input[type='radio'] {
             display: none;
-            +span::before {
-                content: "";
+            + span::before {
+                content: '';
                 display: inline-block;
                 vertical-align: middle;
                 width: 1rem;
@@ -74,8 +50,8 @@
                 border-color: gray;
             }
         }
-        >input[type="radio"]:checked+span::before {
-            background-image: url("../../assets/form-images/purple-tick.jpg");
+        > input[type='radio']:checked + span::before {
+            background-image: url('../../assets/form-images/purple-tick.jpg');
             background-size: 80% 80%;
             border-color: $purple-theme;
             background-repeat: no-repeat;
