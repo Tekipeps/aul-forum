@@ -1,13 +1,8 @@
-const { PrismaClient } = require('@prisma/client')
+const { prisma, MATRIC_REGEX } = require("../utils/config")
 const bcrypt = require("bcrypt")
 const faker = require('faker')
 const RandExp = require('randexp');
 
-
-const prisma = new PrismaClient()
-
-
-const matricRegx = /AUL\/(SCI|HMU|SMS)\/([0-9]{2})\/([0-9]{5})/g
 
 const len = 5
 const posts = []
@@ -18,7 +13,7 @@ const setupUsers = () => {
         const user = {
             email: faker.internet.email(),
             username: faker.name.firstName(),
-            matric: new RandExp(matricRegx).gen(),
+            matric: new RandExp(MATRIC_REGEX).gen(),
             gender: (Math.random() > 0.5 ? 'MALE' : 'FEMALE'),
             role: (Math.random() > 0.3 ? 'USER' : 'ADMIN'),
             posts: [],
