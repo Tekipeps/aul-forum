@@ -20,4 +20,8 @@ app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
 app.use(errorHandler)
 
+app.use("*", (_, res) => {
+    res.sendStatus(404)
+})
+
 module.exports = app
