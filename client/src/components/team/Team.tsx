@@ -7,8 +7,8 @@ export const Team = (): ReactElement => (
         <a id='github-link' href='https://github.com/Tekipeps/aul-forum'>
             Checkout this project on Github
         </a>
-        <div className='heading'>Meet the awesome crew that contributed to this project.</div>
-        <div className='team-list'>
+        <div id='heading'>Meet The Awesome Crew That Contributed To This Project.</div>
+        <div id='team-list'>
             <TeamMember
                 name='Tekena Solomon'
                 avatarURL={fetchAvatar('tekipeps.jpeg')}

@@ -12,17 +12,25 @@ export const Login = (): ReactElement => (
             <div id='logo-image'>
                 <img src={Logo} alt='logo' />
             </div>
-            <form id='login-form'>
-                <input name='matric-no' type='text' placeholder='Matric Number' />
-                <input name='password' type='password' placeholder='Password' />
-                <button id='login-btn' type='submit'>
-                    Login
-                </button>
+            <div id='form-div'>
+                <form>
+                    <div className='text-input'>
+                        <input name='matric-no' type='text' placeholder='Matric Number' />
+                    </div>
+                    <div className='text-input'>
+                        <input name='password' type='password' placeholder='Password' />
+                    </div>
+                    <div id='button-holder'>
+                        <button name='login' type='button'>
+                            Login
+                        </button>
 
-                <button id='register-btn'>
-                    <Link to='/register'>Dont have an account?</Link>
-                </button>
-            </form>
+                        <button name='register'>
+                            <Link to='/register'>Dont have an account?</Link>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
         <SideBar
             content='Keep up with news and discussions related to AUL from anywhere, at
@@ -30,3 +38,10 @@ export const Login = (): ReactElement => (
         />
     </div>
 );
+/*<button id='login-btn' type='submit'>
+                        Login
+                    </button>
+
+                    <button id='register-btn'>
+                        <Link to='/register'>Dont have an account?</Link>
+                    </button>*/

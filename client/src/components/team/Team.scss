@@ -1,7 +1,11 @@
 @import '../../variables.scss';
+@mixin center-absolute-element {
+    left: 50%;
+    transform: translateX(-50%);
+}
 #github-link {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: #050;
     border: 1px solid #0a0;
     padding: 3px 6px;
@@ -14,27 +18,33 @@
     }
 }
 
-.heading {
-    font-size: 22px;
-    margin: 20px 30px;
+#heading {
+    font-size: 40px;
+    margin: 50px 50px;
     font-family: 'Times New Roman', Times, serif;
-    color: grey;
+    color: $purple-theme;
+    text-align: center;
+    border: 1px solid $purple-theme;
+    padding: 10px;
+    background-color: #eee;
 }
 
-.team-list {
+#team-list {
+    position: absolute;
     display: flex;
     flex-flow: row wrap;
+    width: 80%;
+    @include center-absolute-element;
 }
 
 .member {
     background: linear-gradient($purple-theme 15%, #ccc 15%);
+    margin: 5px auto;
     position: relative;
     width: 200px;
-    display: flex;
-    flex-direction: column;
     border-radius: 6px;
-    margin: 3px 12px;
-    padding: 5px;
+    padding: 4px;
+
     > .avatar {
         width: 70px;
         height: 70px;
@@ -43,28 +53,34 @@
     }
     > .name {
         padding: 2px 5px;
-        font-size: 1.2em;
+        font-size: 17px;
         font-family: Advent Pro;
         font-weight: 600;
+        //background:green;
+        margin: 0;
     }
     > .role {
         padding: 0px 9px;
         //background-color: $purple-theme;
-        font-size: 14px;
+        font-size: 15px;
         text-align: center;
-        width: 100%;
+        width: 90%;
         color: $purple-theme;
         //border-radius: 4px;
         font-weight: 600;
         border-bottom: 1px solid $purple-theme;
+        //background:green;
     }
     > .bio {
-        position: relative;
+        //position: relative;
+
         font-size: 0.8rem;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
-        padding: 4px;
-        max-height: 150px;
+        padding: 7px;
+        //background:green;
+        margin: 5px 2px;
+        //max-height: 150px;
     }
     > a {
         width: 15%;
@@ -79,6 +95,6 @@
         }
     }
     &:hover {
-        box-shadow: 1px 1px grey;
+        box-shadow: 2px 1px grey;
     }
 }
