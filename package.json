@@ -15,7 +15,7 @@
     "db:up": "dotenv -e .env -- prisma db push --preview-feature --accept-data-loss --force-reset && yarn db:seed",
     "test:db:up": "dotenv -e .env.test.local -- prisma db push --preview-feature --accept-data-loss --force-reset",
     "db:seed": "node prisma/seed.js",
-    "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js"
+    "test:api": "jest --runInBand --config ./jest.config.js"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

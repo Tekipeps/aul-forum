@@ -10,6 +10,8 @@ const PORT = Number(process.env.PORT) || 5000;
 
 const JWT_SECRET = String(process.env.JWT_SECRET)
 
+const MATRIC_REGEX = /AUL\/(SCI|HMU|SMS)\/([0-9]{2})\/([0-9]{5})/g
+
 const prisma = new PrismaClient({
     datasources: {
         db: {
@@ -18,4 +20,4 @@ const prisma = new PrismaClient({
     },
 })
 
-module.exports = { PORT, DB_URI, ENV, prisma, JWT_SECRET };
+module.exports = { PORT, DB_URI, ENV, prisma, JWT_SECRET, MATRIC_REGEX };
