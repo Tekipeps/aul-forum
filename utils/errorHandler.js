@@ -1,16 +1,16 @@
 const errorHandler = (error, _, res, next) => {
-    console.log(error.message)
+    console.log(error.message);
     /**
      * TODO: add error handling checks
-     * eg: 
+     * eg:
      * if (error.name === 'ValidationError') {
      *      return response.status(400).json({ error: error.message });
      * }
      */
     if (error.name === 'JsonWebTokenError') {
-        return res.status(401).json({ err: error.message })
+        return res.status(401).json({ err: error.message });
     }
-    next(error)
-}
+    next(error);
+};
 
-module.exports = errorHandler
+module.exports = errorHandler;
