@@ -4,36 +4,17 @@
     transform: translateX(-50%);
 }
 
-#container {
+.container {
     border-radius: 2px;
     position: absolute;
     background-color: $bg-theme;
     display: flex;
     flex-flow: row;
     border: 1px solid $purple-theme;
-    margin-top: 30px;
     @include center-absolute-element;
 }
 
-#form-sidebar {
-    width: 450px;
-    font-family: Quantico;
-    background-color: $purple-theme;
-    color: white;
-    padding: 0px;
-    position: relative;
-
-    > p {
-        margin-left: 30px;
-        position: absolute;
-        width: 90%;
-        height: 80%;
-        word-wrap: break-word;
-        font-size: 45px;
-    }
-}
-
-#form-header {
+.form-header {
     position: absolute;
     top: 0px;
     left: 50px;
@@ -45,7 +26,7 @@
     font-family: AllertaStencil;
 }
 
-#form-container {
+.form-container {
     margin: 20px;
     position: absolute;
     padding-top: 30px;
@@ -56,7 +37,7 @@
     z-index: 1;
 }
 
-#form-div {
+.form-wrapper {
     padding: 3px 3px;
     display: inline-block;
 
@@ -69,7 +50,6 @@
         padding-left: 6px;
         letter-spacing: 2px;
         background-color: white;
-        //margin-bottom: 15px;
         border-radius: 2px 2px 0px 0px;
         border: 1px solid $purple-theme;
         transition-property: border;
@@ -79,7 +59,7 @@
         }
     }
 }
-#button-holder {
+.button-holder {
     display: grid;
     button {
         margin: 0px auto;

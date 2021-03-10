@@ -1,13 +1,7 @@
 @import '../../variables.scss';
 $text-color: white;
-$user-color: #f777f0;
-.post {
-    position: relative;
-    background-color: #eee;
-    box-shadow: 10px 5px #aaa;
-    margin-bottom: 10px;
-    background-color: $purple-theme;
-}
+$user-color: #88f;
+
 
 #home-content {
     position: fixed;
@@ -16,36 +10,23 @@ $user-color: #f777f0;
 }
 
 #posts-section {
-    margin-top: 30px;
+    margin: 30px 20%;
     max-width: 700px;
     float: left;
 }
 
-#members-section {
-    width: 300px;
-    background-color: #301934;
-    float: right;
-    position: relative;
-    top: 0px;
-    padding: 10px 20px;
-    height: 100%;
-    color: $text-color;
-}
-
-#members {
-    border-bottom: 1px solid grey;
-    > div {
-        margin: 10px 20px;
-        font-size: 16px;
-        font-weight: 600;
-        color: $user-color;
-        font-family: monospace;
-    }
+.post {
+   
+    background-color: #eee;
+    box-shadow: 5px 5px #aaa;
+    margin-bottom: 10px;
+    
 }
 
 .post-head {
     background-color: $purple-theme;
-    padding: 2px 15px;
+    padding: 4px 15px;
+    margin:0;
     > div {
         display: inline-block;
     }
@@ -56,29 +37,33 @@ $user-color: #f777f0;
     font-weight: 600;
     color: $user-color;
     font-family: monospace;
+    margin:0;
 }
 
 .post-timestamp {
     float: right;
     color: $text-color;
+    margin:0;
 }
 
 .post-topic {
-    font-size: 16px;
-    margin-left: 20px;
-    padding-left: 10px;
-    color: $bg-theme;
+    font-size: 18px;
+    margin: 5px 0px;
+    padding: 3px 12px;
+   
     border-bottom: 1px solid grey;
-    width: 90%;
+    //width: 90%;
     font-weight: 600;
-    text-align: center;
+   
+   
 }
 
 .post-body {
+   
     min-width: 300px;
     padding: 5px 40px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: $text-color;
+   
 }
 
 .post-tags {

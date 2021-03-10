@@ -5,11 +5,11 @@
     border-bottom: 1px solid $purple-theme;
     position: relative;
     min-height: 50px;
+    z-index: 2;
 }
 
 #logo {
     position: absolute;
-    //background-color: red;
     display: flex;
     margin: 5px 20px;
     > div {
@@ -20,7 +20,6 @@
         font-weight: 600;
         font-size: 32px;
         display: inline-block;
-        //background-color: green;
         height: 40px;
         img {
             margin: 0;
@@ -30,21 +29,19 @@
             width: 30px;
         }
     }
-    //>div>
 }
 
 #routes {
     position: absolute;
     right: 5px;
     top: 10px;
-    //background-color: red;
 }
 
 #routes > ul {
     list-style: none;
     display: flex;
     margin: 0;
-    //background-color: green;
+
     > li {
         border-radius: 3px;
         text-align: center;
