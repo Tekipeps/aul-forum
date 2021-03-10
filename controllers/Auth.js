@@ -1,5 +1,5 @@
 const { prisma, JWT_SECRET } = require('../utils/config');
-const { role } = require('../utils/globals')
+const { role } = require('../utils/globals');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
@@ -8,7 +8,8 @@ class Auth {
         try {
             const { username, password } = req.body;
             const user = await prisma.user.findUnique({
-                where: { username }, select: {
+                where: { username },
+                select: {
                     username: true,
                     email: true,
                     role: true,
@@ -16,14 +17,16 @@ class Auth {
                     passwordHash: true
                 }
             });
-            if (!user) return res.status(400).json({
-                err: 'User not available, please register'
-            });
+            if (!user)
+                return res.status(400).json({
+                    err: 'User not available, please register'
+                });
             const isCorrectPassword = await bcrypt.compare(password, user.passwordHash);
-            if (!isCorrectPassword) return res.status(401).json({
-                err: 'Incorrect username or password'
-            });
-            delete user.passwordHash
+            if (!isCorrectPassword)
+                return res.status(401).json({
+                    err: 'Incorrect username or password'
+                });
+            delete user.passwordHash;
             const token = jwt.sign(user, JWT_SECRET);
             res.json({ user, token });
         } catch (error) {
@@ -41,13 +44,14 @@ class Auth {
                     username: true,
                     email: true,
                     role: true,
-                    id: true,
+                    id: true
                 }
             });
             const token = jwt.sign(savedUser, JWT_SECRET);
 
             res.json({
-                user: savedUser, token
+                user: savedUser,
+                token
             });
         } catch (error) {
             next(error);

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     width: 200px;
-    background-color:#ccc;
+    background-color: #ccc;
     float: right;
     position: relative;
     top: 0px;

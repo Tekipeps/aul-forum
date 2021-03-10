@@ -19,9 +19,12 @@ const PostsSection: FC = (): ReactElement => (
             <div className='post-head'>
                 <div className='post-author'>DaGhost</div>
                 <div className='post-timestamp'>3 hours ago</div>
-                
             </div>
-            <div className='post-topic'>Anchor caf is dissappointing...<br/>Honestly!!</div>
+            <div className='post-topic'>
+                Anchor caf is dissappointing...
+                <br />
+                Honestly!!
+            </div>
             <div className='post-body'>
                 Anyone else thinks anchor caf needs to upgrade their food quality? most times its below standard and
                 just dissapppointing, the staffs are sluggish to attend to you most of the times... does anyone else
