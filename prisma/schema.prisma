@@ -26,10 +26,11 @@ model User {
   username     String    @unique
   matric       String?   @unique
   passwordHash String
+  avatar       String    @default("")
   posts        Post[]
   gender       Gender
   role         Role      @default(USER)
-  comments    Comment[]
+  comments     Comment[]
 }
 
 model Post {

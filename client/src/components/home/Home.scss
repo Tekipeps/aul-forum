@@ -2,7 +2,6 @@
 $text-color: white;
 $user-color: #88f;
 
-
 #home-content {
     position: fixed;
     flex-direction: row;
@@ -16,17 +15,15 @@ $user-color: #88f;
 }
 
 .post {
-   
     background-color: #eee;
     box-shadow: 5px 5px #aaa;
     margin-bottom: 10px;
-    
 }
 
 .post-head {
     background-color: $purple-theme;
     padding: 4px 15px;
-    margin:0;
+    margin: 0;
     > div {
         display: inline-block;
     }
@@ -37,33 +34,29 @@ $user-color: #88f;
     font-weight: 600;
     color: $user-color;
     font-family: monospace;
-    margin:0;
+    margin: 0;
 }
 
 .post-timestamp {
     float: right;
     color: $text-color;
-    margin:0;
+    margin: 0;
 }
 
 .post-topic {
     font-size: 18px;
     margin: 5px 0px;
     padding: 3px 12px;
-   
+
     border-bottom: 1px solid grey;
     //width: 90%;
     font-weight: 600;
-   
-   
 }
 
 .post-body {
-   
     min-width: 300px;
     padding: 5px 40px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   
 }
 
 .post-tags {
