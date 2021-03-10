@@ -1,17 +1,20 @@
 @import '../../variables.scss';
-#form-description {
+
+.register-page.container {
+    top: 10%;
+}
+.register-page .form-description {
     color: $purple-theme;
     padding: 10px;
     font-family: Advent Pro;
     font-size: 18px;
     margin: auto;
-    //background:red;
     width: 300px;
 }
 
-#button-holder > button {
+.register-page .button-holder > button {
     &[name='signup'] {
-        width: 300px;
+        width: 330px;
         background-color: $purple-theme;
     }
     &[name='signup-later'] {
@@ -22,7 +25,7 @@
     }
 }
 
-#gender-option {
+.register-page .gender-option {
     margin-left: 10px;
     > p {
         margin: 5px 0px;

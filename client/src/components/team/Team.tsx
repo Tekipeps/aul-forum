@@ -1,12 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, FC } from 'react';
 import TeamMember from './TeamMember';
 import './Team.scss';
 
-export const Team = (): ReactElement => (
+export const Team: FC = (): ReactElement => (
     <div>
-        <a id='github-link' href='https://github.com/Tekipeps/aul-forum'>
-            Checkout this project on Github
-        </a>
+        <div id='pinned-links'>
+            <a id='github-link' href='https://github.com/Tekipeps/aul-forum'>
+                Check out this project on Github
+            </a>
+        </div>
         <div id='heading'>Meet The Awesome Crew That Contributed To This Project.</div>
         <div id='team-list'>
             <TeamMember

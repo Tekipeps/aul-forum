@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import githubLogo from '../../assets/github-logo.png';
+import React, { ReactElement, FC } from 'react';
+import githubLogo from '../../assets/github-logo.svg';
 
 interface Member {
     name: string;
@@ -9,7 +9,7 @@ interface Member {
     githubURL: string;
 }
 
-const TeamMember = ({ name, avatarURL, bio, role, githubURL }: Member): ReactElement => (
+const TeamMember: FC<Member> = ({ name, avatarURL, bio, role, githubURL }): ReactElement => (
     <div className='member'>
         <img className='avatar' src={avatarURL} alt={name} />
         <p className='role'>{role}</p>
