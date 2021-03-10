@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('./config');
+const { JWT_SECRET } = require('../utils/config');
 
 const authAsAdmin = (req, res, next) => {
     try {
@@ -31,5 +31,5 @@ const authUser = (req, res, next) => {
 
 module.exports = {
     authAsAdmin,
-    authUser
+    authUser,
 };
