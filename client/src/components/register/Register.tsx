@@ -1,35 +1,34 @@
 import React, { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
 import SideBar from '../reusable/FormSideBar';
-import './Register.scss';
-import '../../scss/form.scss';
+import styles from './Register.module.scss';
 
 export const Register: FC = (): ReactElement => (
-    <div className='container register-page'>
-        <div className='form-header'>AUL Forum Sign Up</div>
-        <div className='form-container'>
-            <div className='form-description'>
+    <div className={styles.container}>
+        <div className={styles.containerHeader}>AUL Forum Sign Up</div>
+        <div className={styles.formContainer}>
+            <div className={styles.formCaption}>
                 W'ere happy to have you sign up for our platform, please enter your information accurately.
             </div>
-            <div className='form-wrapper'>
+            <div className={styles.formWrapper}>
                 <form>
-                    <div className='text-input'>
+                    <div className={styles.inputWrapper}>
                         <input name='matric-no' type='text' placeholder='Matriculation Number' />
                     </div>
-                    <div className='text-input'>
+                    <div className={styles.inputWrapper}>
                         <input name='username' type='text' placeholder='Username' />
                     </div>
-                    <div className='text-input short'>
+                    <div className={styles.inputWrapper}>
                         <input name='password' type='text' placeholder='New Password' />
                     </div>
-                    <div className='text-input short'>
+                    <div className={styles.inputWrapper}>
                         <input name='confirmpassword' type='password' placeholder='Confirm Password' />
                     </div>
-                    <div className='text-input'>
+                    <div className={styles.inputWrapper}>
                         <input name='email' type='email' placeholder='Email Address(optional)' />
                     </div>
 
-                    <div className='gender-option'>
+                    <div className={styles.genderOption}>
                         <p>Gender</p>
                         <div>
                             <label>
@@ -42,7 +41,7 @@ export const Register: FC = (): ReactElement => (
                             </label>
                         </div>
                     </div>
-                    <div className='button-holder'>
+                    <div className={styles.buttonHolder}>
                         <button name='signup' type='button'>
                             Sign Up
                         </button>

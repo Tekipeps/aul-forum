@@ -1,6 +1,6 @@
 import React, { ReactElement, FC } from 'react';
 import githubLogo from '../../assets/github-logo.svg';
-
+import styles from './Team.module.scss';
 interface Member {
     name: string;
     avatarURL: string;
@@ -10,14 +10,14 @@ interface Member {
 }
 
 const TeamMember: FC<Member> = ({ name, avatarURL, bio, role, githubURL }): ReactElement => (
-    <div className='member'>
-        <img className='avatar' src={avatarURL} alt={name} />
-        <p className='role'>{role}</p>
-        <h3 className='name'>{name}</h3>
+    <div className={styles.member}>
+        <img className={styles.avatar} src={avatarURL} alt={name} />
+        <p className={styles.role}>{role}</p>
+        <h3 className={styles.name}>{name}</h3>
 
-        <p className='bio'>{bio}</p>
+        <p className={styles.bio}>{bio}</p>
         <a href={githubURL}>
-            <img className='githubURL' src={githubLogo} alt='github link' />
+            <img className={styles.githubURL} src={githubLogo} alt='github link' />
         </a>
     </div>
 );
