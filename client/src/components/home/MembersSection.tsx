@@ -1,8 +1,6 @@
 import React, { ReactElement, FC } from 'react';
 import styles from './MembersSection.module.scss';
 
-
-
 const MembersSection: FC = (): ReactElement => (
     <div id={styles.wrapper}>
         <div id={styles.heading}>Members (8)</div>

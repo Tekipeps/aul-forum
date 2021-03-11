@@ -7,7 +7,6 @@ $user-color: #ccf;
     max-width: 650px;
     min-width: 200px;
     padding: 10px;
-   
 }
 
 .post {
@@ -61,25 +60,25 @@ $user-color: #ccf;
 .footer {
     padding: 10px 30px;
     height: 20px;
-    >.viewsCount,>.commentsCount {
+    > .viewsCount,
+    > .commentsCount {
         display: inline-block;
         display: flex;
         flex-direction: row;
-        >img {
+        > img {
             width: 20px;
             margin: 2px;
         }
-        >span {
+        > span {
             color: #444;
             font-size: 17px;
             margin: 2px;
         }
-        
     }
-    >.viewsCount {
+    > .viewsCount {
         float: left;
     }
-    >.commentsCount {
+    > .commentsCount {
         float: right;
     }
 }

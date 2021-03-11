@@ -8,7 +8,6 @@ interface FooterProps {
     comments: number;
 }
 
-
 const PostFooter: FC<FooterProps> = ({ views, comments }): ReactElement => {
     return (
         <div className={styles.footer}>
@@ -25,4 +24,3 @@ const PostFooter: FC<FooterProps> = ({ views, comments }): ReactElement => {
 };
 
 export default PostFooter;
-

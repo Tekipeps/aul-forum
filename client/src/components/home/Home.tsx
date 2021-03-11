@@ -6,17 +6,16 @@ import styled from 'styled-components';
 const PostsSectionWrapper = styled.div`
     position: relative;
     width: 100%;
-    float:left;
+    float: left;
 `;
 
-const HomeWrapper=styled.div`
-display:flex;
+const HomeWrapper = styled.div`
+    display: flex;
 `;
 export const Home: FC = (): ReactElement => (
-    <HomeWrapper >
+    <HomeWrapper>
         <PostsSectionWrapper>
             <PostsSection />
         </PostsSectionWrapper>
-        
     </HomeWrapper>
 );
