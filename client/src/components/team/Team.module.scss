@@ -3,19 +3,11 @@
     left: 50%;
     transform: translateX(-50%);
 }
-<<<<<<< HEAD:client/src/components/team/Team.module.scss
 .pinnedLinks {
     border-bottom: 1px solid black;
     background-color: whitesmoke;
 }
 .githubLink {
-=======
-#pinned-links {
-    border-bottom: 1px solid black;
-    background-color: #eee;
-}
-#github-link {
->>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0:client/src/components/team/Team.scss
     display: inline-block;
     margin: 4px 50px;
     background-color: #050;
@@ -30,17 +22,10 @@
 }
 
 #heading {
-<<<<<<< HEAD:client/src/components/team/Team.module.scss
     font-size: 2rem;
     margin: 0px 0px;
     font-family: 'Times New Roman', Times, serif;
     background-color: whitesmoke;
-=======
-    font-size: 40px;
-    margin: 5px 50px;
-    font-family: 'Times New Roman', Times, serif;
-
->>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0:client/src/components/team/Team.scss
     color: $purple-theme;
     text-align: center;
     border-bottom: 1px solid $purple-theme;

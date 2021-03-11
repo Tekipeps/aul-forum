@@ -1,18 +1,10 @@
 @import '../../variables.scss';
-<<<<<<< HEAD:client/src/components/register/Register.module.scss
 @import '../../scss/form.module.scss';
 
 .container {
     top: 10%;
 }
 .formCaption {
-=======
-
-.register-page.container {
-    top: 10%;
-}
-.register-page .form-description {
->>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0:client/src/components/register/Register.scss
     color: $purple-theme;
     padding: 10px;
     font-family: Advent Pro;
@@ -21,11 +13,7 @@
     width: 300px;
 }
 
-<<<<<<< HEAD:client/src/components/register/Register.module.scss
 .buttonHolder > button {
-=======
-.register-page .button-holder > button {
->>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0:client/src/components/register/Register.scss
     &[name='signup'] {
         width: 330px;
         background-color: $purple-theme;
@@ -38,11 +26,7 @@
     }
 }
 
-<<<<<<< HEAD:client/src/components/register/Register.module.scss
 .genderOption {
-=======
-.register-page .gender-option {
->>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0:client/src/components/register/Register.scss
     margin-left: 10px;
     > p {
         margin: 5px 0px;
