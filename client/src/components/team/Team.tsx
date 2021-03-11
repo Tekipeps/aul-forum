@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import TeamMember from './TeamMember';
 import styles from './Team.module.scss';
 

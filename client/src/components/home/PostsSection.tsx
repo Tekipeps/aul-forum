@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import PostFooter from './PostFooter';
 import styles from './PostsSection.module.scss';
 

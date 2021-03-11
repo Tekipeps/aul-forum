@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import styles from './MembersSection.module.scss';
 
 const MembersSection: FC = (): ReactElement => (

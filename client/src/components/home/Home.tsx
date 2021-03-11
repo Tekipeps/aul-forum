@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import PostsSection from './PostsSection';
 //import MembersSection from './MembersSection';
 import styled from 'styled-components';
