@@ -1,10 +1,11 @@
 @import '../../variables.scss';
+@import '../../scss/form.module.scss';
 
-.login-page.container {
+.container {
     top: 20%;
 }
 
-.login-page .logo-image {
+.logoImage {
     margin: 20px auto 20px auto;
     position: relative;
     height: 120px;
@@ -15,7 +16,7 @@
     }
 }
 
-.login-page .button-holder > button {
+.buttonHolder > button {
     &[name='login'] {
         width: 330px;
         background-color: $purple-theme;

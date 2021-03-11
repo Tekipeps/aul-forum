@@ -3,11 +3,11 @@
     left: 50%;
     transform: translateX(-50%);
 }
-#pinned-links {
+.pinnedLinks {
     border-bottom: 1px solid black;
-    background-color: #eee;
+    background-color: whitesmoke;
 }
-#github-link {
+.githubLink {
     display: inline-block;
     margin: 4px 50px;
     background-color: #050;
@@ -22,18 +22,17 @@
 }
 
 #heading {
-    font-size: 40px;
-    margin: 5px 50px;
+    font-size: 2rem;
+    margin: 0px 0px;
     font-family: 'Times New Roman', Times, serif;
-
+    background-color: whitesmoke;
     color: $purple-theme;
     text-align: center;
-    border: 1px solid $purple-theme;
+    border-bottom: 1px solid $purple-theme;
     padding: 10px;
-    background-color: #eee;
 }
 
-#team-list {
+#teamList {
     position: absolute;
     display: flex;
     flex-flow: row wrap;
@@ -86,7 +85,7 @@
         width: 30px;
         position: absolute;
         top: 9px;
-        left: 150px;
+        left: 80%;
         img {
             width: 100%;
             border-radius: 0%;
@@ -94,6 +93,6 @@
         }
     }
     &:hover {
-        box-shadow: 2px 1px grey;
+        box-shadow: 2px 2px grey;
     }
 }
