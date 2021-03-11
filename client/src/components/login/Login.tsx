@@ -1,26 +1,25 @@
 import React, { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
 import SideBar from '../reusable/FormSideBar';
-import './Login.scss';
-import '../../scss/form.scss';
+import styles from './Login.module.scss';
 import Logo from '../../assets/form-images/logo.png';
 
 export const Login: FC = (): ReactElement => (
-    <div className='container login-page'>
-        <div className='form-header'>AUL Forum Login</div>
-        <div className='form-container'>
-            <div className='logo-image'>
+    <div className={styles.container}>
+        <div className={styles.containerHeader}>AUL Forum Login</div>
+        <div className={styles.formContainer}>
+            <div className={styles.logoImage}>
                 <img src={Logo} alt='logo' />
             </div>
-            <div className='form-wrapper'>
+            <div className={styles.formWrapper}>
                 <form>
-                    <div className='text-input'>
+                    <div className={styles.inputWrapper}>
                         <input name='matric-no' type='text' placeholder='Matric Number' />
                     </div>
-                    <div className='text-input'>
+                    <div className={styles.inputWrapper}>
                         <input name='password' type='password' placeholder='Password' />
                     </div>
-                    <div className='button-holder'>
+                    <div className={styles.buttonHolder}>
                         <button name='login' type='button'>
                             Login
                         </button>
