@@ -1,26 +1,10 @@
-import React, { ReactElement, useState, useEffect, FC } from 'react';
-import styled from 'styled-components';
+import { ReactElement, useState, useEffect, FC } from 'react';
+import styles from './FormSideBar.module.scss';
 
 interface SideBarProp {
     children: string;
 }
 
-const StyledDiv = styled.div`
-    width: 450px;
-    font-family: Quantico;
-    background-color: #37173d;
-    color: white;
-    padding: 0px;
-    position: relative;
-    > p {
-        margin-left: 30px;
-        position: absolute;
-        width: 90%;
-        height: 80%;
-        word-wrap: break-word;
-        font-size: 46px;
-    }
-`;
 
 const SideBar: FC<SideBarProp> = ({ children }): ReactElement | null => {
     const [display, setDisplay] = useState(true);
@@ -36,9 +20,9 @@ const SideBar: FC<SideBarProp> = ({ children }): ReactElement | null => {
 
     if (!display) return null;
     return (
-        <StyledDiv>
+        <div className={styles.sideBar}>
             <p>{children}</p>
-        </StyledDiv>
+        </div>
     );
 };
 

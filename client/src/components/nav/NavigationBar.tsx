@@ -1,4 +1,4 @@
-import React, { ReactElement, FC, useState, useEffect } from 'react';
+import { ReactElement, FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/form-images/logo.png';
 import styles from './NavigationBar.module.scss';

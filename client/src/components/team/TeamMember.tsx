@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import githubLogo from '../../assets/github-logo.svg';
 import styles from './Team.module.scss';
 interface Member {
