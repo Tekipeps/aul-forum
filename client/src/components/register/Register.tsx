@@ -4,6 +4,7 @@ import SideBar from '../reusable/FormSideBar';
 import styles from './Register.module.scss';
 
 export const Register: FC = (): ReactElement => (
+<<<<<<< HEAD
     <div className={styles.container}>
         <div className={styles.containerHeader}>AUL Forum Sign Up</div>
         <div className={styles.formContainer}>
@@ -29,6 +30,33 @@ export const Register: FC = (): ReactElement => (
                     </div>
 
                     <div className={styles.genderOption}>
+=======
+    <div className='container register-page'>
+        <div className='form-header'>AUL Forum Sign Up</div>
+        <div className='form-container'>
+            <div className='form-description'>
+                W'ere happy to have you sign up for our platform, please enter your information accurately.
+            </div>
+            <div className='form-wrapper'>
+                <form>
+                    <div className='text-input'>
+                        <input name='matric-no' type='text' placeholder='Matriculation Number' />
+                    </div>
+                    <div className='text-input'>
+                        <input name='username' type='text' placeholder='Username' />
+                    </div>
+                    <div className='text-input short'>
+                        <input name='password' type='text' placeholder='New Password' />
+                    </div>
+                    <div className='text-input short'>
+                        <input name='confirmpassword' type='password' placeholder='Confirm Password' />
+                    </div>
+                    <div className='text-input'>
+                        <input name='email' type='email' placeholder='Email Address(optional)' />
+                    </div>
+
+                    <div className='gender-option'>
+>>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0
                         <p>Gender</p>
                         <div>
                             <label>
@@ -41,7 +69,11 @@ export const Register: FC = (): ReactElement => (
                             </label>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div className={styles.buttonHolder}>
+=======
+                    <div className='button-holder'>
+>>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0
                         <button name='signup' type='button'>
                             Sign Up
                         </button>

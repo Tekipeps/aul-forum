@@ -4,6 +4,7 @@ import styles from './Team.module.scss';
 
 export const Team: FC = (): ReactElement => (
     <div>
+<<<<<<< HEAD
         <div className={styles.pinnedLinks}>
             <a className={styles.githubLink} href='https://github.com/Tekipeps/aul-forum'>
                 Check out this project on Github
@@ -11,6 +12,15 @@ export const Team: FC = (): ReactElement => (
         </div>
         <div id={styles.heading}>Meet The Awesome Crew That Contributed To This Project.</div>
         <div id={styles.teamList}>
+=======
+        <div id='pinned-links'>
+            <a id='github-link' href='https://github.com/Tekipeps/aul-forum'>
+                Check out this project on Github
+            </a>
+        </div>
+        <div id='heading'>Meet The Awesome Crew That Contributed To This Project.</div>
+        <div id='team-list'>
+>>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0
             <TeamMember
                 name='Tekena Solomon'
                 avatarURL={fetchAvatar('tekipeps.jpeg')}

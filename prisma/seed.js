@@ -1,4 +1,5 @@
-const { prisma, MATRIC_REGEX } = require("../utils/config")
+const { prisma } = require("../utils/config")
+const { MATRIC_REGEX } = require('../utils/globals')
 const bcrypt = require("bcrypt")
 const faker = require('faker')
 const RandExp = require('randexp');

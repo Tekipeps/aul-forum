@@ -34,14 +34,23 @@ const Routes: FC = (): ReactElement | null => {
 };
 
 export const NavBar: FC = (): ReactElement => (
+<<<<<<< HEAD
     <nav id={styles.navbar}>
         <div id={styles.logo}>
+=======
+    <nav id='navbar'>
+        <div id='logo'>
+>>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0
             <div>
                 <img src={Logo} />
             </div>
             <div>AUL Forum</div>
         </div>
+<<<<<<< HEAD
         <div id={styles.routes}>
+=======
+        <div id='routes'>
+>>>>>>> 05bb5bc4c703e6748fe57e3c28c82cbe4e81f5e0
             <Routes />
         </div>
     </nav>
