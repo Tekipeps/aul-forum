@@ -46,7 +46,7 @@ const Post: FC<PostType> = ({ data }): ReactElement => {
             <br />
         </>
     ));
-    
+
     return (
         <div className={styles.post}>
             <div className={styles.avatarWrapper}>
