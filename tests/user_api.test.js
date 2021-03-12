@@ -1,11 +1,10 @@
 const { prisma } = require('../utils/config');
 const helper = require('./test_helper');
-const { role } = require('../utils/globals')
+const { role } = require('../utils/globals');
 const supertest = require('supertest');
 const app = require('../app');
 
 const api = supertest(app);
-
 
 beforeEach(async () => {
     await prisma.post.deleteMany();
@@ -33,15 +32,18 @@ describe('when there is initially some users saved', () => {
 });
 
 describe('while authenticated as admin', () => {
-    let token = ''
+    let token = '';
     beforeEach(async () => {
-        const admin = await helper.createAdmin()
-        const response = await api.post('/api/auth/login').send({
-            username: admin.username,
-            password: admin.password
-        }).expect(200)
-        token = response.body.token
-    })
+        const admin = await helper.createAdmin();
+        const response = await api
+            .post('/api/auth/login')
+            .send({
+                username: admin.username,
+                password: admin.password
+            })
+            .expect(200);
+        token = response.body.token;
+    });
     test('a valid user can be added', async () => {
         const newUser = {
             email: 'test1user@gmail.com',
@@ -50,25 +52,23 @@ describe('while authenticated as admin', () => {
             gender: 'FEMALE',
             role: role.USER,
             password: 'tekena123',
-            confirmPass: 'tekena123',
-        }
+            confirmPass: 'tekena123'
+        };
         await api
             .post('/api/users')
             .set('Authorization', `Bearer ${token}`)
             .send(newUser)
             .expect(200)
-            .expect('Content-Type', /application\/json/)
+            .expect('Content-Type', /application\/json/);
 
-        const response = await api.get('/api/users')
+        const response = await api.get('/api/users');
 
-        const emails = response.body.map(r => r.email)
+        const emails = response.body.map((r) => r.email);
 
-        expect(response.body).toHaveLength(helper.initialUsers.length + 1)
-        expect(emails).toContain(
-            newUser.email
-        )
-    })
-})
+        expect(response.body).toHaveLength(helper.initialUsers.length + 1);
+        expect(emails).toContain(newUser.email);
+    });
+});
 
 /**
  * TODO:
