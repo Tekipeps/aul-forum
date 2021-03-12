@@ -16,6 +16,7 @@
         "noEmit": true,
         "removeComments": true,
         "noUnusedParameters": true,
+        "noUnusedLocals": true,
 
         "jsx": "react-jsx"
     },

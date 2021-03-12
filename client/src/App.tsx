@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { NavBar } from './components/nav/NavigationBar';
 import { Home } from './components/home/Home';

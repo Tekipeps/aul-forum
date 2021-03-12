@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
 import SideBar from '../reusable/FormSideBar';
 import styles from './Login.module.scss';
