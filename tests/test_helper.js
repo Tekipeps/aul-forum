@@ -1,20 +1,27 @@
 const { prisma } = require('../utils/config')
-const faker = require("faker")
 const bcrypt = require("bcrypt")
-const RandExp = require('randexp')
-const { MATRIC_REGEX, role } = require('../utils/globals')
+const { role } = require('../utils/globals')
 
-const initialUsers = new Array(2).fill(null).map(() => {
-    return {
-        email: faker.internet.email(),
-        username: faker.name.firstName(),
-        matric: new RandExp(MATRIC_REGEX).gen(),
-        gender: (Math.random() > 0.5 ? 'MALE' : 'FEMALE'),
+const initialUsers = [
+    {
+        email: "testuser1@gmail.com",
+        username: "testuser1",
+        matric: "AUL/SCI/19/00417",
+        gender: "MALE",
+        role: role.USER,
+        passwordHash: bcrypt.hashSync("testpassword123", 12),
+        posts: [],
+    },
+    {
+        email: "testuser2@gmail.com",
+        username: "testuser2",
+        matric: "AUL/HMU/17/00497",
+        gender: "FEMALE",
         role: role.USER,
         passwordHash: bcrypt.hashSync("testpassword123", 12),
         posts: [],
     }
-})
+]
 
 const usersInDb = async () => {
     const users = await prisma.user.findMany({ where: { role: role.USER } })
