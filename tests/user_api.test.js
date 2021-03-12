@@ -19,10 +19,15 @@ describe('when there is initially some users saved', () => {
             .expect(200)
             .expect('Content-Type', /application\/json/);
     });
-
-    test('all users are returned', async () => {
+    test('all users are returned GET /api/users', async () => {
         const response = await api.get('/api/users');
         expect(response.body).toHaveLength(helper.initialUsers.length);
+    });
+    test('a single user can be fetched GET /api/users/:id', async () => {
+        const user = await helper.usersInDb();
+        const response = await api.get(`/api/users/${user[0].id}`);
+        const usernames = helper.initialUsers.map((u) => u.username);
+        expect(usernames).toContain(response.body.username);
     });
     test('a specific user is within the returned users', async () => {
         const response = await api.get('/api/users');
@@ -68,12 +73,16 @@ describe('while authenticated as admin', () => {
         expect(response.body).toHaveLength(helper.initialUsers.length + 1);
         expect(emails).toContain(newUser.email);
     });
+    test('a user can be deleted', async () => {
+        const { body } = await api.get('/api/users');
+        const user = body[0];
+        await api.delete(`/api/users/${user.id}`).set('Authorization', `Bearer ${token}`).expect(204);
+    });
 });
 
 /**
  * TODO:
- *      a single user can be returned: GET /api/users/:id
- *      a user can be deleted by admin: DELETE /api/users/:id
+ *      a single admin can be returned: GET /api/users/admin/:id
  *      a user can update his profile and no one else except admin: PUT /api/users/:id
  */
 
