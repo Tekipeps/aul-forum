@@ -6,7 +6,7 @@ const { MATRIC_REGEX, GENDER_REGEX } = require('../utils/globals')
 const register = validate({
     shape: {
         username: yup.string().min(3).max(9).required("Username is required"),
-        email: yup.string().email().required(),
+        email: yup.string().email().required("Email is required"),
         password: yup.string().min(8).required("Password is required"),
         confirmPass: yup.string()
             .test('passwords-match', 'Passwords must match', function (value) {
@@ -24,8 +24,20 @@ const login = validate({
     }
 })
 
+const createUser = validate({
+    username: yup.string().min(3).max(9).required("Username is required"),
+    email: yup.string().email().required("Email is required"),
+    password: yup.string().min(8).required("Password is required"),
+    confirmPass: yup.string()
+        .test('passwords-match', 'Passwords must match', function (value) {
+            return this.parent.password === value
+        }),
+    gender: yup.string().matches(GENDER_REGEX).required("Gender is required"),
+    matric: yup.string().matches(MATRIC_REGEX).notRequired()
+})
+
 module.exports = {
     register,
-
-    login
+    login,
+    createUser
 }

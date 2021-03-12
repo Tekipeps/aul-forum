@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path')
 const requestLogger = require("./utils/requestLogger");
 const authRoute = require('./routes/authRoute')
 const userRoute = require('./routes/userRoute');
@@ -21,7 +22,7 @@ app.use("/api/posts", postRoute)
 app.use(errorHandler)
 
 app.use("*", (_, res) => {
-    res.sendStatus(404)
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
 
 module.exports = app

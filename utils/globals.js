@@ -6,8 +6,15 @@ const role = {
     ADMIN: 'ADMIN'
 };
 
+const reqDataPath = {
+    BODY: 'body',
+    PARAMS: 'params',
+    QUERY: 'query'
+};
+
 module.exports = {
     GENDER_REGEX,
     MATRIC_REGEX,
-    role
+    role,
+    reqDataPath
 };
