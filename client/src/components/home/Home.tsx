@@ -1,21 +1,21 @@
 import { ReactElement, FC } from 'react';
 import PostsSection from './PostsSection';
 //import MembersSection from './MembersSection';
-import styled from 'styled-components';
-
-const PostsSectionWrapper = styled.div`
+//import styled from 'styled-components';
+/*
+const div = styled.div`
     position: relative;
     width: 100%;
     float: left;
 `;
 
-const HomeWrapper = styled.div`
+const div = styled.div`
     display: flex;
-`;
+`;*/
 export const Home: FC = (): ReactElement => (
-    <HomeWrapper>
-        <PostsSectionWrapper>
+    <div>
+        <div>
             <PostsSection />
-        </PostsSectionWrapper>
-    </HomeWrapper>
+        </div>
+    </div>
 );

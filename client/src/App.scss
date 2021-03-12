@@ -15,6 +15,11 @@ $font-dir: './assets/fonts';
     src: url('#{$font-dir}/Quantico/Quantico-Regular.otf');
 }
 
+@font-face {
+    font-family: Nunito;
+    src: url('#{$font-dir}/Nunito/Nunito-Regular.ttf');
+}
+
 *:focus {
     outline: none;
 }
