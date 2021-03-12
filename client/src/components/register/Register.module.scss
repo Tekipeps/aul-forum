@@ -1,9 +1,10 @@
 @import '../../variables.scss';
+@import '../../scss/form.module.scss';
 
-.register-page.container {
+.container {
     top: 10%;
 }
-.register-page .form-description {
+.formCaption {
     color: $purple-theme;
     padding: 10px;
     font-family: Advent Pro;
@@ -12,7 +13,7 @@
     width: 300px;
 }
 
-.register-page .button-holder > button {
+.buttonHolder > button {
     &[name='signup'] {
         width: 330px;
         background-color: $purple-theme;
@@ -25,7 +26,7 @@
     }
 }
 
-.register-page .gender-option {
+.genderOption {
     margin-left: 10px;
     > p {
         margin: 5px 0px;

@@ -1,16 +1,16 @@
-import React, { ReactElement, FC } from 'react';
+import { ReactElement, FC } from 'react';
 import TeamMember from './TeamMember';
-import './Team.scss';
+import styles from './Team.module.scss';
 
 export const Team: FC = (): ReactElement => (
     <div>
-        <div id='pinned-links'>
-            <a id='github-link' href='https://github.com/Tekipeps/aul-forum'>
+        <div className={styles.pinnedLinks}>
+            <a className={styles.githubLink} href='https://github.com/Tekipeps/aul-forum'>
                 Check out this project on Github
             </a>
         </div>
-        <div id='heading'>Meet The Awesome Crew That Contributed To This Project.</div>
-        <div id='team-list'>
+        <div id={styles.heading}>Meet The Awesome Crew That Contributed To This Project.</div>
+        <div id={styles.teamList}>
             <TeamMember
                 name='Tekena Solomon'
                 avatarURL={fetchAvatar('tekipeps.jpeg')}

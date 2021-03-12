@@ -4,7 +4,46 @@ You must have first been assigned as a member of the **AUL web dev entrepreneurs
 Members are assigned to roles such as UI/UX design, server side scripting e.t.c To have a role, inform the [project leader](https://github.com/Tekipeps) about what role you want to get assigned to.
 
 ## Pull Request
-After you have **added** and **commited** your changes to your own copy of this repository, make a pull request. Do not forget to include files like *yarn-error.log* and other build/dev tools in your [.gitignore](.gitignore) before making a pull request. If there are no conflicts or errors, your pull request should get merged eventually. Visit [this link](https://github.com/firstcontributions/first-contributions) for a tutorial on how to make contributions/pull requests
+After you have **added** and **commited** your changes to your own copy of this repository, make a pull request. Do not forget to include files like *yarn-error.log* and other build/dev tools in your [.gitignore](.gitignore) before making a pull request. If there are no merge conflicts or errors, your pull request should get merged eventually. Visit [this link](https://github.com/firstcontributions/first-contributions) for a tutorial on how to make contributions/pull requests.
+
+# Development
+
+## Linux
+
+- Install [Volta](https://volta.sh/) here
+- Fork and clone the project `git clone https://github.com/<YOUR_USERNAME>/aul-forum.git`
+
+
+## Windows
+
+- Install [Nodejs](https://nodejs.org/en/download/) for windows, then run `node -v` to test if node has been properly installed
+- Install Yarn from [yarn site](https://classic.yarnpkg.com/en/docs/install/#debian-stable) or if Nodejs is already installed `npm install --global yarn`
+- Fork and clone the project `git clone https://github.com/<YOUR_USERNAME>/aul-forum.git`
+
+
+Download and install postgresql on your computer [here](https://www.postgresql.org/download/)
+
+## Backend
+- Navigate to the root folder and install dependencies `yarn install` and `yarn install:client`
+- Run `cp .env.example .env`
+- Replace `<USERNAME>`, `<PASSWORD>` and `<DB_PORT>`, `<DB_NAME>` with the username, password, port and name of the postgres database respectively
+- Run `yarn db:up` which sets up the database and seeds it
+- Run `yarn build:client` which builds the frontend to serve (not necessary if working with only API)
+- Start the server `yarn dev`
+
+## Frontend
+- Navigate into the client directory and run `yarn install`
+- Run `yarn dev` to start the development server
+- View the app in the url shown in your console
+
+
+# Testing
+
+## Backend
+- Run `cp .env.example .env.test.local` to create a copy of the environment variables
+- Replace `<USERNAME>`, `<PASSWORD>` and `<DB_PORT>`, `<DB_NAME>` with the username, password, port and name of the 'test' postgres database respectively
+- Run `yarn test:db:up` to setup test database
+- Run `yarn test:api` to test with jest
 
 # Code of Conduct
 ## Our Pledge

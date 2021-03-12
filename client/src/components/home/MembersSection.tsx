@@ -1,33 +1,11 @@
-import React, { ReactElement, FC } from 'react';
-import styled from 'styled-components';
+import { ReactElement, FC } from 'react';
 
-const Wrapper = styled.div`
-    width: 200px;
-    background-color:#ccc;
-    float: right;
-    position: relative;
-    top: 0px;
-    padding: 10px 20px;
-`;
-const Heading = styled.div`
-    font-size: 20px;
-    color: black;
-`;
+import styles from './MembersSection.module.scss';
 
-const Members = styled.div`
-    border-bottom: 1px solid grey;
-    > div {
-        margin: 10px 20px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #44f;
-        font-family: monospace;
-    }
-`;
 const MembersSection: FC = (): ReactElement => (
-    <Wrapper>
-        <Heading>Members (8)</Heading>
-        <Members>
+    <div id={styles.wrapper}>
+        <div id={styles.heading}>Members (8)</div>
+        <div id={styles.members}>
             <div>bidex</div>
             <div>Tekipeps</div>
             <div>Cindy Ebirim</div>
@@ -36,8 +14,8 @@ const MembersSection: FC = (): ReactElement => (
             <div>Emedith</div>
             <div>Timberon</div>
             <div>Vikky</div>
-        </Members>
-    </Wrapper>
+        </div>
+    </div>
 );
 
 export default MembersSection;

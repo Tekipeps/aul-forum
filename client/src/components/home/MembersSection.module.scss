@@ -1,0 +1,30 @@
+@import '../../variables.scss';
+
+#wrapper {
+    width: 200px;
+    background-color: #eee;
+    //float: right;
+    position: relative;
+    top: 5px;
+    box-shadow: -2px 2px grey;
+    position: relative;
+}
+#heading {
+    font-size: 20px;
+    background-color: $purple-theme;
+    padding: 4px;
+    text-align: center;
+    color: white;
+}
+
+#members {
+    border-bottom: 1px solid grey;
+
+    > div {
+        margin: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #44f;
+        font-family: monospace;
+    }
+}

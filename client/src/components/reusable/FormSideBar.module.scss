@@ -1,0 +1,18 @@
+@import '../../_variables.scss';
+
+.sideBar {
+    width: 450px;
+    font-family: Quantico;
+    background-color: $purple-theme;
+    color: white;
+    padding: 0px;
+    position: relative;
+    > p {
+        margin-left: 30px;
+        position: absolute;
+        width: 90%;
+        height: 80%;
+        word-wrap: break-word;
+        font-size: 46px;
+    }
+}

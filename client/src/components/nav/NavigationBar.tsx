@@ -1,7 +1,7 @@
-import React, { ReactElement, FC, useState, useEffect } from 'react';
+import { ReactElement, FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/form-images/logo.png';
-import './NavigationBar.scss';
+import styles from './NavigationBar.module.scss';
 
 const Routes: FC = (): ReactElement | null => {
     const [display, setDisplay] = useState(true);
@@ -34,14 +34,14 @@ const Routes: FC = (): ReactElement | null => {
 };
 
 export const NavBar: FC = (): ReactElement => (
-    <nav id='navbar'>
-        <div id='logo'>
+    <nav id={styles.navbar}>
+        <div id={styles.logo}>
             <div>
                 <img src={Logo} />
             </div>
             <div>AUL Forum</div>
         </div>
-        <div id='routes'>
+        <div id={styles.routes}>
             <Routes />
         </div>
     </nav>
