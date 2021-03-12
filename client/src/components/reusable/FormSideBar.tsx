@@ -5,7 +5,6 @@ interface SideBarProp {
     children: string;
 }
 
-
 const SideBar: FC<SideBarProp> = ({ children }): ReactElement | null => {
     const [display, setDisplay] = useState(true);
 
