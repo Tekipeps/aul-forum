@@ -1,9 +1,11 @@
 const { prisma } = require('../utils/config');
 const helper = require('./test_helper');
+const { role } = require('../utils/globals')
 const supertest = require('supertest');
 const app = require('../app');
 
 const api = supertest(app);
+
 
 beforeEach(async () => {
     await prisma.post.deleteMany();
@@ -26,36 +28,47 @@ describe('when there is initially some users saved', () => {
     test('a specific user is within the returned users', async () => {
         const response = await api.get('/api/users');
         const usernames = response.body.map((u) => u.username);
-
         expect(usernames).toContain(helper.initialUsers[1].username);
     });
 });
 
-// test('a valid user can be added', async () => {
-//     const newUser = {
-//         email: faker.internet.email(),
-//         username: faker.name.firstName(),
-//         matric: faker.name.title(),
-//         gender: (Math.random() > 0.5 ? 'MALE' : 'FEMALE'),
-//         role: (Math.random() > 0.4 ? 'USER' : 'ADMIN'),
-//         password: 'tekena123',
-//         confirmPass: 'tekena123',
-//     }
-//     await api
-//         .post('/api/users')
-//         .send(newUser)
-//         .expect(200)
-//         .expect('Content-Type', /application\/json/)
+describe('while authenticated as admin', () => {
+    let token = ''
+    beforeEach(async () => {
+        const admin = await helper.createAdmin()
+        const response = await api.post('/api/auth/login').send({
+            username: admin.username,
+            password: admin.password
+        }).expect(200)
+        token = response.body.token
+    })
+    test('a valid user can be added', async () => {
+        const newUser = {
+            email: 'test1user@gmail.com',
+            username: 'test1user',
+            matric: 'AUL/SMS/19/00418',
+            gender: 'FEMALE',
+            role: role.USER,
+            password: 'tekena123',
+            confirmPass: 'tekena123',
+        }
+        await api
+            .post('/api/users')
+            .set('Authorization', `Bearer ${token}`)
+            .send(newUser)
+            .expect(200)
+            .expect('Content-Type', /application\/json/)
 
-//     const response = await api.get('/api/users')
+        const response = await api.get('/api/users')
 
-//     const emails = response.body.map(r => r.email)
+        const emails = response.body.map(r => r.email)
 
-//     expect(response.body).toHaveLength(initialUsers.length + 1)
-//     expect(emails).toContain(
-//         newUser.email
-//     )
-// })
+        expect(response.body).toHaveLength(helper.initialUsers.length + 1)
+        expect(emails).toContain(
+            newUser.email
+        )
+    })
+})
 
 /**
  * TODO:
