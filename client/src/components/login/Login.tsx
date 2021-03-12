@@ -30,7 +30,7 @@ export const Login: FC = (): ReactElement => {
                             <input
                                 value={username}
                                 onChange={({ target }) => setUsername(target.value)}
-                                placeholder='username'
+                                placeholder='Username'
                             />
                         </div>
                         <div className={styles.inputWrapper}>
