@@ -1,5 +1,4 @@
 import { ReactElement, FC } from 'react';
-
 import styles from './PostsSection.module.scss';
 import viewsLogo from '../../assets/views-logo.webp';
 import commentsLogo from '../../assets/comments-logo.jpg';
