@@ -25,15 +25,15 @@ const initialUsers = [
 
 const usersInDb = async () => {
     const users = await prisma.user.findMany({ where: { role: role.USER } })
-    return users.map((u) => u.toJSON())
+    return users
 }
 const adminsInDb = async () => {
     const admins = await prisma.user.findMany({ where: { role: role.ADMIN } })
-    return admins.map((u) => u.toJSON())
+    return admins
 }
 const allUsersInDb = async () => {
     const users = await prisma.user.findMany()
-    return users.map((u) => u.toJSON())
+    return users
 }
 const createAdmin = async () => {
     const admin = await prisma.user.create({
