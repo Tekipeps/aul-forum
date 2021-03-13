@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+#postNavBar {
+    position: relative;
+    padding: 30px 10px 0px 10px;
+    background-color: $purple-theme;
+    > div {
+        position: relative;
+        margin-left: 80px;
+    }
+}
+
+.navButton {
+    $border-width: 2px;
+    display: inline-block;
+    margin: 0px 0px;
+    border-bottom: $border-width solid $purple-theme;
+
+    color: white;
+    transition: border;
+    transition-duration: 300ms;
+    &:hover {
+        border-bottom: $border-width solid #aaa;
+    }
+    &.isOnFocus {
+        border-bottom: 2px solid red;
+    }
+    a {
+        color: white;
+        display: block;
+        padding: 14px 15px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+    }
+}
+
+.searchBar {
+    margin-left: 100px;
+    display: inline-block;
+    input {
+        width: 140px;
+        padding: 6px 12px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+        transition: width;
+        transition-duration: 100ms;
+        font-family: Nunito;
+        &:focus {
+            width: 260px;
+        }
+    }
+}
