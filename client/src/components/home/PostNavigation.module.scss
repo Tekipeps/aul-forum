@@ -4,9 +4,11 @@
     position: relative;
     padding: 30px 10px 0px 10px;
     background-color: $purple-theme;
+    display: flex;
     > div {
         position: relative;
         margin-left: 80px;
+        overflow-x: hidden;
     }
 }
 
@@ -35,8 +37,9 @@
 }
 
 .searchBar {
-    margin-left: 100px;
-    display: inline-block;
+    margin-left: 70px;
+    flex: 1;
+    //background-color: aqua;
     input {
         width: 140px;
         padding: 6px 12px;
@@ -46,8 +49,10 @@
         transition: width;
         transition-duration: 100ms;
         font-family: Nunito;
+        min-width: 140px;
+        max-width: 260px;
         &:focus {
-            width: 260px;
+            width: 70%;
         }
     }
 }

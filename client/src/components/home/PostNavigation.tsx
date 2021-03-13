@@ -1,4 +1,5 @@
 import { ReactElement, FC, useState, MouseEventHandler } from 'react';
+import WindowResizeListener from '../reusable/WindowResizeListener';
 import styles from './PostNavigation.module.scss';
 
 interface NavButtonType {
@@ -7,13 +8,13 @@ interface NavButtonType {
     handleClick: MouseEventHandler;
 }
 
-const SearchBar: FC = (): ReactElement => {
-    return (
+const SearchBar: FC = (): ReactElement | null => (
+    <WindowResizeListener minWidth={700}>
         <div className={styles.searchBar}>
             <input type='text' placeholder='Search' />
         </div>
-    );
-};
+    </WindowResizeListener>
+);
 
 const NavButton: FC<NavButtonType> = ({ routeName, handleClick, isOnFocus }): ReactElement => {
     const getClassName = (isOnFocus: boolean) => {
@@ -41,8 +42,8 @@ const PostNav: FC = (): ReactElement => {
                         isOnFocus={route === currentRoute}
                     />
                 ))}
-                <SearchBar />
             </div>
+            <SearchBar />
         </div>
     );
 };
