@@ -17,9 +17,9 @@
         letter-spacing: 2px;
         padding: 1px 1px;
         margin: 0px 10px;
-        font-family: Merriwheather;
+        font-family: Quantico, Merriwheather;
         font-weight: 600;
-        font-size: 32px;
+        font-size: 28px;
         display: inline-block;
         height: 40px;
         img {
@@ -27,7 +27,7 @@
             border-radius: 15%;
             padding: 4px;
             background-color: white;
-            width: 30px;
+            width: 35px;
         }
     }
 }
@@ -54,7 +54,8 @@
             color: $purple-theme;
             display: block;
             padding: 5px 25px;
-            font-size: 20px;
+            font-size: 18px;
+            font-family: Nunito;
         }
         &:hover {
             border: 2px solid $purple-theme;
