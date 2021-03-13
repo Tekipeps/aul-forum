@@ -6,6 +6,7 @@ import { Login } from './components/login/Login';
 import { Register } from './components/register/Register';
 import { Team } from './components/team/Team';
 import './App.scss';
+
 export const App: FC = (): ReactElement => (
     <Router>
         <div>

@@ -1,21 +1,11 @@
-import { ReactElement, FC, useState, useEffect } from 'react';
+import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
+import WindowResizeListener from '../reusable/WindowResizeListener';
 import Logo from '../../assets/form-images/logo.png';
 import styles from './NavigationBar.module.scss';
 
-const Routes: FC = (): ReactElement | null => {
-    const [display, setDisplay] = useState(true);
-    const handleDisplay = () => {
-        window.innerWidth < 800 ? setDisplay(false) : setDisplay(true);
-    };
-    window.addEventListener('resize', handleDisplay);
-
-    useEffect(() => {
-        handleDisplay();
-    });
-
-    if (!display) return null;
-    return (
+const Routes: FC = (): ReactElement | null => (
+    <WindowResizeListener minWidth={800}>
         <ul>
             <li>
                 <Link to='/'>Home</Link>
@@ -30,8 +20,8 @@ const Routes: FC = (): ReactElement | null => {
                 <Link to='/team'>Team</Link>
             </li>
         </ul>
-    );
-};
+    </WindowResizeListener>
+);
 
 export const NavBar: FC = (): ReactElement => (
     <nav id={styles.navbar}>
