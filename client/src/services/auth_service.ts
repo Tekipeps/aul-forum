@@ -2,17 +2,36 @@ import axios from 'axios';
 
 const baseUrl = '/api/auth';
 
-interface data{
-    username:string;
-    password:string;
+interface LoginData {
+    username: string;
+    password: string;
 }
 
-const login = async ({ username, password }: data) => {
-    const response = await axios.post(`${baseUrl}/login`, { username, password });
+interface RegisterData {
+    username: string;
+    password: string;
+    confirmPass: string;
+    gender: 'MALE' | 'FEMALE';
+    matric?: string;
+    email: string;
+}
 
-    return response.data
+const login = async (data: LoginData) => {
+    const response = await axios.post(`${baseUrl}/login`, data);
+
+    return response.data;
 };
 
+const register = async (data: RegisterData) => {
+    if (data?.matric?.length) {
+        const response = await axios.post(`${baseUrl}/register`, data);
+        return response.data;
+    }
+    delete data.matric;
+    const response = await axios.post(`${baseUrl}/register`, data);
+    return response.data;
+};
 export default {
-    login
+    login,
+    register
 };
