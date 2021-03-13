@@ -5,14 +5,13 @@ import styles from './Register.module.scss';
 import authService from '../../services/auth_service';
 import { Gender } from '../../types';
 
-
 export const Register: FC = (): ReactElement => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [matric, setMatric] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
     const [email, setEmail] = useState('');
-    const [gender, setGender] = useState<Gender>(Gender.MALE)
+    const [gender, setGender] = useState<Gender>(Gender.MALE);
     const history = useHistory();
     const submitRegister = async (event: FormEvent) => {
         event.preventDefault();
@@ -31,30 +30,65 @@ export const Register: FC = (): ReactElement => {
                 <div className={styles.formWrapper}>
                     <form onSubmit={submitRegister}>
                         <div className={styles.inputWrapper}>
-                            <input onChange={({ target }) => setMatric(target.value)} value={matric} type='text' placeholder='Matriculation Number(optional)' />
+                            <input
+                                onChange={({ target }) => setMatric(target.value)}
+                                value={matric}
+                                type='text'
+                                placeholder='Matriculation Number(optional)'
+                            />
                         </div>
                         <div className={styles.inputWrapper}>
-                            <input onChange={({ target }) => setUsername(target.value)} value={username} type='text' placeholder='Username' />
+                            <input
+                                onChange={({ target }) => setUsername(target.value)}
+                                value={username}
+                                type='text'
+                                placeholder='Username'
+                            />
                         </div>
                         <div className={styles.inputWrapper}>
-                            <input onChange={({ target }) => setPassword(target.value)} value={password} type='password' placeholder='New Password' />
+                            <input
+                                onChange={({ target }) => setPassword(target.value)}
+                                value={password}
+                                type='password'
+                                placeholder='New Password'
+                            />
                         </div>
                         <div className={styles.inputWrapper}>
-                            <input onChange={({ target }) => setConfirmPass(target.value)} value={confirmPass} type='password' placeholder='Confirm Password' />
+                            <input
+                                onChange={({ target }) => setConfirmPass(target.value)}
+                                value={confirmPass}
+                                type='password'
+                                placeholder='Confirm Password'
+                            />
                         </div>
                         <div className={styles.inputWrapper}>
-                            <input onChange={({ target }) => setEmail(target.value)} value={email} type='email' placeholder='Email Address' />
+                            <input
+                                onChange={({ target }) => setEmail(target.value)}
+                                value={email}
+                                type='email'
+                                placeholder='Email Address'
+                            />
                         </div>
 
                         <div className={styles.genderOption}>
                             <p>Gender</p>
                             <div>
                                 <label>
-                                    <input type='radio' name='gender'onChange={() => setGender(Gender.MALE)} value={Gender.MALE} />
+                                    <input
+                                        type='radio'
+                                        name='gender'
+                                        onChange={() => setGender(Gender.MALE)}
+                                        value={Gender.MALE}
+                                    />
                                     <span>Male</span>
                                 </label>
                                 <label>
-                                    <input type='radio' name='gender' onChange={() => setGender(Gender.FEMALE)} value={Gender.FEMALE} />
+                                    <input
+                                        type='radio'
+                                        name='gender'
+                                        onChange={() => setGender(Gender.FEMALE)}
+                                        value={Gender.FEMALE}
+                                    />
                                     <span>Female</span>
                                 </label>
                             </div>
@@ -72,6 +106,5 @@ export const Register: FC = (): ReactElement => {
             </div>
             <SideBar>Create an account to have unlimited access and contribution to content from AUL's forum</SideBar>
         </div>
-    )
-
-}
+    );
+};
