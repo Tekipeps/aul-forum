@@ -1,6 +1,5 @@
 import { ReactElement, FC, useState, MouseEventHandler } from 'react';
 import WindowResizeListener from '../reusable/WindowResizeListener';
-
 import styles from './PostNavigation.module.scss';
 
 interface NavButtonType {
@@ -8,6 +7,7 @@ interface NavButtonType {
     isOnFocus: boolean;
     handleClick: MouseEventHandler;
 }
+
 
 const SearchBar: FC = (): ReactElement => (
     <div className={styles.searchBar}>
@@ -45,6 +45,7 @@ const PostNav: FC = (): ReactElement => {
                         />
                     );
                 })}
+
             </div>
             <SearchBar />
         </div>

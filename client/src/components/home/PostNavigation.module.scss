@@ -7,11 +7,13 @@
     display: flex;
 
     > #postRoutesWrapper {
+
         position: relative;
         margin-left: 80px;
         overflow-x: auto;
         white-space: nowrap;
     }
+  
     > .searchBar {
         margin-left: 70px;
         margin-bottom: 20px;
