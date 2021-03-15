@@ -27,6 +27,7 @@ const NavButton: FC<NavButtonType> = ({ routeName, handleClick, isOnFocus }): Re
                 <a onClick={handleClick}>{routeName}</a>
             </div>
         </ParentResizeListener>
+
     );
 };
 
@@ -43,6 +44,7 @@ const PostNav: FC = (): ReactElement => {
                         isOnFocus={route === currentRoute}
                     />
                 ))}
+
             </div>
             <SearchBar />
         </div>
