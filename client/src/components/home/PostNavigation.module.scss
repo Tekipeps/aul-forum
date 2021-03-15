@@ -5,9 +5,32 @@
     padding: 30px 10px 0px 10px;
     background-color: $purple-theme;
     display: flex;
-    > div {
+
+    > #postRoutesWrapper {
         position: relative;
         margin-left: 80px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    > .searchBar {
+        margin-left: 70px;
+        margin-bottom: 20px;
+        flex: 1;
+        input {
+            width: 140px;
+            padding: 6px 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            transition: width;
+            transition-duration: 100ms;
+            font-family: Nunito;
+            min-width: 140px;
+            max-width: 260px;
+            &:focus {
+                width: 70%;
+            }
+        }
     }
 }
 
@@ -32,26 +55,5 @@
         padding: 14px 15px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 16px;
-    }
-}
-
-.searchBar {
-    margin-left: 70px;
-    flex: 1;
-    //background-color: aqua;
-    input {
-        width: 140px;
-        padding: 6px 12px;
-        border-radius: 10px;
-        border: none;
-        font-size: 16px;
-        transition: width;
-        transition-duration: 100ms;
-        font-family: Nunito;
-        min-width: 140px;
-        max-width: 260px;
-        &:focus {
-            width: 70%;
-        }
     }
 }

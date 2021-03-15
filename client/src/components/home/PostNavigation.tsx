@@ -1,5 +1,6 @@
 import { ReactElement, FC, useState, MouseEventHandler } from 'react';
 import WindowResizeListener from '../reusable/WindowResizeListener';
+
 import styles from './PostNavigation.module.scss';
 
 interface NavButtonType {
@@ -8,24 +9,24 @@ interface NavButtonType {
     handleClick: MouseEventHandler;
 }
 
-const SearchBar: FC = (): ReactElement | null => (
-    <WindowResizeListener minWidth={700}>
-        <div className={styles.searchBar}>
-            <input type='text' placeholder='Search' />
-        </div>
-    </WindowResizeListener>
+const SearchBar: FC = (): ReactElement => (
+    <div className={styles.searchBar}>
+        <input type='text' placeholder='Search' />
+    </div>
 );
 
-const NavButton: FC<NavButtonType> = ({ routeName, handleClick, isOnFocus }): ReactElement => {
+const NavButton: FC<NavButtonType> = ({ routeName, handleClick, isOnFocus }): ReactElement | null => {
     const getClassName = (isOnFocus: boolean) => {
         if (isOnFocus) return `${styles.navButton} ${styles.isOnFocus}`;
         else return styles.navButton;
     };
 
     return (
-        <div className={getClassName(isOnFocus)}>
-            <a onClick={handleClick}>{routeName}</a>
-        </div>
+        <WindowResizeListener minWidth={600}>
+            <div className={getClassName(isOnFocus)}>
+                <a onClick={handleClick}>{routeName}</a>
+            </div>
+        </WindowResizeListener>
     );
 };
 
@@ -34,14 +35,16 @@ const PostNav: FC = (): ReactElement => {
     const [currentRoute, changeCurrentRoute] = useState('Most recent');
     return (
         <div id={styles.postNavBar}>
-            <div>
-                {routes.map((route) => (
-                    <NavButton
-                        routeName={route}
-                        handleClick={() => changeCurrentRoute(route)}
-                        isOnFocus={route === currentRoute}
-                    />
-                ))}
+            <div id={styles.postRoutesWrapper}>
+                {routes.map((route) => {
+                    return (
+                        <NavButton
+                            routeName={route}
+                            handleClick={() => changeCurrentRoute(route)}
+                            isOnFocus={route === currentRoute}
+                        />
+                    );
+                })}
             </div>
             <SearchBar />
         </div>
