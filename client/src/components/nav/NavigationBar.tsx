@@ -1,6 +1,6 @@
 import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
-import WindowResizeListener from '../reusable/WindowResizeListener';
+import { WindowResizeListener } from '../reusable/ResizeListener';
 import Logo from '../../assets/form-images/logo.png';
 import styles from './NavigationBar.module.scss';
 

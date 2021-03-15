@@ -6,8 +6,8 @@ import Logo from '../../assets/form-images/logo.png';
 import authService from '../../services/auth_service';
 
 export const Login: FC = (): ReactElement => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
     const history = useHistory();
     const submitLogin = async (event: FormEvent) => {
         event.preventDefault();
