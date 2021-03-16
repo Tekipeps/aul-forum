@@ -55,7 +55,7 @@
             }
         }
         > input[type='radio']:checked + span::before {
-            background-image: url('../../assets/form-images/purple-tick.jpg');
+            background-image: url('../../assets/images/purple-tick.jpg');
             background-size: 80% 80%;
             border-color: $purple-theme;
             background-repeat: no-repeat;

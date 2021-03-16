@@ -2,12 +2,12 @@
 
 #postNavBar {
     position: relative;
-    padding: 30px 10px 0px 10px;
+    padding: 30px 10px 0px 0px;
     background-color: $purple-theme;
     display: flex;
 
     > #postRoutesWrapper {
-        margin-left: 20px;
+        margin-left: 150px;
         overflow: hidden;
         white-space: nowrap;
         margin-bottom: 0px;
@@ -18,9 +18,11 @@
         margin-left: 20px;
         margin-bottom: 0px;
         flex: 1;
+        max-width: 400px;
         input {
             width: 160px;
             min-width: 160px;
+            max-width: 170px;
             padding: 6px 12px;
             border-radius: 10px;
             border: none;

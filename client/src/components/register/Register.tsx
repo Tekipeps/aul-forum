@@ -18,7 +18,7 @@ export const Register: FC = (): ReactElement => {
         console.log(username, password, gender);
         const response = await authService.register({ username, password, confirmPass, matric, email, gender });
         window.localStorage.setItem('token', response.token);
-        history.push('/');
+        history.push('/home');
     };
     return (
         <div className={styles.container}>

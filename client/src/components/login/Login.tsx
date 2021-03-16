@@ -2,7 +2,7 @@ import { ReactElement, FC, FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SideBar from '../reusable/FormSideBar';
 import styles from './Login.module.scss';
-import Logo from '../../assets/form-images/logo.png';
+import anchorLogo from '../../assets/images/anchor-logo.png';
 import authService from '../../services/auth_service';
 
 export const Login: FC = (): ReactElement => {
@@ -14,7 +14,7 @@ export const Login: FC = (): ReactElement => {
         console.log(username, password);
         const response = await authService.login({ username, password });
         window.localStorage.setItem('token', response.token);
-        history.push('/');
+        history.push('/home');
     };
 
     return (
@@ -22,7 +22,7 @@ export const Login: FC = (): ReactElement => {
             <div className={styles.containerHeader}>AUL Forum Login</div>
             <div className={styles.formContainer}>
                 <div className={styles.logoImage}>
-                    <img src={Logo} alt='logo' />
+                    <img src={anchorLogo} alt='logo' />
                 </div>
                 <div className={styles.formWrapper}>
                     <form onSubmit={submitLogin}>

@@ -5,7 +5,7 @@ import styles from './Team.module.scss';
 export const Team: FC = (): ReactElement => (
     <div>
         <div className={styles.pinnedLinks}>
-            <a className={styles.githubLink} href='https://github.com/Tekipeps/aul-forum'>
+            <a className={styles.githubLink} href='https://github.com/Tekipeps/aul-forum' target='_blank'>
                 Check out this project on Github
             </a>
         </div>
@@ -47,4 +47,4 @@ export const Team: FC = (): ReactElement => (
     </div>
 );
 
-const fetchAvatar = (assetName: string) => require(`../../assets/images/${assetName}`).default;
+const fetchAvatar = (assetName: string) => require(`../../assets/avatars/team/${assetName}`).default;

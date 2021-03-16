@@ -1,9 +1,9 @@
 import { ReactElement, FC } from 'react';
-import viewsLogo from '../../assets/views-logo.webp';
-import commentsLogo from '../../assets/comments-logo.jpg';
-import styles from './PostsSection.module.scss';
+import viewsLogo from '../../assets/svg/views-logo.svg';
+import commentsLogo from '../../assets/svg/comments-logo.svg';
+import styles from './PostSection.module.scss';
 
-interface PostType {
+interface PostParams {
     data: {
         authorName: string;
         avatarURL: string;
@@ -15,12 +15,12 @@ interface PostType {
     };
 }
 
-interface PostFooterType {
+interface PostFooterParams {
     views: number;
     comments: number;
 }
 
-const PostFooter: FC<PostFooterType> = ({ views, comments }): ReactElement => {
+const PostFooter: FC<PostFooterParams> = ({ views, comments }): ReactElement => {
     return (
         <div className={styles.footer}>
             <div className={styles.viewsCount}>
@@ -35,7 +35,7 @@ const PostFooter: FC<PostFooterType> = ({ views, comments }): ReactElement => {
     );
 };
 
-const Post: FC<PostType> = ({ data }): ReactElement => {
+const Post: FC<PostParams> = ({ data }): ReactElement => {
     const { authorName, timeStamp, content, topic, comments, views, avatarURL } = data;
     const avatar = require(`./dummy-assets/${avatarURL}`).default;
 
@@ -50,7 +50,7 @@ const Post: FC<PostType> = ({ data }): ReactElement => {
     return (
         <div className={styles.post}>
             <div className={styles.avatarWrapper}>
-                <img src={avatar} />
+                <img src={avatar} alt={authorName} />
             </div>
             <div className={styles.contentWrapper}>
                 <div className={styles.head}>

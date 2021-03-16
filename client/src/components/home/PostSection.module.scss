@@ -1,7 +1,12 @@
 @import '../../variables.scss';
+
 $user-color: #00f;
 
-.container {
+#containerHeader {
+    text-align: center;
+}
+
+.postContainer {
     margin: 0px 0% 0px 20%;
     max-width: 600px;
     min-width: 200px;
@@ -32,22 +37,22 @@ $user-color: #00f;
 .head {
     padding: 14px 15px 1px 5px;
     margin: 0;
-    > div {
+    > .author,
+    > .timestamp {
         display: inline-block;
     }
-}
+    > .author {
+        font-size: 18px;
+        color: $user-color;
+        margin: 0;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
 
-.author {
-    font-size: 18px;
-    color: $user-color;
-    margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.timestamp {
-    float: right;
-    color: #444;
-    margin: 0;
+    > .timestamp {
+        float: right;
+        color: #444;
+        margin: 0;
+    }
 }
 
 .topic {
@@ -76,10 +81,6 @@ $user-color: #00f;
         display: inline-block;
         display: flex;
         flex-direction: row;
-        > img {
-            width: 20px;
-            margin: 2px;
-        }
         > span {
             color: #444;
             font-size: 17px;
@@ -88,8 +89,16 @@ $user-color: #00f;
     }
     > .viewsCount {
         float: left;
+        > img {
+            width: 26px;
+            margin: 4px;
+        }
     }
     > .commentsCount {
         float: right;
+        > img {
+            width: 23px;
+            margin: 4px;
+        }
     }
 }
