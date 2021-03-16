@@ -1,7 +1,7 @@
 import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
 import { WindowResizeListener } from '../reusable/ResizeListener';
-import Logo from '../../assets/form-images/logo.png';
+import anchorLogo from '../../assets/images/anchor-logo.png';
 import styles from './NavigationBar.module.scss';
 
 const Routes: FC = (): ReactElement | null => (
@@ -27,7 +27,7 @@ export const NavBar: FC = (): ReactElement => (
     <nav id={styles.navbar}>
         <div id={styles.logo}>
             <div>
-                <img src={Logo} />
+                <img src={anchorLogo} />
             </div>
             <div>AUL Forum</div>
         </div>

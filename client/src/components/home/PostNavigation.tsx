@@ -1,7 +1,7 @@
 import { ReactElement, FC, useState, MouseEventHandler } from 'react';
 import { ParentResizeListener } from '../reusable/ResizeListener';
 import { Link } from 'react-router-dom';
-
+import routes from './home-routes.json';
 import styles from './PostNavigation.module.scss';
 
 interface NavButtonParams {
@@ -41,16 +41,15 @@ const NavButton: FC<NavButtonParams> = ({ routeName, handleClick, isOnFocus, bas
 };
 
 const PostNavigation: FC<PostNavigationParams> = ({ baseURL }): ReactElement => {
-    const routes = ['Most recent', 'Trending', 'Most popular', 'Followed posts', 'My posts', 'My contributions'];
     const [currentRoute, changeCurrentRoute] = useState<string>('Most recent');
     return (
         <div id={styles.postNavBar}>
             <div id={styles.postRoutesWrapper}>
-                {routes.map((route) => (
+                {routes.map(({ name }) => (
                     <NavButton
-                        routeName={route}
-                        handleClick={() => changeCurrentRoute(route)}
-                        isOnFocus={route === currentRoute}
+                        routeName={name}
+                        handleClick={() => changeCurrentRoute(name)}
+                        isOnFocus={name === currentRoute}
                         baseURL={baseURL}
                     />
                 ))}

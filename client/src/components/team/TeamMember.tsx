@@ -1,5 +1,5 @@
 import { ReactElement, FC } from 'react';
-import githubLogo from '../../assets/github-logo.svg';
+import githubLogo from '../../assets/svg/github-logo.svg';
 import styles from './Team.module.scss';
 
 interface Member {
@@ -16,9 +16,8 @@ const TeamMember: FC<Member> = ({ name, avatarURL, bio, role, githubURL }): Reac
             <img className={styles.avatar} src={avatarURL} alt={name} />
             <p className={styles.role}>{role}</p>
             <h3 className={styles.name}>{name}</h3>
-
             <p className={styles.bio}>{bio}</p>
-            <a href={githubURL}>
+            <a href={githubURL} target='_blank'>
                 <img className={styles.githubURL} src={githubLogo} alt='github link' />
             </a>
         </div>

@@ -7,7 +7,7 @@
     display: flex;
 
     > #postRoutesWrapper {
-        margin-left: 100px;
+        margin-left: 150px;
         overflow: hidden;
         white-space: nowrap;
     }
@@ -16,9 +16,11 @@
         margin-left: 20px;
         margin-bottom: 0px;
         flex: 1;
+        max-width: 400px;
         input {
             width: 160px;
             min-width: 160px;
+            max-width: 170px;
             padding: 6px 12px;
             border-radius: 10px;
             border: none;

@@ -1,6 +1,6 @@
 import { ReactElement, FC } from 'react';
-import viewsLogo from '../../assets/views-logo.webp';
-import commentsLogo from '../../assets/comments-logo.jpg';
+import viewsLogo from '../../assets/svg/views-logo.svg';
+import commentsLogo from '../../assets/svg/comments-logo.svg';
 import styles from './PostSection.module.scss';
 
 interface PostParams {
@@ -50,7 +50,7 @@ const Post: FC<PostParams> = ({ data }): ReactElement => {
     return (
         <div className={styles.post}>
             <div className={styles.avatarWrapper}>
-                <img src={avatar} />
+                <img src={avatar} alt={authorName} />
             </div>
             <div className={styles.contentWrapper}>
                 <div className={styles.head}>
