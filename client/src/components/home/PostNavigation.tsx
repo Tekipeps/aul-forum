@@ -1,6 +1,7 @@
 import { ReactElement, FC, useState, MouseEventHandler } from 'react';
 import { ParentResizeListener } from '../reusable/ResizeListener';
 import { Link } from 'react-router-dom';
+import searchIcon from '../../assets/svg/search-icon.svg';
 import routes from './home-routes.json';
 import styles from './PostNavigation.module.scss';
 
@@ -17,6 +18,7 @@ interface PostNavigationParams {
 
 const SearchBar: FC = (): ReactElement => (
     <div className={styles.searchBar}>
+        <img src={searchIcon} />
         <input type='text' placeholder='Search' />
     </div>
 );
@@ -37,7 +39,6 @@ const NavButton: FC<NavButtonParams> = ({ routeName, handleClick, isOnFocus, bas
                 <Link to={getRoute(baseURL, routeName)}>{routeName}</Link>
             </div>
         </ParentResizeListener>
-
     );
 };
 
@@ -54,7 +55,6 @@ const PostNavigation: FC<PostNavigationParams> = ({ baseURL }): ReactElement => 
                         baseURL={baseURL}
                     />
                 ))}
-
             </div>
             <SearchBar />
         </div>
