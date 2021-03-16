@@ -14,7 +14,7 @@ export const Login: FC = (): ReactElement => {
         console.log(username, password);
         const response = await authService.login({ username, password });
         window.localStorage.setItem('token', response.token);
-        history.push('/');
+        history.push('/home');
     };
 
     return (
