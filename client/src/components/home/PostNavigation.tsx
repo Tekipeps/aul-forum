@@ -37,6 +37,7 @@ const NavButton: FC<NavButtonParams> = ({ routeName, handleClick, isOnFocus, bas
                 <Link to={getRoute(baseURL, routeName)}>{routeName}</Link>
             </div>
         </ParentResizeListener>
+
     );
 };
 
@@ -53,6 +54,7 @@ const PostNavigation: FC<PostNavigationParams> = ({ baseURL }): ReactElement => 
                         baseURL={baseURL}
                     />
                 ))}
+
             </div>
             <SearchBar />
         </div>
