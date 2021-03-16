@@ -11,15 +11,17 @@ interface Member {
 }
 
 const TeamMember: FC<Member> = ({ name, avatarURL, bio, role, githubURL }): ReactElement => (
-    <div className={styles.member}>
-        <img className={styles.avatar} src={avatarURL} alt={name} />
-        <p className={styles.role}>{role}</p>
-        <h3 className={styles.name}>{name}</h3>
+    <div className={styles.memberWrapper}>
+        <div className={styles.member}>
+            <img className={styles.avatar} src={avatarURL} alt={name} />
+            <p className={styles.role}>{role}</p>
+            <h3 className={styles.name}>{name}</h3>
 
-        <p className={styles.bio}>{bio}</p>
-        <a href={githubURL}>
-            <img className={styles.githubURL} src={githubLogo} alt='github link' />
-        </a>
+            <p className={styles.bio}>{bio}</p>
+            <a href={githubURL}>
+                <img className={styles.githubURL} src={githubLogo} alt='github link' />
+            </a>
+        </div>
     </div>
 );
 

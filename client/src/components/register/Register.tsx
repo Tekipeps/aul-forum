@@ -6,11 +6,11 @@ import authService from '../../services/auth_service';
 import { Gender } from '../../types';
 
 export const Register: FC = (): ReactElement => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [matric, setMatric] = useState('');
-    const [confirmPass, setConfirmPass] = useState('');
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [matric, setMatric] = useState<string>('');
+    const [confirmPass, setConfirmPass] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
     const [gender, setGender] = useState<Gender>(Gender.MALE);
     const history = useHistory();
     const submitRegister = async (event: FormEvent) => {

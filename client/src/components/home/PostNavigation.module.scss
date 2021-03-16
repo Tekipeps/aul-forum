@@ -7,19 +7,20 @@
     display: flex;
 
     > #postRoutesWrapper {
-
-        position: relative;
-        margin-left: 80px;
-        overflow-x: auto;
+        margin-left: 20px;
+        overflow: hidden;
         white-space: nowrap;
+        margin-bottom: 0px;
+        padding: 0px;
     }
-  
+
     > .searchBar {
-        margin-left: 70px;
-        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-bottom: 0px;
         flex: 1;
         input {
-            width: 140px;
+            width: 160px;
+            min-width: 160px;
             padding: 6px 12px;
             border-radius: 10px;
             border: none;
@@ -27,8 +28,8 @@
             transition: width;
             transition-duration: 100ms;
             font-family: Nunito;
-            min-width: 140px;
-            max-width: 260px;
+            max-width: 300px;
+
             &:focus {
                 width: 70%;
             }
@@ -36,20 +37,16 @@
     }
 }
 
-.navButton {
+.postRoute {
     $border-width: 2px;
-    display: inline-block;
-    margin: 0px 0px;
     border-bottom: $border-width solid $purple-theme;
-
-    color: white;
     transition: border;
     transition-duration: 300ms;
     &:hover {
         border-bottom: $border-width solid #aaa;
     }
     &.isOnFocus {
-        border-bottom: 2px solid red;
+        border-bottom: $border-width solid red;
     }
     a {
         color: white;

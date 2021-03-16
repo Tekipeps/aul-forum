@@ -5,9 +5,9 @@ import styles from './PostsSection.module.scss';
 
 const PostsSection: FC = (): ReactElement => (
     <div className={styles.container}>
-        {dummyData.map((data) => {
-            return <Post data={data} />;
-        })}
+        {dummyData.map((data) => (
+            <Post data={data} />
+        ))}
     </div>
 );
 

@@ -1,8 +1,4 @@
 @import '../variables.scss';
-@mixin center-absolute-element {
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 .container {
     border-radius: 2px;
