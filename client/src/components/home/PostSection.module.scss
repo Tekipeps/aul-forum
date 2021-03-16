@@ -1,7 +1,12 @@
 @import '../../variables.scss';
 $user-color: #00f;
 
-.container {
+#containerHeader {
+    //background-color: aqua;
+    text-align: center;
+}
+
+.postContainer {
     margin: 0px 0% 0px 20%;
     max-width: 600px;
     min-width: 200px;

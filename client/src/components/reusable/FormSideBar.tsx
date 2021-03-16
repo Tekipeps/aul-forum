@@ -1,12 +1,12 @@
-import { ReactElement, FC } from 'react';
+import { ReactElement, FC, ReactNode } from 'react';
 import { WindowResizeListener } from './ResizeListener';
 import styles from './FormSideBar.module.scss';
 
-interface SideBarProp {
-    children: string;
+interface FormSideBarParams {
+    children: string | ReactNode;
 }
 
-const SideBar: FC<SideBarProp> = ({ children }): ReactElement | null => (
+const FormSideBar: FC<FormSideBarParams> = ({ children }): ReactElement | null => (
     <WindowResizeListener minWidth={1100}>
         <div className={styles.sideBar}>
             <p>{children}</p>
@@ -14,4 +14,4 @@ const SideBar: FC<SideBarProp> = ({ children }): ReactElement | null => (
     </WindowResizeListener>
 );
 
-export default SideBar;
+export default FormSideBar;

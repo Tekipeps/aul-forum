@@ -1,15 +1,15 @@
 import { FC, useState, ReactElement, useEffect, useRef } from 'react';
 
-interface WindowResizeProps {
+interface WindowResizeParams {
     children: ReactElement;
     minWidth: number;
 }
 
-interface ParentResizeProps {
+interface ParentResizeParams {
     children: ReactElement;
 }
 
-export const WindowResizeListener: FC<WindowResizeProps> = ({ children, minWidth }): ReactElement | null => {
+export const WindowResizeListener: FC<WindowResizeParams> = ({ children, minWidth }): ReactElement | null => {
     const [display, setDisplay] = useState<boolean>(false);
 
     const handleWindowResize = (): void => {
@@ -25,7 +25,7 @@ export const WindowResizeListener: FC<WindowResizeProps> = ({ children, minWidth
     return display ? children : null;
 };
 
-export const ParentResizeListener: FC<ParentResizeProps> = ({ children }): ReactElement => {
+export const ParentResizeListener: FC<ParentResizeParams> = ({ children }): ReactElement => {
     const [visiblilty, setVisibilty] = useState<'visible' | 'hidden'>('hidden');
     const ref = useRef<HTMLDivElement>(null);
 
@@ -35,14 +35,18 @@ export const ParentResizeListener: FC<ParentResizeProps> = ({ children }): React
         () => window.removeEventListener('resize', handleWindowResize);
     }, []);
 
+    const getTotalWidth = (element: HTMLElement): number => {
+        const marginLeft = parseFloat(window.getComputedStyle(element).marginLeft) || 1;
+        const paddingLeft = parseFloat(window.getComputedStyle(element).paddingLeft) || 1;
+        return element.offsetWidth + paddingLeft + marginLeft;
+    };
+
     const handleWindowResize = (): void => {
         const { current } = ref;
-        if (!current) return;
-        if (!current.parentElement) return;
-        const parentWidth = current.parentElement.getBoundingClientRect().width;
-        const currentWidth = current.getBoundingClientRect().width;
+        if (!current || !current.parentElement) return;
 
-        if (parentWidth < current.offsetLeft + currentWidth - 40) setVisibilty('hidden');
+        const parentWidth = getTotalWidth(current.parentElement);
+        if (parentWidth <= current.offsetLeft + current.offsetWidth) setVisibilty('hidden');
         else setVisibilty('visible');
     };
 

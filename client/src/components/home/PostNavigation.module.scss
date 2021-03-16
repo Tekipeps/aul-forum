@@ -2,16 +2,14 @@
 
 #postNavBar {
     position: relative;
-    padding: 30px 10px 0px 10px;
+    padding: 30px 10px 0px 0px;
     background-color: $purple-theme;
     display: flex;
 
     > #postRoutesWrapper {
-        margin-left: 20px;
+        margin-left: 100px;
         overflow: hidden;
         white-space: nowrap;
-        margin-bottom: 0px;
-        padding: 0px;
     }
 
     > .searchBar {
