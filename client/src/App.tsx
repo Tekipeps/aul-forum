@@ -1,5 +1,5 @@
 import { ReactElement, FC } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import { NavBar } from './components/nav/NavigationBar';
 import { Home } from './components/home/Home';
 import { Login } from './components/login/Login';
@@ -12,6 +12,9 @@ export const App: FC = (): ReactElement => (
         <div>
             <NavBar />
             <main>
+                <Route exact path='/'>
+                    <Redirect to='/home' />
+                </Route>
                 <Route path='/home' component={Home} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
