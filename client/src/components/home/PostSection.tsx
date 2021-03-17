@@ -2,6 +2,7 @@ import { ReactElement, FC } from 'react';
 import Post from './Post';
 import dummyData from './dummy-assets/dummyPostData.json';
 import routes from './home-routes.json';
+
 import styles from './PostSection.module.scss';
 
 interface PostSectionParams {
