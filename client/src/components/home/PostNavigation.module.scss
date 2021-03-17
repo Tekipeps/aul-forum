@@ -7,34 +7,39 @@
     display: flex;
 
     > #postRoutesWrapper {
-        margin-left: 150px;
+        margin-left: 50px;
         overflow: hidden;
         white-space: nowrap;
         margin-bottom: 0px;
         padding: 0px;
     }
 
-    > .searchBar {
+    > .searchBarContainer {
+        $input-background: whitesmoke;
         margin-left: 20px;
-        margin-bottom: 0px;
         flex: 1;
         max-width: 400px;
+        display: flex;
+        padding: 4px 7px;
+        height: 35px;
         > img {
             width: 22px;
+            padding-left: 5px;
+            background-color: $input-background;
+            border-radius: 10px 0px 0px 10px;
         }
         > input {
+            background: $input-background;
             width: 160px;
             min-width: 160px;
-            max-width: 170px;
             padding: 6px 12px;
-            border-radius: 10px;
+            border-radius: 0px 10px 10px 0px;
             border: none;
             font-size: 16px;
             transition: width;
             transition-duration: 100ms;
             font-family: Nunito;
             max-width: 300px;
-
             &:focus {
                 width: 70%;
             }

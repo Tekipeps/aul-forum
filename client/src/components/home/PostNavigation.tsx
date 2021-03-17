@@ -1,5 +1,5 @@
 import { ReactElement, FC, useState, MouseEventHandler } from 'react';
-import { ParentResizeListener } from '../reusable/ResizeListener';
+import ParentResizeListener from '../reusable/ParentResizeListener';
 import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/svg/search-icon.svg';
 import routes from './home-routes.json';
@@ -17,13 +17,13 @@ interface PostNavigationParams {
 }
 
 const SearchBar: FC = (): ReactElement => (
-    <div className={styles.searchBar}>
+    <div className={styles.searchBarContainer}>
         <img src={searchIcon} />
         <input type='text' placeholder='Search' />
     </div>
 );
 
-const NavButton: FC<NavButtonParams> = ({ routeName, handleClick, isOnFocus, baseURL }): ReactElement | null => {
+const NavButton: FC<NavButtonParams> = ({ routeName, handleClick, isOnFocus, baseURL }): ReactElement => {
     const getClassName = (isOnFocus: boolean) => {
         if (isOnFocus) return `${styles.postRoute} ${styles.isOnFocus}`;
         else return styles.postRoute;
@@ -56,6 +56,7 @@ const PostNavigation: FC<PostNavigationParams> = ({ baseURL }): ReactElement => 
                     />
                 ))}
             </div>
+
             <SearchBar />
         </div>
     );

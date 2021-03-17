@@ -1,5 +1,5 @@
 import { ReactElement, FC, ReactNode } from 'react';
-import { WindowResizeListener } from './ResizeListener';
+import WindowResizeListener from './WindowResizeListener';
 import styles from './FormSideBar.module.scss';
 
 interface FormSideBarParams {

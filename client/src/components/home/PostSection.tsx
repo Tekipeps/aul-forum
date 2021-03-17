@@ -20,7 +20,7 @@ const PostSection: FC<PostSectionParams> = ({ match }): ReactElement => {
 
     return (
         <>
-            <h2 id={styles.containerHeader}>{description}</h2>
+            <div id={styles.containerHeader}>{description}</div>
             <div className={styles.postContainer}>
                 {dummyData.map((data) => (
                     <Post data={data} />
