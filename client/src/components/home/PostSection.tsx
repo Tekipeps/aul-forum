@@ -2,6 +2,7 @@ import { ReactElement, FC } from 'react';
 import Post from './Post';
 import dummyData from './dummy-assets/dummyPostData.json';
 import routes from './home-routes.json';
+
 import styles from './PostSection.module.scss';
 
 interface PostSectionParams {
@@ -11,6 +12,7 @@ interface PostSectionParams {
 }
 
 const PostSection: FC<PostSectionParams> = ({ match }): ReactElement => {
+
     const urlArray = match.url.split('/');
     const urlHeader = urlArray[urlArray.length - 1].replace(/-/g, ' ');
     const route = routes.find((route) => route.name.toLowerCase() === urlHeader);
@@ -21,6 +23,7 @@ const PostSection: FC<PostSectionParams> = ({ match }): ReactElement => {
     return (
         <>
             <h2 id={styles.containerHeader}>{description}</h2>
+
             <div className={styles.postContainer}>
                 {dummyData.map((data) => (
                     <Post data={data} />
