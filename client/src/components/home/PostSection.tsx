@@ -10,10 +10,12 @@ interface PostSectionParams {
     };
 }
 
+type routeType = { name: string; description: string } | undefined;
+
 const PostSection: FC<PostSectionParams> = ({ match }): ReactElement => {
-    const urlArray = match.url.split('/');
-    const urlHeader = urlArray[urlArray.length - 1].replace(/-/g, ' ');
-    const route = routes.find((route) => route.name.toLowerCase() === urlHeader);
+    const urlArray: string[] = match.url.split('/');
+    const urlHeader: string = urlArray[urlArray.length - 1].replace(/-/g, ' ');
+    const route: routeType = routes.find((route) => route.name.toLowerCase() === urlHeader);
     let description: string;
     if (!route) description = '';
     else description = route.description;

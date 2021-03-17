@@ -24,14 +24,12 @@ const SearchBar: FC = (): ReactElement => (
 );
 
 const NavButton: FC<NavButtonParams> = ({ routeName, handleClick, isOnFocus, baseURL }): ReactElement => {
-    const getClassName = (isOnFocus: boolean) => {
+    const getClassName = (isOnFocus: boolean): string => {
         if (isOnFocus) return `${styles.postRoute} ${styles.isOnFocus}`;
         else return styles.postRoute;
     };
 
-    const getRoute = (url: string, route: string): string => {
-        return `${url}/${route.replace(/\s+/g, '-').toLowerCase()}`;
-    };
+    const getRoute = (url: string, route: string): string => `${url}/${route.replace(/\s+/g, '-').toLowerCase()}`;
 
     return (
         <ParentResizeListener>

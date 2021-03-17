@@ -37,10 +37,10 @@ const PostFooter: FC<PostFooterParams> = ({ views, comments }): ReactElement => 
 
 const Post: FC<PostParams> = ({ data }): ReactElement => {
     const { authorName, timeStamp, content, topic, comments, views, avatarURL } = data;
-    const avatar = require(`./dummy-assets/${avatarURL}`).default;
+    const avatar: string = require(`./dummy-assets/${avatarURL}`).default;
 
     //converts the newline sequence \n to <br/>
-    const contentArray = content.split('\n').map((line) => (
+    const contentArray: JSX.Element[] = content.split('\n').map((line) => (
         <>
             {line}
             <br />

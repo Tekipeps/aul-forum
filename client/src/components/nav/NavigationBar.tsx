@@ -4,10 +4,14 @@ import ParentResizeListener from '../reusable/ParentResizeListener';
 import anchorLogo from '../../assets/images/anchor-logo.png';
 import styles from './NavigationBar.module.scss';
 
-const RouteButton: FC<{ route: string }> = ({ route }): ReactElement => {
-    const slashIndex = route.indexOf('/');
-    const end = slashIndex === -1 ? route.length : slashIndex;
-    const name = route.charAt(0).toUpperCase() + route.slice(1, end);
+interface RouteButtonParams {
+    route: string;
+}
+
+const RouteButton: FC<RouteButtonParams> = ({ route }): ReactElement => {
+    const slashIndex: number = route.indexOf('/');
+    const end: number = slashIndex === -1 ? route.length : slashIndex;
+    const name: string = route.charAt(0).toUpperCase() + route.slice(1, end);
 
     return (
         <ParentResizeListener>

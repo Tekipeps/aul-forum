@@ -6,7 +6,7 @@ interface WindowResizeParams {
 }
 
 const WindowResizeListener: FC<WindowResizeParams> = ({ children, minWidth }): ReactElement | null => {
-    const initialDisplay = window.innerWidth < minWidth ? false : true;
+    const initialDisplay: boolean = window.innerWidth < minWidth ? false : true;
     const [display, setDisplay] = useState<boolean>(initialDisplay);
 
     const handleWindowResize = (): void => {
