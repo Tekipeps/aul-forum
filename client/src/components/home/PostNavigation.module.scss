@@ -19,7 +19,11 @@
         margin-bottom: 0px;
         flex: 1;
         max-width: 400px;
-        input {
+
+        > img {
+            width: 22px;
+        }
+        > input {
             width: 160px;
             min-width: 160px;
             max-width: 170px;
