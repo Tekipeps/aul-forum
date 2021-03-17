@@ -12,7 +12,6 @@ interface PostSectionParams {
 }
 
 const PostSection: FC<PostSectionParams> = ({ match }): ReactElement => {
-
     const urlArray = match.url.split('/');
     const urlHeader = urlArray[urlArray.length - 1].replace(/-/g, ' ');
     const route = routes.find((route) => route.name.toLowerCase() === urlHeader);
