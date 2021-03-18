@@ -1,11 +1,11 @@
 import { ReactElement, FC } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { NavBar } from './components/nav/NavigationBar';
-import { Home } from './components/home/Home';
-import { Login } from './components/login/Login';
-import { Register } from './components/register/Register';
-import { Team } from './components/team/Team';
-import { PageNotFound } from './components/reusable/PageNotFound';
+import { Home } from './routes/home/Home';
+import { Login } from './routes/login/Login';
+import { Register } from './routes/register/Register';
+import { Team } from './routes/team/Team';
+import { PageNotFound } from './routes/404/PageNotFound';
 
 import './App.scss';
 

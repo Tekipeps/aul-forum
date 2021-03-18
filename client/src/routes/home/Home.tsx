@@ -1,8 +1,7 @@
 import { ReactElement, FC } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import PostNavigation from './PostNavigation';
 import PostSection from './PostSection';
-//import MembersSection from './MembersSection';
+import HomeLayout from '../../layouts/HomeLayout/HomeLayout';
 
 interface HomeParams {
     match: {
@@ -14,10 +13,9 @@ export const Home: FC<HomeParams> = ({ match }): ReactElement => {
     const { url } = match;
     const DEFAULT_SECTION = 'most-recent';
     return (
-        <>
+        <HomeLayout>
             <Redirect to={`${url}/${DEFAULT_SECTION}`} />
-            <PostNavigation baseURL={url} />
             <Route exact path={`${url}/:section`} component={PostSection} />
-        </>
+        </HomeLayout>
     );
 };

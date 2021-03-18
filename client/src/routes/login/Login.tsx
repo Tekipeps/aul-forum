@@ -1,6 +1,6 @@
 import { ReactElement, FC, FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import SideBar from '../reusable/FormSideBar';
+import SideBar from '../../components/reusable/FormSideBar';
 import styles from './Login.module.scss';
 import anchorLogo from '../../assets/images/anchor-logo.png';
 import authService from '../../services/auth_service';
