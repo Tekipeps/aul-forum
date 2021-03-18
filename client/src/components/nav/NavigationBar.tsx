@@ -1,26 +1,34 @@
 import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
-import { WindowResizeListener } from '../reusable/ResizeListener';
+import ParentResizeListener from '../reusable/ParentResizeListener';
 import anchorLogo from '../../assets/images/anchor-logo.png';
 import styles from './NavigationBar.module.scss';
 
-const Routes: FC = (): ReactElement | null => (
-    <WindowResizeListener minWidth={800}>
-        <ul>
-            <li>
-                <Link to='/home'>Home</Link>
-            </li>
-            <li>
-                <Link to='/login'>Login</Link>
-            </li>
-            <li>
-                <Link to='/register'>Register</Link>
-            </li>
-            <li>
-                <Link to='/team'>Team</Link>
-            </li>
-        </ul>
-    </WindowResizeListener>
+interface RouteButtonParams {
+    route: string;
+}
+
+const RouteButton: FC<RouteButtonParams> = ({ route }): ReactElement => {
+    const slashIndex: number = route.indexOf('/');
+    const end: number = slashIndex === -1 ? route.length : slashIndex;
+    const name: string = route.charAt(0).toUpperCase() + route.slice(1, end);
+
+    return (
+        <ParentResizeListener>
+            <div>
+                <Link to={`/${route}`}>{name}</Link>
+            </div>
+        </ParentResizeListener>
+    );
+};
+
+const Routes: FC = (): ReactElement => (
+    <div id={styles.routes}>
+        <RouteButton route='home/most-recent' />
+        <RouteButton route='login' />
+        <RouteButton route='register' />
+        <RouteButton route='team' />
+    </div>
 );
 
 export const NavBar: FC = (): ReactElement => (
@@ -31,8 +39,6 @@ export const NavBar: FC = (): ReactElement => (
             </div>
             <div>AUL Forum</div>
         </div>
-        <div id={styles.routes}>
-            <Routes />
-        </div>
+        <Routes />
     </nav>
 );

@@ -1,6 +1,6 @@
 import { ReactElement, FC, useState, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import SideBar from '../reusable/FormSideBar';
+import SideBar from '../../components/reusable/FormSideBar';
 import styles from './Register.module.scss';
 import authService from '../../services/auth_service';
 import { Gender } from '../../types';

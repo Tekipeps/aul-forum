@@ -1,13 +1,11 @@
-import React from 'react';
-import HomeNav from './HomeNav';
+import { FC } from 'react';
+import HomeNavigation from './HomeNavigation';
 
-const MainLayout: React.FC = ({ children }) => {
-    return (
-        <div>
-            <HomeNav />
-            {children}
-        </div>
-    );
-};
+const Layout: FC = ({ children }) => (
+    <div>
+        <HomeNavigation />
+        {children}
+    </div>
+);
 
-export default MainLayout;
+export default Layout;

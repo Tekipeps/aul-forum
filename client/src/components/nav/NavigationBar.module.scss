@@ -7,12 +7,13 @@
     position: relative;
     min-height: 50px;
     z-index: 2;
+    display: flex;
 }
 
 #logo {
-    position: absolute;
-    display: flex;
     margin: 5px 20px;
+    min-width: 250px;
+    display: flex;
     > div {
         letter-spacing: 2px;
         padding: 1px 1px;
@@ -33,17 +34,12 @@
 }
 
 #routes {
-    position: absolute;
-    right: 5px;
-    top: 10px;
-}
-
-#routes > ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-
-    > li {
+    flex: 1;
+    margin: 0px 10px 0px 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px;
+    > div {
         border-radius: 3px;
         text-align: center;
         border: 2px solid $nav-theme;
