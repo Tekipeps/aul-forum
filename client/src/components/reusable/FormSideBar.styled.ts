@@ -1,11 +1,10 @@
-@import '../../_variables.scss';
+import styled from 'styled-components';
 
-.sideBar {
+const StyledSideBar = styled.div`
     width: 450px;
     font-family: Quantico;
-    background-color: $purple-theme;
+    background-color: ${({ theme }) => theme.purple};
     color: white;
-    padding: 0px;
     position: relative;
     > p {
         margin-left: 30px;
@@ -15,4 +14,6 @@
         word-wrap: break-word;
         font-size: 46px;
     }
-}
+`;
+
+export default StyledSideBar;

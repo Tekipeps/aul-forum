@@ -1,6 +1,6 @@
 import { ReactElement, FC, ReactNode } from 'react';
 import WindowResizeListener from './WindowResizeListener';
-import styles from './FormSideBar.module.scss';
+import StyledFormSideBar from './FormSideBar.styled';
 
 interface FormSideBarParams {
     children: string | ReactNode;
@@ -13,9 +13,9 @@ const MINIMUM_WINDOW_WIDTH = 1100;
 
 const FormSideBar: FC<FormSideBarParams> = ({ children }): ReactElement | null => (
     <WindowResizeListener minWidth={MINIMUM_WINDOW_WIDTH}>
-        <div className={styles.sideBar}>
+        <StyledFormSideBar>
             <p>{children}</p>
-        </div>
+        </StyledFormSideBar>
     </WindowResizeListener>
 );
 

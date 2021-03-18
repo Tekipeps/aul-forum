@@ -1,9 +1,18 @@
 import { ReactElement, FC, useState, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SideBar from '../../components/reusable/FormSideBar';
-import styles from './Register.module.scss';
 import authService from '../../services/auth_service';
 import { Gender } from '../../types';
+import {
+    StyledRegister,
+    StyledContainerHeader,
+    StyledFormContainer,
+    StyledCaption,
+    StyledFormWrapper,
+    StyledGenderOption,
+    StyledRegisterButtonHolder,
+    StyledInputWrapper
+} from './Register.styled';
 
 export const Register: FC = (): ReactElement => {
     const [username, setUsername] = useState<string>('');
@@ -21,56 +30,56 @@ export const Register: FC = (): ReactElement => {
         history.push('/home');
     };
     return (
-        <div className={styles.container}>
-            <div className={styles.containerHeader}>AUL Forum Sign Up</div>
-            <div className={styles.formContainer}>
-                <div className={styles.formCaption}>
+        <StyledRegister>
+            <StyledContainerHeader>AUL Forum Sign Up</StyledContainerHeader>
+            <StyledFormContainer>
+                <StyledCaption>
                     W'ere happy to have you sign up for our platform, please enter your information accurately.
-                </div>
-                <div className={styles.formWrapper}>
+                </StyledCaption>
+                <StyledFormWrapper>
                     <form onSubmit={submitRegister}>
-                        <div className={styles.inputWrapper}>
+                        <StyledInputWrapper>
                             <input
                                 onChange={({ target }) => setMatric(target.value)}
                                 value={matric}
                                 type='text'
                                 placeholder='Matriculation Number(optional)'
                             />
-                        </div>
-                        <div className={styles.inputWrapper}>
+                        </StyledInputWrapper>
+                        <StyledInputWrapper>
                             <input
                                 onChange={({ target }) => setUsername(target.value)}
                                 value={username}
                                 type='text'
                                 placeholder='Username'
                             />
-                        </div>
-                        <div className={styles.inputWrapper}>
+                        </StyledInputWrapper>
+                        <StyledInputWrapper>
                             <input
                                 onChange={({ target }) => setPassword(target.value)}
                                 value={password}
                                 type='password'
                                 placeholder='New Password'
                             />
-                        </div>
-                        <div className={styles.inputWrapper}>
+                        </StyledInputWrapper>
+                        <StyledInputWrapper>
                             <input
                                 onChange={({ target }) => setConfirmPass(target.value)}
                                 value={confirmPass}
                                 type='password'
                                 placeholder='Confirm Password'
                             />
-                        </div>
-                        <div className={styles.inputWrapper}>
+                        </StyledInputWrapper>
+                        <StyledInputWrapper>
                             <input
                                 onChange={({ target }) => setEmail(target.value)}
                                 value={email}
                                 type='email'
                                 placeholder='Email Address'
                             />
-                        </div>
+                        </StyledInputWrapper>
 
-                        <div className={styles.genderOption}>
+                        <StyledGenderOption>
                             <p>Gender</p>
                             <div>
                                 <label>
@@ -92,19 +101,19 @@ export const Register: FC = (): ReactElement => {
                                     <span>Female</span>
                                 </label>
                             </div>
-                        </div>
-                        <div className={styles.buttonHolder}>
+                        </StyledGenderOption>
+                        <StyledRegisterButtonHolder>
                             <button name='signup' type='submit'>
                                 Sign Up
                             </button>
                             <button name='signup-later' type='button'>
                                 <Link to='/'>Sign Up Later</Link>
                             </button>
-                        </div>
+                        </StyledRegisterButtonHolder>
                     </form>
-                </div>
-            </div>
+                </StyledFormWrapper>
+            </StyledFormContainer>
             <SideBar>Create an account to have unlimited access and contribution to content from AUL's forum</SideBar>
-        </div>
+        </StyledRegister>
     );
 };

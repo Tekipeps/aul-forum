@@ -1,39 +1,38 @@
-@import '../../variables.scss';
+import styled from 'styled-components';
 
-#navbar {
-    background: $nav-theme;
+const StyledNavBar = styled.div`
+    background: ${({ theme }) => theme.navbar.bgcolor};
     padding: 3px 3px;
-    border-bottom: 1px solid $purple-theme;
     position: relative;
     min-height: 50px;
     z-index: 2;
     display: flex;
-}
+`;
 
-#logo {
+export const StyledNavLogo = styled.div`
     margin: 5px 20px;
     min-width: 250px;
     display: flex;
     > div {
-        letter-spacing: 2px;
         padding: 1px 1px;
         margin: 0px 10px;
-        font-family: Quantico, Merriwheather;
+        font-family: Nunito;
         font-weight: 600;
-        font-size: 28px;
-        display: inline-block;
+        font-size: 1.8rem;
         height: 40px;
-        img {
+        line-height: 50px;
+        color: ${({ theme }) => theme.navbar.color};
+        > img {
             margin: 0;
             border-radius: 15%;
             padding: 4px;
-            background-color: white;
-            width: 35px;
+            background-color: ${({ theme }) => theme.navbar.bgcolor};
+            height: 100%;
         }
     }
-}
+`;
 
-#routes {
+export const StyledNavRoutes = styled.div`
     flex: 1;
     margin: 0px 10px 0px 30px;
     overflow: hidden;
@@ -42,19 +41,19 @@
     > div {
         border-radius: 3px;
         text-align: center;
-        border: 2px solid $nav-theme;
-        transition-property: border;
-        transition-duration: 500ms;
+        border: 2px solid ${({ theme }) => theme.navbar.bgcolor};
         margin: 0px 10px;
         > a {
-            color: $purple-theme;
+            color: ${({ theme }) => theme.navbar.linkColor};
             display: block;
             padding: 5px 25px;
-            font-size: 18px;
+            font-size: 1.2rem;
             font-family: Nunito;
         }
         &:hover {
-            border: 2px solid $purple-theme;
+            border: 2px solid ${({ theme }) => theme.navbar.linkColor};
         }
     }
-}
+`;
+
+export default StyledNavBar;

@@ -1,7 +1,15 @@
 import { ReactElement, FC, FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SideBar from '../../components/reusable/FormSideBar';
-import styles from './Login.module.scss';
+import {
+    StyledLogin,
+    StyledContainerHeader,
+    StyledFormContainer,
+    StyledFormWrapper,
+    StyledLogo,
+    StyledLoginButtonHolder,
+    StyledInputWrapper
+} from './Login.styled';
 import anchorLogo from '../../assets/images/anchor-logo.png';
 import authService from '../../services/auth_service';
 
@@ -18,30 +26,30 @@ export const Login: FC = (): ReactElement => {
     };
 
     return (
-        <div className={styles.container}>
-            <div className={styles.containerHeader}>AUL Forum Login</div>
-            <div className={styles.formContainer}>
-                <div className={styles.logoImage}>
+        <StyledLogin>
+            <StyledContainerHeader>AUL Forum Login</StyledContainerHeader>
+            <StyledFormContainer>
+                <StyledLogo>
                     <img src={anchorLogo} alt='logo' />
-                </div>
-                <div className={styles.formWrapper}>
+                </StyledLogo>
+                <StyledFormWrapper>
                     <form onSubmit={submitLogin}>
-                        <div className={styles.inputWrapper}>
+                        <StyledInputWrapper>
                             <input
                                 value={username}
                                 onChange={({ target }) => setUsername(target.value)}
                                 placeholder='Username'
                             />
-                        </div>
-                        <div className={styles.inputWrapper}>
+                        </StyledInputWrapper>
+                        <StyledInputWrapper>
                             <input
                                 value={password}
                                 onChange={({ target }) => setPassword(target.value)}
                                 type='password'
                                 placeholder='Password'
                             />
-                        </div>
-                        <div className={styles.buttonHolder}>
+                        </StyledInputWrapper>
+                        <StyledLoginButtonHolder>
                             <button name='login' type='submit'>
                                 Login
                             </button>
@@ -49,11 +57,11 @@ export const Login: FC = (): ReactElement => {
                             <button name='register'>
                                 <Link to='/register'>Dont have an account?</Link>
                             </button>
-                        </div>
+                        </StyledLoginButtonHolder>
                     </form>
-                </div>
-            </div>
+                </StyledFormWrapper>
+            </StyledFormContainer>
             <SideBar>Keep up with news and discussions related to AUL from anywhere, at anytime</SideBar>
-        </div>
+        </StyledLogin>
     );
 };

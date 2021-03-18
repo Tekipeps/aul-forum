@@ -2,43 +2,42 @@ import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
 import ParentResizeListener from '../reusable/ParentResizeListener';
 import anchorLogo from '../../assets/images/anchor-logo.png';
-import styles from './NavigationBar.module.scss';
+import StyledNavBar, { StyledNavLogo, StyledNavRoutes } from './NavigationBar.styled';
+import Utility from '../../utils/Utility';
 
 interface RouteButtonParams {
     route: string;
 }
 
 const RouteButton: FC<RouteButtonParams> = ({ route }): ReactElement => {
-    const slashIndex: number = route.indexOf('/');
-    const end: number = slashIndex === -1 ? route.length : slashIndex;
-    const name: string = route.charAt(0).toUpperCase() + route.slice(1, end);
+    const routeName = Utility.getBaseURL(route);
 
     return (
         <ParentResizeListener>
             <div>
-                <Link to={`/${route}`}>{name}</Link>
+                <Link to={`/${route}`}>{routeName}</Link>
             </div>
         </ParentResizeListener>
     );
 };
 
 const Routes: FC = (): ReactElement => (
-    <div id={styles.routes}>
+    <StyledNavRoutes>
         <RouteButton route='home/most-recent' />
         <RouteButton route='login' />
         <RouteButton route='register' />
         <RouteButton route='team' />
-    </div>
+    </StyledNavRoutes>
 );
 
 export const NavBar: FC = (): ReactElement => (
-    <nav id={styles.navbar}>
-        <div id={styles.logo}>
+    <StyledNavBar>
+        <StyledNavLogo>
             <div>
                 <img src={anchorLogo} />
             </div>
-            <div>AUL Forum</div>
-        </div>
+            <div>AUL FORUM</div>
+        </StyledNavLogo>
         <Routes />
-    </nav>
+    </StyledNavBar>
 );
