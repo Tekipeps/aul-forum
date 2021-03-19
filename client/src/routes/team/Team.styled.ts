@@ -1,48 +1,49 @@
-@import '../../variables.scss';
+import styled from 'styled-components';
 
-.pinnedLinks {
+export const StyledPinnedLinks = styled.div`
     border-bottom: 1px solid black;
-    background-color: whitesmoke;
-}
-.githubLink {
-    display: inline-block;
-    margin: 4px 50px;
-    background-color: #050;
-    padding: 4px 6px;
-    border-radius: 3px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
-    color: white;
-    &:hover {
-        background-color: #060;
+    background-color: ${({ theme }) => theme.navbar.bgcolor};
+    .githubLink {
+        display: inline-block;
+        margin: 4px 50px;
+        background-color: #050;
+        padding: 4px 6px;
+        border-radius: 3px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        color: white;
+        &:hover {
+            background-color: #060;
+        }
     }
-}
+`;
 
-#heading {
+export const StyledHeading = styled.div`
     font-size: 25px;
     margin: 0px 0px;
     font-family: 'Times New Roman', Times, serif;
-    background-color: whitesmoke;
-    color: $purple-theme;
+    background-color: ${({ theme }) => theme.navbar.bgcolor};
+    color: ${({ theme }) => theme.navbar.color};
     text-align: center;
-    border-bottom: 1px solid $purple-theme;
+    border-bottom: 1px solid ${({ theme }) => theme.purple};
     padding: 10px;
-}
-
-#teamList {
+`;
+export const StyledTeamList = styled.div`
     position: absolute;
     display: flex;
     flex-flow: row wrap;
     width: 80%;
     margin-top: 7%;
-    @include center-absolute-element;
-}
-.memberWrapper {
+    left: 50%;
+    transform: translateX(-50%);
+`;
+export const StyledMemberWrapper = styled.div`
     margin: 5px auto;
     padding: 10px;
-}
-.member {
-    background: linear-gradient($purple-theme 18%, #ccc 18%);
+`;
+
+export const StyledMember = styled.div`
+    background: linear-gradient(${({ theme }) => theme.purple} 18%, ${({ theme }) => theme.grey} 18%);
     position: relative;
     width: 240px;
     border-radius: 6px;
@@ -60,16 +61,16 @@
         font-family: Advent Pro;
         font-weight: 600;
         margin: 5px 0px;
+        color: ${({ theme }) => theme.bgtext};
     }
     > .role {
         padding: 0px 3px;
         font-size: 90%;
         text-align: center;
         width: 80%;
-        background-color: $purple-theme;
+        background-color: ${({ theme }) => theme.purple};
         color: white;
         font-weight: 500;
-        border: 1px solid $purple-theme;
         margin: auto;
         border-radius: 5%;
     }
@@ -81,8 +82,9 @@
         font-family: Nunito;
         overflow-y: auto;
         max-height: 120px;
+        color: ${({ theme }) => theme.bgtext};
     }
-    > a {
+    > .githubURL {
         width: 30px;
         position: absolute;
         top: 9px;
@@ -96,4 +98,4 @@
     &:hover {
         box-shadow: 2px 2px grey;
     }
-}
+`;

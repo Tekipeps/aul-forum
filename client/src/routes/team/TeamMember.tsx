@@ -1,6 +1,7 @@
 import { ReactElement, FC } from 'react';
 import githubLogo from '../../assets/svg/github-logo.svg';
-import styles from './Team.module.scss';
+//import styles from './Team.module.scss';
+import { StyledMemberWrapper, StyledMember } from './Team.styled';
 
 interface Member {
     name: string;
@@ -11,17 +12,17 @@ interface Member {
 }
 
 const TeamMember: FC<Member> = ({ name, avatarURL, bio, role, githubURL }): ReactElement => (
-    <div className={styles.memberWrapper}>
-        <div className={styles.member}>
-            <img className={styles.avatar} src={avatarURL} alt={name} />
-            <p className={styles.role}>{role}</p>
-            <h3 className={styles.name}>{name}</h3>
-            <p className={styles.bio}>{bio}</p>
-            <a href={githubURL} target='_blank'>
-                <img className={styles.githubURL} src={githubLogo} alt='github link' />
+    <StyledMemberWrapper>
+        <StyledMember>
+            <img className='avatar' src={avatarURL} alt={name} />
+            <p className='role'>{role}</p>
+            <h3 className='name'>{name}</h3>
+            <p className='bio'>{bio}</p>
+            <a className='githubURL' href={githubURL} target='_blank'>
+                <img src={githubLogo} alt='github link' />
             </a>
-        </div>
-    </div>
+        </StyledMember>
+    </StyledMemberWrapper>
 );
 
 export default TeamMember;

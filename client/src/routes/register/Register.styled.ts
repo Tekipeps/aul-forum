@@ -26,7 +26,7 @@ const StyledRegisterButtonHolder = styled(StyledButtonHolder)`
     > button {
         &[name='signup'] {
             width: 330px;
-            background-color: ${({ theme }) => theme.purple};
+            background-color: ${({ theme }) => theme.form.purpleBtn};
         }
         &[name='signup-later'] {
             background: none;

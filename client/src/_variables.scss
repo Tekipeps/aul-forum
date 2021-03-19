@@ -1,9 +1,0 @@
-$purple-theme: #37173d;
-$blue-theme: #6f6ffa;
-$nav-theme: #fff;
-$bg-theme: #fff;
-
-@mixin center-absolute-element {
-    left: 50%;
-    transform: translateX(-50%);
-}

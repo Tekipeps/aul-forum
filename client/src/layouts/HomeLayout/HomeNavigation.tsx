@@ -1,9 +1,9 @@
 import { ReactElement, FC } from 'react';
 import ParentResizeListener from '../../components/reusable/ParentResizeListener';
 import { Link, useRouteMatch } from 'react-router-dom';
-import searchIcon from '../../assets/svg/search-icon.svg';
+import SearchIcon from './assets/SearchIcon.svg';
 import routes from '../../routes/home/home-routes.json';
-import styles from './HomeNavigation.module.scss';
+import StyledNavBar, { StyledRoutesWrapper, StyledSearchBarContainer, StyledNavLink } from './HomeNavigation.styled';
 
 interface NavButtonParams {
     name: string;
@@ -11,10 +11,12 @@ interface NavButtonParams {
 }
 
 const SearchBar: FC = (): ReactElement => (
-    <div className={styles.searchBarContainer}>
-        <img src={searchIcon} />
+    <StyledSearchBarContainer>
+        <div className='searchIconWrapper'>
+            <SearchIcon />
+        </div>
         <input type='text' placeholder='Search' />
-    </div>
+    </StyledSearchBarContainer>
 );
 
 const NavLink: FC<NavButtonParams> = ({ name, url }): ReactElement => {
@@ -23,24 +25,24 @@ const NavLink: FC<NavButtonParams> = ({ name, url }): ReactElement => {
 
     return (
         <ParentResizeListener>
-            <div className={`${styles.navLink} ${matchUrl === url && styles.isOnFocus}`}>
+            <StyledNavLink className={`${matchUrl === url && 'isOnFocus'}`}>
                 <Link to={`/home${url}`}>{name}</Link>
-            </div>
+            </StyledNavLink>
         </ParentResizeListener>
     );
 };
 
 const PostNavigation: FC = (): ReactElement => {
     return (
-        <div id={styles.postNavBar}>
-            <div id={styles.postRoutesWrapper}>
+        <StyledNavBar>
+            <StyledRoutesWrapper>
                 {routes.map(({ name, url }, i) => (
                     <NavLink {...{ name, url }} key={i} />
                 ))}
-            </div>
+            </StyledRoutesWrapper>
 
             <SearchBar />
-        </div>
+        </StyledNavBar>
     );
 };
 

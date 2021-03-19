@@ -1,19 +1,19 @@
 import { ReactElement, FC } from 'react';
 import TeamMember from './TeamMember';
-import styles from './Team.module.scss';
-
+//import styles from './Team.module.scss';
+import { StyledPinnedLinks, StyledHeading, StyledTeamList } from './Team.styled';
 export const Team: FC = (): ReactElement => {
     const fetchAvatarURL = (assetName: string): string => require(`../../assets/avatars/team/${assetName}`).default;
 
     return (
-        <div>
-            <div className={styles.pinnedLinks}>
-                <a className={styles.githubLink} href='https://github.com/Tekipeps/aul-forum' target='_blank'>
+        <>
+            <StyledPinnedLinks>
+                <a className='githubLink' href='https://github.com/Tekipeps/aul-forum' target='_blank'>
                     Check out this project on Github
                 </a>
-            </div>
-            <div id={styles.heading}>Meet The Awesome Crew That Contributed To This Project.</div>
-            <div id={styles.teamList}>
+            </StyledPinnedLinks>
+            <StyledHeading>Meet The Awesome Crew That Contributed To This Project.</StyledHeading>
+            <StyledTeamList>
                 <TeamMember
                     name='Tekena Solomon'
                     avatarURL={fetchAvatarURL('tekipeps.jpeg')}
@@ -46,7 +46,7 @@ export const Team: FC = (): ReactElement => {
                     role='Frontend support'
                     githubURL='https://github.com/seunosinowo'
                 />
-            </div>
-        </div>
+            </StyledTeamList>
+        </>
     );
 };

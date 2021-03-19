@@ -1,11 +1,13 @@
 import { ReactElement, FC } from 'react';
-import styles from './PageNotFound.module.scss';
-
-/**
- * A nice little component to handle 404 errors
- * @returns {ReactElement}
- */
+import Styled404, { StyledMessage } from './PageNotFound.styled';
 
 export const PageNotFound: FC = (): ReactElement => (
-    <div id={styles.container}>Oops, we've searched far and wide, the page was not found.</div>
+    <>
+        <Styled404>
+            <div>4</div>
+            <div>0</div>
+            <div>4</div>
+        </Styled404>
+        <StyledMessage>Oops!The requested page was not found!</StyledMessage>
+    </>
 );

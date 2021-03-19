@@ -2,8 +2,7 @@ import { ReactElement, FC } from 'react';
 import Post from './Post';
 import dummyData from './dummy-assets/dummyPostData.json';
 import routes from './home-routes.json';
-
-import styles from './PostSection.module.scss';
+import { StyledSectionDescription, StyledPostSection } from './PostSection.styled';
 
 interface PostSectionParams {
     match: {
@@ -23,12 +22,12 @@ const PostSection: FC<PostSectionParams> = ({ match }): ReactElement => {
 
     return (
         <>
-            <div id={styles.containerHeader}>{description}</div>
-            <div className={styles.postContainer}>
+            <StyledSectionDescription>{description}</StyledSectionDescription>
+            <StyledPostSection>
                 {dummyData.map((data) => (
                     <Post data={data} />
                 ))}
-            </div>
+            </StyledPostSection>
         </>
     );
 };

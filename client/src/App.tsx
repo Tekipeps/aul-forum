@@ -6,25 +6,26 @@ import { Login } from './routes/login/Login';
 import { Register } from './routes/register/Register';
 import { Team } from './routes/team/Team';
 import { PageNotFound } from './routes/404/PageNotFound';
-import theme from './theme';
+import getTheme from './theme';
 import { ThemeProvider } from 'styled-components';
-import './App.scss';
+import './App.css';
 
 export const App: FC = (): ReactElement => {
-    const [currentTheme, setTheme] = useState<'light' | 'dark'>('light');
+    const DEFAULT_THEME = window.localStorage.getItem('theme') || 'light';
+    const [currentTheme, setTheme] = useState(DEFAULT_THEME);
 
-    const toggleTheme = () => {
-        if (currentTheme === 'light') setTheme('dark');
-        else setTheme('light');
+    const toggleTheme = (): void => {
+        currentTheme === 'light' ? setTheme('dark') : setTheme('light');
     };
 
     useEffect(() => {
-        document.body.style.backgroundColor = theme[currentTheme].bgcolor;
+        document.body.style.backgroundColor = getTheme(currentTheme).bgcolor;
+        window.localStorage.setItem('theme', currentTheme);
     });
 
     return (
         <Router>
-            <ThemeProvider theme={theme[currentTheme]}>
+            <ThemeProvider theme={getTheme(currentTheme)}>
                 <button onClick={toggleTheme}>toggle</button>
                 <NavBar />
                 <main>

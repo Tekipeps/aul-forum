@@ -19,7 +19,7 @@ export const StyledContainerHeader = styled.div`
     z-index: 2;
     font-size: 29px;
     padding: 5px 5px;
-    color: ${({ theme }) => theme.bgtext};
+    color: ${({ theme }) => theme.form.headerText};
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 `;
 

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledNavBar = styled.div`
     background: ${({ theme }) => theme.navbar.bgcolor};
+    border-bottom: 1px solid ${({ theme }) => theme.bgtext};
     padding: 3px 3px;
     position: relative;
     min-height: 50px;

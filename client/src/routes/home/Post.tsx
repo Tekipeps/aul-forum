@@ -1,7 +1,15 @@
 import { ReactElement, FC } from 'react';
-import viewsLogo from '../../assets/svg/views-logo.svg';
-import commentsLogo from '../../assets/svg/comments-logo.svg';
-import styles from './PostSection.module.scss';
+import ViewsIcon from './assets/Views.svg';
+import CommentsIcon from './assets/Comments.svg';
+import {
+    StyledPost,
+    StyledAvatarWrapper,
+    StyledContentWrapper,
+    StyledHead,
+    StyledTopic,
+    StyledContent,
+    StyledFooter
+} from './Post.styled';
 
 interface PostParams {
     data: {
@@ -22,16 +30,16 @@ interface PostFooterParams {
 
 const PostFooter: FC<PostFooterParams> = ({ views, comments }): ReactElement => {
     return (
-        <div className={styles.footer}>
-            <div className={styles.viewsCount}>
-                <img src={viewsLogo} alt='views' />
+        <StyledFooter>
+            <div className='viewsCount'>
+                <ViewsIcon />
                 <span>{views}</span>
             </div>
-            <div className={styles.commentsCount}>
-                <img src={commentsLogo} alt='comments' />
+            <div className='commentsCount'>
+                <CommentsIcon />
                 <span>{comments}</span>
             </div>
-        </div>
+        </StyledFooter>
     );
 };
 
@@ -40,28 +48,23 @@ const Post: FC<PostParams> = ({ data }): ReactElement => {
     const avatar: string = require(`./dummy-assets/${avatarURL}`).default;
 
     //converts the newline sequence \n to <br/>
-    const contentArray: JSX.Element[] = content.split('\n').map((line) => (
-        <>
-            {line}
-            <br />
-        </>
-    ));
+    const contentArray: JSX.Element[] = content.split('\n').map((line, i) => <div key={i}>{line}</div>);
 
     return (
-        <div className={styles.post}>
-            <div className={styles.avatarWrapper}>
+        <StyledPost>
+            <StyledAvatarWrapper>
                 <img src={avatar} alt={authorName} />
-            </div>
-            <div className={styles.contentWrapper}>
-                <div className={styles.head}>
-                    <div className={styles.author}>{authorName}</div>
-                    <div className={styles.timestamp}>{timeStamp}</div>
-                </div>
-                <div className={styles.topic}>{topic}</div>
-                <div className={styles.content}>{contentArray}</div>
+            </StyledAvatarWrapper>
+            <StyledContentWrapper>
+                <StyledHead>
+                    <div className='author'>{authorName}</div>
+                    <div className='timestamp'>{timeStamp}</div>
+                </StyledHead>
+                <StyledTopic>{topic}</StyledTopic>
+                <StyledContent>{contentArray}</StyledContent>
                 <PostFooter views={views} comments={comments} />
-            </div>
-        </div>
+            </StyledContentWrapper>
+        </StyledPost>
     );
 };
 export default Post;

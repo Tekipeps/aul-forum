@@ -1,23 +1,21 @@
-@import 'variables.scss';
-$font-dir: './assets/fonts';
 @font-face {
     font-family: Advent Pro;
-    src: url('#{$font-dir}/Advent_Pro/AdventPro-Regular.ttf');
+    src: url('./assets/fonts/Advent_Pro/AdventPro-Regular.ttf');
 }
 
 @font-face {
     font-family: AllertaStencil;
-    src: url('#{$font-dir}/AllertaStencil/AllertaStencil-Regular.ttf');
+    src: url('./assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf');
 }
 
 @font-face {
     font-family: Quantico;
-    src: url('#{$font-dir}/Quantico/Quantico-Regular.otf');
+    src: url('./assets/fonts/Quantico/Quantico-Regular.otf');
 }
 
 @font-face {
     font-family: Nunito;
-    src: url('#{$font-dir}/Nunito/Nunito-Regular.ttf');
+    src: url('./assets/fonts/Nunito/Nunito-Regular.ttf');
 }
 
 *:focus {
