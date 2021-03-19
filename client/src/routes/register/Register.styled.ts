@@ -41,7 +41,7 @@ const StyledGenderOption = styled.div`
     margin-left: 10px;
     > p {
         margin: 5px 0px;
-        color: grey;
+        color: ${({ theme }) => theme.home.grey};
         font-size: 19px;
     }
     > div {
@@ -50,6 +50,7 @@ const StyledGenderOption = styled.div`
     label {
         display: inline-block;
         margin: 0px 3px;
+        color: ${({ theme }) => theme.bgtext};
         > input[type='radio'] {
             display: none;
             + span::before {
@@ -71,6 +72,7 @@ const StyledGenderOption = styled.div`
             border-color: green;
             background-repeat: no-repeat;
             background-position: center;
+            background-color: none;
         }
     }
 `;

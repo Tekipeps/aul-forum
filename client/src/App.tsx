@@ -21,7 +21,7 @@ export const App: FC = (): ReactElement => {
     useEffect(() => {
         document.body.style.backgroundColor = getTheme(currentTheme).bgcolor;
         window.localStorage.setItem('theme', currentTheme);
-    });
+    }, [currentTheme]);
 
     return (
         <Router>

@@ -6,14 +6,13 @@ export const StyledContainer = styled.div`
     background-color: ${({ theme }) => theme.bgcolor};
     display: flex;
     flex-flow: row;
-    border: 1px solid ${({ theme }) => theme.purple};
+    border: 1px solid ${({ theme }) => theme.bgtext};
     left: 50%;
     transform: translateX(-50%);
 `;
 
 export const StyledContainerHeader = styled.div`
     position: absolute;
-    top: 0px;
     left: 50px;
     background-color: ${({ theme }) => theme.bgcolor};
     z-index: 2;
@@ -27,7 +26,6 @@ export const StyledFormContainer = styled.div`
     margin: 20px;
     position: absolute;
     padding-top: 30px;
-    padding-left: 0px;
     border-radius: 4px;
     position: relative;
     border: 1px solid ${({ theme }) => theme.purple};
@@ -54,6 +52,7 @@ export const StyledInputWrapper = styled.div`
         border: 1px solid ${({ theme }) => theme.purple};
         transition-property: border;
         transition-duration: 0.5s;
+        font-family: Nunito;
         &:focus {
             border: 1px solid grey;
         }
@@ -64,13 +63,13 @@ export const StyledButtonHolder = styled.div`
     display: grid;
     button {
         margin: 0px auto;
-        padding: 0;
         height: 30px;
-        font-size: 18px;
+        font-size: 16px;
         border: none;
         border-radius: 2px;
-        color: white;
         margin-bottom: 5px;
-        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        //font-family: 'Times New Roman', Times, serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 `;

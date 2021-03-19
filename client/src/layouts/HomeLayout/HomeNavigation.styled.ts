@@ -66,7 +66,7 @@ export const StyledNavLink = styled.div`
         color: ${({ theme }) => theme.home.navlink};
         display: block;
         padding: 14px 15px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: Nunito;
         font-size: 16px;
     }
 `;
