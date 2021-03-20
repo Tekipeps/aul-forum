@@ -2,7 +2,7 @@ import { ReactElement, FC } from 'react';
 import ParentResizeListener from '../../components/reusable/ParentResizeListener';
 import { Link, useRouteMatch } from 'react-router-dom';
 import SearchIcon from './assets/SearchIcon.svg';
-import routes from '../../routes/home/home-routes.json';
+import routes from '../../routes/home/routes.json';
 import StyledNavBar, { StyledRoutesWrapper, StyledSearchBarContainer, StyledNavLink } from './HomeNavigation.styled';
 
 interface NavButtonParams {

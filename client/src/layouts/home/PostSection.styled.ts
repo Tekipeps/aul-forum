@@ -11,9 +11,9 @@ export const StyledSectionDescription = styled.div`
 `;
 
 const StyledPostSection = styled.div`
-    margin: 0px 0% 0px 20%;
+    margin: 0px 0% 0px 10%;
     max-width: 600px;
-    min-width: 200px;
+    min-width: 350px;
     padding: 10px;
 `;
 

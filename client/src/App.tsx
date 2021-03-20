@@ -16,10 +16,17 @@ export const App: FC = (): ReactElement => {
 
     useEffect(() => {
         document.body.style.backgroundColor = getTheme(currentTheme).bgcolor;
-        window.localStorage.setItem('theme', currentTheme);
     }, [currentTheme]);
 
-    const toggleTheme = (): void => (currentTheme === 'light' ? setTheme('dark') : setTheme('light'));
+    const toggleTheme = (): void => {
+        if (currentTheme === 'light') {
+            window.localStorage.setItem('theme', 'dark');
+            setTheme('dark');
+        } else {
+            window.localStorage.setItem('theme', 'light');
+            setTheme('light');
+        }
+    };
 
     return (
         <Router>

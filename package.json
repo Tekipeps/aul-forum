@@ -19,12 +19,12 @@
         "test:db:up": "dotenv -e .env.test.local -- prisma db push --preview-feature --accept-data-loss --force-reset",
         "db:seed": "node prisma/seed.js",
         "test:api": "dotenv -e .env.test.local -- jest --runInBand --config ./jest.config.js",
-        "prettify:client": "prettier --write client/src/**/*.{tsx,scss}  client/public/*.html client/*.json",
+        "prettify:client": "prettier --write client/src/*.{tsx,ts,json}  client/public/*.html client/*.json",
         "prettify:server": "prettier --write controllers/**/*.js routes/**/*.js utils/**/*.js tests/**/*.test.js",
         "lint-staged": "lint-staged"
     },
     "lint-staged": {
-        "*.{scss,tsx,js,ts,json,md}": "prettier --write"
+        "*.{tsx,js,ts,json,md}": "prettier --write"
     },
     "pre-commit": "lint-staged",
     "devDependencies": {

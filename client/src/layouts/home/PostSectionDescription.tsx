@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react';
-import { StyledSectionDescription } from '../../routes/home/PostSection.styled';
+import { StyledSectionDescription } from './PostSection.styled';
 import { useRouteMatch } from 'react-router-dom';
-import routes from '../../routes/home/home-routes.json';
+import routes from '../../routes/home/routes.json';
 
 type routeType = { name: string; description: string } | undefined;
 
