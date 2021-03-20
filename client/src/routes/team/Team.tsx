@@ -1,6 +1,5 @@
 import { ReactElement, FC } from 'react';
 import TeamMember from './TeamMember';
-//import styles from './Team.module.scss';
 import { StyledPinnedLinks, StyledHeading, StyledTeamList } from './Team.styled';
 export const Team: FC = (): ReactElement => {
     const fetchAvatarURL = (assetName: string): string => require(`../../assets/avatars/team/${assetName}`).default;

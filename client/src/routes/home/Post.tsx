@@ -12,15 +12,13 @@ import {
 } from './Post.styled';
 
 interface PostParams {
-    data: {
-        authorName: string;
-        avatarURL: string;
-        timeStamp: string;
-        topic: string;
-        content: string;
-        views: number;
-        comments: number;
-    };
+    authorName: string;
+    avatarURL: string;
+    timeStamp: string;
+    topic: string;
+    content: string;
+    views: number;
+    comments: number;
 }
 
 interface PostFooterParams {
@@ -43,12 +41,11 @@ const PostFooter: FC<PostFooterParams> = ({ views, comments }): ReactElement => 
     );
 };
 
-const Post: FC<PostParams> = ({ data }): ReactElement => {
-    const { authorName, timeStamp, content, topic, comments, views, avatarURL } = data;
+const Post: FC<PostParams> = ({ authorName, timeStamp, content, topic, comments, views, avatarURL }): ReactElement => {
     const avatar: string = require(`./dummy-assets/${avatarURL}`).default;
 
     //converts the newline sequence \n to <br/>
-    const contentArray: JSX.Element[] = content.split('\n').map((line, i) => <div key={i}>{line}</div>);
+    const contentArray: ReactElement[] = content.split('\n').map((line, i) => <div key={i}>{line}</div>);
 
     return (
         <StyledPost>

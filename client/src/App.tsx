@@ -6,34 +6,33 @@ import { Login } from './routes/login/Login';
 import { Register } from './routes/register/Register';
 import { Team } from './routes/team/Team';
 import { PageNotFound } from './routes/404/PageNotFound';
-import getTheme from './theme';
 import { ThemeProvider } from 'styled-components';
+import getTheme from './theme';
 import './App.css';
 
 export const App: FC = (): ReactElement => {
     const DEFAULT_THEME = window.localStorage.getItem('theme') || 'light';
     const [currentTheme, setTheme] = useState(DEFAULT_THEME);
 
-    const toggleTheme = (): void => {
-        currentTheme === 'light' ? setTheme('dark') : setTheme('light');
-    };
-
     useEffect(() => {
         document.body.style.backgroundColor = getTheme(currentTheme).bgcolor;
         window.localStorage.setItem('theme', currentTheme);
     }, [currentTheme]);
 
+    const toggleTheme = (): void => (currentTheme === 'light' ? setTheme('dark') : setTheme('light'));
+
     return (
         <Router>
             <ThemeProvider theme={getTheme(currentTheme)}>
-                <button onClick={toggleTheme}>toggle</button>
                 <NavBar />
                 <main>
                     <Switch>
                         <Route exact path='/'>
                             <Redirect to='/home' />
                         </Route>
-                        <Route path='/home' component={Home} />
+                        <Route path='/home'>
+                            <Home baseUrl='/home' {...{ toggleTheme }} />
+                        </Route>
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/register' component={Register} />
                         <Route exact path='/team' component={Team} />

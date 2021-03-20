@@ -37,6 +37,7 @@ export const StyledHead = styled.div`
     > .timestamp {
         float: right;
         color: ${({ theme }) => theme.bgtext};
+        font-family: 'Trebuchet MS';
     }
 `;
 
@@ -46,10 +47,11 @@ export const StyledTopic = styled.div`
     padding: 0px 10px;
     font-weight: 600;
     color: ${({ theme }) => theme.home.grey};
+    font-family: 'Trebuchet MS';
 `;
 
 export const StyledContent = styled.div`
-    padding: 1px 12px;
+    padding: 1px 19px;
     font-family: Nunito;
     color: ${({ theme }) => theme.bgtext};
 `;

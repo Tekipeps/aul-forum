@@ -1,21 +1,31 @@
 import { ReactElement, FC } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import { PageNotFound } from '../404/PageNotFound';
+import ThemeToggler from './ThemeToggler';
+import routes from './home-routes.json';
 import PostSection from './PostSection';
 import HomeLayout from '../../layouts/HomeLayout/HomeLayout';
 
 interface HomeParams {
-    match: {
-        url: string;
-    };
+    baseUrl: string;
+    toggleTheme: () => void;
 }
 
-export const Home: FC<HomeParams> = ({ match }): ReactElement => {
-    const { url } = match;
+export const Home: FC<HomeParams> = ({ baseUrl, toggleTheme }): ReactElement => {
     const DEFAULT_SECTION = 'most-recent';
+
     return (
         <HomeLayout>
-            <Redirect to={`${url}/${DEFAULT_SECTION}`} />
-            <Route exact path={`${url}/:section`} component={PostSection} />
+            <ThemeToggler {...{ toggleTheme }} />
+            <Switch>
+                <Route exact path={baseUrl}>
+                    <Redirect to={`${baseUrl}/${DEFAULT_SECTION}`} />
+                </Route>
+                {routes.map(({ url }, i) => (
+                    <Route exact path={`${baseUrl}${url}`} key={i} component={PostSection} />
+                ))}
+                <Route component={PageNotFound} />
+            </Switch>
         </HomeLayout>
     );
 };

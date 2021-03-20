@@ -40,7 +40,6 @@ const PostNavigation: FC = (): ReactElement => {
                     <NavLink {...{ name, url }} key={i} />
                 ))}
             </StyledRoutesWrapper>
-
             <SearchBar />
         </StyledNavBar>
     );

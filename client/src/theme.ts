@@ -16,7 +16,8 @@ const darkTheme = {
         navlink: '#aaa',
         searchbarBorder: '#fff',
         grey: '#aaa',
-        searchicon: '#aaa'
+        searchicon: '#aaa',
+        themeToggler: 'grey'
     },
     bgcolor: '#000',
     bgtext: '#fff'
@@ -40,7 +41,8 @@ const lightTheme = {
         navlink: '#fff',
         searchbarBorder: '#37173d',
         grey: '#333',
-        searchicon: '#37173d'
+        searchicon: '#37173d',
+        themeToggler: '#990'
     },
     bgcolor: '#fff',
     bgtext: '#000'
