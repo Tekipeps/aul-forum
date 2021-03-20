@@ -1,38 +1,43 @@
 import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
-import { WindowResizeListener } from '../reusable/ResizeListener';
+import ParentResizeListener from '../reusable/ParentResizeListener';
 import anchorLogo from '../../assets/images/anchor-logo.png';
-import styles from './NavigationBar.module.scss';
+import StyledNavBar, { StyledNavLogo, StyledNavRoutes } from './NavigationBar.styled';
+import Utility from '../../utils/Utility';
 
-const Routes: FC = (): ReactElement | null => (
-    <WindowResizeListener minWidth={800}>
-        <ul>
-            <li>
-                <Link to='/home'>Home</Link>
-            </li>
-            <li>
-                <Link to='/login'>Login</Link>
-            </li>
-            <li>
-                <Link to='/register'>Register</Link>
-            </li>
-            <li>
-                <Link to='/team'>Team</Link>
-            </li>
-        </ul>
-    </WindowResizeListener>
+interface RouteButtonParams {
+    route: string;
+}
+
+const RouteButton: FC<RouteButtonParams> = ({ route }): ReactElement => {
+    const routeName = Utility.getBaseURL(route);
+
+    return (
+        <ParentResizeListener>
+            <div>
+                <Link to={`/${route}`}>{routeName}</Link>
+            </div>
+        </ParentResizeListener>
+    );
+};
+
+const Routes: FC = (): ReactElement => (
+    <StyledNavRoutes>
+        <RouteButton route='home/most-recent' />
+        <RouteButton route='login' />
+        <RouteButton route='register' />
+        <RouteButton route='team' />
+    </StyledNavRoutes>
 );
 
 export const NavBar: FC = (): ReactElement => (
-    <nav id={styles.navbar}>
-        <div id={styles.logo}>
+    <StyledNavBar>
+        <StyledNavLogo>
             <div>
                 <img src={anchorLogo} />
             </div>
-            <div>AUL Forum</div>
-        </div>
-        <div id={styles.routes}>
-            <Routes />
-        </div>
-    </nav>
+            <div>AUL FORUM</div>
+        </StyledNavLogo>
+        <Routes />
+    </StyledNavBar>
 );
