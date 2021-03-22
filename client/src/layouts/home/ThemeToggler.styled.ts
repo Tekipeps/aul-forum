@@ -47,6 +47,7 @@ export const StyledToggle = styled.div`
     overflow: hidden;
     border: 2px solid ${({ theme }) => theme.home.themeToggler};
     background-color: #c0e6f6;
+    transform: scale(0.7);
     &:before,
     &:after {
         content: '';
@@ -116,16 +117,16 @@ export const StyledToggle = styled.div`
     }
 
     .toggle-switch-figureAlt:before {
-        ${craterMixin('-13px', '21px', '7px')}
+        ${craterMixin('-13px', '21px', '4px')}
     }
 
     .toggle-switch-figureAlt:after {
-        ${craterMixin('6px', '19px', '2px')}
+        ${craterMixin('6px', '19px', '1px')}
     }
 
     .toggle-input:checked ~ .toggle-switch {
         margin-left: 0;
-        border-color: #dee1c5;
+        border-color: #aaa;
         background-color: #fffdf2;
     }
 

@@ -7,7 +7,7 @@ interface ParentResizeParams {
 type visibilityStates = 'visible' | 'hidden';
 
 const ParentResizeListener: FC<ParentResizeParams> = ({ children }): ReactElement => {
-    const [visibility, setVisibility] = useState<visibilityStates>('hidden');
+    const [visibility, setVisibility] = useState<visibilityStates>('visible');
     const ref = useRef<HTMLDivElement>(null);
 
     const getTotalLeft = (element: HTMLElement): number => element.offsetWidth + element.offsetLeft;

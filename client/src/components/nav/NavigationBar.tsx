@@ -23,7 +23,7 @@ const RouteButton: FC<RouteButtonParams> = ({ route }): ReactElement => {
 
 const Routes: FC = (): ReactElement => (
     <StyledNavRoutes>
-        <RouteButton route='home/most-recent' />
+        <RouteButton route='home' />
         <RouteButton route='login' />
         <RouteButton route='register' />
         <RouteButton route='team' />
