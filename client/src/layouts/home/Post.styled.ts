@@ -66,9 +66,10 @@ export const StyledFooter = styled.div`
         flex-direction: row;
         > span {
             color: ${({ theme }) => theme.home.grey};
-            font-size: 17px;
+            font-size: 16px;
             margin: 2px;
             display: inline-block;
+            font-family: Nunito;
         }
     }
     > .viewsCount {

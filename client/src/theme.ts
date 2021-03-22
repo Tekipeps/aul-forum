@@ -42,7 +42,7 @@ const lightTheme = {
         searchbarBorder: '#37173d',
         grey: '#333',
         searchicon: '#37173d',
-        themeToggler: '#990'
+        themeToggler: '#f5eb42'
     },
     bgcolor: '#fff',
     bgtext: '#000'

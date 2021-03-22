@@ -7,7 +7,7 @@ interface ThemeTogglerParams {
 
 const ThemeToggler: FC<ThemeTogglerParams> = ({ toggleTheme }): ReactElement => {
     const theme = window.localStorage.getItem('theme') || 'light';
-    const [checked, changeChecked] = useState(theme === 'dark' ? true : false);
+    const [checked, changeChecked] = useState<boolean>(theme === 'dark' ? true : false);
 
     const onChange = (): void => {
         toggleTheme();
