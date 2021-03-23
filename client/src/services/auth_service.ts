@@ -31,7 +31,17 @@ const register = async (data: RegisterData) => {
     const response = await axios.post(`${baseUrl}/register`, data);
     return response.data;
 };
+
+const isValidToken = async (token: string) => {
+    const response = await axios.get(`${baseUrl}/isValidToken`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+    return response.data;
+};
 export default {
     login,
-    register
+    register,
+    isValidToken
 };

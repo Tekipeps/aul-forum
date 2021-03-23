@@ -1,4 +1,4 @@
-import { ReactElement, FC, FormEvent, useState } from 'react';
+import { ReactElement, FC, FormEvent, useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SideBar from '../../components/reusable/FormSideBar';
 import {
@@ -24,6 +24,17 @@ export const Login: FC = (): ReactElement => {
         window.localStorage.setItem('token', response.token);
         history.push('/home');
     };
+
+    useEffect(() => {
+        const token = String(window.localStorage.getItem('token'));
+        const validateToken = async (t: string) => {
+            const { isValidToken } = await authService.isValidToken(t);
+            return isValidToken;
+        };
+        if (token && validateToken(token)) {
+            history.push('/home');
+        }
+    }, []);
 
     return (
         <StyledLogin>
