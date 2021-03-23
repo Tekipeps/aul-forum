@@ -11,7 +11,7 @@ export const Team: FC = (): ReactElement => {
                     Check out this project on Github
                 </a>
             </StyledPinnedLinks>
-            <StyledHeading>Meet The Awesome Crew That Contributed To This Project.</StyledHeading>
+            <StyledHeading>Meet the awesome crew that contributed to this project.</StyledHeading>
             <StyledTeamList>
                 <TeamMember
                     name='Tekena Solomon'

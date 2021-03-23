@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledPost = styled.div`
-    margin-bottom: 3px;
     border: 1px solid ${({ theme }) => theme.bgtext};
+    border-bottom: none;
     display: flex;
     flex-direction: row;
 `;
@@ -28,25 +28,26 @@ export const StyledHead = styled.div`
         display: inline-block;
     }
     > .author {
-        font-size: 17px;
         color: blue;
-        font-family: Nunito;
         margin-left: 3px;
+        font-family: 'Trebuchet MS';
+        font-size: clamp(14px, 2.4vw, 17px);
     }
 
     > .timestamp {
         float: right;
         color: ${({ theme }) => theme.bgtext};
-        font-family: 'Trebuchet MS';
+        font-family: Nunito;
+        font-size: clamp(14px, 2vw, 16px);
     }
 `;
 
 export const StyledTopic = styled.div`
-    font-size: 17px;
+    font-size: clamp(14px, 2.4vw, 17px);
     margin: 5px 0px;
     padding: 0px 10px;
-    font-weight: 600;
-    color: ${({ theme }) => theme.home.grey};
+    //font-weight: 600;
+    color: ${({ theme }) => theme.bgtext};
     font-family: 'Trebuchet MS';
 `;
 
@@ -54,6 +55,7 @@ export const StyledContent = styled.div`
     padding: 1px 19px;
     font-family: Nunito;
     color: ${({ theme }) => theme.bgtext};
+    font-size: clamp(14px, 2vw, 16px);
 `;
 
 export const StyledFooter = styled.div`

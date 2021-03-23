@@ -11,7 +11,9 @@ interface LayoutParams {
 
 const StyledMain = styled.div`
     display: flex;
-    margin: 2px;
+    margin: 2px auto;
+    //background-color:red;
+    width: fit-content;
 `;
 
 const Layout: FC<LayoutParams> = ({ toggleTheme }): ReactElement => (
@@ -19,8 +21,8 @@ const Layout: FC<LayoutParams> = ({ toggleTheme }): ReactElement => (
         <HomeNavigation />
         <SectionDescription />
         <StyledMain>
-            <ThemeToggler {...{ toggleTheme }} />
             <PostSection />
+            <ThemeToggler {...{ toggleTheme }} />
         </StyledMain>
     </div>
 );
