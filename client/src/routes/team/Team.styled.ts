@@ -19,7 +19,7 @@ export const StyledPinnedLinks = styled.div`
 `;
 
 export const StyledHeading = styled.div`
-    font-size: 25px;
+    font-size: clamp(18px, 3vw, 26px);
     margin: 0px 0px;
     font-family: 'Times New Roman', Times, serif;
     background-color: ${({ theme }) => theme.navbar.bgcolor};
