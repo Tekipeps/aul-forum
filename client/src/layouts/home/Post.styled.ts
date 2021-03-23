@@ -72,6 +72,7 @@ export const StyledFooter = styled.div`
             margin: 2px;
             display: inline-block;
             font-family: Nunito;
+
         }
     }
     > .viewsCount {
