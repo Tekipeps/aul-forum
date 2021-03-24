@@ -1,10 +1,10 @@
 import { ReactElement, FC, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { NavBar } from './components/nav/NavigationBar';
-import { Home } from './routes/home/Home';
-import { Login } from './routes/login/Login';
-import { Register } from './routes/register/Register';
-import { Team } from './routes/team/Team';
+import { HomePage } from './routes/home/Home';
+import { LoginPage } from './routes/login/Login';
+import { RegisterPage } from './routes/register/Register';
+import { AboutPage } from './routes/about/About';
 import { PageNotFound } from './routes/404/PageNotFound';
 import { ThemeProvider } from 'styled-components';
 import getTheme from './theme';
@@ -38,11 +38,11 @@ export const App: FC = (): ReactElement => {
                             <Redirect to='/home' />
                         </Route>
                         <Route path='/home'>
-                            <Home baseUrl='/home' {...{ toggleTheme }} />
+                            <HomePage baseUrl='/home' {...{ toggleTheme }} />
                         </Route>
-                        <Route exact path='/login' component={Login} />
-                        <Route exact path='/register' component={Register} />
-                        <Route exact path='/team' component={Team} />
+                        <Route exact path='/login' component={LoginPage} />
+                        <Route exact path='/register' component={RegisterPage} />
+                        <Route exact path='/about' component={AboutPage} />
                         <Route component={PageNotFound} />
                     </Switch>
                 </main>

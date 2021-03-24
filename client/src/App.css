@@ -28,6 +28,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     height: 100vh;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 a {

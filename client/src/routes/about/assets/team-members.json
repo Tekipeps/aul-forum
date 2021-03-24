@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Tekena Solomon",
+        "avatarURL": "/avatars/team/tekipeps.jpeg",
+        "bio": "Software developer from Port Harcourt, Nigeria. Loves building software to solve real world problems.",
+        "role": "Lead backend  developer",
+        "githubURL": "https://github.com/Tekipeps"
+    },
+    {
+        "name": "Koledoye Abidemi",
+        "avatarURL": "/avatars/team/bidex.jpg",
+        "bio": " Frontend developer experienced with Java, TypeScript and Reactjs, develops web games with webcanvas, hates cats!",
+        "role": "Lead Frontend developer",
+        "githubURL": "https://github.com/BidemiEnoch"
+    },
+    {
+        "name": "Emmanuel Itighise",
+        "avatarURL": "/avatars/team/emedit.jpeg",
+        "bio": "Freelance Frontend Developer, familiar with Reactjs, loves learning. Addicted to political issues.",
+        "role": "Frontend support",
+        "githubURL": "https://github.com/EmeditWeb"
+    },
+    {
+        "name": "Osinowo Seun",
+        "avatarURL": "/avatars/team/seun.jpeg",
+        "bio": "Loves to write PHP for serverside development, freelancer, big nerd...fine!! medium nerd.",
+        "role": "Frontend support",
+        "githubURL": "https://github.com/seunosinowo"
+    }
+]

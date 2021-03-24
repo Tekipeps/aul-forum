@@ -19,7 +19,7 @@ export const StyledContainerHeader = styled.div`
     font-size: 29px;
     padding: 5px 5px;
     color: ${({ theme }) => theme.form.headerText};
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria;
 `;
 
 export const StyledFormContainer = styled.div`
@@ -53,7 +53,7 @@ export const StyledInputWrapper = styled.div`
         transition-property: border;
         transition-duration: 0.5s;
         font-family: Nunito;
-        &:focus {
+        :focus {
             border: 1px solid grey;
         }
     }

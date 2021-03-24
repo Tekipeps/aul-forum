@@ -13,7 +13,7 @@ import {
 import anchorLogo from '../../assets/images/anchor-logo.png';
 import authService from '../../services/auth_service';
 
-export const Login: FC = (): ReactElement => {
+export const LoginPage: FC = (): ReactElement => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const history = useHistory();

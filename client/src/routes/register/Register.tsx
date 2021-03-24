@@ -14,7 +14,7 @@ import {
     StyledInputWrapper
 } from './Register.styled';
 
-export const Register: FC = (): ReactElement => {
+export const RegisterPage: FC = (): ReactElement => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [matric, setMatric] = useState<string>('');

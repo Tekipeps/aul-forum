@@ -2,6 +2,7 @@ const darkTheme = {
     purple: '#111',
     blue: '#6f6ffa',
     grey: '#333',
+    notification: '#090',
     navbar: {
         bgcolor: '#111',
         color: '#fff',
@@ -27,6 +28,7 @@ const lightTheme = {
     purple: '#37173d',
     blue: '#00f',
     grey: '#aaa',
+    notification: '#b19cd9',
     navbar: {
         bgcolor: '#fff',
         color: '#000',
