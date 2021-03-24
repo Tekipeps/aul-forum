@@ -48,7 +48,7 @@ export const StyledToggle = styled.div`
     overflow: hidden;
     border: 2px solid ${({ theme }) => theme.home.themeToggler};
     background-color: #c0e6f6;
-    //transform: scale(0.7);
+    transform: scale(0.7);
     &:before,
     &:after {
         content: '';

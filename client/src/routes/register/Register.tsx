@@ -1,4 +1,4 @@
-import { ReactElement, FC, useState, FormEvent } from 'react';
+import { ReactElement, FC, useState, FormEvent, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SideBar from '../../components/reusable/FormSideBar';
 import authService from '../../services/auth_service';
@@ -29,6 +29,17 @@ export const RegisterPage: FC = (): ReactElement => {
         window.localStorage.setItem('token', response.token);
         history.push('/home');
     };
+
+    useEffect(() => {
+        const token = String(window.localStorage.getItem('token'));
+        const validateToken = async (t: string) => {
+            const { isValidToken } = await authService.isValidToken(t);
+            return isValidToken;
+        };
+        if (token && validateToken(token)) {
+            history.push('/home');
+        }
+    }, []);
     return (
         <StyledRegister>
             <StyledContainerHeader>AUL Forum Sign Up</StyledContainerHeader>

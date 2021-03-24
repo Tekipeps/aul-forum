@@ -4,6 +4,13 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 class Auth {
+    async isValidToken(_, res, next) {
+        try {
+            res.json({ isValid: true });
+        } catch (error) {
+            next(error);
+        }
+    }
     async login(req, res, next) {
         try {
             const { username, password } = req.body;
