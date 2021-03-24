@@ -47,12 +47,12 @@ export const StyledTopic = styled.div`
     margin: 5px 0px;
     padding: 0px 10px;
     color: ${({ theme }) => theme.bgtext};
-    font-family: 'Trebuchet MS';
+    font-family: Nunito;
 `;
 
 export const StyledContent = styled.div`
     padding: 1px 19px;
-    font-family: monospace;
+    font-family: 'Segoe UI';
     color: ${({ theme }) => theme.bgtext};
     font-size: clamp(14px, 2.2vw, 16px);
 `;

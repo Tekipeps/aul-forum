@@ -9,7 +9,7 @@ export const StyledPinnedLinks = styled.div`
         background-color: #050;
         padding: 4px 6px;
         border-radius: 3px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Nunito;
         font-size: 15px;
         color: white;
         :hover {
