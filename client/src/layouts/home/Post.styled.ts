@@ -43,19 +43,18 @@ export const StyledHead = styled.div`
 `;
 
 export const StyledTopic = styled.div`
-    font-size: clamp(14px, 2.4vw, 17px);
+    font-size: clamp(15px, 2.4vw, 17px);
     margin: 5px 0px;
     padding: 0px 10px;
-    //font-weight: 600;
     color: ${({ theme }) => theme.bgtext};
     font-family: 'Trebuchet MS';
 `;
 
 export const StyledContent = styled.div`
     padding: 1px 19px;
-    font-family: Nunito;
+    font-family: monospace;
     color: ${({ theme }) => theme.bgtext};
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: clamp(14px, 2.2vw, 16px);
 `;
 
 export const StyledFooter = styled.div`
@@ -63,16 +62,12 @@ export const StyledFooter = styled.div`
     height: 20px;
     > .viewsCount,
     > .commentsCount {
-        display: inline-block;
         display: flex;
-        flex-direction: row;
         > span {
             color: ${({ theme }) => theme.home.grey};
             font-size: 16px;
             margin: 2px;
-            display: inline-block;
             font-family: Nunito;
-
         }
     }
     > .viewsCount {

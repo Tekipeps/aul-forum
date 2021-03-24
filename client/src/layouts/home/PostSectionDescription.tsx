@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
-import { StyledSectionDescription } from './PostSection.styled';
 import { useRouteMatch } from 'react-router-dom';
+import Notification from '../../components/reusable/Notification';
 import routes from '../../routes/home/routes.json';
 
 type routeType = { name: string; description: string } | undefined;
@@ -11,8 +11,7 @@ const SectionDescription: FC = (): ReactElement | null => {
     const route: routeType = routes.find(({ url }) => currentUrl.includes(url));
     const description: string | undefined = route ? route.description : undefined;
 
-    if (!description) return null;
-    return <StyledSectionDescription>{description}</StyledSectionDescription>;
+    return description ? <Notification>{description}</Notification> : null;
 };
 
 export default SectionDescription;

@@ -26,7 +26,7 @@ const Routes: FC = (): ReactElement => (
         <RouteButton route='home' />
         <RouteButton route='login' />
         <RouteButton route='register' />
-        <RouteButton route='team' />
+        <RouteButton route='about' />
     </StyledNavRoutes>
 );
 

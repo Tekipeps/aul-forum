@@ -12,7 +12,6 @@ interface LayoutParams {
 const StyledMain = styled.div`
     display: flex;
     margin: 2px auto;
-    //background-color:red;
     width: fit-content;
 `;
 

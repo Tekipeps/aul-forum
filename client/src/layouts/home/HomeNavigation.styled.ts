@@ -29,6 +29,7 @@ export const StyledSearchBarContainer = styled.div`
         border-left: 1px solid white;
         border-top: 1px solid white;
         border-bottom: 1px solid white;
+        cursor: pointer;
     }
     > input {
         background: ${({ theme }) => theme.bgcolor};

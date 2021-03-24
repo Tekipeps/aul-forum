@@ -9,7 +9,7 @@ interface HomeParams {
     toggleTheme: () => void;
 }
 
-export const Home: FC<HomeParams> = ({ baseUrl, toggleTheme }): ReactElement => {
+export const HomePage: FC<HomeParams> = ({ baseUrl, toggleTheme }): ReactElement => {
     const DEFAULT_SECTION = 'most-recent';
 
     return (
