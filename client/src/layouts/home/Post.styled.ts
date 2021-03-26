@@ -5,6 +5,9 @@ export const StyledPost = styled.div`
     border-bottom: none;
     display: flex;
     flex-direction: row;
+    :last-child {
+        border-bottom: 1px solid ${({ theme }) => theme.bgtext};
+    }
 `;
 
 export const StyledAvatarWrapper = styled.div`
@@ -43,7 +46,7 @@ export const StyledHead = styled.div`
 `;
 
 export const StyledTopic = styled.div`
-    font-size: clamp(15px, 2.4vw, 17px);
+    font-size: clamp(17px, 2.4vw, 19px);
     margin: 5px 0px;
     padding: 0px 10px;
     color: ${({ theme }) => theme.bgtext};
@@ -52,9 +55,9 @@ export const StyledTopic = styled.div`
 
 export const StyledContent = styled.div`
     padding: 1px 19px;
-    font-family: 'Segoe UI';
+    font-family: Nunito;
     color: ${({ theme }) => theme.bgtext};
-    font-size: clamp(14px, 2.2vw, 16px);
+    font-size: clamp(14px, 2vw, 15px);
 `;
 
 export const StyledFooter = styled.div`

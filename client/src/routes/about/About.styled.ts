@@ -1,26 +1,42 @@
 import styled from 'styled-components';
 
-export const StyledPinnedLinks = styled.div`
-    border-bottom: 1px solid black;
-    background-color: ${({ theme }) => theme.navbar.bgcolor};
-    .githubLink {
-        display: inline-block;
-        margin: 4px 50px;
-        background-color: #050;
-        padding: 4px 6px;
-        border-radius: 3px;
-        font-family: Nunito;
-        font-size: 15px;
-        color: white;
-        :hover {
-            background-color: #060;
-        }
+export const StyledHeader = styled.div`
+    margin: 40px 40px 10px 40px;
+    padding: 5px 20px;
+    font-family: Nunito;
+    font-size: 17px;
+    max-width: 700px;
+    border: 1px solid ${({ theme }) => theme.bgtext};
+    border-radius: 6px;
+    #about-header {
+        font-size: 20px;
+        margin: 0;
+        width: fit-content;
+        padding: 3px 10px;
+        border-radius: 17px;
+        border: 1px solid ${({ theme }) => theme.home.grey};
+        color: ${({ theme }) => theme.bgtext};
     }
+    #about-content {
+        padding: 0px 10px;
+        color: ${({ theme }) => theme.bgtext};
+    }
+`;
+
+export const StyledMainWrapper = styled.div`
+    display: flex;
+    padding: 40px 5px 10px 40px;
+    margin-bottom: 20px;
+`;
+
+export const StyledTeamListWrapper = styled.div`
+    border: 1px solid ${({ theme }) => theme.bgtext};
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 0px 10px;
 `;
 
 export const StyledTeamList = styled.div`
     display: flex;
     flex-flow: row wrap;
-    width: 90%;
-    margin: 7% auto;
 `;
