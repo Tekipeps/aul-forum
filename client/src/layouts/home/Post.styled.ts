@@ -55,7 +55,7 @@ export const StyledTopic = styled.div`
 
 export const StyledContent = styled.div`
     padding: 1px 19px;
-    font-family: Nunito;
+    font-family: 'Segoe UI';
     color: ${({ theme }) => theme.bgtext};
     font-size: clamp(14px, 2vw, 15px);
 `;
