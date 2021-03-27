@@ -1,5 +1,7 @@
- <img src="client/public/logo2.png" align: center; width="300" height="400"></img>
-# Forum web app (AUL entrepreneurship project)
+ #  Forum web app (AUL entrepreneurship project)
+ <p align="center">
+  <img width="300" height="300" src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/logo2.png">
+</p>
 
 ## Objectives
 
