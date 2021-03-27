@@ -29,7 +29,7 @@ Please check out our [Contribution Guidelines](./CONTRIBUTING.md) to figure how 
 | [Bidemi](https://github.com/BidemiEnoch) | Leading role at UI and UX design                         |
 | [Tekena](https://github.com/Tekipeps)    | Leading role at Backend development, Database Management |
 | [Seun](https://github.com/seunosinowo)   | Supporting role at UI and UX design                      |
-| [Emedit](https://github.com/EmeditWeb)   | ?                                                        |
+| [Emedit](https://github.com/EmeditWeb)   | Supporting role at UI and UX design                      ||                                                  
 
 # License
 
