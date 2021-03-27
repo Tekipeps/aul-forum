@@ -17,7 +17,7 @@
         "removeComments": true,
         "noUnusedParameters": true,
         "noUnusedLocals": true,
-
+        "baseUrl": "./",
         "jsx": "react-jsx"
     },
     "include": ["src"]

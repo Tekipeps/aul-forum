@@ -1,4 +1,4 @@
-import { ReactElement, FC, FormEvent, useState, useEffect } from 'react';
+import { ReactElement, FC, FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SideBar from '../../components/reusable/FormSideBar';
 import {
@@ -11,35 +11,23 @@ import {
     StyledInputWrapper
 } from './Login.styled';
 import anchorLogo from '../../assets/images/anchor-logo.png';
-import authService from '../../services/auth_service';
+import { useAppDispatch, useAppSelector } from '../../state/hooks';
+import { login } from '../../state/auth/actions';
 
 export const LoginPage: FC = (): ReactElement => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const history = useHistory();
+    const auth = useAppSelector((state) => state.auth);
+    const dispatch = useAppDispatch();
+
     const submitLogin = async (event: FormEvent) => {
         event.preventDefault();
-        console.log(username, password);
-        const response = await authService.login({ username, password });
-        window.localStorage.setItem('token', response.token);
-        history.push('/home');
+        await dispatch(login({ username, password }));
+        auth.isLoggedIn && history.push('/home');
     };
 
-    useEffect(() => {
-        const token = String(window.localStorage.getItem('token'));
-        if (!token) return;
-
-        const validateToken = async (t: string) => {
-            const { isValidToken } = await authService.isValidToken(t);
-            return isValidToken;
-        };
-
-        if (token && validateToken(token)) {
-            alert(token);
-            history.push('/home');
-        }
-    }, []);
-
+    // TODO: add notification component to display error message in auth.error.err
     return (
         <StyledLogin>
             <StyledContainerHeader>AUL Forum Login</StyledContainerHeader>

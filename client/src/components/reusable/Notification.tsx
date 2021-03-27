@@ -3,7 +3,7 @@ import StyledNotification, { StyledNotificationContent, StyledCloseButton } from
 import CloseButtonSvg from '../../assets/svg/CloseButton.svg';
 
 interface NotificationParams {
-    children: string;
+    transitionDuration?: number;
 }
 
 interface CloseButtonParams {
@@ -16,21 +16,24 @@ const CloseButton: FC<CloseButtonParams> = ({ handleClick }): ReactElement => (
     </StyledCloseButton>
 );
 
-const Notification: FC<NotificationParams> = ({ children }): ReactElement | null => {
-    const [visibility, setVisibility] = useState<'visible' | 'hidden'>('visible');
+const Notification: FC<NotificationParams> = ({ children, transitionDuration }): ReactElement | null => {
+    const [visibility, setVisibility] = useState<'visible' | 'hidden'>(children ? 'visible' : 'hidden');
     const [opacity, setOpacity] = useState<0 | 1>(1);
-    const transitionDuration = 0.7;
+    const defaultTransition = 0.7;
 
     const handleClick = (): void => {
         if (!opacity) return;
         setOpacity(0);
-        setTimeout(() => {
-            setVisibility('hidden');
-        }, transitionDuration * 1000);
+        setTimeout(
+            () => {
+                setVisibility('hidden');
+            },
+            transitionDuration ? transitionDuration * 1000 : defaultTransition
+        );
     };
 
     return (
-        <StyledNotification {...{ opacity, transitionDuration, visibility }}>
+        <StyledNotification {...{ opacity, transitionDuration: transitionDuration || defaultTransition, visibility }}>
             <StyledNotificationContent>{children}</StyledNotificationContent>
             <CloseButton {...{ handleClick }} />
         </StyledNotification>
