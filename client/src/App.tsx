@@ -1,5 +1,7 @@
 import { ReactElement, FC, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { Provider as StateProvider } from 'react-redux';
+import store from './state/store';
 import { NavBar } from './components/nav/NavigationBar';
 import { HomePage } from './routes/home/Home';
 import { LoginPage } from './routes/login/Login';
@@ -30,23 +32,25 @@ export const App: FC = (): ReactElement => {
 
     return (
         <Router>
-            <ThemeProvider theme={getTheme(currentTheme)}>
-                <NavBar />
-                <main>
-                    <Switch>
-                        <Route exact path='/'>
-                            <Redirect to='/home' />
-                        </Route>
-                        <Route path='/home'>
-                            <HomePage baseUrl='/home' {...{ toggleTheme }} />
-                        </Route>
-                        <Route exact path='/login' component={LoginPage} />
-                        <Route exact path='/register' component={RegisterPage} />
-                        <Route exact path='/about' component={AboutPage} />
-                        <Route component={PageNotFound} />
-                    </Switch>
-                </main>
-            </ThemeProvider>
+            <StateProvider store={store}>
+                <ThemeProvider theme={getTheme(currentTheme)}>
+                    <NavBar />
+                    <main>
+                        <Switch>
+                            <Route exact path='/'>
+                                <Redirect to='/home' />
+                            </Route>
+                            <Route path='/home'>
+                                <HomePage baseUrl='/home' {...{ toggleTheme }} />
+                            </Route>
+                            <Route exact path='/login' component={LoginPage} />
+                            <Route exact path='/register' component={RegisterPage} />
+                            <Route exact path='/about' component={AboutPage} />
+                            <Route component={PageNotFound} />
+                        </Switch>
+                    </main>
+                </ThemeProvider>
+            </StateProvider>
         </Router>
     );
 };
