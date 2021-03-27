@@ -6,7 +6,6 @@ import getPieChartOptions from './ContributionChart.options';
 
 const StyledContributionInfo = styled.div`
     padding: 10px;
-    border: 1px solid ${({ theme }) => theme.bgtext};
     border-radius: 6px;
     margin: 10;
     white-space: nowrap;

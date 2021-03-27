@@ -1,10 +1,11 @@
 const darkTheme = {
-    purple: '#111',
+    purple: '#000',
     blue: '#6f6ffa',
     grey: '#333',
     notification: '#090',
+    userColor: '#58a6ff',
     navbar: {
-        bgcolor: '#111',
+        bgcolor: '#10101a',
         color: '#fff',
         linkColor: '#fff'
     },
@@ -13,14 +14,14 @@ const darkTheme = {
         headerText: '#aaa'
     },
     home: {
-        navcolor: '#000',
+        navcolor: '#101013',
         navlink: '#aaa',
-        searchbarBorder: '#fff',
+        searchbarBorder: '#777',
         grey: '#aaa',
         searchicon: '#aaa',
-        themeToggler: 'grey'
+        themeToggler: '#777'
     },
-    bgcolor: '#000',
+    bgcolor: '#101013',
     bgtext: '#fff'
 };
 
@@ -28,7 +29,8 @@ const lightTheme = {
     purple: '#37173d',
     blue: '#00f',
     grey: '#aaa',
-    notification: '#b19cd9',
+    notification: '#ccc',
+    userColor: 'blue',
     navbar: {
         bgcolor: '#fff',
         color: '#000',

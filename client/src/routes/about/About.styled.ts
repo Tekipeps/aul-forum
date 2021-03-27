@@ -6,7 +6,7 @@ export const StyledHeader = styled.div`
     font-family: Nunito;
     font-size: 17px;
     max-width: 700px;
-    border: 1px solid ${({ theme }) => theme.bgtext};
+    border: 1px solid ${({ theme }) => theme.grey};
     border-radius: 6px;
     #about-header {
         font-size: 20px;
@@ -14,7 +14,7 @@ export const StyledHeader = styled.div`
         width: fit-content;
         padding: 3px 10px;
         border-radius: 17px;
-        border: 1px solid ${({ theme }) => theme.home.grey};
+        border: 1px solid ${({ theme }) => theme.grey};
         color: ${({ theme }) => theme.bgtext};
     }
     #about-content {
@@ -30,7 +30,7 @@ export const StyledMainWrapper = styled.div`
 `;
 
 export const StyledTeamListWrapper = styled.div`
-    border: 1px solid ${({ theme }) => theme.bgtext};
+    border: 1px solid ${({ theme }) => theme.grey};
     border-radius: 6px;
     overflow: hidden;
     margin: 0px 10px;

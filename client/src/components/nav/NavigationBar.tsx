@@ -14,7 +14,7 @@ const RouteButton: FC<RouteButtonParams> = ({ route }): ReactElement => {
 
     return (
         <ParentResizeListener>
-            <div>
+            <div id='route-btn'>
                 <Link to={`/${route}`}>{routeName}</Link>
             </div>
         </ParentResizeListener>
@@ -33,10 +33,10 @@ const Routes: FC = (): ReactElement => (
 export const NavBar: FC = (): ReactElement => (
     <StyledNavBar>
         <StyledNavLogo>
-            <div>
+            <div id='logo-image-wrapper'>
                 <img src={anchorLogo} />
             </div>
-            <div>AUL FORUM</div>
+            <div id='logo-text'>AUL FORUM</div>
         </StyledNavLogo>
         <Routes />
     </StyledNavBar>

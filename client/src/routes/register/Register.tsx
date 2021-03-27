@@ -37,7 +37,7 @@ export const RegisterPage: FC = (): ReactElement => {
             return isValidToken;
         };
         if (token && validateToken(token)) {
-            history.push('/home');
+            //history.push('/home');
         }
     }, []);
     return (

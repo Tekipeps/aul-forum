@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledPost = styled.div`
-    border: 1px solid ${({ theme }) => theme.bgtext};
+    border: 1px solid ${({ theme }) => theme.grey};
     border-bottom: none;
     display: flex;
     flex-direction: row;
     :last-child {
-        border-bottom: 1px solid ${({ theme }) => theme.bgtext};
+        border-bottom: 1px solid ${({ theme }) => theme.grey};
     }
 `;
 
@@ -31,9 +31,9 @@ export const StyledHead = styled.div`
         display: inline-block;
     }
     > .author {
-        color: blue;
+        color: ${({ theme }) => theme.userColor};
         margin-left: 3px;
-        font-family: 'Trebuchet MS';
+        font-family: Nunito;
         font-size: clamp(14px, 2.4vw, 17px);
     }
 

@@ -27,11 +27,15 @@ export const LoginPage: FC = (): ReactElement => {
 
     useEffect(() => {
         const token = String(window.localStorage.getItem('token'));
+        if (!token) return;
+
         const validateToken = async (t: string) => {
             const { isValidToken } = await authService.isValidToken(t);
             return isValidToken;
         };
+
         if (token && validateToken(token)) {
+            alert(token);
             history.push('/home');
         }
     }, []);

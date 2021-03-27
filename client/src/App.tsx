@@ -5,6 +5,7 @@ import { HomePage } from './routes/home/Home';
 import { LoginPage } from './routes/login/Login';
 import { RegisterPage } from './routes/register/Register';
 import { AboutPage } from './routes/about/About';
+import { ProfilePage } from './routes/profile/Profile';
 import { PageNotFound } from './routes/404/PageNotFound';
 import { ThemeProvider } from 'styled-components';
 import getTheme from './theme';
@@ -43,6 +44,7 @@ export const App: FC = (): ReactElement => {
                         <Route exact path='/login' component={LoginPage} />
                         <Route exact path='/register' component={RegisterPage} />
                         <Route exact path='/about' component={AboutPage} />
+                        <Route exact path='/profile' component={ProfilePage} />
                         <Route component={PageNotFound} />
                     </Switch>
                 </main>

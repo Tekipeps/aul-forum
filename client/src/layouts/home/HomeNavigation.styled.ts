@@ -5,9 +5,12 @@ const StyledNavBar = styled.div`
     padding: 30px 10px 0px 0px;
     background-color: ${({ theme }) => theme.home.navcolor};
     display: flex;
+    border-bottom: 1px solid ${({ theme }) => theme.home.grey};
 `;
 
 export const StyledRoutesWrapper = styled.div`
+    position: relative;
+    top: 1px;
     margin-left: 50px;
     overflow: hidden;
     white-space: nowrap;
@@ -26,9 +29,9 @@ export const StyledSearchBarContainer = styled.div`
         width: 28px;
         background-color: ${({ theme }) => theme.bgcolor};
         border-radius: 10px 0px 0px 10px;
-        border-left: 1px solid white;
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
+        border-left: 1px solid ${({ theme }) => theme.home.searchbarBorder};
+        border-top: 1px solid ${({ theme }) => theme.home.searchbarBorder};
+        border-bottom: 1px solid ${({ theme }) => theme.home.searchbarBorder};
         cursor: pointer;
     }
     > input {
@@ -43,9 +46,9 @@ export const StyledSearchBarContainer = styled.div`
         font-family: Nunito;
         max-width: 300px;
         border-radius: 0px 10px 10px 0px;
-        border-right: 1px solid white;
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
+        border-right: 1px solid ${({ theme }) => theme.home.searchbarBorder};
+        border-top: 1px solid ${({ theme }) => theme.home.searchbarBorder};
+        border-bottom: 1px solid ${({ theme }) => theme.home.searchbarBorder};
         border-left: none;
         &:focus {
             width: 70%;
@@ -54,7 +57,7 @@ export const StyledSearchBarContainer = styled.div`
 `;
 
 export const StyledNavLink = styled.div`
-    border-bottom: 2px solid ${({ theme }) => theme.home.navcolor};
+    border-bottom: 2px solid none;
     transition: border;
     transition-duration: 300ms;
     &:hover {
