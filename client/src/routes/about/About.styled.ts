@@ -6,11 +6,7 @@ export const StyledHeader = styled.div`
     font-family: Nunito;
     font-size: 17px;
     max-width: 700px;
-<<<<<<< HEAD
     border: 1px solid ${({ theme }) => theme.grey};
-=======
-    border: 1px solid ${({ theme }) => theme.bgtext};
->>>>>>> 0c51a222f90d7e10e804201f0ead961b939e1cfc
     border-radius: 6px;
     #about-header {
         font-size: 20px;
