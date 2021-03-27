@@ -1,3 +1,4 @@
+ <img src="client/public/logo2.png" align: center; width="300" height="400"></img>
 # Forum web app (AUL entrepreneurship project)
 
 ## Objectives
