@@ -12,24 +12,12 @@ const craterMixin = (top: string, left: string, size: string) => `
     border: 4px solid #dee1c5;
 `;
 
-const cloudBubbleMixin = (top: string, right: string, width: string, height: string, deg: string) => `
-    content: '';
-    display: block;
-    position: relative;
-    top: ${top};
-    right: ${right};
-    width: ${width};
-    height: ${height};
-    border: 8px solid #d4d4d2;
-    border-radius: 100%;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    transform: rotateZ(${deg});
-    background-color: #fff;
-`;
+
 
 const StyledWrapper = styled.div`
-    padding: 9px 10px;
+    padding: 9px;
+    padding-right: 1px;
+    
 `;
 
 export const StyledToggleCaption = styled.div`
@@ -87,27 +75,19 @@ export const StyledToggle = styled.div`
         background-color: #f5eb42;
         border: 4px solid #e4c74d;
         border-radius: 50%;
-        transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .toggle-switch-figure {
         position: absolute;
         bottom: -14px;
         left: -50px;
-        display: block;
-        width: 80px;
-        height: 30px;
         border: 8px solid #d4d4d2;
         border-radius: 20px;
         background-color: #fff;
         transform: scale(0.4);
         transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        &:after {
-            ${cloudBubbleMixin('-65px', '-42px', '15px', '15px', '70deg')}
-        }
-        &:before {
-            ${cloudBubbleMixin('-25px', '-10px', '30px', '30px', '30deg')}
-        }
+        
     }
 
     .toggle-switch-figureAlt {
@@ -118,7 +98,7 @@ export const StyledToggle = styled.div`
     }
 
     .toggle-switch-figureAlt:before {
-        ${craterMixin('-13px', '21px', '4px')}
+        ${craterMixin('-13px', '19px', '4px')}
     }
 
     .toggle-switch-figureAlt:after {
@@ -128,7 +108,7 @@ export const StyledToggle = styled.div`
     .toggle-input:checked ~ .toggle-switch {
         margin-left: 0;
         border-color: #aaa;
-        background-color: #fffdf2;
+        background-color: black;
     }
 
     .toggle-input:checked ~ .toggle-bg {
@@ -143,6 +123,8 @@ export const StyledToggle = styled.div`
 
     .toggle-input:checked ~ .toggle-switch .toggle-switch-figureAlt {
         transform: scale(1);
+    
+    
     }
 `;
 

@@ -1,7 +1,7 @@
 import { ReactElement, FC } from 'react';
 import { Link } from 'react-router-dom';
 import ParentResizeListener from '../reusable/ParentResizeListener';
-import anchorLogo from '../../assets/images/anchor-logo.png';
+import anchorLogo from '../../assets/images/trans-logo.png';
 import StyledNavBar, { StyledNavLogo, StyledNavRoutes } from './NavigationBar.styled';
 import Utility from '../../utils/Utility';
 

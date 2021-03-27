@@ -16,15 +16,20 @@ const Styled404 = styled.div`
         color: grey;
     }
     div:nth-child(3) {
-        transform: rotate(-10deg);
+        transform: rotate(-25deg);
         color: red;
     }
 `;
 
 export const StyledMessage = styled.div`
-    font-size: 2rem;
+    font-size: 1.3rem;
     text-align: center;
     color: ${({ theme }) => theme.bgtext};
+`;
+
+export const Styledbackground = styled.div`
+
+       background:linear-gradient(90deg, rgba(47,54,64,1) 23%, rgba(24,27,32,1) 100%);
 `;
 
 export default Styled404;

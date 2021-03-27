@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledNavBar = styled.div`
     position: relative;
-    padding: 30px 10px 0px 0px;
+    padding: 9px 10px 0px 0px;
     background-color: ${({ theme }) => theme.home.navcolor};
     display: flex;
 `;

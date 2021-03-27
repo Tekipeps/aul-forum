@@ -28,8 +28,8 @@ export const StyledHead = styled.div`
         display: inline-block;
     }
     > .author {
-        color: blue;
-        margin-left: 3px;
+        color: green;
+        margin-left: 6px;
         font-family: 'Trebuchet MS';
         font-size: clamp(14px, 2.4vw, 17px);
     }
