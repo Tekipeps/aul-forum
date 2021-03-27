@@ -1,8 +1,10 @@
-import { ReactElement, FC, useState, FormEvent, useEffect } from 'react';
+import { ReactElement, FC, useState, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { register } from 'src/state/auth/actions';
+import { useAppDispatch, useAppSelector } from 'src/state/hooks';
 import SideBar from '../../components/reusable/FormSideBar';
-import authService from '../../services/auth_service';
 import { Gender } from '../../types';
+
 import {
     StyledRegister,
     StyledContainerHeader,
@@ -21,25 +23,17 @@ export const RegisterPage: FC = (): ReactElement => {
     const [confirmPass, setConfirmPass] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [gender, setGender] = useState<Gender>(Gender.MALE);
+
     const history = useHistory();
+    const auth = useAppSelector((state) => state.auth);
+    const dispatch = useAppDispatch();
+
     const submitRegister = async (event: FormEvent) => {
         event.preventDefault();
-        console.log(username, password, gender);
-        const response = await authService.register({ username, password, confirmPass, matric, email, gender });
-        window.localStorage.setItem('token', response.token);
-        history.push('/home');
+        await dispatch(register({ username, password, confirmPass, matric, email, gender }));
+        auth.isLoggedIn && history.push('/home');
     };
 
-    useEffect(() => {
-        const token = String(window.localStorage.getItem('token'));
-        const validateToken = async (t: string) => {
-            const { isValidToken } = await authService.isValidToken(t);
-            return isValidToken;
-        };
-        if (token && validateToken(token)) {
-            history.push('/home');
-        }
-    }, []);
     return (
         <StyledRegister>
             <StyledContainerHeader>AUL Forum Sign Up</StyledContainerHeader>

@@ -30,7 +30,7 @@ const createUser = validate({
         return this.parent.password === value;
     }),
     gender: yup.string().matches(GENDER_REGEX).required('Gender is required'),
-    matric: yup.string().matches(MATRIC_REGEX).notRequired()
+    matric: yup.string().matches(MATRIC_REGEX)
 });
 
 module.exports = {
