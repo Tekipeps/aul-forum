@@ -20,6 +20,9 @@ export const StyledHeader = styled.div`
     #about-content {
         padding: 0px 10px;
         color: ${({ theme }) => theme.bgtext};
+        a {
+            color: #00f;
+        }
     }
 `;
 

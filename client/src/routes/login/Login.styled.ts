@@ -28,6 +28,7 @@ const StyledLoginButtonHolder = styled(StyledButtonHolder)`
         &[name='login'] {
             width: 330px;
             background-color: ${({ theme }) => theme.form.purpleBtn};
+            cursor: pointer;
         }
 
         &[name='register'] {

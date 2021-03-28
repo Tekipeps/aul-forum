@@ -16,7 +16,7 @@ const StyledRegister = styled(StyledContainer)`
 const StyledCaption = styled.div`
     color: ${({ theme }) => theme.bgtext};
     padding: 10px;
-    font-family: Advent Pro;
+    font-family: Cambria;
     font-size: 18px;
     margin: auto;
     width: 300px;
@@ -27,6 +27,7 @@ const StyledRegisterButtonHolder = styled(StyledButtonHolder)`
         &[name='signup'] {
             width: 330px;
             background-color: ${({ theme }) => theme.form.purpleBtn};
+            cursor: pointer;
         }
         &[name='signup-later'] {
             background: none;

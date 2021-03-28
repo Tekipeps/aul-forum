@@ -38,10 +38,11 @@ export const StyledFormWrapper = styled.div`
 `;
 
 export const StyledInputWrapper = styled.div`
+    margin-bottom: 8px;
     > input {
         width: 330px;
         padding: 2px 5px;
-        margin: 5px 2px 5px 2px;
+        margin: 0px;
         height: 30px;
         font-size: 17px;
         padding-left: 6px;
@@ -49,13 +50,21 @@ export const StyledInputWrapper = styled.div`
         background-color: ${({ theme }) => theme.bgcolor};
         color: ${({ theme }) => theme.bgtext};
         border-radius: 2px 2px 0px 0px;
-        border: 1px solid ${({ theme }) => theme.grey};
+        border: 1px solid ${({ theme }) => theme.bgtext};
         transition-property: border;
-        transition-duration: 0.5s;
+        transition-duration: 0.3s;
         font-family: Nunito;
         :focus {
             border: 1px solid grey;
         }
+    }
+
+    > .input-error {
+        font-family: Nunito;
+        font-size: 14px;
+        width: fit-content;
+        margin: auto;
+        color: red;
     }
 `;
 

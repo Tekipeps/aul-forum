@@ -1,15 +1,7 @@
 import { ReactElement, FC } from 'react';
 import ViewsIcon from './assets/Views.svg';
 import CommentsIcon from './assets/Comments.svg';
-import {
-    StyledPost,
-    StyledAvatarWrapper,
-    StyledContentWrapper,
-    StyledHead,
-    StyledTopic,
-    StyledContent,
-    StyledFooter
-} from './Post.styled';
+import { StyledPost, StyledAvatarWrapper, StyledContentWrapper, StyledHead, StyledTopic, StyledContent, StyledFooter } from './Post.styled';
 
 interface PostParams {
     authorName: string;
