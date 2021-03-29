@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledNavBar = styled.div`
     position: relative;
     padding: 30px 10px 0px 0px;
-    background-color: ${({ theme }) => theme.home.navcolor};
+    background-color: ${({ theme }) => theme.home.postnav_bgcolor};
     display: flex;
     border-bottom: 1px solid ${({ theme }) => theme.home.grey};
 `;
@@ -27,16 +27,16 @@ export const StyledSearchBarContainer = styled.div`
     height: 35px;
     > .searchIconWrapper {
         width: 28px;
-        background-color: ${({ theme }) => theme.bgcolor};
+        background-color: ${({ theme }) => theme.body.bgcolor};
         border-radius: 10px 0px 0px 10px;
-        border-left: 1px solid ${({ theme }) => theme.home.searchbarBorder};
-        border-top: 1px solid ${({ theme }) => theme.home.searchbarBorder};
-        border-bottom: 1px solid ${({ theme }) => theme.home.searchbarBorder};
+        border-left: 1px solid ${({ theme }) => theme.home.searchbar_border};
+        border-top: 1px solid ${({ theme }) => theme.home.searchbar_border};
+        border-bottom: 1px solid ${({ theme }) => theme.home.searchbar_border};
         cursor: pointer;
     }
     > input {
-        background: ${({ theme }) => theme.bgcolor};
-        color: ${({ theme }) => theme.bgtext};
+        background: ${({ theme }) => theme.body.bgcolor};
+        color: ${({ theme }) => theme.body.color};
         width: 160px;
         min-width: 160px;
         padding: 6px 12px;
@@ -46,9 +46,9 @@ export const StyledSearchBarContainer = styled.div`
         font-family: Nunito;
         max-width: 300px;
         border-radius: 0px 10px 10px 0px;
-        border-right: 1px solid ${({ theme }) => theme.home.searchbarBorder};
-        border-top: 1px solid ${({ theme }) => theme.home.searchbarBorder};
-        border-bottom: 1px solid ${({ theme }) => theme.home.searchbarBorder};
+        border-right: 1px solid ${({ theme }) => theme.home.searchbar_border};
+        border-top: 1px solid ${({ theme }) => theme.home.searchbar_border};
+        border-bottom: 1px solid ${({ theme }) => theme.home.searchbar_border};
         border-left: none;
         &:focus {
             width: 70%;
@@ -67,7 +67,7 @@ export const StyledNavLink = styled.div`
         border-bottom: 2px solid red;
     }
     a {
-        color: ${({ theme }) => theme.home.navlink};
+        color: ${({ theme }) => theme.home.nav_link_color};
         display: block;
         padding: 14px 15px;
         font-family: Nunito;

@@ -18,7 +18,7 @@ export const App: FC = (): ReactElement => {
     const [currentTheme, setTheme] = useState(DEFAULT_THEME);
 
     useEffect(() => {
-        document.body.style.backgroundColor = getTheme(currentTheme).bgcolor;
+        document.body.style.backgroundColor = getTheme(currentTheme).body.bgcolor;
     }, [currentTheme]);
 
     const toggleTheme = (): void => {

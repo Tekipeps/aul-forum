@@ -37,6 +37,7 @@ export const RegisterPage: FC = (): ReactElement => {
     const dispatch = useAppDispatch();
 
     const submitRegister = async (event: FormEvent) => {
+        //TODO: prevent user from registering if there are validation errors in the inputs
         event.preventDefault();
         await dispatch(register({ username, password, confirmPass, matric, email, gender }));
         auth.isLoggedIn && history.push('/home');

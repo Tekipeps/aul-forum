@@ -29,6 +29,7 @@ export const LoginPage: FC = (): ReactElement => {
     const dispatch = useAppDispatch();
 
     const submitLogin = async (event: FormEvent) => {
+        //TODO: prevent user from logging in if there are validation errors in inputs
         event.preventDefault();
         await dispatch(login({ username, password }));
         auth.isLoggedIn && history.push('/home');

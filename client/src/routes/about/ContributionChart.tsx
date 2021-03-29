@@ -15,6 +15,7 @@ const StyledContributionInfo = styled.div`
 `;
 
 const ContributionChart: FC = (): ReactElement => {
+    // TODO: replace dummy data with actual data from github's api
     const DUMMY_DATA = [
         {
             name: 'Koledoye Abidemi',

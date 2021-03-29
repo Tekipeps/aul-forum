@@ -21,7 +21,7 @@ export const StyledNavLogo = styled.div`
         font-size: clamp(20px, 2.5vw, 32px);
         min-height: 40px;
         line-height: 50px;
-        color: ${({ theme }) => theme.navbar.linkColor};
+        color: ${({ theme }) => theme.navbar.route_color};
         word-spacing: 2px;
     }
 
@@ -49,14 +49,14 @@ export const StyledNavRoutes = styled.div`
         border: 1px solid ${({ theme }) => theme.navbar.bgcolor};
         margin: 0px 0.5vw;
         > a {
-            color: ${({ theme }) => theme.navbar.linkColor};
+            color: ${({ theme }) => theme.navbar.route_color};
             display: block;
             padding: 5px 25px;
             font-size: clamp(16px, 2vw, 20px);
             font-family: Nunito;
         }
         &:hover {
-            border: 1px solid ${({ theme }) => theme.navbar.linkColor};
+            border: 1px solid ${({ theme }) => theme.navbar.route_color};
         }
     }
 `;

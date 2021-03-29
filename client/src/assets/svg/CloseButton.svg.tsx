@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledSvg = styled.svg`
     path {
-        fill: ${({ theme }) => theme.bgtext};
+        fill: red;
     }
     height: 100%;
 `;

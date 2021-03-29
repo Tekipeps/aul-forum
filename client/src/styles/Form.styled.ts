@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
     border-radius: 2px;
     position: absolute;
-    background-color: ${({ theme }) => theme.bgcolor};
+    background-color: ${({ theme }) => theme.body.bgcolor};
     display: flex;
     flex-flow: row;
-    border: 1px solid ${({ theme }) => theme.bgtext};
+    border: 1px solid ${({ theme }) => theme.body.color};
     left: 50%;
     transform: translateX(-50%);
 `;
@@ -14,11 +14,11 @@ export const StyledContainer = styled.div`
 export const StyledContainerHeader = styled.div`
     position: absolute;
     left: 50px;
-    background-color: ${({ theme }) => theme.bgcolor};
+    background-color: ${({ theme }) => theme.body.bgcolor};
     z-index: 2;
     font-size: 29px;
     padding: 5px 5px;
-    color: ${({ theme }) => theme.form.headerText};
+    color: ${({ theme }) => theme.body.color};
     font-family: Cambria;
 `;
 
@@ -28,7 +28,7 @@ export const StyledFormContainer = styled.div`
     padding-top: 30px;
     border-radius: 4px;
     position: relative;
-    border: 1px solid ${({ theme }) => theme.bgtext};
+    border: 1px solid ${({ theme }) => theme.body.color};
     z-index: 1;
 `;
 
@@ -47,10 +47,10 @@ export const StyledInputWrapper = styled.div`
         font-size: 17px;
         padding-left: 6px;
         letter-spacing: 2px;
-        background-color: ${({ theme }) => theme.bgcolor};
-        color: ${({ theme }) => theme.bgtext};
+        background-color: ${({ theme }) => theme.body.bgcolor};
+        color: ${({ theme }) => theme.body.color};
         border-radius: 2px 2px 0px 0px;
-        border: 1px solid ${({ theme }) => theme.bgtext};
+        border: 1px solid ${({ theme }) => theme.body.color};
         transition-property: border;
         transition-duration: 0.3s;
         font-family: Nunito;

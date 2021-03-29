@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledSvg = styled.svg`
     path {
-        fill: ${({ theme }) => theme.home.searchicon};
+        fill: ${({ theme }) => theme.home.searchbar_border};
     }
     height: 22px;
     margin: 5px 3px;

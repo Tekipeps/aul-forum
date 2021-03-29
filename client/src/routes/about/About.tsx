@@ -25,7 +25,6 @@ export const AboutPage: FC = (): ReactElement => (
             </WindowResizeListener>
             <StyledTeamListWrapper>
                 <Notification>Check out the awesome crew that contributed to this project</Notification>
-
                 <StyledTeamList>
                     {members.map((member, i) => (
                         <TeamMember {...member} key={i} />

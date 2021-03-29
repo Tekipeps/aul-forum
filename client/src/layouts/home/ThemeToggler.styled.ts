@@ -33,7 +33,7 @@ const StyledWrapper = styled.div`
 `;
 
 export const StyledToggleCaption = styled.div`
-    color: ${({ theme }) => theme.bgtext};
+    color: ${({ theme }) => theme.body.color};
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(13px, 2vw, 17px);
     text-align: center;
@@ -46,7 +46,7 @@ export const StyledToggle = styled.div`
     padding: 4px;
     border-radius: 40px;
     overflow: hidden;
-    border: 2px solid ${({ theme }) => theme.home.themeToggler};
+    border: 2px solid ${({ theme }) => theme.home.theme_toggler_border};
     background-color: #c0e6f6;
     transform: scale(0.7);
     &:before,

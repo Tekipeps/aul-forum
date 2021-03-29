@@ -15,11 +15,11 @@ export const StyledHeader = styled.div`
         padding: 3px 10px;
         border-radius: 17px;
         border: 1px solid ${({ theme }) => theme.grey};
-        color: ${({ theme }) => theme.bgtext};
+        color: ${({ theme }) => theme.body.color};
     }
     #about-content {
         padding: 0px 10px;
-        color: ${({ theme }) => theme.bgtext};
+        color: ${({ theme }) => theme.body.color};
         a {
             color: #00f;
         }

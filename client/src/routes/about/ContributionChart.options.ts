@@ -9,7 +9,7 @@ type ContributionDataType =
 
 const getPieChartOptions = (contributionData: ContributionDataType, currentTheme: string) => ({
     chart: {
-        backgroundColor: getTheme(currentTheme).bgcolor,
+        backgroundColor: getTheme(currentTheme).body.bgcolor,
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,

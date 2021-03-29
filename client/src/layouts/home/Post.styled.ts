@@ -31,7 +31,7 @@ export const StyledHead = styled.div`
         display: inline-block;
     }
     > .author {
-        color: ${({ theme }) => theme.userColor};
+        color: ${({ theme }) => theme.user_color};
         margin-left: 3px;
         font-family: Nunito;
         font-size: clamp(14px, 2.4vw, 17px);
@@ -39,7 +39,7 @@ export const StyledHead = styled.div`
 
     > .timestamp {
         float: right;
-        color: ${({ theme }) => theme.bgtext};
+        color: ${({ theme }) => theme.body.color};
         font-family: Nunito;
         font-size: clamp(14px, 2vw, 16px);
     }
@@ -49,15 +49,15 @@ export const StyledTopic = styled.div`
     font-size: clamp(17px, 2.4vw, 19px);
     margin: 5px 0px;
     padding: 0px 10px;
-    color: ${({ theme }) => theme.bgtext};
+    color: ${({ theme }) => theme.body.color};
     font-family: Nunito;
 `;
 
 export const StyledContent = styled.div`
     padding: 1px 19px;
     font-family: 'Segoe UI';
-    color: ${({ theme }) => theme.bgtext};
-    font-size: clamp(14px, 2vw, 15px);
+    color: ${({ theme }) => theme.body.color};
+    font-size: clamp(14px, 2vw, 16px);
 `;
 
 export const StyledFooter = styled.div`

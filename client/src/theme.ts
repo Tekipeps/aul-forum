@@ -1,55 +1,76 @@
-const darkTheme = {
+interface Theme {
+    purple: string;
+    blue: string;
+    grey: string;
+    user_color: string;
+    notification_bgcolor: string;
+    form_purple_btn: string;
+    body: {
+        bgcolor: string;
+        color: string;
+    };
+    navbar: {
+        bgcolor: string;
+        route_color: string;
+    };
+    home: {
+        postnav_bgcolor: string;
+        nav_link_color: string;
+        searchbar_border: string;
+        grey: string;
+        searchicon_color: string;
+        theme_toggler_border: string;
+    };
+}
+
+const darkTheme: Theme = {
     purple: '#000',
     blue: '#6f6ffa',
     grey: '#333',
-    notification: '#090',
-    userColor: '#58a6ff',
+    notification_bgcolor: '#090',
+    user_color: '#58a6ff',
+    body: {
+        bgcolor: '#101013',
+        color: '#fff'
+    },
     navbar: {
         bgcolor: '#10101a',
-        color: '#fff',
-        linkColor: '#fff'
+        route_color: '#fff'
     },
-    form: {
-        purpleBtn: '#00f',
-        headerText: '#aaa'
-    },
+    form_purple_btn: '#00f',
     home: {
-        navcolor: '#101013',
-        navlink: '#aaa',
-        searchbarBorder: '#777',
+        postnav_bgcolor: '#101013',
+        nav_link_color: '#aaa',
+        searchbar_border: '#777',
         grey: '#aaa',
-        searchicon: '#aaa',
-        themeToggler: '#777'
-    },
-    bgcolor: '#101013',
-    bgtext: '#fff'
+        searchicon_color: '#aaa',
+        theme_toggler_border: '#777'
+    }
 };
 
-const lightTheme = {
+const lightTheme: Theme = {
     purple: '#37173d',
     blue: '#00f',
     grey: '#aaa',
-    notification: '#ccc',
-    userColor: 'blue',
+    notification_bgcolor: '#ccc',
+    user_color: 'blue',
+    body: {
+        bgcolor: '#fff',
+        color: '#000'
+    },
     navbar: {
         bgcolor: '#fff',
-        color: '#000',
-        linkColor: '#37173d'
+        route_color: '#37173d'
     },
-    form: {
-        purpleBtn: '#37173d',
-        headerText: '#444'
-    },
+    form_purple_btn: '#37173d',
     home: {
-        navcolor: '#37173d',
-        navlink: '#fff',
-        searchbarBorder: '#37173d',
+        postnav_bgcolor: '#37173d',
+        nav_link_color: '#fff',
+        searchbar_border: '#37173d',
         grey: '#333',
-        searchicon: '#37173d',
-        themeToggler: '#f5eb42'
-    },
-    bgcolor: '#fff',
-    bgtext: '#000'
+        searchicon_color: '#37173d',
+        theme_toggler_border: '#f5eb42'
+    }
 };
 
 const getTheme = (theme: string) => {

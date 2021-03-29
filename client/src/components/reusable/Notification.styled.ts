@@ -18,12 +18,12 @@ export const StyledCloseButton = styled.div`
 export const StyledNotificationContent = styled.div`
     flex: 1;
     padding: 4px;
-    color: ${({ theme }) => theme.bgtext};
+    color: ${({ theme }) => theme.body.color};
 `;
 
 const StyledNotification = styled.div<StyledNotificationParam>`
     text-align: center;
-    background-color: ${({ theme }) => theme.notification};
+    background-color: ${({ theme }) => theme.notification_bgcolor};
     color: white;
     padding: 2px;
     font-size: clamp(14px, 2vw, 16px);
