@@ -1,4 +1,4 @@
-import getTheme from '../../theme';
+import { ThemeType } from '../../theme';
 
 type ContributionDataType =
     | {
@@ -7,9 +7,9 @@ type ContributionDataType =
       }[]
     | null;
 
-const getPieChartOptions = (contributionData: ContributionDataType, currentTheme: string) => ({
+const getPieChartOptions = (contributionData: ContributionDataType, theme: ThemeType) => ({
     chart: {
-        backgroundColor: getTheme(currentTheme).bgcolor,
+        backgroundColor: theme.body.bgcolor,
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
@@ -18,7 +18,7 @@ const getPieChartOptions = (contributionData: ContributionDataType, currentTheme
     title: {
         text: 'AUL forum developer contributions chart',
         style: {
-            color: getTheme(currentTheme).home.grey
+            color: theme.body.color
         }
     },
     tooltip: {
@@ -33,10 +33,20 @@ const getPieChartOptions = (contributionData: ContributionDataType, currentTheme
         pie: {
             allowPointSelect: true,
             cursor: 'pointer',
+            showInLegend: true,
             dataLabels: {
                 enabled: false
-            },
-            showInLegend: true
+            }
+        }
+    },
+    legend: {
+        itemStyle: {
+            color: theme.body.color,
+            fontWeight: 'bold'
+        },
+        itemHoverStyle: {
+            color: theme.home.grey,
+            cursor: 'pointer'
         }
     },
     series: [

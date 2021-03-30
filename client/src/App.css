@@ -18,6 +18,11 @@
     src: url('./assets/fonts/Nunito/Nunito-Regular.ttf');
 }
 
+@font-face{
+    font-family:OpenSans;
+    src:url('./assets/fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
 *:focus {
     outline: none;
 }

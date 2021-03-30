@@ -12,10 +12,10 @@ interface NavButtonParams {
 
 const SearchBar: FC = (): ReactElement => (
     <StyledSearchBarContainer>
+        <input type='text' placeholder='Search' />
         <div className='searchIconWrapper'>
             <SearchIcon />
         </div>
-        <input type='text' placeholder='Search' />
     </StyledSearchBarContainer>
 );
 

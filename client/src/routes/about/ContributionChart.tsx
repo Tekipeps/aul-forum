@@ -3,10 +3,10 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import styled from 'styled-components';
 import getPieChartOptions from './ContributionChart.options';
+import getTheme from '../../theme';
 
 const StyledContributionInfo = styled.div`
     padding: 10px;
-    border: 1px solid ${({ theme }) => theme.bgtext};
     border-radius: 6px;
     margin: 10;
     white-space: nowrap;
@@ -16,6 +16,7 @@ const StyledContributionInfo = styled.div`
 `;
 
 const ContributionChart: FC = (): ReactElement => {
+    // TODO: replace dummy data with actual data from github's api
     const DUMMY_DATA = [
         {
             name: 'Koledoye Abidemi',
@@ -36,10 +37,11 @@ const ContributionChart: FC = (): ReactElement => {
     ];
 
     const currentTheme = window.localStorage.getItem('theme') || 'light';
+    const theme = getTheme(currentTheme);
 
     return (
         <StyledContributionInfo>
-            <HighchartsReact highcharts={Highcharts} options={getPieChartOptions(DUMMY_DATA, currentTheme)} />
+            <HighchartsReact highcharts={Highcharts} options={getPieChartOptions(DUMMY_DATA, theme)} />
         </StyledContributionInfo>
     );
 };

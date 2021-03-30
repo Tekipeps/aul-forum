@@ -1,14 +1,15 @@
 import { ReactElement, FC, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { Provider as StateProvider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 import store from './state/store';
 import { NavBar } from './components/nav/NavigationBar';
 import { HomePage } from './routes/home/Home';
 import { LoginPage } from './routes/login/Login';
 import { RegisterPage } from './routes/register/Register';
 import { AboutPage } from './routes/about/About';
+import { ProfilePage } from './routes/profile/Profile';
 import { PageNotFound } from './routes/404/PageNotFound';
-import { ThemeProvider } from 'styled-components';
 import getTheme from './theme';
 import './App.css';
 
@@ -17,17 +18,13 @@ export const App: FC = (): ReactElement => {
     const [currentTheme, setTheme] = useState(DEFAULT_THEME);
 
     useEffect(() => {
-        document.body.style.backgroundColor = getTheme(currentTheme).bgcolor;
+        document.body.style.backgroundColor = getTheme(currentTheme).body.bgcolor;
     }, [currentTheme]);
 
     const toggleTheme = (): void => {
-        if (currentTheme === 'light') {
-            window.localStorage.setItem('theme', 'dark');
-            setTheme('dark');
-        } else {
-            window.localStorage.setItem('theme', 'light');
-            setTheme('light');
-        }
+        const theme = currentTheme === 'light' ? 'dark' : 'light';
+        window.localStorage.setItem('theme', theme);
+        setTheme(theme);
     };
 
     return (
@@ -46,6 +43,7 @@ export const App: FC = (): ReactElement => {
                             <Route exact path='/login' component={LoginPage} />
                             <Route exact path='/register' component={RegisterPage} />
                             <Route exact path='/about' component={AboutPage} />
+                            <Route exact path='/profile' component={ProfilePage} />
                             <Route component={PageNotFound} />
                         </Switch>
                     </main>

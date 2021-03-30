@@ -17,7 +17,8 @@
         "react-scripts": "^4.0.3",
         "redux": "^4.0.5",
         "redux-thunk": "^2.3.0",
-        "styled-components": "^5.2.1"
+        "styled-components": "^5.2.1",
+        "yup": "^0.32.9"
     },
     "proxy": "http://localhost:5000",
     "devDependencies": {

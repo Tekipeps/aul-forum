@@ -3,10 +3,14 @@ import styled from 'styled-components';
 
 const StyledSvg = styled.svg`
     path {
-        fill: ${({ theme }) => theme.home.searchicon};
+        fill: ${({ theme }) => theme.home.searchicon_color};
     }
-    height: 22px;
+    height: 60%;
     margin: 5px 3px;
+    cursor: pointer;
+    :hover {
+        transform: scale(1.1);
+    }
 `;
 
 const SearchIcon: FC = (): ReactElement => (
