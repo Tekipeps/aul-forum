@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledPost = styled.div`
-    border: 1px solid ${({ theme }) => theme.grey};
-    border-bottom: none;
+    border-top: 1px solid ${({ theme }) => theme.grey};
+    border-right: 1px solid ${({ theme }) => theme.grey};
+    border-left: 1px solid ${({ theme }) => theme.grey};
     display: flex;
     flex-direction: row;
     :last-child {
@@ -12,6 +13,7 @@ export const StyledPost = styled.div`
 
 export const StyledAvatarWrapper = styled.div`
     padding: 10px 1px 0px 15px;
+    margin-right: 10px;
     img {
         width: 50px;
         height: 50px;
@@ -39,7 +41,7 @@ export const StyledHead = styled.div`
 
     > .timestamp {
         float: right;
-        color: ${({ theme }) => theme.body.color};
+        color: ${({ theme }) => theme.home.grey};
         font-family: Nunito;
         font-size: clamp(14px, 2vw, 16px);
     }
@@ -50,14 +52,14 @@ export const StyledTopic = styled.div`
     margin: 5px 0px;
     padding: 0px 10px;
     color: ${({ theme }) => theme.body.color};
-    font-family: Nunito;
+    font-family: OpenSans;
 `;
 
 export const StyledContent = styled.div`
     padding: 1px 19px;
-    font-family: 'Segoe UI';
-    color: ${({ theme }) => theme.body.color};
-    font-size: clamp(14px, 2vw, 16px);
+    font-family: OpenSans;
+    color: ${({ theme }) => theme.home.post_content_color};
+    font-size: clamp(13px, 2vw, 15px);
 `;
 
 export const StyledFooter = styled.div`

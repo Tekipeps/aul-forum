@@ -13,9 +13,7 @@ const MINIMUM_WINDOW_WIDTH = 1100;
 
 const FormSideBar: FC<FormSideBarParams> = ({ children }): ReactElement | null => (
     <WindowResizeListener minWidth={MINIMUM_WINDOW_WIDTH}>
-        <StyledFormSideBar>
-            <p>{children}</p>
-        </StyledFormSideBar>
+        <StyledFormSideBar>{children}</StyledFormSideBar>
     </WindowResizeListener>
 );
 

@@ -10,7 +10,6 @@ const signedOutRoutes = ['home', 'login', 'register', 'about'];
 export const NavBar: FC = (): ReactElement => {
     const auth = useAppSelector((state) => state.auth);
     const state = auth.isLoggedIn ? signedInRoutes : signedOutRoutes;
-    console.log(state);
     return (
         <StyledNavBar>
             <StyledNavLogo>

@@ -1,4 +1,4 @@
-interface Theme {
+export interface ThemeType {
     purple: string;
     blue: string;
     grey: string;
@@ -20,13 +20,14 @@ interface Theme {
         grey: string;
         searchicon_color: string;
         theme_toggler_border: string;
+        post_content_color: string;
     };
 }
 
-const darkTheme: Theme = {
-    purple: '#000',
+const darkTheme: ThemeType = {
+    purple: '#222',
     blue: '#6f6ffa',
-    grey: '#333',
+    grey: '#444',
     notification_bgcolor: '#090',
     user_color: '#58a6ff',
     body: {
@@ -41,14 +42,15 @@ const darkTheme: Theme = {
     home: {
         postnav_bgcolor: '#101013',
         nav_link_color: '#aaa',
-        searchbar_border: '#777',
+        searchbar_border: '1px solid #777',
         grey: '#aaa',
         searchicon_color: '#aaa',
-        theme_toggler_border: '#777'
+        theme_toggler_border: '#777',
+        post_content_color: '#ddd'
     }
 };
 
-const lightTheme: Theme = {
+const lightTheme: ThemeType = {
     purple: '#37173d',
     blue: '#00f',
     grey: '#aaa',
@@ -66,15 +68,14 @@ const lightTheme: Theme = {
     home: {
         postnav_bgcolor: '#37173d',
         nav_link_color: '#fff',
-        searchbar_border: '#37173d',
+        searchbar_border: 'none',
         grey: '#333',
         searchicon_color: '#37173d',
-        theme_toggler_border: '#f5eb42'
+        theme_toggler_border: '#f5eb42',
+        post_content_color: '#222'
     }
 };
 
-const getTheme = (theme: string) => {
-    return theme === 'dark' ? darkTheme : lightTheme;
-};
+const getThemeType = (ThemeType: string) => (ThemeType === 'dark' ? darkTheme : lightTheme);
 
-export default getTheme;
+export default getThemeType;

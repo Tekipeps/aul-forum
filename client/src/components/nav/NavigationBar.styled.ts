@@ -53,7 +53,7 @@ export const StyledNavRoutes = styled.div`
             display: block;
             padding: 5px 25px;
             font-size: clamp(16px, 2vw, 20px);
-            font-family: Nunito;
+            font-family: OpenSans;
         }
         &:hover {
             border: 1px solid ${({ theme }) => theme.navbar.route_color};

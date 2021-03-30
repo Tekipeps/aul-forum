@@ -59,7 +59,7 @@ export const RegisterPage: FC = (): ReactElement => {
                             <input
                                 onChange={({ target }) => setMatric(target.value)}
                                 onBlur={({ target }) => handleBlur(target.value, 'matric')}
-                                value={matric}
+                                value={matric.toUpperCase()}
                                 type='text'
                                 placeholder='Matriculation Number(optional)'
                             />
@@ -130,7 +130,7 @@ export const RegisterPage: FC = (): ReactElement => {
                     </form>
                 </StyledFormWrapper>
             </StyledFormContainer>
-            <SideBar>Create an account to have unlimited access and contribution to content from AUL's forum</SideBar>
+            <SideBar>Create an account to have unlimited access and contribution to discussions on AUL's forum</SideBar>
         </StyledRegister>
     );
 };

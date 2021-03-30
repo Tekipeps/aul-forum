@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState } from 'react';
+import { FC, ReactElement, useState, useEffect } from 'react';
 import StyledNotification, { StyledNotificationContent, StyledCloseButton } from './Notification.styled';
 import CloseButtonSvg from '../../assets/svg/CloseButton.svg';
 
@@ -7,11 +7,11 @@ interface NotificationParams {
 }
 
 interface CloseButtonParams {
-    handleClick: () => void;
+    closeNotification: () => void;
 }
 
-const CloseButton: FC<CloseButtonParams> = ({ handleClick }): ReactElement => (
-    <StyledCloseButton onClick={handleClick}>
+const CloseButton: FC<CloseButtonParams> = ({ closeNotification }): ReactElement => (
+    <StyledCloseButton onClick={closeNotification}>
         <CloseButtonSvg />
     </StyledCloseButton>
 );
@@ -19,23 +19,28 @@ const CloseButton: FC<CloseButtonParams> = ({ handleClick }): ReactElement => (
 const Notification: FC<NotificationParams> = ({ children, transitionDuration }): ReactElement | null => {
     const [visibility, setVisibility] = useState<'visible' | 'hidden'>(children ? 'visible' : 'hidden');
     const [opacity, setOpacity] = useState<0 | 1>(1);
-    const defaultTransition = 0.7;
+    const defaultTransitionDuration = 0.5;
 
-    const handleClick = (): void => {
+    //hides the notification after 10 seconds
+    useEffect(() => {
+        setTimeout(closeNotification, 10000);
+    }, []);
+
+    const closeNotification = (): void => {
         if (!opacity) return;
         setOpacity(0);
         setTimeout(
             () => {
                 setVisibility('hidden');
             },
-            transitionDuration ? transitionDuration * 1000 : defaultTransition
+            transitionDuration ? transitionDuration * 1000 : defaultTransitionDuration * 1000
         );
     };
 
     return (
-        <StyledNotification {...{ opacity, transitionDuration: transitionDuration || defaultTransition, visibility }}>
+        <StyledNotification {...{ opacity, transitionDuration: transitionDuration || defaultTransitionDuration, visibility }}>
             <StyledNotificationContent>{children}</StyledNotificationContent>
-            <CloseButton {...{ handleClick }} />
+            <CloseButton {...{ closeNotification }} />
         </StyledNotification>
     );
 };

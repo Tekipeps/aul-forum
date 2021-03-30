@@ -3,6 +3,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import styled from 'styled-components';
 import getPieChartOptions from './ContributionChart.options';
+import getTheme from '../../theme';
 
 const StyledContributionInfo = styled.div`
     padding: 10px;
@@ -36,10 +37,11 @@ const ContributionChart: FC = (): ReactElement => {
     ];
 
     const currentTheme = window.localStorage.getItem('theme') || 'light';
+    const theme = getTheme(currentTheme);
 
     return (
         <StyledContributionInfo>
-            <HighchartsReact highcharts={Highcharts} options={getPieChartOptions(DUMMY_DATA, currentTheme)} />
+            <HighchartsReact highcharts={Highcharts} options={getPieChartOptions(DUMMY_DATA, theme)} />
         </StyledContributionInfo>
     );
 };
