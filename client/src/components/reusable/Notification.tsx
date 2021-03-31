@@ -20,10 +20,12 @@ const Notification: FC<NotificationParams> = ({ children, transitionDuration }):
     const [visibility, setVisibility] = useState<'visible' | 'hidden'>(children ? 'visible' : 'hidden');
     const [opacity, setOpacity] = useState<0 | 1>(1);
     const defaultTransitionDuration = 0.5;
+    const displayDuration = 10;
 
-    //hides the notification after 10 seconds
+    //hides the notification after <displayDuration> seconds
     useEffect(() => {
-        setTimeout(closeNotification, 10000);
+        const timeout = setTimeout(closeNotification, displayDuration * 1000);
+        return () => clearTimeout(timeout);
     }, []);
 
     const closeNotification = (): void => {

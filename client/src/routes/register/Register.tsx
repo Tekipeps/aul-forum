@@ -50,86 +50,90 @@ export const RegisterPage: FC = (): ReactElement => {
 
     return (
         <StyledRegister>
-            <StyledContainerHeader>AUL Forum Sign Up</StyledContainerHeader>
-            <StyledFormContainer>
-                <StyledCaption>W'ere happy to have you sign up for our platform, please enter your information accurately.</StyledCaption>
-                <StyledFormWrapper>
-                    <form onSubmit={submitRegister}>
-                        <StyledInputWrapper>
-                            <input
-                                onChange={({ target }) => setMatric(target.value)}
-                                onBlur={({ target }) => handleBlur(target.value, 'matric')}
-                                value={matric.toUpperCase()}
-                                type='text'
-                                placeholder='Matriculation Number(optional)'
-                            />
-                            <div className='input-error'>{errors.matric}</div>
-                        </StyledInputWrapper>
-                        <StyledInputWrapper>
-                            <input
-                                onChange={({ target }) => setUsername(target.value)}
-                                onBlur={({ target }) => handleBlur(target.value, 'username')}
-                                value={username}
-                                type='text'
-                                placeholder='Username'
-                            />
-                            <div className='input-error'>{errors.username}</div>
-                        </StyledInputWrapper>
-                        <StyledInputWrapper>
-                            <input
-                                onChange={({ target }) => setPassword(target.value)}
-                                onBlur={({ target }) => handleBlur(target.value, 'password')}
-                                value={password}
-                                type='password'
-                                placeholder='New Password'
-                            />
-                            <div className='input-error'>{errors.password}</div>
-                        </StyledInputWrapper>
-                        <StyledInputWrapper>
-                            <input
-                                onChange={({ target }) => setConfirmPass(target.value)}
-                                onBlur={({ target }) => handleBlur(target.value, 'confirmPassword')}
-                                value={confirmPass}
-                                type='password'
-                                placeholder='Confirm Password'
-                            />
-                            <div className='input-error'>{errors.confirmPassword}</div>
-                        </StyledInputWrapper>
-                        <StyledInputWrapper>
-                            <input
-                                onChange={({ target }) => setEmail(target.value)}
-                                onBlur={({ target }) => handleBlur(target.value, 'email')}
-                                value={email}
-                                type='email'
-                                placeholder='Email Address'
-                            />
-                            <div className='input-error'>{errors.email}</div>
-                        </StyledInputWrapper>
+            <div>
+                <StyledFormContainer>
+                    <StyledContainerHeader>AUL Forum Sign Up</StyledContainerHeader>
+                    <StyledCaption>
+                        W'ere happy to have you sign up for our platform, please enter your information accurately.
+                    </StyledCaption>
+                    <StyledFormWrapper>
+                        <form onSubmit={submitRegister}>
+                            <StyledInputWrapper>
+                                <input
+                                    onChange={({ target }) => setMatric(target.value)}
+                                    onBlur={({ target }) => handleBlur(target.value, 'matric')}
+                                    value={matric.toUpperCase()}
+                                    type='text'
+                                    placeholder='Matriculation Number(optional)'
+                                />
+                                <div className='input-error'>{errors.matric}</div>
+                            </StyledInputWrapper>
+                            <StyledInputWrapper>
+                                <input
+                                    onChange={({ target }) => setUsername(target.value)}
+                                    onBlur={({ target }) => handleBlur(target.value, 'username')}
+                                    value={username}
+                                    type='text'
+                                    placeholder='Username'
+                                />
+                                <div className='input-error'>{errors.username}</div>
+                            </StyledInputWrapper>
+                            <StyledInputWrapper>
+                                <input
+                                    onChange={({ target }) => setPassword(target.value)}
+                                    onBlur={({ target }) => handleBlur(target.value, 'password')}
+                                    value={password}
+                                    type='password'
+                                    placeholder='New Password'
+                                />
+                                <div className='input-error'>{errors.password}</div>
+                            </StyledInputWrapper>
+                            <StyledInputWrapper>
+                                <input
+                                    onChange={({ target }) => setConfirmPass(target.value)}
+                                    onBlur={({ target }) => handleBlur(target.value, 'confirmPassword')}
+                                    value={confirmPass}
+                                    type='password'
+                                    placeholder='Confirm Password'
+                                />
+                                <div className='input-error'>{errors.confirmPassword}</div>
+                            </StyledInputWrapper>
+                            <StyledInputWrapper>
+                                <input
+                                    onChange={({ target }) => setEmail(target.value)}
+                                    onBlur={({ target }) => handleBlur(target.value, 'email')}
+                                    value={email}
+                                    type='email'
+                                    placeholder='Email Address'
+                                />
+                                <div className='input-error'>{errors.email}</div>
+                            </StyledInputWrapper>
 
-                        <StyledGenderOption>
-                            <p>Gender</p>
-                            <div>
-                                <label>
-                                    <input type='radio' name='gender' onChange={() => setGender(Gender.MALE)} value={Gender.MALE} />
-                                    <span>Male</span>
-                                </label>
-                                <label>
-                                    <input type='radio' name='gender' onChange={() => setGender(Gender.FEMALE)} value={Gender.FEMALE} />
-                                    <span>Female</span>
-                                </label>
-                            </div>
-                        </StyledGenderOption>
-                        <StyledRegisterButtonHolder>
-                            <button name='signup' type='submit'>
-                                Sign Up
-                            </button>
-                            <button name='signup-later' type='button'>
-                                <Link to='/'>Sign Up Later</Link>
-                            </button>
-                        </StyledRegisterButtonHolder>
-                    </form>
-                </StyledFormWrapper>
-            </StyledFormContainer>
+                            <StyledGenderOption>
+                                <p>Gender</p>
+                                <div>
+                                    <label>
+                                        <input type='radio' name='gender' onChange={() => setGender(Gender.MALE)} value={Gender.MALE} />
+                                        <span>Male</span>
+                                    </label>
+                                    <label>
+                                        <input type='radio' name='gender' onChange={() => setGender(Gender.FEMALE)} value={Gender.FEMALE} />
+                                        <span>Female</span>
+                                    </label>
+                                </div>
+                            </StyledGenderOption>
+                            <StyledRegisterButtonHolder>
+                                <button name='signup' type='submit'>
+                                    Sign Up
+                                </button>
+                                <button name='signup-later' type='button'>
+                                    <Link to='/'>Sign Up Later</Link>
+                                </button>
+                            </StyledRegisterButtonHolder>
+                        </form>
+                    </StyledFormWrapper>
+                </StyledFormContainer>
+            </div>
             <SideBar>Create an account to have unlimited access and contribution to discussions on AUL's forum</SideBar>
         </StyledRegister>
     );

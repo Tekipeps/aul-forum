@@ -46,7 +46,7 @@ const darkTheme: ThemeType = {
         grey: '#aaa',
         searchicon_color: '#aaa',
         theme_toggler_border: '#777',
-        post_content_color: '#ddd'
+        post_content_color: '#bbb'
     }
 };
 
@@ -68,7 +68,7 @@ const lightTheme: ThemeType = {
     home: {
         postnav_bgcolor: '#37173d',
         nav_link_color: '#fff',
-        searchbar_border: 'none',
+        searchbar_border: '1px solid transparent',
         grey: '#333',
         searchicon_color: '#37173d',
         theme_toggler_border: '#f5eb42',

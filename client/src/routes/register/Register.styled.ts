@@ -10,14 +10,14 @@ import {
 import genderOptionBG from '../../assets/images/green-tick.jpg';
 
 const StyledRegister = styled(StyledContainer)`
-    top: 100px;
+    top: 30px;
 `;
 
 const StyledCaption = styled.div`
     color: ${({ theme }) => theme.body.color};
     padding: 10px;
-    font-family: Cambria;
-    font-size: 18px;
+    font-family: OpenSans;
+    font-size: 15px;
     margin: auto;
     width: 300px;
 `;

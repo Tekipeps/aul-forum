@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledMemberWrapper = styled.div`
     margin: 5px auto;
-    padding: 10px;
+    padding: 5px;
 `;
 
 export const StyledMember = styled.div`
@@ -12,16 +12,10 @@ export const StyledMember = styled.div`
     border-radius: 6px;
     padding: 4px;
     height: 280px;
-    > .avatar {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
+    > .avatar-wrapper {
         margin: 10px 20px;
-        background: grey;
-        overflow: hidden;
-        display: block;
-        text-align: center;
-        line-height: 70px;
+        background: none;
+        width: fit-content;
     }
     > .name {
         padding: 2px 5px;

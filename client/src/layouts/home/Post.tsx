@@ -3,6 +3,7 @@ import ViewsIcon from './assets/Views.svg';
 import CommentsIcon from './assets/Comments.svg';
 import { getRelativeTime } from '../../utils/Utility';
 import { StyledPost, StyledAvatarWrapper, StyledContentWrapper, StyledHead, StyledTopic, StyledContent, StyledFooter } from './Post.styled';
+import Avatar from '../../components/reusable/Avatar';
 
 interface PostParams {
     authorName: string;
@@ -42,7 +43,7 @@ const Post: FC<PostParams> = ({ authorName, timeStamp, content, topic, comments,
     return (
         <StyledPost>
             <StyledAvatarWrapper>
-                <img src={avatar} alt={authorName} />
+                <Avatar src={avatar} alt={authorName} size={50} />
             </StyledAvatarWrapper>
             <StyledContentWrapper>
                 <StyledHead>
