@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const StyledProfilePage = styled.div`
     display: flex;
-    padding: 20px;
+    padding: 10px;
 `;
 
 export const ProfilePage: FC = (): ReactElement => {

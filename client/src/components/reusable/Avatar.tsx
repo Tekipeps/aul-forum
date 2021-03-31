@@ -8,7 +8,7 @@ interface AvatarProps {
 }
 
 interface StyledAvatarProps {
-    size: number;
+    size?: number;
     src: string;
     alt: string;
 }
@@ -16,15 +16,19 @@ interface StyledAvatarProps {
 const Avatar: FC<AvatarProps> = ({ src, className, alt }): ReactElement => <img {...{ className, src, alt }} />;
 
 const StyledAvatar = styled(Avatar)<StyledAvatarProps>`
-    width: ${(props) => props.size}px;
-    height: ${(props) => props.size}px;
+    --size: ${(props) => (props.size ? `${props.size}px` : '100%')};
+    width: var(--size);
+    height: var(--size);
     border-radius: 50%;
-    background: grey;
+    border: none;
+    //if the alt ever displays
+    background: #444;
     overflow: hidden;
     display: block;
     text-align: center;
-    line-height: ${(props) => props.size}px;
-    border: none;
+    line-height: var(--size);
+    color: white;
+    font-size: 14px;
 `;
 
 export default StyledAvatar;
