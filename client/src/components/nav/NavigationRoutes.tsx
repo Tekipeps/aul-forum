@@ -4,6 +4,7 @@ import ParentResizeListener from '../reusable/ParentResizeListener';
 import { StyledNavRoutes } from './NavigationBar.styled';
 import { capFirstLetter } from '../../utils/Utility';
 
+
 interface RouteButtonParams {
     route: string;
 }

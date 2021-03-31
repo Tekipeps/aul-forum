@@ -26,6 +26,7 @@ const Notification: FC<NotificationParams> = ({ children, transitionDuration }):
     useEffect(() => {
         const timeout = setTimeout(closeNotification, displayDuration * 1000);
         return () => clearTimeout(timeout);
+
     }, []);
 
     const closeNotification = (): void => {
