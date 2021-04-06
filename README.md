@@ -1,6 +1,5 @@
-#<b> Forum web app (AUL entrepreneurship project)</b>
-      <center><img title="Anchor Logo" src='../../assets/images/logo2.png' width: 100px; height: 80px;></img></center>
-
+## Forum web app (AUL entrepreneurship project)
+     
 ## Installation and Setup Instructions
   
  You will need `node.js` and `yarn` installed globally on your machine.  
