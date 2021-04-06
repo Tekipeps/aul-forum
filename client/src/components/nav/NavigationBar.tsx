@@ -1,6 +1,6 @@
 import { ReactElement, FC } from 'react';
 import NavRoutes from './NavigationRoutes';
-import anchorLogo from '../../assets/images/anchor-logo.png';
+import anchorLogo from '../../assets/images/logo2.png';
 import { useAppSelector } from '../../state/hooks';
 import StyledNavBar, { StyledNavLogo } from './NavigationBar.styled';
 
