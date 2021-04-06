@@ -1,12 +1,12 @@
-#<b> Forum web app (AUL entrepreneurship project)</b>
-      <center><img title="Anchor Logo" src='../../assets/images/logo2.png' width: 100px; height: 80px;></img></center>
+## Forum web app (AUL entrepreneurship project)
+    
 
 ## Installation and Setup Instructions
   
  You will need `node.js` and `yarn` installed globally on your machine.  
 
  Clone down this repository:
- `git clone https://github.com/Tekipeps/CBT-Made-Test-Your-skill.git` [Main Server]
+ `git clone https://github.com/Tekipeps/aul-forum.git` [Main Server]
 
 Installation:
 
