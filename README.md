@@ -1,6 +1,6 @@
 ## Forum web app (AUL entrepreneurship project)
- <p style="text-align:center;"><img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/logo2.png" title="Aul web forum logo"
-width="300" height="300" ></p>
+ <div style="align:center;"><img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/logo2.png" title="Aul web forum logo"
+width="300" height="300" ></div>
 
 ## Installation and Setup Instructions
   
