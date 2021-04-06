@@ -10,9 +10,10 @@ const StyledContributionInfo = styled.div`
     border-radius: 6px;
     margin: 10;
     white-space: nowrap;
-    min-width: 500px;
-    width: 500px;
+    min-width: 450px;
+    max-width: 600px;
     height: fit-content;
+    flex: 1;
 `;
 
 const ContributionChart: FC = (): ReactElement => {

@@ -8,7 +8,8 @@ const StyledNavBar = styled.div`
     border-bottom: 1px solid #777;
 `;
 
-export const StyledRoutesWrapper = styled.div`
+
+export const StyledNavButtonContainer = styled.div`
     position: relative;
     top: 1px;
     margin-left: 70px;
@@ -42,7 +43,7 @@ export const StyledSearchBarContainer = styled.div`
         font-size: 16px;
         transition: width;
         transition-duration: 100ms;
-        font-family: Nunito;
+        font-family: Nunito, Arial;
         max-width: 300px;
         border-radius: 10px 0px 0px 10px;
         border-left: ${({ theme }) => theme.home.searchbar_border};
@@ -55,7 +56,9 @@ export const StyledSearchBarContainer = styled.div`
     }
 `;
 
-export const StyledNavLink = styled.div`
+
+export const StyledNavButton = styled.div`
+    border: 2px solid transparent;
     transition: border;
     transition-duration: 300ms;
     &:hover {
@@ -68,7 +71,7 @@ export const StyledNavLink = styled.div`
         color: ${({ theme }) => theme.home.nav_link_color};
         display: block;
         padding: 14px 15px;
-        font-family: Nunito;
+        font-family: Nunito, Arial;
         font-size: 16px;
     }
 `;

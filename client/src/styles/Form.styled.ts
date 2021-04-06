@@ -2,34 +2,33 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
     border-radius: 2px;
-    position: absolute;
+    position: relative;
     background-color: ${({ theme }) => theme.body.bgcolor};
     display: flex;
     flex-flow: row;
-    border: 1px solid ${({ theme }) => theme.body.color};
-    left: 50%;
-    transform: translateX(-50%);
-`;
-
-export const StyledContainerHeader = styled.div`
-    position: absolute;
-    left: 50px;
-    background-color: ${({ theme }) => theme.body.bgcolor};
-    z-index: 2;
-    font-size: 29px;
-    padding: 5px 5px;
-    color: ${({ theme }) => theme.body.color};
-    font-family: Cambria;
+    border: 1px solid ${({ theme }) => theme.home.grey};
+    width: fit-content;
+    margin: 1px auto;
 `;
 
 export const StyledFormContainer = styled.div`
-    margin: 20px;
-    position: absolute;
-    padding-top: 30px;
+    margin: 10px;
     border-radius: 4px;
     position: relative;
-    border: 1px solid ${({ theme }) => theme.body.color};
+    border: 1px solid ${({ theme }) => theme.home.grey};
     z-index: 1;
+`;
+
+export const StyledContainerHeader = styled.div`
+    position: relative;
+    width: fit-content;
+    margin: 1px auto;
+    background-color: ${({ theme }) => theme.body.bgcolor};
+    z-index: 2;
+    font-size: 24px;
+    padding: 2px 8px;
+    color: ${({ theme }) => theme.home.grey};
+    font-family: OpenSans;
 `;
 
 export const StyledFormWrapper = styled.div`

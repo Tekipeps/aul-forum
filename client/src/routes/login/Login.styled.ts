@@ -9,7 +9,7 @@ import {
 } from '../../styles/Form.styled';
 
 const StyledLogin = styled(StyledContainer)`
-    top: 150px;
+    top: 50px;
 `;
 
 const StyledLogo = styled.div`

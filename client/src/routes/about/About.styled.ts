@@ -36,7 +36,10 @@ export const StyledTeamListWrapper = styled.div`
     border: 1px solid ${({ theme }) => theme.grey};
     border-radius: 6px;
     overflow: hidden;
-    margin: 0px 10px;
+    margin: 0px 0px;
+    max-width: 600px;
+    float: right;
+    width: fit-content;
 `;
 
 export const StyledTeamList = styled.div`
