@@ -2,6 +2,8 @@ import { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import ParentResizeListener from '../reusable/ParentResizeListener';
 import { StyledNavRoutes } from './NavigationBar.styled';
+import { capFirstLetter } from '../../utils/Utility';
+
 
 interface RouteButtonParams {
     route: string;
@@ -10,7 +12,7 @@ interface RouteButtonParams {
 const RouteButton: FC<RouteButtonParams> = ({ route }): ReactElement => (
     <ParentResizeListener>
         <div id='route-btn'>
-            <Link to={`/${route}`}>{route}</Link>
+            <Link to={`/${route}`}>{capFirstLetter(route)}</Link>
         </div>
     </ParentResizeListener>
 );

@@ -14,11 +14,6 @@ export const StyledPost = styled.div`
 export const StyledAvatarWrapper = styled.div`
     padding: 10px 1px 0px 15px;
     margin-right: 10px;
-    img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
 `;
 
 export const StyledContentWrapper = styled.div`
@@ -27,7 +22,6 @@ export const StyledContentWrapper = styled.div`
 
 export const StyledHead = styled.div`
     padding: 14px 15px 1px 5px;
-    margin: 0;
     > .author,
     > .timestamp {
         display: inline-block;
@@ -35,31 +29,32 @@ export const StyledHead = styled.div`
     > .author {
         color: ${({ theme }) => theme.user_color};
         margin-left: 3px;
-        font-family: Nunito;
+        font-family: OpenSans, Arial;
         font-size: clamp(14px, 2.4vw, 17px);
     }
 
     > .timestamp {
         float: right;
         color: ${({ theme }) => theme.home.grey};
-        font-family: Nunito;
-        font-size: clamp(14px, 2vw, 16px);
+        font-family: OpenSans, Arial;
+        font-size: 13px;
     }
 `;
 
 export const StyledTopic = styled.div`
-    font-size: clamp(17px, 2.4vw, 19px);
+    font-size: clamp(17px, 2.2vw, 18px);
     margin: 5px 0px;
     padding: 0px 10px;
     color: ${({ theme }) => theme.body.color};
-    font-family: OpenSans;
+    font-family: OpenSans, Arial;
 `;
 
 export const StyledContent = styled.div`
-    padding: 1px 19px;
-    font-family: OpenSans;
+    padding: 1px 12px;
+    font-family: OpenSans, Arial;
     color: ${({ theme }) => theme.home.post_content_color};
-    font-size: clamp(13px, 2vw, 15px);
+    font-size: clamp(14px, 2vw, 15px);
+    word-spacing: 1px;
 `;
 
 export const StyledFooter = styled.div`
@@ -72,7 +67,7 @@ export const StyledFooter = styled.div`
             color: ${({ theme }) => theme.home.grey};
             font-size: 16px;
             margin: 2px;
-            font-family: Nunito;
+            font-family: OpenSans, Arial;
         }
     }
     > .viewsCount {

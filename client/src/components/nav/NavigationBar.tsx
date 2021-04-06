@@ -9,7 +9,9 @@ const signedOutRoutes = ['home', 'login', 'register', 'about'];
 
 export const NavBar: FC = (): ReactElement => {
     const auth = useAppSelector((state) => state.auth);
-    const state = auth.isLoggedIn ? signedInRoutes : signedOutRoutes;
+    //This should be const state = auth.isLoggedIn ? signedInRoutes : signedOutRoutes;
+    //I added the ! so i can work on the profile page
+    const state = !auth.isLoggedIn ? signedInRoutes : signedOutRoutes;
     return (
         <StyledNavBar>
             <StyledNavLogo>

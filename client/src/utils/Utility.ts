@@ -63,8 +63,17 @@ export const getRelativeTime = (createdAt: number): string => {
  * @param element A DOM element
  * @returns the sum of the elements left and width in relation to the browser window
  */
-
 export const getDOMElementRelativeWidth = (element: HTMLElement): number => {
     const { left, width } = element.getBoundingClientRect();
     return left + width;
+};
+
+/**
+ * @param str A non empty string
+ * @returns A string with a capitalized first letter
+ */
+
+export const capFirstLetter = (str: string) => {
+    if (!str.length) throw new Error('input string cannot be empty');
+    return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 };

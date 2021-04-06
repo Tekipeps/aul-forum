@@ -18,9 +18,9 @@
     src: url('./assets/fonts/Nunito/Nunito-Regular.ttf');
 }
 
-@font-face{
-    font-family:OpenSans;
-    src:url('./assets/fonts/OpenSans/OpenSans-Regular.ttf');
+@font-face {
+    font-family: OpenSans;
+    src: url('./assets/fonts/OpenSans/OpenSans-Regular.ttf');
 }
 
 *:focus {
@@ -32,8 +32,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
-    -webkit-font-smoothing: subpixel-antialiased;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {

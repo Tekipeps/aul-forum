@@ -1,6 +1,7 @@
 import { ReactElement, FC } from 'react';
 import githubLogo from '../../assets/svg/github-logo.svg';
 import { StyledMemberWrapper, StyledMember } from './TeamMember.styled';
+import Avatar from '../../components/reusable/Avatar';
 
 interface Member {
     name: string;
@@ -11,12 +12,14 @@ interface Member {
 }
 
 const TeamMember: FC<Member> = ({ name, avatarURL, bio, role, githubURL }): ReactElement => {
-    const avatar: string = require(`../../assets${avatarURL}`).default;
+    const src: string = require(`../../assets${avatarURL}`).default;
 
     return (
         <StyledMemberWrapper>
             <StyledMember>
-                <img className='avatar' src={avatar} alt={name} />
+                <div className='avatar-wrapper'>
+                    <Avatar src={src} alt={name} size={70} />
+                </div>
                 <p className='role'>{role}</p>
                 <p className='name'>{name}</p>
                 <p className='bio'>{bio}</p>
