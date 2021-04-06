@@ -1,10 +1,38 @@
-# Forum web app (AUL entrepreneurship project)
+#<b> Forum web app (AUL entrepreneurship project)</b>
+      <center><img title="Anchor Logo" src='../../assets/images/logo2.png' width: 100px; height: 80px;></img></center>
+
+## Installation and Setup Instructions
+  
+ You will need `node.js` and `yarn` installed globally on your machine.  
+
+ Clone down this repository:
+ `git clone https://github.com/Tekipeps/CBT-Made-Test-Your-skill.git` [Main Server]
+
+Installation:
+
+`cd client`
+
+`yarn install`  
+
+To Run Test Suite:  
+
+`yarn test`  
+
+To Start Server:
+
+`yarn dev`  
+
+To Visit App:
+
+`http://localhost:3000/home/most-recent` 
+
 
 ## Objectives
 
 -   Learn version control (Git and Github)
 -   Learn how websites/webpages work
 -   Learn how to create static/dynamic websites
+
 
 ## About this branch
 
@@ -29,7 +57,7 @@ Please check out our [Contribution Guidelines](./CONTRIBUTING.md) to figure how 
 | [Bidemi](https://github.com/BidemiEnoch) | Leading role at UI and UX design                         |
 | [Tekena](https://github.com/Tekipeps)    | Leading role at Backend development, Database Management |
 | [Seun](https://github.com/seunosinowo)   | Supporting role at UI and UX design                      |
-| [Emedit](https://github.com/EmeditWeb)   | ?                                                        |
+| [Emedit](https://github.com/EmeditWeb)   | Supporting role at UI and UX design                      |
 
 # License
 
