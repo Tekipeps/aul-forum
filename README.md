@@ -1,6 +1,8 @@
 ## Forum web app (AUL entrepreneurship project)
- <div style="align:center;"><img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/logo2.png" title="Aul web forum logo"
-width="300" height="300" ></div>
+ 
+<p align="center">
+  <img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/logo2.png" title="Aul web forum logo"/>
+</p>
 
 ## Installation and Setup Instructions
   
@@ -29,7 +31,7 @@ To Visit App:
 
 ## Project Sceenshot(s)
 
- <p style="text-align:center;"><img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/forum.png" title="Aul web forum logo"></p>
+ <p style="text-align:center;"><img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/forum.png" title="Project screenshot"></p>
 
 ## Objectives
 
