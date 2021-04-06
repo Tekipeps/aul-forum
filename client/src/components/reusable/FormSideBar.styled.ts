@@ -6,14 +6,10 @@ const StyledSideBar = styled.div`
     background-color: ${({ theme }) => theme.purple};
     color: white;
     position: relative;
-    > p {
-        margin-left: 30px;
-        position: absolute;
-        width: 90%;
-        height: 80%;
-        word-wrap: break-word;
-        font-size: 46px;
-    }
+    word-wrap: break-word;
+    font-size: 49px;
+    overflow: auto;
+    padding: 20px;
 `;
 
 export default StyledSideBar;

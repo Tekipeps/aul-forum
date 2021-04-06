@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledPost = styled.div`
-    border: 1px solid ${({ theme }) => theme.bgtext};
-    border-bottom: none;
+    border-top: 1px solid ${({ theme }) => theme.grey};
+    border-right: 1px solid ${({ theme }) => theme.grey};
+    border-left: 1px solid ${({ theme }) => theme.grey};
     display: flex;
     flex-direction: row;
     :last-child {
-        border-bottom: 1px solid ${({ theme }) => theme.bgtext};
+        border-bottom: 1px solid ${({ theme }) => theme.grey};
     }
 `;
 
 export const StyledAvatarWrapper = styled.div`
     padding: 10px 1px 0px 15px;
+    margin-right: 10px;
     img {
         width: 50px;
         height: 50px;
@@ -31,15 +33,21 @@ export const StyledHead = styled.div`
         display: inline-block;
     }
     > .author {
+<<<<<<< HEAD
         color: green;
         margin-left: 6px;
         font-family: 'Trebuchet MS';
+=======
+        color: ${({ theme }) => theme.user_color};
+        margin-left: 3px;
+        font-family: Nunito;
+>>>>>>> f10a833114a1ac04bed44820490ab83df893b41e
         font-size: clamp(14px, 2.4vw, 17px);
     }
 
     > .timestamp {
         float: right;
-        color: ${({ theme }) => theme.bgtext};
+        color: ${({ theme }) => theme.home.grey};
         font-family: Nunito;
         font-size: clamp(14px, 2vw, 16px);
     }
@@ -49,15 +57,15 @@ export const StyledTopic = styled.div`
     font-size: clamp(17px, 2.4vw, 19px);
     margin: 5px 0px;
     padding: 0px 10px;
-    color: ${({ theme }) => theme.bgtext};
-    font-family: Nunito;
+    color: ${({ theme }) => theme.body.color};
+    font-family: OpenSans;
 `;
 
 export const StyledContent = styled.div`
     padding: 1px 19px;
-    font-family: 'Segoe UI';
-    color: ${({ theme }) => theme.bgtext};
-    font-size: clamp(14px, 2vw, 15px);
+    font-family: OpenSans;
+    color: ${({ theme }) => theme.home.post_content_color};
+    font-size: clamp(13px, 2vw, 15px);
 `;
 
 export const StyledFooter = styled.div`

@@ -2,13 +2,21 @@ import styled from 'styled-components';
 
 const StyledNavBar = styled.div`
     position: relative;
+<<<<<<< HEAD
     padding: 9px 10px 0px 0px;
     background-color: ${({ theme }) => theme.home.navcolor};
+=======
+    padding: 30px 10px 0px 0px;
+    background-color: ${({ theme }) => theme.home.postnav_bgcolor};
+>>>>>>> f10a833114a1ac04bed44820490ab83df893b41e
     display: flex;
+    border-bottom: 1px solid #777;
 `;
 
 export const StyledRoutesWrapper = styled.div`
-    margin-left: 50px;
+    position: relative;
+    top: 1px;
+    margin-left: 70px;
     overflow: hidden;
     white-space: nowrap;
     margin-bottom: 0px;
@@ -16,7 +24,7 @@ export const StyledRoutesWrapper = styled.div`
 `;
 
 export const StyledSearchBarContainer = styled.div`
-    margin-left: 20px;
+    margin-left: 40px;
     flex: 1;
     max-width: 400px;
     display: flex;
@@ -24,16 +32,15 @@ export const StyledSearchBarContainer = styled.div`
     height: 35px;
     > .searchIconWrapper {
         width: 28px;
-        background-color: ${({ theme }) => theme.bgcolor};
-        border-radius: 10px 0px 0px 10px;
-        border-left: 1px solid white;
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
-        cursor: pointer;
+        background-color: ${({ theme }) => theme.body.bgcolor};
+        border-radius: 0px 10px 10px 0px;
+        border-right: ${({ theme }) => theme.home.searchbar_border};
+        border-top: ${({ theme }) => theme.home.searchbar_border};
+        border-bottom: ${({ theme }) => theme.home.searchbar_border};
     }
     > input {
-        background: ${({ theme }) => theme.bgcolor};
-        color: ${({ theme }) => theme.bgtext};
+        background: ${({ theme }) => theme.body.bgcolor};
+        color: ${({ theme }) => theme.body.color};
         width: 160px;
         min-width: 160px;
         padding: 6px 12px;
@@ -42,11 +49,11 @@ export const StyledSearchBarContainer = styled.div`
         transition-duration: 100ms;
         font-family: Nunito;
         max-width: 300px;
-        border-radius: 0px 10px 10px 0px;
-        border-right: 1px solid white;
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
-        border-left: none;
+        border-radius: 10px 0px 0px 10px;
+        border-left: ${({ theme }) => theme.home.searchbar_border};
+        border-top: ${({ theme }) => theme.home.searchbar_border};
+        border-bottom: ${({ theme }) => theme.home.searchbar_border};
+        border-right: none;
         &:focus {
             width: 70%;
         }
@@ -54,7 +61,6 @@ export const StyledSearchBarContainer = styled.div`
 `;
 
 export const StyledNavLink = styled.div`
-    border-bottom: 2px solid ${({ theme }) => theme.home.navcolor};
     transition: border;
     transition-duration: 300ms;
     &:hover {
@@ -64,7 +70,7 @@ export const StyledNavLink = styled.div`
         border-bottom: 2px solid red;
     }
     a {
-        color: ${({ theme }) => theme.home.navlink};
+        color: ${({ theme }) => theme.home.nav_link_color};
         display: block;
         padding: 14px 15px;
         font-family: Nunito;

@@ -11,7 +11,7 @@ export const StyledMember = styled.div`
     width: 240px;
     border-radius: 6px;
     padding: 4px;
-    height: 300px;
+    height: 280px;
     > .avatar {
         width: 70px;
         height: 70px;
@@ -39,7 +39,7 @@ export const StyledMember = styled.div`
         color: white;
         font-weight: 500;
         margin: auto;
-        border-radius: 5%;
+        border-radius: 10px;
         font-family: Nunito;
     }
     > .bio {
@@ -50,7 +50,7 @@ export const StyledMember = styled.div`
         font-family: Nunito;
         overflow-y: auto;
         max-height: 120px;
-        color: ${({ theme }) => theme.bgtext};
+        color: ${({ theme }) => theme.body.color};
     }
     > .githubURL {
         width: 30px;

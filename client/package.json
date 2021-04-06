@@ -12,6 +12,16 @@
         "highcharts-react-official": "^3.0.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
+<<<<<<< HEAD
+=======
+        "react-redux": "^7.2.3",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^4.0.3",
+        "redux": "^4.0.5",
+        "redux-thunk": "^2.3.0",
+        "styled-components": "^5.2.1",
+        "yup": "^0.32.9"
+>>>>>>> f10a833114a1ac04bed44820490ab83df893b41e
     },
     "proxy": "http://localhost:5000",
     "devDependencies": {

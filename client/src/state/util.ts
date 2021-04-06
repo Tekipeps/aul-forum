@@ -54,13 +54,9 @@ export const apiCall = (url: string, method: Method, body?: typeof Object, token
     });
 };
 
-export const asyncRequest = (
-    actionName: string,
-    url: string,
-    method: Method,
-    body: any | null = null,
-    token?: string
-) => async (dispatch: Dispatch<any>) => {
+export const asyncRequest = (actionName: string, url: string, method: Method, body: any | null = null, token?: string) => async (
+    dispatch: Dispatch<any>
+) => {
     dispatch(asyncActions(actionName).loading(true));
     try {
         const res = await apiCall(url, method, body, token);
