@@ -1,6 +1,10 @@
 ## Forum web app (AUL entrepreneurship project)
+<<<<<<< HEAD
     
 
+=======
+     
+>>>>>>> f59e76a1fbf7cec7f07a249b9a98b66978db2377
 ## Installation and Setup Instructions
   
  You will need `node.js` and `yarn` installed globally on your machine.  
