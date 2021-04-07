@@ -1,5 +1,6 @@
 const { prisma } = require('../utils/config');
 const bcrypt = require('bcrypt');
+const { role } = require('../utils/globals');
 
 const pubUserData = {
     id: true,
@@ -8,15 +9,59 @@ const pubUserData = {
     matric: true,
     gender: true,
     role: true,
-    posts: true
+    avatar: true
 };
 
 class User {
+    async getAdmin(req, res, next) {
+        try {
+            const { id } = req.params;
+            const admin = await prisma.user.findUnique({
+                where: { id },
+                select: pubUserData
+            });
+            if (admin.role !== role.ADMIN)
+                return res.status(400).json({
+                    err: `user ${admin.username} is not an ADMIN`
+                });
+            return res.json(admin);
+        } catch (error) {
+            next(error);
+        }
+    }
+    async getAdmins(_, res, next) {
+        try {
+            const admins = await prisma.user.findMany({
+                select: pubUserData,
+                where: { role: role.ADMIN }
+            });
+            res.json(admins);
+        } catch (error) {
+            next(error);
+        }
+    }
+    async getAllUsers(_, res, next) {
+        try {
+            const users = await prisma.user.findMany({
+                select: pubUserData
+            });
+            res.json(users);
+        } catch (error) {
+            next(error);
+        }
+    }
     async getUser(req, res, next) {
         try {
             const { id } = req.params;
-            const user = await prisma.user.findUnique({ where: { id }, select: { ...pubUserData, posts: false } });
-
+            const user = await prisma.user.findUnique({
+                where: { id },
+                select: pubUserData
+            });
+            if (!user) return res.status(404).json({ err: 'user not found' });
+            if (user.role !== role.USER)
+                return res.status(400).json({
+                    err: `user ${user.username} is an ADMIN`
+                });
             return res.json(user);
         } catch (error) {
             next(error);
@@ -25,8 +70,8 @@ class User {
     async getUsers(_, res, next) {
         try {
             const users = await prisma.user.findMany({
-                select: { ...pubUserData, posts: false },
-                where: { role: 'USER' }
+                select: pubUserData,
+                where: { role: role.USER }
             });
             res.json(users);
         } catch (error) {
@@ -35,16 +80,7 @@ class User {
     }
     async createUser(req, res, next) {
         try {
-            const { username, email, matric, gender, role, password, confirmPass } = req.body;
-            if (!username || !email || !matric || !gender || !role) {
-                return res.status(400).json({ err: 'username, email, matric, password, gender, role, is required' });
-            }
-            if (String(password).length < 8) {
-                return res.status(400).json({ err: 'password too short, 8 or more characters' });
-            }
-            if (password !== confirmPass) {
-                return res.status(400).json({ err: 'passwords not the same' });
-            }
+            const { username, email, matric, gender, role, password } = req.body;
 
             const passwordHash = await bcrypt.hash(password, 12);
             const user = { username, email, matric, gender, role, passwordHash };
@@ -60,8 +96,11 @@ class User {
             const authenticatedUser = req.user;
             const data = req.body;
 
-            const user = await prisma.user.findUnique({ where: { id }, select: pubUserData });
-            if (!user) return res.status(400).json({ err: 'User not available' });
+            const user = await prisma.user.findUnique({
+                where: { id },
+                select: pubUserData
+            });
+            if (!user) return res.status(400).json({ err: 'user not available' });
             if (user.id != authenticatedUser.id || authenticatedUser.role != 'ADMIN') return res.sendStatus(401);
 
             const updatedUser = await prisma.user.update({ where: { id }, data });
@@ -75,11 +114,14 @@ class User {
             const { id } = req.params;
             const authenticatedUser = req.user;
 
-            const user = await prisma.user.findUnique({ where: { id }, select: pubUserData });
-            if (user.id !== authenticatedUser.id || authenticatedUser.role != 'ADMIN') return res.sendStatus(401);
-
-            await prisma.user.delete({ where: { id } });
-            res.status(204).end();
+            const user = await prisma.user.findUnique({ where: { id }, select: { id: true } });
+            if (!user) return res.status(400).json({ err: 'cannot delete, user not in database' });
+            if (user.id === authenticatedUser.id || authenticatedUser.role === role.ADMIN) {
+                await prisma.post.deleteMany({ where: { authorId: id } });
+                await prisma.user.delete({ where: { id } });
+                return res.status(204).end();
+            }
+            return res.status(401).json({ err: 'unauthorized' });
         } catch (error) {
             next(error);
         }

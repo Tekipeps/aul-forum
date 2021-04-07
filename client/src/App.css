@@ -1,0 +1,45 @@
+@font-face {
+    font-family: Advent Pro;
+    src: url('./assets/fonts/Advent_Pro/AdventPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: AllertaStencil;
+    src: url('./assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf');
+}
+
+@font-face {
+    font-family: Quantico;
+    src: url('./assets/fonts/Quantico/Quantico-Regular.otf');
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('./assets/fonts/Nunito/Nunito-Regular.ttf');
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('./assets/fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+*:focus {
+    outline: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    padding: 0;
+}

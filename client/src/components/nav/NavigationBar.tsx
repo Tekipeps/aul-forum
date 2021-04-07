@@ -1,48 +1,32 @@
-import { ReactElement, FC, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../../assets/form-images/logo.png';
-import styles from './NavigationBar.module.scss';
+import { ReactElement, FC } from 'react';
+import NavRoutes from './NavigationRoutes';
+import ThemeToggler from './ThemeToggler';
+import anchorLogo from '../../assets/images/logo2.png';
+import { useAppSelector } from '../../state/hooks';
+import StyledNavBar, { StyledNavLogo } from './NavigationBar.styled';
 
-const Routes: FC = (): ReactElement | null => {
-    const [display, setDisplay] = useState(true);
-    const handleDisplay = () => {
-        window.innerWidth < 800 ? setDisplay(false) : setDisplay(true);
-    };
-    window.addEventListener('resize', handleDisplay);
+const signedInRoutes = ['home', 'profile', 'about'];
+const signedOutRoutes = ['home', 'login', 'register', 'about'];
 
-    useEffect(() => {
-        handleDisplay();
-    });
+interface NavBarParams {
+    toggleTheme: () => void;
+}
 
-    if (!display) return null;
+export const NavBar: FC<NavBarParams> = ({ toggleTheme }): ReactElement => {
+    const auth = useAppSelector((state) => state.auth);
+    //This should be const state = auth.isLoggedIn ? signedInRoutes : signedOutRoutes;
+    //I added the ! so i can work on the profile page
+    const state = !auth.isLoggedIn ? signedInRoutes : signedOutRoutes;
     return (
-        <ul>
-            <li>
-                <Link to='/'>Home</Link>
-            </li>
-            <li>
-                <Link to='/login'>Login</Link>
-            </li>
-            <li>
-                <Link to='/register'>Register</Link>
-            </li>
-            <li>
-                <Link to='/team'>Team</Link>
-            </li>
-        </ul>
+        <StyledNavBar>
+            <StyledNavLogo>
+                <div id='logo-image-wrapper'>
+                    <img src={anchorLogo} />
+                </div>
+                <div id='logo-text'>AUL FORUM</div>
+            </StyledNavLogo>
+            <NavRoutes routes={state} />
+            <ThemeToggler {...{ toggleTheme }} />
+        </StyledNavBar>
     );
 };
-
-export const NavBar: FC = (): ReactElement => (
-    <nav id={styles.navbar}>
-        <div id={styles.logo}>
-            <div>
-                <img src={Logo} />
-            </div>
-            <div>AUL Forum</div>
-        </div>
-        <div id={styles.routes}>
-            <Routes />
-        </div>
-    </nav>
-);

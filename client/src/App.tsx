@@ -1,21 +1,55 @@
-import { ReactElement, FC } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { ReactElement, FC, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { Provider as StateProvider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import store from './state/store';
 import { NavBar } from './components/nav/NavigationBar';
-import { Home } from './components/home/Home';
-import { Login } from './components/login/Login';
-import { Register } from './components/register/Register';
-import { Team } from './components/team/Team';
-import './App.scss';
-export const App: FC = (): ReactElement => (
-    <Router>
-        <div>
-            <NavBar />
-            <main>
-                <Route exact path='/' component={Home} />
-                <Route path='/login' component={Login} />
-                <Route path='/register' component={Register} />
-                <Route path='/team' component={Team} />
-            </main>
-        </div>
-    </Router>
-);
+import { HomePage } from './routes/home/Home';
+import { LoginPage } from './routes/login/Login';
+import { RegisterPage } from './routes/register/Register';
+import { AboutPage } from './routes/about/About';
+import { ProfilePage } from './routes/profile/Profile';
+import { PageNotFound } from './routes/404/PageNotFound';
+import getTheme from './theme';
+import './App.css';
+
+export const App: FC = (): ReactElement => {
+    const DEFAULT_THEME = window.localStorage.getItem('theme') || 'light';
+    const [currentTheme, setTheme] = useState(DEFAULT_THEME);
+
+    useEffect(() => {
+        document.body.style.backgroundColor = getTheme(currentTheme).body.bgcolor;
+    }, [currentTheme]);
+
+    const toggleTheme = (): void => {
+        const theme = currentTheme === 'light' ? 'dark' : 'light';
+        window.localStorage.setItem('theme', theme);
+        setTheme(theme);
+    };
+    // TODO: path '/' should not redirect to '/home
+
+    return (
+        <Router>
+            <StateProvider store={store}>
+                <ThemeProvider theme={getTheme(currentTheme)}>
+                    <NavBar {...{ toggleTheme }} />
+                    <main>
+                        <Switch>
+                            <Route exact path='/'>
+                                <Redirect to='/home' />
+                            </Route>
+                            <Route path='/home'>
+                                <HomePage baseUrl='/home' />
+                            </Route>
+                            <Route exact path='/login' component={LoginPage} />
+                            <Route exact path='/register' component={RegisterPage} />
+                            <Route exact path='/about' component={AboutPage} />
+                            <Route exact path='/profile' component={ProfilePage} />
+                            <Route component={PageNotFound} />
+                        </Switch>
+                    </main>
+                </ThemeProvider>
+            </StateProvider>
+        </Router>
+    );
+};

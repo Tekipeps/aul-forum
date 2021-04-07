@@ -1,28 +1,20 @@
-import { ReactElement, useState, useEffect, FC } from 'react';
-import styles from './FormSideBar.module.scss';
+import { ReactElement, FC, ReactNode } from 'react';
+import WindowResizeListener from './WindowResizeListener';
+import StyledFormSideBar from './FormSideBar.styled';
 
-interface SideBarProp {
-    children: string;
+interface FormSideBarParams {
+    children: string | ReactNode;
 }
 
-const SideBar: FC<SideBarProp> = ({ children }): ReactElement | null => {
-    const [display, setDisplay] = useState(true);
+/**
+ * specifies a value which if the windows width is smaller than, causes the FormSideBar to render null
+ */
+const MINIMUM_WINDOW_WIDTH = 1100;
 
-    const handleDisplay = (): void => {
-        window.innerWidth < 1100 ? setDisplay(false) : setDisplay(true);
-    };
-    window.addEventListener('resize', handleDisplay);
+const FormSideBar: FC<FormSideBarParams> = ({ children }): ReactElement | null => (
+    <WindowResizeListener minWidth={MINIMUM_WINDOW_WIDTH}>
+        <StyledFormSideBar>{children}</StyledFormSideBar>
+    </WindowResizeListener>
+);
 
-    useEffect(() => {
-        handleDisplay();
-    });
-
-    if (!display) return null;
-    return (
-        <div className={styles.sideBar}>
-            <p>{children}</p>
-        </div>
-    );
-};
-
-export default SideBar;
+export default FormSideBar;
