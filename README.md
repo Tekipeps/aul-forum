@@ -5,19 +5,15 @@
 You will need `node.js` and `yarn` installed globally on your machine.
 
 Clone down this repository:
-`git clone https://github.com/Tekipeps/aul-forum.git` [Main Server]
+`git clone https://github.com/Tekipeps/aul-forum.git` 
 
-Installation:
+Frontend installation:
 
 `cd client`
 
 `yarn install`
 
-To Run Test Suite:
-
-`yarn test`
-
-To Start Server:
+To start the server:
 
 `yarn dev`
 
