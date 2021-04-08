@@ -3,13 +3,13 @@ import CloseButtonSvg from '../../assets/svg/CloseButton.svg';
 import StyledCloseButton from './CloseBtn.styled';
 
 interface CloseButtonParams {
-    onClose: () => void;
+    onClick: () => void;
     size: number;
     fill?: string;
 }
 
-const CloseButton: FC<CloseButtonParams> = ({ onClose, size, fill = '<theme>' }): ReactElement => (
-    <StyledCloseButton onClick={onClose} {...{ fill, size }}>
+const CloseButton: FC<CloseButtonParams> = ({ onClick, size, fill = '<theme>' }): ReactElement => (
+    <StyledCloseButton {...{ fill, size, onClick }}>
         <CloseButtonSvg />
     </StyledCloseButton>
 );

@@ -14,10 +14,14 @@ const CreatePostModal: FC<CreatePostModalParams> = ({ closeModal }): ReactElemen
     };
 
     return (
-        <StyledBackground>
+        <StyledBackground
+            onClick={(event) => {
+                if (event.target === event.currentTarget) closeModal();
+            }}
+        >
             <StyledModal>
                 <StyledCloseBtnWrapper>
-                    <CloseBtn size={40} onClose={closeModal} />
+                    <CloseBtn size={40} onClick={closeModal} />
                 </StyledCloseBtnWrapper>
                 <textarea
                     onChange={({ target }) => setTitle(target.value)}

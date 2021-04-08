@@ -10,7 +10,7 @@ import {
     StyledLoginButtonHolder,
     StyledInputWrapper
 } from './Login.styled';
-import anchorLogo from '../../assets/images/anchor-logo.png';
+import anchorLogo from '../../assets/images/logo2.png';
 import { useAppDispatch, useAppSelector } from '../../state/hooks';
 import { login } from '../../state/auth/actions';
 import { getInputError } from '../../services/form_validation';

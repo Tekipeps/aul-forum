@@ -33,7 +33,7 @@ const Notification: FC<NotificationParams> = ({ children, transitionDuration }):
     return (
         <StyledNotification {...{ opacity, transitionDuration: transitionDuration || defaultTransitionDuration, visibility }}>
             <StyledNotificationContent>{children}</StyledNotificationContent>
-            <CloseBtn size={30} fill='#fff' onClose={closeNotification} />
+            <CloseBtn size={30} fill='#fff' onClick={closeNotification} />
         </StyledNotification>
     );
 };

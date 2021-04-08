@@ -5,7 +5,7 @@ export const StyledBackground = styled.div`
     top: 0%;
     width: 100%;
     height: 100%;
-    background: rgba(170, 170, 170, 0.3);
+    background: rgba(170, 170, 170, 0.2);
     z-index: 3;
     display: flex;
 `;
@@ -29,6 +29,8 @@ export const StyledModal = styled.div`
         border: 1px solid grey;
         font-size: 18px;
         border-radius: 10px;
+        transition: border;
+        transition-duration: 0.5s;
         &.title {
             height: 25px;
             margin-bottom: 5px;
@@ -36,10 +38,13 @@ export const StyledModal = styled.div`
         &.content {
             margin-bottom: 10px;
         }
+        :focus {
+            border: 1px solid ${({ theme }) => theme.body.color};
+        }
     }
 
     > .createpost-btn {
-        color: ${({ theme }) => theme.body.color};
+        color: #fff;
         background: blue;
         padding: 4px 29px;
         width: fit-content;
