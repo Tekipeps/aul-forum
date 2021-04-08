@@ -43,10 +43,10 @@ const StyledModBadge = styled.div`
 `;
 
 const Avatar: FC<AvatarProps> = ({ src, size, alt, admin = false }): ReactElement => (
-    <>
+    <div>
         <StyledAvatar {...{ src, alt, size }} />
         {admin && <StyledModBadge>admin</StyledModBadge>}
-    </>
+    </div>
 );
 
 export default Avatar;

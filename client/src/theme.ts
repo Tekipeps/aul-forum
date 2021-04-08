@@ -54,7 +54,7 @@ const lightTheme: ThemeType = {
     purple: '#37173d',
     blue: '#00f',
     grey: '#aaa',
-    notification_bgcolor: '#3a1f3f',
+    notification_bgcolor: 'linear-gradient(#181, #191,#1a1,#191, #181)',
     user_color: 'blue',
     form_purple_btn: '#37173d',
     body: {

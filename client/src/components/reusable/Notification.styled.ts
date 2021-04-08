@@ -6,21 +6,6 @@ interface StyledNotificationParam {
     visibility: 'visible' | 'hidden';
 }
 
-export const StyledCloseButton = styled.div`
-    cursor: pointer;
-    height: 30px;
-    margin: auto 30px auto 0px;
-    > svg {
-        height: 90%;
-        path {
-            fill: white;
-        }
-    }
-    :hover {
-        transform: scale(1.1);
-    }
-`;
-
 export const StyledNotificationContent = styled.div`
     flex: 1;
     margin: 6px 2px;

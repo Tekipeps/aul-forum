@@ -21,11 +21,16 @@ export const StyledCreatePost = styled.div`
 export const StyledCreatePostBtn = styled.div`
     font-family: Nunito;
     padding: 5px;
-    background-color: blue;
+    background-color: #00f;
     color: white;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 14px;
     cursor: pointer;
+    transition: background-color;
+    transition-duration: 300ms;
+    &:hover {
+        background-color: #33f;
+    }
 `;
 
 export default StyledRightSection;

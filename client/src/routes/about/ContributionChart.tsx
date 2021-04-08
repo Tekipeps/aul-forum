@@ -28,11 +28,11 @@ const ContributionChart: FC = (): ReactElement => {
         },
         {
             name: 'Osinowo Seun',
-            y: 3
+            y: 5
         },
         {
             name: 'Emmanuel Itighise',
-            y: 2
+            y: 4
         }
     ];
 

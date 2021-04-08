@@ -1,7 +1,11 @@
 import { FC, ReactElement } from 'react';
 import StyledRightSection, { StyledCreatePostBtn, StyledCreatePost } from './RightSection.styled';
 
-const RightSection: FC = (): ReactElement => {
+interface RightSectionParams {
+    openModal: () => void;
+}
+
+const RightSection: FC<RightSectionParams> = ({ openModal }): ReactElement => {
     return (
         <StyledRightSection>
             <StyledCreatePost>
@@ -9,7 +13,7 @@ const RightSection: FC = (): ReactElement => {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add your thoughts to the community by creating a new post. Please check out our
                     content creation guidelines if you haven't before posting
                 </p>
-                <StyledCreatePostBtn>Create Post</StyledCreatePostBtn>
+                <StyledCreatePostBtn onClick={openModal}>Create Post</StyledCreatePostBtn>
             </StyledCreatePost>
         </StyledRightSection>
     );
