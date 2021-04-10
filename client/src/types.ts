@@ -19,3 +19,10 @@ export interface RegistrationError extends LoginError {
     confirmPassword: null | string;
     email: null | string;
 }
+
+export interface AuthenticatedUser {
+    email: string;
+    id: string;
+    role: 'USER' | 'ADMIN';
+    username: string;
+}

@@ -29,13 +29,15 @@ export const NavBar: FC<NavBarParams> = ({ toggleTheme }): ReactElement => {
                 <div id='logo-text'>AUL FORUM</div>
             </StyledNavLogo>
             <NavRoutes routes={state} />
-            <button
-                onClick={() => {
-                    dispatch(logout());
-                }}
-            >
-                Logout
-            </button>
+            {auth.isLoggedIn && (
+                <button
+                    onClick={() => {
+                        dispatch(logout());
+                    }}
+                >
+                    Logout
+                </button>
+            )}
             <ThemeToggler {...{ toggleTheme }} />
         </StyledNavBar>
     );
