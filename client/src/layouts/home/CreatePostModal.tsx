@@ -12,16 +12,15 @@ const CreatePostModal: FC<CreatePostModalParams> = ({ closeModal }): ReactElemen
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
     const dispatch = useAppDispatch();
+
     const submitNewPost = () => {
+        if (!title.length || !content.length) return;
         dispatch(createPost(title.trim(), content.trim()));
+        closeModal();
     };
 
     return (
-        <StyledBackground
-            onClick={(event) => {
-                if (event.target === event.currentTarget) closeModal();
-            }}
-        >
+        <StyledBackground onClick={(e) => e.target === e.currentTarget && closeModal()}>
             <StyledModal>
                 <StyledCloseBtnWrapper>
                     <CloseBtn size={40} onClick={closeModal} />

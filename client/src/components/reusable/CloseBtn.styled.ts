@@ -13,9 +13,7 @@ const StyledCloseButton = styled.div<StyledCloseButtonParams>`
     > svg {
         height: 90%;
         path {
-            fill: ${({ theme, fill }) => {
-                return fill === '<theme>' ? theme.body.color : fill;
-            }};
+            fill: ${({ theme, fill }) => (fill === '<theme>' ? theme.body.color : fill)};
         }
     }
     :hover {

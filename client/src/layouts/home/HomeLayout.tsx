@@ -14,17 +14,8 @@ const Layout: FC = (): ReactElement => {
     const [modalState, setModalState] = useState<'open' | 'closed'>('closed');
 
     useEffect(() => {
-        if (modalState === 'open') document.body.style.overflow = 'hidden';
         document.body.style.overflow = modalState === 'open' ? 'hidden' : 'scroll';
     }, [modalState]);
-
-    const openPostModal = () => {
-        setModalState('open');
-    };
-
-    const closePostModal = () => {
-        setModalState('closed');
-    };
 
     return (
         <div>
@@ -32,9 +23,9 @@ const Layout: FC = (): ReactElement => {
             <SectionDescription />
             <StyledMain>
                 <PostSection />
-                <RightSection openModal={openPostModal} />
+                <RightSection openModal={() => setModalState('open')} />
             </StyledMain>
-            {modalState === 'open' && <CreatePostModal closeModal={closePostModal} />}
+            {modalState === 'open' && <CreatePostModal closeModal={() => setModalState('closed')} />}
         </div>
     );
 };

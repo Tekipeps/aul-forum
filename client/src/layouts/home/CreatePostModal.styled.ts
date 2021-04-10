@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledBackground = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0%;
     width: 100%;
     height: 100%;
@@ -12,7 +12,6 @@ export const StyledBackground = styled.div`
 
 export const StyledModal = styled.div`
     width: clamp(300px, 60vw, 550px);
-    //height: 200px;
     background: ${({ theme }) => theme.body.bgcolor};
     margin: auto auto;
     display: flex;
@@ -49,10 +48,13 @@ export const StyledModal = styled.div`
         padding: 4px 29px;
         width: fit-content;
         border-radius: 19px;
-        font-size: 20px;
+        font-size: 16px;
         font-family: Nunito;
         margin: 0px 10px 0px auto;
         cursor: pointer;
+        :hover {
+            background: #22f;
+        }
     }
 `;
 
