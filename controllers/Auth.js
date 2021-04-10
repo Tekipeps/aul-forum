@@ -4,9 +4,22 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 class Auth {
-    async isValidToken(_, res, next) {
+    async isValidToken(req, res, next) {
         try {
-            res.json({ isValid: true });
+            const user = await prisma.user.findUnique({
+                where: { id: req.user.id },
+                select: {
+                    username: true,
+                    avatar: true,
+                    email: true,
+                    role: true,
+                    id: true
+                }
+            });
+            if (!user) {
+                return res.status(401).json({ err: 'User not available' });
+            }
+            res.json(user);
         } catch (error) {
             next(error);
         }
