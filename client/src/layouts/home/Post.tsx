@@ -44,11 +44,11 @@ const Post: FC<PostType> = ({ author, id, createdAt, content, title, comments, v
                 <StyledTopic>{title}</StyledTopic>
                 <StyledContent>
                     {content.length > 340 ? (
-                        <p>
+                        <p style={{ wordBreak: 'break-word' }}>
                             {content.substring(0, 340)} <Link to={`/posts/${id}`}>...(read more)</Link>
                         </p>
                     ) : (
-                        <p>content</p>
+                        <p style={{ wordBreak: 'break-word' }}>{content}</p>
                     )}
                 </StyledContent>
                 <PostFooter views={views} comments={comments.length} />

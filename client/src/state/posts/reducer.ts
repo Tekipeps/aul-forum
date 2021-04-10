@@ -17,9 +17,13 @@ const rootState: State = {
 };
 
 const reducer = (state: State = rootState, action: Action) => {
+    let posts: PostType[];
     switch (action.type) {
         case asyncActionNames(Actions.GET_ALL_POSTS).success:
-            return { ...state, posts: action.payload };
+            posts = action.payload;
+            return { ...state, posts: posts.reverse() }; // post.revrse() temporary to mimic  ordering of 'most-recent' post
+        case asyncActionNames(Actions.CREATE_POST).success:
+            return { ...state, posts: [action.payload, ...state.posts] };
         default:
             return state;
     }
