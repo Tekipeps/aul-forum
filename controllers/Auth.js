@@ -18,6 +18,7 @@ class Auth {
                 where: { username },
                 select: {
                     username: true,
+                    avatar: true,
                     email: true,
                     role: true,
                     id: true,
@@ -46,9 +47,18 @@ class Auth {
 
             const passwordHash = await bcrypt.hash(password, 12);
             const savedUser = await prisma.user.create({
-                data: { username, email, matric, gender, role: role.USER, passwordHash },
+                data: {
+                    username,
+                    email,
+                    matric,
+                    gender,
+                    role: role.USER,
+                    passwordHash,
+                    avatar: `/assets/images/noavatar${Math.round(Math.random() * 4)}.png`
+                },
                 select: {
                     username: true,
+                    avatar: true,
                     email: true,
                     role: true,
                     id: true

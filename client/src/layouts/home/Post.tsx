@@ -30,11 +30,11 @@ const Post: FC<PostType> = ({ author, id, createdAt, content, title, comments, v
 
     //converts the newline sequence \n to <br/>
     // const contentArray: ReactElement[] = content.split('\n').map((line, i) => <div key={i}>{line}</div>);
-
+    console.log(author.avatar);
     return (
         <StyledPost>
             <StyledAvatarWrapper>
-                <Avatar src={author.avatar || '/assets/images/noavatar.png'} alt={author.username} size={50} />
+                <Avatar src={author.avatar} alt={author.username} size={50} />
             </StyledAvatarWrapper>
             <StyledContentWrapper>
                 <StyledHead>
@@ -44,11 +44,11 @@ const Post: FC<PostType> = ({ author, id, createdAt, content, title, comments, v
                 <StyledTopic>{title}</StyledTopic>
                 <StyledContent>
                     {content.length > 340 ? (
-                        <p>
+                        <p style={{ wordBreak: 'break-word' }}>
                             {content.substring(0, 340)} <Link to={`/posts/${id}`}>...(read more)</Link>
                         </p>
                     ) : (
-                        <p>content</p>
+                        <p style={{ wordBreak: 'break-word' }}>{content}</p>
                     )}
                 </StyledContent>
                 <PostFooter views={views} comments={comments.length} />
