@@ -2,8 +2,9 @@ import { applyMiddleware, combineReducers, createStore, Action } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk, { ThunkAction } from 'redux-thunk';
 import authReducer from './auth/reducer';
+import postsReducer from './posts/reducer';
 
-const RootReducer = combineReducers({ auth: authReducer });
+const RootReducer = combineReducers({ auth: authReducer, post: postsReducer });
 
 const store =
     process.env.NODE_ENV !== 'production'
