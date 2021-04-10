@@ -1,5 +1,5 @@
 import { ReactElement, FC, useState, FormEvent } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { getInputError } from '../../services/form_validation';
 import { register } from '../../state/auth/actions';
 import { useAppDispatch, useAppSelector } from '../../state/hooks';
@@ -32,7 +32,6 @@ export const RegisterPage: FC = (): ReactElement => {
         email: null
     });
 
-    const history = useHistory();
     const auth = useAppSelector((state) => state.auth);
     const dispatch = useAppDispatch();
 
@@ -40,13 +39,16 @@ export const RegisterPage: FC = (): ReactElement => {
         //TODO: prevent user from registering if there are validation errors in the inputs
         event.preventDefault();
         await dispatch(register({ username, password, confirmPass, matric, email, gender }));
-        auth.isLoggedIn && history.push('/home');
     };
 
     const handleBlur = async (val: string, fieldName: string) => {
         const errorMessage = val.length ? await getInputError(val, fieldName) : null;
         if (errorMessage !== errors[fieldName]) setErrors({ ...errors, [fieldName]: errorMessage });
     };
+
+    if (auth.isLoggedIn) {
+        return <Redirect to='/home' />;
+    }
 
     return (
         <StyledRegister>

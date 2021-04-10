@@ -9,16 +9,13 @@ interface CreatePostModalParams {
 const CreatePostModal: FC<CreatePostModalParams> = ({ closeModal }): ReactElement => {
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
+
     const createPost = () => {
         alert(`Waiting for tekena to do this...\ntitle:${title}\ncontent:${content}`);
     };
 
     return (
-        <StyledBackground
-            onClick={(event) => {
-                if (event.target === event.currentTarget) closeModal();
-            }}
-        >
+        <StyledBackground onClick={(e) => e.target === e.currentTarget && closeModal()}>
             <StyledModal>
                 <StyledCloseBtnWrapper>
                     <CloseBtn size={40} onClick={closeModal} />

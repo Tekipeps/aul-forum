@@ -8,6 +8,17 @@ const StyledNavBar = styled.div`
     z-index: 2;
     display: flex;
     border-bottom: 1px solid grey;
+    > .logout-btn {
+        height: 30px;
+        margin-top: 20px;
+        margin-right: 10px;
+        font-family: OpenSans;
+        color: white;
+        background: #333;
+        border: none;
+        border-radius: 14px;
+        padding: 1px 15px;
+    }
 `;
 
 export const StyledNavLogo = styled.div`

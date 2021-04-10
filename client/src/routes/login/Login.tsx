@@ -1,5 +1,5 @@
 import { ReactElement, FC, FormEvent, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import SideBar from '../../components/reusable/FormSideBar';
 import {
     StyledLogin,
@@ -24,15 +24,13 @@ export const LoginPage: FC = (): ReactElement => {
         password: null
     });
 
-    const history = useHistory();
-    const auth = useAppSelector((state) => state.auth);
     const dispatch = useAppDispatch();
+    const auth = useAppSelector((state) => state.auth);
 
     const submitLogin = async (event: FormEvent) => {
         //TODO: prevent user from logging in if there are validation errors in inputs
         event.preventDefault();
         await dispatch(login({ username, password }));
-        auth.isLoggedIn && history.push('/home');
     };
 
     const handleBlur = async (val: string, fieldName: string) => {
@@ -40,6 +38,9 @@ export const LoginPage: FC = (): ReactElement => {
         if (errorMessage !== errors[fieldName]) setErrors({ ...errors, [fieldName]: errorMessage });
     };
 
+    if (auth.isLoggedIn) {
+        return <Redirect to='/home' />;
+    }
     // TODO: add notification component to display error message in auth.error.err
     return (
         <StyledLogin>
