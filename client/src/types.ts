@@ -26,3 +26,17 @@ export interface AuthenticatedUser {
     role: 'USER' | 'ADMIN';
     username: string;
 }
+
+export interface PostType {
+    id: string;
+    author: {
+        username: string;
+        avatar: string;
+        id: string;
+    };
+    createdAt: string;
+    title: string;
+    content: string;
+    views?: number;
+    comments: [];
+}

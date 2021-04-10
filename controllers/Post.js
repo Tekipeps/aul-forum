@@ -11,7 +11,24 @@ class Post {
     }
     async getPosts(_, res, next) {
         try {
-            const posts = await prisma.post.findMany();
+            const posts = await prisma.post.findMany({
+                select: {
+                    id: true,
+                    title: true,
+                    content: true,
+                    comments: true,
+                    author: {
+                        select: {
+                            id: true,
+                            username: true,
+                            role: true,
+                            email: true,
+                            avatar: true
+                        }
+                    },
+                    createdAt: true
+                }
+            });
             res.json(posts);
         } catch (error) {
             next(error);

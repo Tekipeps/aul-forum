@@ -5,6 +5,7 @@ export const StyledPost = styled.div`
     border-right: 1px solid ${({ theme }) => theme.grey};
     border-left: 1px solid ${({ theme }) => theme.grey};
     display: flex;
+    max-height: 15rem;
     flex-direction: row;
     :last-child {
         border-bottom: 1px solid ${({ theme }) => theme.grey};
