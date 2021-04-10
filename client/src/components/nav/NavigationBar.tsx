@@ -1,5 +1,6 @@
 import { ReactElement, FC } from 'react';
 import NavRoutes from './NavigationRoutes';
+import ThemeToggler from './ThemeToggler';
 import anchorLogo from '../../assets/images/logo2.png';
 import { useAppSelector } from '../../state/hooks';
 import StyledNavBar, { StyledNavLogo } from './NavigationBar.styled';
@@ -7,7 +8,11 @@ import StyledNavBar, { StyledNavLogo } from './NavigationBar.styled';
 const signedInRoutes = ['home', 'profile', 'about'];
 const signedOutRoutes = ['home', 'login', 'register', 'about'];
 
-export const NavBar: FC = (): ReactElement => {
+interface NavBarParams {
+    toggleTheme: () => void;
+}
+
+export const NavBar: FC<NavBarParams> = ({ toggleTheme }): ReactElement => {
     const auth = useAppSelector((state) => state.auth);
     //This should be const state = auth.isLoggedIn ? signedInRoutes : signedOutRoutes;
     //I added the ! so i can work on the profile page
@@ -21,6 +26,7 @@ export const NavBar: FC = (): ReactElement => {
                 <div id='logo-text'>AUL FORUM</div>
             </StyledNavLogo>
             <NavRoutes routes={state} />
+            <ThemeToggler {...{ toggleTheme }} />
         </StyledNavBar>
     );
 };

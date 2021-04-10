@@ -8,7 +8,6 @@ const StyledNavBar = styled.div`
     border-bottom: 1px solid #777;
 `;
 
-
 export const StyledNavButtonContainer = styled.div`
     position: relative;
     top: 1px;
@@ -55,7 +54,6 @@ export const StyledSearchBarContainer = styled.div`
         }
     }
 `;
-
 
 export const StyledNavButton = styled.div`
     border: 2px solid transparent;

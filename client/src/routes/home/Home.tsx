@@ -6,10 +6,9 @@ import HomeLayout from '../../layouts/home/HomeLayout';
 
 interface HomeParams {
     baseUrl: string;
-    toggleTheme: () => void;
 }
 
-export const HomePage: FC<HomeParams> = ({ baseUrl, toggleTheme }): ReactElement => {
+export const HomePage: FC<HomeParams> = ({ baseUrl }): ReactElement => {
     const DEFAULT_SECTION = 'most-recent';
 
     return (
@@ -19,7 +18,7 @@ export const HomePage: FC<HomeParams> = ({ baseUrl, toggleTheme }): ReactElement
             </Route>
             {routes.map(({ url }, i) => (
                 <Route exact path={`${baseUrl}${url}`} key={i}>
-                    <HomeLayout {...{ toggleTheme }} />
+                    <HomeLayout />
                 </Route>
             ))}
             <Route component={PageNotFound} />

@@ -9,7 +9,7 @@ const ParentResizeListener: FC<ParentResizeParams> = ({ children }): ReactElemen
     const [visibility, setVisibility] = useState<'visible' | 'hidden'>('visible');
     const ref = useRef<HTMLDivElement>(null);
     let resizeId: NodeJS.Timeout;
-    const resizeInterval = 200;
+    const resizeInterval = 50;
 
     /*To prevent the elements state from being set multiple times during a window resize, we reduce the strain on the browser
      by making sure the state only sets when there is an interval of <resizeInterval>ms between resizes. i.e kinda listening to when the resize ends not the resize itself

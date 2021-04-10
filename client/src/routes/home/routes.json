@@ -15,11 +15,6 @@
         "description": "Check out the most viewed posts ever on this forum, you might be impressed."
     },
     {
-        "name": "Followed posts",
-        "url": "/followed-posts",
-        "description": "Keep up with posts that you have starred or commented on, bring back those memories!"
-    },
-    {
         "name": "My posts",
         "url": "/my-posts",
         "description": "Woohoooo! here's all the posts you have created on this platform!"

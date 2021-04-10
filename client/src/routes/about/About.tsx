@@ -20,7 +20,7 @@ export const AboutPage: FC = (): ReactElement => (
             </p>
         </StyledHeader>
         <StyledMainWrapper>
-            <WindowResizeListener minWidth={900}>
+            <WindowResizeListener minWidth={600}>
                 <ContributionChart />
             </WindowResizeListener>
             <StyledTeamListWrapper>

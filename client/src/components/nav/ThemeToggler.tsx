@@ -1,5 +1,5 @@
 import { ReactElement, FC, useState } from 'react';
-import StyledWrapper, { StyledToggle, StyledToggleCaption } from './ThemeToggler.styled';
+import StyledWrapper, { StyledToggle } from './ThemeToggler.styled';
 import WindowResizeListener from '../../components/reusable/WindowResizeListener';
 
 interface ThemeTogglerParams {
@@ -26,7 +26,6 @@ const ThemeToggler: FC<ThemeTogglerParams> = ({ toggleTheme }): ReactElement | n
                         <div className='toggle-switch-figureAlt'></div>
                     </div>
                 </StyledToggle>
-                <StyledToggleCaption>{`${theme} mode`}</StyledToggleCaption>
             </StyledWrapper>
         </WindowResizeListener>
     );

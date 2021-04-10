@@ -37,10 +37,10 @@ export const StyledFormWrapper = styled.div`
 `;
 
 export const StyledInputWrapper = styled.div`
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     > input {
         width: 330px;
-        padding: 2px 5px;
+        padding: 2px 13px;
         margin: 0px;
         height: 30px;
         font-size: 17px;
@@ -48,13 +48,13 @@ export const StyledInputWrapper = styled.div`
         letter-spacing: 2px;
         background-color: ${({ theme }) => theme.body.bgcolor};
         color: ${({ theme }) => theme.body.color};
-        border-radius: 2px 2px 0px 0px;
-        border: 1px solid ${({ theme }) => theme.body.color};
+        border-radius: 3px;
+        border: 1px solid grey;
         transition-property: border;
         transition-duration: 0.3s;
         font-family: Nunito;
         :focus {
-            border: 1px solid grey;
+            border: 1px solid ${({ theme }) => theme.body.color};
         }
     }
 
@@ -63,7 +63,7 @@ export const StyledInputWrapper = styled.div`
         font-size: 14px;
         width: fit-content;
         margin: auto;
-        color: red;
+        color: #f33;
     }
 `;
 

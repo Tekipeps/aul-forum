@@ -28,8 +28,9 @@ const darkTheme: ThemeType = {
     purple: '#222',
     blue: '#6f6ffa',
     grey: '#444',
-    notification_bgcolor: '#090',
+    notification_bgcolor: 'linear-gradient(#118, #11a,#11d,#11a, #118)',
     user_color: '#58a6ff',
+    form_purple_btn: '#00f',
     body: {
         bgcolor: '#101013',
         color: '#fff'
@@ -38,7 +39,6 @@ const darkTheme: ThemeType = {
         bgcolor: '#10101a',
         route_color: '#fff'
     },
-    form_purple_btn: '#00f',
     home: {
         postnav_bgcolor: '#101013',
         nav_link_color: '#aaa',
@@ -54,8 +54,9 @@ const lightTheme: ThemeType = {
     purple: '#37173d',
     blue: '#00f',
     grey: '#aaa',
-    notification_bgcolor: '#ccc',
+    notification_bgcolor: 'linear-gradient(#181, #191,#1a1,#191, #181)',
     user_color: 'blue',
+    form_purple_btn: '#37173d',
     body: {
         bgcolor: '#fff',
         color: '#000'
@@ -64,7 +65,6 @@ const lightTheme: ThemeType = {
         bgcolor: '#fff',
         route_color: '#37173d'
     },
-    form_purple_btn: '#37173d',
     home: {
         postnav_bgcolor: '#37173d',
         nav_link_color: '#fff',
@@ -72,7 +72,7 @@ const lightTheme: ThemeType = {
         grey: '#333',
         searchicon_color: '#37173d',
         theme_toggler_border: '#f5eb42',
-        post_content_color: '#222'
+        post_content_color: '#333'
     }
 };
 

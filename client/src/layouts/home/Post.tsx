@@ -5,7 +5,6 @@ import { getRelativeTime } from '../../utils/Utility';
 import { StyledPost, StyledAvatarWrapper, StyledContentWrapper, StyledHead, StyledTopic, StyledContent, StyledFooter } from './Post.styled';
 import Avatar from '../../components/reusable/Avatar';
 
-
 interface PostParams {
     authorName: string;
     avatarURL: string;

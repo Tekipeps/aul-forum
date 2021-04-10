@@ -1,37 +1,31 @@
 ## Forum web app (AUL entrepreneurship project)
 
 ## Installation and Setup Instructions
-  
- You will need `node.js` and `yarn` installed globally on your machine.  
 
- Clone down this repository:
- `git clone https://github.com/Tekipeps/aul-forum.git` [Main Server]
+You will need `node.js` and `yarn` installed globally on your machine.
 
-Installation:
+Clone down this repository:
+`git clone https://github.com/Tekipeps/aul-forum.git` 
+
+Frontend installation:
 
 `cd client`
 
-`yarn install`  
+`yarn install`
 
-To Run Test Suite:  
+To start the server:
 
-`yarn test`  
-
-To Start Server:
-
-`yarn dev`  
+`yarn dev`
 
 To Visit App:
 
-`http://localhost:3000/home/most-recent` 
-
+`http://localhost:3000/home/most-recent`
 
 ## Objectives
 
 -   Learn version control (Git and Github)
 -   Learn how websites/webpages work
 -   Learn how to create static/dynamic websites
-
 
 ## About this branch
 

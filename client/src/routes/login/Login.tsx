@@ -10,7 +10,7 @@ import {
     StyledLoginButtonHolder,
     StyledInputWrapper
 } from './Login.styled';
-import anchorLogo from '../../assets/images/anchor-logo.png';
+import anchorLogo from '../../assets/images/logo2.png';
 import { useAppDispatch, useAppSelector } from '../../state/hooks';
 import { login } from '../../state/auth/actions';
 import { getInputError } from '../../services/form_validation';
@@ -53,7 +53,7 @@ export const LoginPage: FC = (): ReactElement => {
                         <form onSubmit={submitLogin}>
                             <StyledInputWrapper>
                                 <input
-                                    value={username}
+                                    value={username.trim()}
                                     onChange={({ target }) => setUsername(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'username')}
                                     type='text'
@@ -63,7 +63,7 @@ export const LoginPage: FC = (): ReactElement => {
                             </StyledInputWrapper>
                             <StyledInputWrapper>
                                 <input
-                                    value={password}
+                                    value={password.trim()}
                                     onChange={({ target }) => setPassword(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'password')}
                                     type='password'

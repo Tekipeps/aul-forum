@@ -1,20 +1,11 @@
 import { FC, ReactElement, useState, useEffect } from 'react';
-import StyledNotification, { StyledNotificationContent, StyledCloseButton } from './Notification.styled';
-import CloseButtonSvg from '../../assets/svg/CloseButton.svg';
+import CloseBtn from './CloseBtn';
+import StyledNotification, { StyledNotificationContent } from './Notification.styled';
 
 interface NotificationParams {
     transitionDuration?: number;
+    children: string;
 }
-
-interface CloseButtonParams {
-    closeNotification: () => void;
-}
-
-const CloseButton: FC<CloseButtonParams> = ({ closeNotification }): ReactElement => (
-    <StyledCloseButton onClick={closeNotification}>
-        <CloseButtonSvg />
-    </StyledCloseButton>
-);
 
 const Notification: FC<NotificationParams> = ({ children, transitionDuration }): ReactElement | null => {
     const [visibility, setVisibility] = useState<'visible' | 'hidden'>(children ? 'visible' : 'hidden');
@@ -26,7 +17,6 @@ const Notification: FC<NotificationParams> = ({ children, transitionDuration }):
     useEffect(() => {
         const timeout = setTimeout(closeNotification, displayDuration * 1000);
         return () => clearTimeout(timeout);
-
     }, []);
 
     const closeNotification = (): void => {
@@ -43,7 +33,7 @@ const Notification: FC<NotificationParams> = ({ children, transitionDuration }):
     return (
         <StyledNotification {...{ opacity, transitionDuration: transitionDuration || defaultTransitionDuration, visibility }}>
             <StyledNotificationContent>{children}</StyledNotificationContent>
-            <CloseButton {...{ closeNotification }} />
+            <CloseBtn size={30} fill='#fff' onClick={closeNotification} />
         </StyledNotification>
     );
 };

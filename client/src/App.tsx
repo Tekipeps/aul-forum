@@ -26,19 +26,20 @@ export const App: FC = (): ReactElement => {
         window.localStorage.setItem('theme', theme);
         setTheme(theme);
     };
+    // TODO: path '/' should not redirect to '/home
 
     return (
         <Router>
             <StateProvider store={store}>
                 <ThemeProvider theme={getTheme(currentTheme)}>
-                    <NavBar />
+                    <NavBar {...{ toggleTheme }} />
                     <main>
                         <Switch>
                             <Route exact path='/'>
                                 <Redirect to='/home' />
                             </Route>
                             <Route path='/home'>
-                                <HomePage baseUrl='/home' {...{ toggleTheme }} />
+                                <HomePage baseUrl='/home' />
                             </Route>
                             <Route exact path='/login' component={LoginPage} />
                             <Route exact path='/register' component={RegisterPage} />

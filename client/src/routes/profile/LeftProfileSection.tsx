@@ -7,7 +7,7 @@ const LeftSection: FC = (): ReactElement => {
     return (
         <StyledLeftSection>
             <StyledAvatarWrapper>
-                <Avatar src={TekipepsAvatar} alt='tekipeps' />
+                <Avatar src={TekipepsAvatar} size={130} alt='tekipeps' admin />
             </StyledAvatarWrapper>
             <StyledUsername>Tekipeps</StyledUsername>
             <StyledBasicInfo>

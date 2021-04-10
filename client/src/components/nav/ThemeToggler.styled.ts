@@ -29,16 +29,7 @@ const cloudBubbleMixin = (top: string, right: string, width: string, height: str
 `;
 
 const StyledWrapper = styled.div`
-    padding: 9px 10px;
-`;
-
-export const StyledToggleCaption = styled.div`
-    position: relative;
-    top: -5px;
-    color: ${({ theme }) => theme.body.color};
-    font-family: OpenSans;
-    font-size: clamp(13px, 2vw, 15px);
-    text-align: center;
+    padding: 4px 10px;
 `;
 
 export const StyledToggle = styled.div`
