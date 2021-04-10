@@ -38,7 +38,7 @@ const reducer = (state: State = rootState, action: Action) => {
         case asyncActionNames(Actions.AUTH_LOGIN).loading:
             return { ...state, isLoading: action.payload };
         case asyncActionNames(Actions.AUTH_VALID_TOKEN).success:
-            user = action.payload.user;
+            user = action.payload;
             window.localStorage.setItem('user', JSON.stringify(user));
             return { ...state, isLoggedIn: true, user };
         case asyncActionNames(Actions.AUTH_VALID_TOKEN).failure:

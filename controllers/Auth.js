@@ -19,7 +19,7 @@ class Auth {
             if (!user) {
                 return res.status(401).json({ err: 'User not available' });
             }
-            res.json({ user });
+            res.json(user);
         } catch (error) {
             next(error);
         }
