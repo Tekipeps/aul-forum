@@ -19,23 +19,26 @@ const reducer = (state: State = rootState, action: Action) => {
     let user;
     switch (action.type) {
         case asyncActionNames(Actions.AUTH_LOGIN).success:
+        case asyncActionNames(Actions.AUTH_REGISTER).success:
             user = action.payload.user;
-            window.localStorage.setItem('user', user);
+            window.localStorage.setItem('user', JSON.stringify(user));
             window.localStorage.setItem('token', action.payload.token);
             return { ...state, isLoggedIn: true, username: user.username };
         case asyncActionNames(Actions.AUTH_LOGIN).failure:
-            return { ...state, error: action.payload };
-        case asyncActionNames(Actions.AUTH_LOGIN).loading:
-            return { ...state, isLoading: action.payload };
-        case asyncActionNames(Actions.AUTH_REGISTER).success:
-            user = action.payload.user;
-            window.localStorage.setItem('user', user);
-            window.localStorage.setItem('token', action.payload.token);
-            return { ...state, isLoggedIn: true, username: user.username };
         case asyncActionNames(Actions.AUTH_REGISTER).failure:
             return { ...state, error: action.payload };
+        case asyncActionNames(Actions.AUTH_VALID_TOKEN).loading:
         case asyncActionNames(Actions.AUTH_REGISTER).loading:
+        case asyncActionNames(Actions.AUTH_LOGIN).loading:
             return { ...state, isLoading: action.payload };
+        case asyncActionNames(Actions.AUTH_VALID_TOKEN).success:
+            user = JSON.parse(window.localStorage.getItem('user') || '{}');
+            return { ...state, isLoggedIn: true, username: user.username };
+        case asyncActionNames(Actions.AUTH_VALID_TOKEN).failure:
+        case Actions.AUTH_LOGOUT:
+            window.localStorage.removeItem('user');
+            window.localStorage.removeItem('token');
+            return rootState;
         default:
             return state;
     }
