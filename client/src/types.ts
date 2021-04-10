@@ -25,6 +25,7 @@ export interface AuthenticatedUser {
     id: string;
     role: 'USER' | 'ADMIN';
     username: string;
+    avatar: string;
 }
 
 export interface PostType {

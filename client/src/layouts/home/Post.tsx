@@ -30,11 +30,11 @@ const Post: FC<PostType> = ({ author, id, createdAt, content, title, comments, v
 
     //converts the newline sequence \n to <br/>
     // const contentArray: ReactElement[] = content.split('\n').map((line, i) => <div key={i}>{line}</div>);
-
+    console.log(author.avatar);
     return (
         <StyledPost>
             <StyledAvatarWrapper>
-                <Avatar src={author.avatar || '/assets/images/noavatar.png'} alt={author.username} size={50} />
+                <Avatar src={author.avatar} alt={author.username} size={50} />
             </StyledAvatarWrapper>
             <StyledContentWrapper>
                 <StyledHead>
