@@ -14,10 +14,12 @@ const StyledContributionInfo = styled.div`
     height: fit-content;
     flex: 1;
 `;
+
 interface ContributorType {
     name: string;
     y: number;
 }
+
 const ContributionChart: FC = (): ReactElement => {
     const [contributors, setContributors] = useState<ContributorType[]>([]);
     useEffect(() => {

@@ -7,7 +7,7 @@ import StyledNavBar, { StyledNavLogo } from './NavigationBar.styled';
 import { logout } from 'src/state/auth/actions';
 
 const signedInRoutes = ['home', 'profile', 'about', 'users'];
-const signedOutRoutes = ['home', 'login', 'register', 'about', 'users'];
+const signedOutRoutes = ['home', 'login', 'register', 'about'];
 
 interface NavBarParams {
     toggleTheme: () => void;
