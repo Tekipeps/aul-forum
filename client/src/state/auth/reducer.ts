@@ -12,6 +12,7 @@ export interface State {
 const rootState: State = {
     user: {
         username: '',
+        avatar: '',
         id: '',
         role: 'USER',
         email: ''

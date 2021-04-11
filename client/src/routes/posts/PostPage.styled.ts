@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
+export const StyledContainer = styled.div`
+    max-width: 700px;
+    margin: auto;
+    min-width: 300px;
+    padding: 0px 50px;
+`;
+
 export const StyledPost = styled.div`
-    border-top: 1px solid ${({ theme }) => theme.grey};
+    border-bottom: 1px solid ${({ theme }) => theme.grey};
     border-right: 1px solid ${({ theme }) => theme.grey};
     border-left: 1px solid ${({ theme }) => theme.grey};
     display: flex;
     flex-direction: row;
-
-    :last-child {
-        border-bottom: 1px solid ${({ theme }) => theme.grey};
-    }
 `;
 
 export const StyledAvatarWrapper = styled.div`
@@ -35,19 +38,19 @@ export const StyledHead = styled.div`
         color: ${({ theme }) => theme.user_color};
         margin-left: 3px;
         font-family: OpenSans, Arial;
-        font-size: clamp(14px, 2.4vw, 17px);
+        font-size: clamp(15px, 2.4vw, 19px);
     }
 
     > .timestamp {
         float: right;
         color: ${({ theme }) => theme.home.grey};
         font-family: OpenSans, Arial;
-        font-size: 13px;
+        font-size: 15px;
     }
 `;
 
 export const StyledTopic = styled.div`
-    font-size: clamp(17px, 2.2vw, 18px);
+    font-size: clamp(20px, 2.5vw, 24px);
     margin: 5px 0px;
     padding: 0px 10px;
     color: ${({ theme }) => theme.body.color};
@@ -58,7 +61,7 @@ export const StyledContent = styled.div`
     padding: 1px 12px;
     font-family: OpenSans, Arial;
     color: ${({ theme }) => theme.home.post_content_color};
-    font-size: clamp(14px, 2vw, 15px);
+    font-size: clamp(16px, 2.2vw, 18px);
     word-spacing: 1px;
 `;
 
@@ -80,5 +83,27 @@ export const StyledFooter = styled.div`
     }
     > .commentsCount {
         float: right;
+    }
+`;
+
+export const StyledCommentsHeader = styled.div`
+    color: ${({ theme }) => theme.user_color};
+    padding: 5px 35px;
+    border-left: 1px solid ${({ theme }) => theme.grey};
+    border-right: 1px solid ${({ theme }) => theme.grey};
+    border-bottom: 1px solid ${({ theme }) => theme.grey};
+    font-size: 18px;
+    font-family: OpenSans;
+    background: ${({ theme }) => theme.body.lighter_bgcolor};
+`;
+
+export const StyledComments = styled.div`
+    border-left: 1px solid ${({ theme }) => theme.grey};
+    border-right: 1px solid ${({ theme }) => theme.grey};
+    border-bottom: 1px solid ${({ theme }) => theme.grey};
+    padding: 10px;
+    > div {
+        margin: 30px 10px;
+        color: ${({ theme }) => theme.body.color};
     }
 `;

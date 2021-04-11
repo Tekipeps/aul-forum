@@ -18,7 +18,7 @@ const PostSection: FC = (): ReactElement => {
             ) : post.posts.length ? (
                 post.posts.map((p: PostType) => <Post {...p} key={p.id} />)
             ) : (
-                <h1>No Posts on the forum</h1>
+                <h1>No Posts found on this forum</h1>
             )}
         </StyledPostSection>
     );

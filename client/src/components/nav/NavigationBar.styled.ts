@@ -18,6 +18,7 @@ const StyledNavBar = styled.div`
         border: none;
         border-radius: 14px;
         padding: 1px 15px;
+        cursor: pointer;
     }
 `;
 

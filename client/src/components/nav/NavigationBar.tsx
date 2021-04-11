@@ -6,8 +6,8 @@ import { useAppDispatch, useAppSelector } from '../../state/hooks';
 import StyledNavBar, { StyledNavLogo } from './NavigationBar.styled';
 import { logout } from 'src/state/auth/actions';
 
-const signedInRoutes = ['home', 'profile', 'about'];
-const signedOutRoutes = ['home', 'login', 'register', 'about'];
+const signedInRoutes = ['home', 'profile', 'about', 'users'];
+const signedOutRoutes = ['home', 'login', 'register', 'about', 'users'];
 
 interface NavBarParams {
     toggleTheme: () => void;

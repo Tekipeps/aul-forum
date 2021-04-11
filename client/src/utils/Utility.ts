@@ -1,62 +1,45 @@
 /**
- * @param createdAt A timestamp of when the object was created
+ * @param timeStamp A timestamp of when the object was created
  * @returns A human readable format of the relative time the object was created
  */
-export const getRelativeTime = (createdAt: number): string => {
-    //TODO: Optimise this method so it can return more specific time formats like 1hour 30minutes ago and handle singular/plurals i.e display 1 minute ago instead of 1 minutes ago without any libaries
+export const getRelativeTime = (timeStamp: number): string => {
     const currentDate = new Date().getTime();
-    const timeDifference = currentDate - createdAt;
+    const timeDifference = currentDate - timeStamp;
     const second = 1000;
     const minute = second * 60;
     const hour = minute * 60;
     const day = hour * 24;
 
-    // Define readableFormat and units
-    let readableFormat, units;
+    // Define createdAt and unit
+    let createdAt, unit;
 
-    // If there are years
     if (timeDifference > day * 365) {
-        readableFormat = timeDifference / (day * 365);
-        units = 'years';
+        createdAt = timeDifference / (day * 365);
+        unit = 'year';
+    } else if (timeDifference > day * 30) {
+        createdAt = timeDifference / (day * 30);
+        unit = 'month';
+    } else if (timeDifference > day * 7) {
+        createdAt = timeDifference / (day * 7);
+        unit = 'week';
+    } else if (timeDifference > day) {
+        createdAt = timeDifference / day;
+        unit = 'day';
+    } else if (timeDifference > hour) {
+        createdAt = timeDifference / hour;
+        unit = 'hour';
+    } else if (timeDifference > minute) {
+        createdAt = timeDifference / minute;
+        unit = 'minute';
+    } else {
+        createdAt = timeDifference / second;
+        unit = 'second';
     }
 
-    // If there are months
-    else if (timeDifference > day * 30) {
-        readableFormat = timeDifference / (day * 30);
-        units = 'months';
-    }
+    createdAt = Math.round(createdAt);
+    if (createdAt > 1) unit = `${unit}s`;
 
-    // If there are weeks
-    else if (timeDifference > day * 7) {
-        readableFormat = timeDifference / (day * 7);
-        units = 'weeks';
-    }
-
-    // If there are days
-    else if (timeDifference > day) {
-        readableFormat = timeDifference / day;
-        units = 'days';
-    }
-
-    // If there are hours
-    else if (timeDifference > hour) {
-        readableFormat = timeDifference / hour;
-        units = 'hours';
-    }
-
-    // If there are minutes
-    else if (timeDifference > minute) {
-        readableFormat = timeDifference / minute;
-        units = 'minutes';
-    }
-
-    // Otherwise, use seconds
-    else {
-        readableFormat = timeDifference / second;
-        units = 'seconds';
-    }
-
-    return `${Math.round(readableFormat)} ${units} ago`;
+    return `${createdAt} ${unit} ago`;
 };
 
 /**
