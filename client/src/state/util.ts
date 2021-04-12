@@ -43,7 +43,7 @@ const constructToken = (token: string | null) => (token ? { Authorization: `Bear
 const composeData = (method: Method, body: any) => (method === 'post' || method === 'put' ? { data: body } : {});
 
 export const apiCall = (url: string, method: Method, body?: typeof Object, token?: string) => {
-    const requestUrl = `/api'${url}`;
+    const requestUrl = `/api${url}`;
     return axios({
         method,
         url: requestUrl,
