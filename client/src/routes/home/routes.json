@@ -5,19 +5,9 @@
         "description": "Want to keep up with the latest gists on our forum? you have arrived here!"
     },
     {
-        "name": "Trending",
-        "url": "/trending",
-        "description": "Want to check out currently hot topics on our forum? hop in!"
-    },
-    {
         "name": "Most popular",
         "url": "/most-popular",
         "description": "Check out the most viewed posts ever on this forum, you might be impressed."
-    },
-    {
-        "name": "Followed posts",
-        "url": "/followed-posts",
-        "description": "Keep up with posts that you have starred or commented on, bring back those memories!"
     },
     {
         "name": "My posts",

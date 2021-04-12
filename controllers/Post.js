@@ -1,4 +1,21 @@
 const { prisma } = require('../utils/config');
+
+const publicPost = {
+    id: true,
+    title: true,
+    content: true,
+    comments: true,
+    author: {
+        select: {
+            id: true,
+            username: true,
+            role: true,
+            email: true,
+            avatar: true
+        }
+    },
+    createdAt: true
+};
 class Post {
     async getPost(req, res, next) {
         try {
@@ -11,7 +28,9 @@ class Post {
     }
     async getPosts(_, res, next) {
         try {
-            const posts = await prisma.post.findMany();
+            const posts = await prisma.post.findMany({
+                select: publicPost
+            });
             res.json(posts);
         } catch (error) {
             next(error);
@@ -24,7 +43,7 @@ class Post {
             const author = await prisma.user.findUnique({ where: { id } });
             if (!author) return res.sendStatus(401);
 
-            const savedPost = await prisma.post.create({ data: { title, content, authorId: id } });
+            const savedPost = await prisma.post.create({ data: { title, content, authorId: id }, select: publicPost });
             res.json(savedPost);
         } catch (error) {
             next(error);

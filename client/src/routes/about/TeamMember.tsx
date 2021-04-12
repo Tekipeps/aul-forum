@@ -18,7 +18,7 @@ const TeamMember: FC<Member> = ({ name, avatarURL, bio, role, githubURL }): Reac
         <StyledMemberWrapper>
             <StyledMember>
                 <div className='avatar-wrapper'>
-                    <Avatar src={src} alt={name} size={70} />
+                    <Avatar src={src} alt={name} size={70} admin />
                 </div>
                 <p className='role'>{role}</p>
                 <p className='name'>{name}</p>

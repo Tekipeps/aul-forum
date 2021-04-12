@@ -4,9 +4,22 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 class Auth {
-    async isValidToken(_, res, next) {
+    async isValidToken(req, res, next) {
         try {
-            res.json({ isValid: true });
+            const user = await prisma.user.findUnique({
+                where: { id: req.user.id },
+                select: {
+                    username: true,
+                    avatar: true,
+                    email: true,
+                    role: true,
+                    id: true
+                }
+            });
+            if (!user) {
+                return res.status(401).json({ err: 'User not available' });
+            }
+            res.json(user);
         } catch (error) {
             next(error);
         }
@@ -18,6 +31,7 @@ class Auth {
                 where: { username },
                 select: {
                     username: true,
+                    avatar: true,
                     email: true,
                     role: true,
                     id: true,
@@ -46,9 +60,18 @@ class Auth {
 
             const passwordHash = await bcrypt.hash(password, 12);
             const savedUser = await prisma.user.create({
-                data: { username, email, matric, gender, role: role.USER, passwordHash },
+                data: {
+                    username,
+                    email,
+                    matric,
+                    gender,
+                    role: role.USER,
+                    passwordHash,
+                    avatar: `/assets/images/noavatar${Math.round(Math.random() * 4)}.png`
+                },
                 select: {
                     username: true,
+                    avatar: true,
                     email: true,
                     role: true,
                     id: true

@@ -3,20 +3,17 @@ import styled from 'styled-components';
 
 interface AvatarProps {
     src: string;
-    className?: string;
     alt: string;
+    size: number;
+    admin?: boolean;
 }
 
 interface StyledAvatarProps {
-    size?: number;
-    src: string;
-    alt: string;
+    size: number;
 }
 
-const Avatar: FC<AvatarProps> = ({ src, className, alt }): ReactElement => <img {...{ className, src, alt }} />;
-
-const StyledAvatar = styled(Avatar)<StyledAvatarProps>`
-    --size: ${(props) => (props.size ? `${props.size}px` : '100%')};
+const StyledAvatar = styled.img<StyledAvatarProps>`
+    --size: ${(props) => `${props.size}px`};
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
@@ -31,4 +28,25 @@ const StyledAvatar = styled(Avatar)<StyledAvatarProps>`
     font-size: 14px;
 `;
 
-export default StyledAvatar;
+const StyledModBadge = styled.div`
+    color: white;
+    width: fit-content;
+    position: relative;
+    top: -15px;
+    left: 60%;
+    padding: 1px 6px;
+    border-radius: 15px;
+    font-family: Nunito, OpenSans, Arial;
+    font-size: 12px;
+    border: 1px solid #aaa;
+    background-color: ${({ theme }) => theme.purple};
+`;
+
+const Avatar: FC<AvatarProps> = ({ src, size, alt, admin = false }): ReactElement => (
+    <div>
+        <StyledAvatar {...{ src, alt, size }} />
+        {admin && <StyledModBadge>admin</StyledModBadge>}
+    </div>
+);
+
+export default Avatar;

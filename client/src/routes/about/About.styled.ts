@@ -21,7 +21,10 @@ export const StyledHeader = styled.div`
         padding: 0px 10px;
         color: ${({ theme }) => theme.body.color};
         a {
-            color: #00f;
+            color: ${({ theme }) => theme.user_color};
+            :hover {
+                text-decoration: underline;
+            }
         }
     }
 `;
@@ -33,12 +36,12 @@ export const StyledMainWrapper = styled.div`
 `;
 
 export const StyledTeamListWrapper = styled.div`
+    position: relative;
     border: 1px solid ${({ theme }) => theme.grey};
     border-radius: 6px;
     overflow: hidden;
-    margin: 0px 0px;
-    max-width: 600px;
-    float: right;
+    max-width: 700px;
+    margin-left: auto;
     width: fit-content;
 `;
 

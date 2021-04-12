@@ -1,5 +1,5 @@
 import { ReactElement, FC, useState, FormEvent } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { getInputError } from '../../services/form_validation';
 import { register } from '../../state/auth/actions';
 import { useAppDispatch, useAppSelector } from '../../state/hooks';
@@ -32,7 +32,6 @@ export const RegisterPage: FC = (): ReactElement => {
         email: null
     });
 
-    const history = useHistory();
     const auth = useAppSelector((state) => state.auth);
     const dispatch = useAppDispatch();
 
@@ -40,13 +39,16 @@ export const RegisterPage: FC = (): ReactElement => {
         //TODO: prevent user from registering if there are validation errors in the inputs
         event.preventDefault();
         await dispatch(register({ username, password, confirmPass, matric, email, gender }));
-        auth.isLoggedIn && history.push('/home');
     };
 
     const handleBlur = async (val: string, fieldName: string) => {
         const errorMessage = val.length ? await getInputError(val, fieldName) : null;
         if (errorMessage !== errors[fieldName]) setErrors({ ...errors, [fieldName]: errorMessage });
     };
+
+    if (auth.isLoggedIn) {
+        return <Redirect to='/home' />;
+    }
 
     return (
         <StyledRegister>
@@ -62,7 +64,7 @@ export const RegisterPage: FC = (): ReactElement => {
                                 <input
                                     onChange={({ target }) => setMatric(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'matric')}
-                                    value={matric.toUpperCase()}
+                                    value={matric.toUpperCase().trim()}
                                     type='text'
                                     placeholder='Matriculation Number(optional)'
                                 />
@@ -72,7 +74,7 @@ export const RegisterPage: FC = (): ReactElement => {
                                 <input
                                     onChange={({ target }) => setUsername(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'username')}
-                                    value={username}
+                                    value={username.trim()}
                                     type='text'
                                     placeholder='Username'
                                 />
@@ -82,7 +84,7 @@ export const RegisterPage: FC = (): ReactElement => {
                                 <input
                                     onChange={({ target }) => setPassword(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'password')}
-                                    value={password}
+                                    value={password.trim()}
                                     type='password'
                                     placeholder='New Password'
                                 />
@@ -92,7 +94,7 @@ export const RegisterPage: FC = (): ReactElement => {
                                 <input
                                     onChange={({ target }) => setConfirmPass(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'confirmPassword')}
-                                    value={confirmPass}
+                                    value={confirmPass.trim()}
                                     type='password'
                                     placeholder='Confirm Password'
                                 />
@@ -102,7 +104,7 @@ export const RegisterPage: FC = (): ReactElement => {
                                 <input
                                     onChange={({ target }) => setEmail(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'email')}
-                                    value={email}
+                                    value={email.trim()}
                                     type='email'
                                     placeholder='Email Address'
                                 />

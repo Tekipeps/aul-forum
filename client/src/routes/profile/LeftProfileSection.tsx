@@ -7,7 +7,7 @@ const LeftSection: FC = (): ReactElement => {
     return (
         <StyledLeftSection>
             <StyledAvatarWrapper>
-                <Avatar src={TekipepsAvatar} alt='tekipeps' />
+                <Avatar src={TekipepsAvatar} size={130} alt='tekipeps' admin />
             </StyledAvatarWrapper>
             <StyledUsername>Tekipeps</StyledUsername>
             <StyledBasicInfo>
@@ -15,7 +15,7 @@ const LeftSection: FC = (): ReactElement => {
                 <span>57 followers</span>
                 <span>19 following</span>
             </StyledBasicInfo>
-            <StyledBio> Hi im a tekena solomon, An aul student studying computer science, I contributed to this wonderful app.</StyledBio>
+            <StyledBio> Hi im tekena solomon, An aul student studying computer science, I contributed to this wonderful app.</StyledBio>
         </StyledLeftSection>
     );
 };

@@ -7,40 +7,38 @@
 
 
 ## Installation and Setup Instructions
-  
- You will need `node.js` and `yarn` installed globally on your machine.  
 
- Clone down this repository:
- `git clone https://github.com/Tekipeps/aul-forum.git` [Main Server]
+You will need `node.js` and `yarn` installed globally on your machine.
 
-Installation:
+Clone down this repository:
+`git clone https://github.com/Tekipeps/aul-forum.git` 
+
+Frontend installation:
 
 `cd client`
 
-`yarn install`  
+`yarn install`
 
-To Run Test Suite:  
+To start the server:
 
-`yarn test`  
-
-To Start Server:
-
-`yarn dev`  
+`yarn dev`
 
 To Visit App:
 
 `http://localhost:3000/home/most-recent`
+<<<<<<< HEAD
 
 ## Project Sceenshot(s)
 
  <p style="text-align:center;"><img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/forum.png" title="Project screenshot"></p>
+=======
+>>>>>>> 18aa2902e7eaffe243a48ac570d25b5a96473843
 
 ## Objectives
 
 -   Learn version control (Git and Github)
 -   Learn how websites/webpages work
 -   Learn how to create static/dynamic websites
-
 
 ## About this branch
 

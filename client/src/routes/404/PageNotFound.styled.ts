@@ -4,7 +4,7 @@ const Styled404 = styled.div`
     font-size: 16rem;
     margin: 50px auto 10px auto;
     width: fit-content;
-    font-family: Nunito;
+    font-family: 'Trebuchet MS';
     font-weight: 600;
     display: flex;
     div:nth-child(1) {
@@ -24,7 +24,7 @@ const Styled404 = styled.div`
 export const StyledMessage = styled.div`
     font-size: 2rem;
     text-align: center;
-    color: ${({ theme }) => theme.bgtext};
+    color: ${({ theme }) => theme.body.color};
 `;
 
 export default Styled404;

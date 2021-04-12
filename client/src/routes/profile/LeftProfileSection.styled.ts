@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 
 const StyledLeftSection = styled.div`
-    margin-left: 20px;
+    margin: 20px auto;
     min-width: 200px;
     max-width: 300px;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    border: 1px solid grey;
 `;
 
 export const StyledAvatarWrapper = styled.div`
     margin: 50px auto 0px auto;
-    width: 60%;
 `;
 
 export const StyledUsername = styled.div`
     font-size: 19px;
-    margin: 20px auto;
+    margin: 1vw auto;
     font-family: OpenSans;
     color: ${({ theme }) => theme.body.color};
 `;
@@ -28,6 +28,7 @@ export const StyledBasicInfo = styled.div`
     color: ${({ theme }) => theme.home.post_content_color};
     span {
         margin: 0px auto;
+        padding: 3px;
         font-size: 14px;
         cursor: pointer;
         :hover {

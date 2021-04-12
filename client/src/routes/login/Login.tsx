@@ -1,5 +1,5 @@
 import { ReactElement, FC, FormEvent, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import SideBar from '../../components/reusable/FormSideBar';
 import {
     StyledLogin,
@@ -10,7 +10,7 @@ import {
     StyledLoginButtonHolder,
     StyledInputWrapper
 } from './Login.styled';
-import anchorLogo from '../../assets/images/anchor-logo.png';
+import anchorLogo from '../../assets/images/logo2.png';
 import { useAppDispatch, useAppSelector } from '../../state/hooks';
 import { login } from '../../state/auth/actions';
 import { getInputError } from '../../services/form_validation';
@@ -24,15 +24,13 @@ export const LoginPage: FC = (): ReactElement => {
         password: null
     });
 
-    const history = useHistory();
-    const auth = useAppSelector((state) => state.auth);
     const dispatch = useAppDispatch();
+    const auth = useAppSelector((state) => state.auth);
 
     const submitLogin = async (event: FormEvent) => {
         //TODO: prevent user from logging in if there are validation errors in inputs
         event.preventDefault();
         await dispatch(login({ username, password }));
-        auth.isLoggedIn && history.push('/home');
     };
 
     const handleBlur = async (val: string, fieldName: string) => {
@@ -40,6 +38,9 @@ export const LoginPage: FC = (): ReactElement => {
         if (errorMessage !== errors[fieldName]) setErrors({ ...errors, [fieldName]: errorMessage });
     };
 
+    if (auth.isLoggedIn) {
+        return <Redirect to='/home' />;
+    }
     // TODO: add notification component to display error message in auth.error.err
     return (
         <StyledLogin>
@@ -53,7 +54,7 @@ export const LoginPage: FC = (): ReactElement => {
                         <form onSubmit={submitLogin}>
                             <StyledInputWrapper>
                                 <input
-                                    value={username}
+                                    value={username.trim()}
                                     onChange={({ target }) => setUsername(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'username')}
                                     type='text'
@@ -63,7 +64,7 @@ export const LoginPage: FC = (): ReactElement => {
                             </StyledInputWrapper>
                             <StyledInputWrapper>
                                 <input
-                                    value={password}
+                                    value={password.trim()}
                                     onChange={({ target }) => setPassword(target.value)}
                                     onBlur={({ target }) => handleBlur(target.value, 'password')}
                                     type='password'

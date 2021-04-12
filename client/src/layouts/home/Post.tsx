@@ -1,23 +1,14 @@
 import { ReactElement, FC } from 'react';
 import ViewsIcon from './assets/Views.svg';
 import CommentsIcon from './assets/Comments.svg';
-import { getRelativeTime } from '../../utils/Utility';
 import { StyledPost, StyledAvatarWrapper, StyledContentWrapper, StyledHead, StyledTopic, StyledContent, StyledFooter } from './Post.styled';
 import Avatar from '../../components/reusable/Avatar';
-
-
-interface PostParams {
-    authorName: string;
-    avatarURL: string;
-    timeStamp: number;
-    topic: string;
-    content: string;
-    views: number;
-    comments: number;
-}
+import { getRelativeTime } from 'src/utils/Utility';
+import { PostType } from 'src/types';
+import { Link } from 'react-router-dom';
 
 interface PostFooterParams {
-    views: number;
+    views?: number;
     comments: number;
 }
 
@@ -25,7 +16,7 @@ const PostFooter: FC<PostFooterParams> = ({ views, comments }): ReactElement => 
     <StyledFooter>
         <div className='viewsCount'>
             <ViewsIcon />
-            <span>{views}</span>
+            <span>{views || 0}</span>
         </div>
         <div className='commentsCount'>
             <CommentsIcon />
@@ -34,26 +25,33 @@ const PostFooter: FC<PostFooterParams> = ({ views, comments }): ReactElement => 
     </StyledFooter>
 );
 
-const Post: FC<PostParams> = ({ authorName, timeStamp, content, topic, comments, views, avatarURL }): ReactElement => {
-    const avatar: string = require(`./dummy-assets/${avatarURL}`).default;
-    const relativeTime = getRelativeTime(timeStamp);
+const Post: FC<PostType> = ({ author, id, createdAt, content, title, comments, views }): ReactElement => {
+    const relativeTime = getRelativeTime(new Date(createdAt).getTime());
 
     //converts the newline sequence \n to <br/>
-    const contentArray: ReactElement[] = content.split('\n').map((line, i) => <div key={i}>{line}</div>);
-
+    // const contentArray: ReactElement[] = content.split('\n').map((line, i) => <div key={i}>{line}</div>);
+    console.log(author.avatar);
     return (
         <StyledPost>
             <StyledAvatarWrapper>
-                <Avatar src={avatar} alt={authorName} size={50} />
+                <Avatar src={author.avatar} alt={author.username} size={50} />
             </StyledAvatarWrapper>
             <StyledContentWrapper>
                 <StyledHead>
-                    <div className='author'>{authorName}</div>
+                    <div className='author'>{author.username}</div>
                     <div className='timestamp'>{relativeTime}</div>
                 </StyledHead>
-                <StyledTopic>{topic}</StyledTopic>
-                <StyledContent>{contentArray}</StyledContent>
-                <PostFooter views={views} comments={comments} />
+                <StyledTopic>{title}</StyledTopic>
+                <StyledContent>
+                    {content.length > 340 ? (
+                        <p style={{ wordBreak: 'break-word' }}>
+                            {content.substring(0, 340)} <Link to={`/posts/${id}`}>...(read more)</Link>
+                        </p>
+                    ) : (
+                        <p style={{ wordBreak: 'break-word' }}>{content}</p>
+                    )}
+                </StyledContent>
+                <PostFooter views={views} comments={comments.length} />
             </StyledContentWrapper>
         </StyledPost>
     );
