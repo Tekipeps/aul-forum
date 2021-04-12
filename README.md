@@ -26,13 +26,7 @@ To start the server:
 To Visit App:
 
 `http://localhost:3000/home/most-recent`
-<<<<<<< HEAD
 
-## Project Sceenshot(s)
-
- <p style="text-align:center;"><img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/forum.png" title="Project screenshot"></p>
-=======
->>>>>>> 18aa2902e7eaffe243a48ac570d25b5a96473843
 
 ## Objectives
 
