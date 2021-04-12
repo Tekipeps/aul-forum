@@ -43,7 +43,7 @@ const constructToken = (token: string | null) => (token ? { Authorization: `Bear
 const composeData = (method: Method, body: any) => (method === 'post' || method === 'put' ? { data: body } : {});
 
 export const apiCall = (url: string, method: Method, body?: typeof Object, token?: string) => {
-    const requestUrl = `${process.env.API_BASEURL || 'http://localhost:5000/api'}${url}`;
+    const requestUrl = `${process.env.NODE_ENV != 'production' ? 'http://localhost:5000/api' : '/api'}${url}`;
     return axios({
         method,
         url: requestUrl,
