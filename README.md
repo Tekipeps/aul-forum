@@ -1,5 +1,11 @@
 ## Forum web app (AUL entrepreneurship project)
 
+ 
+<p align="center">
+  <img src="https://github.com/EmeditWeb/aul-forum/blob/react-ts/client/public/logo2.png" title="Aul web forum logo"/>
+</p>
+
+
 ## Installation and Setup Instructions
 
 You will need `node.js` and `yarn` installed globally on your machine.
@@ -20,6 +26,7 @@ To start the server:
 To Visit App:
 
 `http://localhost:3000/home/most-recent`
+
 
 ## Objectives
 
@@ -54,4 +61,4 @@ Please check out our [Contribution Guidelines](./CONTRIBUTING.md) to figure how 
 
 # License
 
-This project is licensed under the MIT license.
+This project is licensed under the [MIT license](./LICENSE).

@@ -7,7 +7,7 @@ import {
     StyledInputWrapper,
     StyledButtonHolder
 } from '../../styles/Form.styled';
-import genderOptionBG from '../../assets/images/green-tick.jpg';
+import genderOptionBG from '../../assets/images/green-tick.png';
 
 const StyledRegister = styled(StyledContainer)`
     top: 30px;
