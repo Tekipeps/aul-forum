@@ -1,16 +1,22 @@
 import { AnyAction as Action } from 'redux';
 import { asyncActionNames } from '../util';
-import { CustomError } from './../../types';
+import { CustomError, AuthenticatedUser } from './../../types';
 import { Actions } from './actions';
 
 export interface State {
-    username: string;
+    user: AuthenticatedUser;
     isLoggedIn: boolean;
     error?: CustomError;
     isLoading: boolean;
 }
 const rootState: State = {
-    username: '',
+    user: {
+        username: '',
+        avatar: '',
+        id: '',
+        role: 'USER',
+        email: ''
+    },
     isLoggedIn: false,
     error: {},
     isLoading: false
@@ -23,7 +29,7 @@ const reducer = (state: State = rootState, action: Action) => {
             user = action.payload.user;
             window.localStorage.setItem('user', JSON.stringify(user));
             window.localStorage.setItem('token', action.payload.token);
-            return { ...state, isLoggedIn: true, username: user.username };
+            return { ...state, isLoggedIn: true, user };
         case asyncActionNames(Actions.AUTH_LOGIN).failure:
         case asyncActionNames(Actions.AUTH_REGISTER).failure:
             return { ...state, error: action.payload };
@@ -32,8 +38,9 @@ const reducer = (state: State = rootState, action: Action) => {
         case asyncActionNames(Actions.AUTH_LOGIN).loading:
             return { ...state, isLoading: action.payload };
         case asyncActionNames(Actions.AUTH_VALID_TOKEN).success:
-            user = JSON.parse(window.localStorage.getItem('user') || '{}');
-            return { ...state, isLoggedIn: true, username: user.username };
+            user = action.payload;
+            window.localStorage.setItem('user', JSON.stringify(user));
+            return { ...state, isLoggedIn: true, user };
         case asyncActionNames(Actions.AUTH_VALID_TOKEN).failure:
         case Actions.AUTH_LOGOUT:
             window.localStorage.removeItem('user');

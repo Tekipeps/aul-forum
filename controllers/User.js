@@ -83,7 +83,15 @@ class User {
             const { username, email, matric, gender, role, password } = req.body;
 
             const passwordHash = await bcrypt.hash(password, 12);
-            const user = { username, email, matric, gender, role, passwordHash };
+            const user = {
+                username,
+                email,
+                matric,
+                gender,
+                role,
+                passwordHash,
+                avatar: `/assets/images/noavatar${Math.round(Math.random() * 4)}.png`
+            };
             const savedUser = await prisma.user.create({ data: user, select: pubUserData });
             res.json(savedUser);
         } catch (error) {

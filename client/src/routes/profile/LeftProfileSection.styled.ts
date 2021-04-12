@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const StyledLeftSection = styled.div`
-    margin-left: 20px;
+    margin: 20px auto;
     min-width: 200px;
     max-width: 300px;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    border: 1px solid grey;
 `;
 
 export const StyledAvatarWrapper = styled.div`

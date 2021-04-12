@@ -7,6 +7,7 @@ export interface ThemeType {
     form_purple_btn: string;
     body: {
         bgcolor: string;
+        lighter_bgcolor: string;
         color: string;
     };
     navbar: {
@@ -33,6 +34,7 @@ const darkTheme: ThemeType = {
     form_purple_btn: '#00f',
     body: {
         bgcolor: '#101013',
+        lighter_bgcolor: '#101019',
         color: '#fff'
     },
     navbar: {
@@ -59,6 +61,7 @@ const lightTheme: ThemeType = {
     form_purple_btn: '#37173d',
     body: {
         bgcolor: '#fff',
+        lighter_bgcolor: '#f7f7f7',
         color: '#000'
     },
     navbar: {

@@ -1,6 +1,8 @@
 import { FC, ReactElement, useState } from 'react';
 import { StyledBackground, StyledModal, StyledCloseBtnWrapper } from './CreatePostModal.styled';
 import CloseBtn from '../../components/reusable/CloseBtn';
+import { useAppDispatch } from 'src/state/hooks';
+import { createPost } from '../../state/posts/actions';
 
 interface CreatePostModalParams {
     closeModal: () => void;
@@ -9,16 +11,16 @@ interface CreatePostModalParams {
 const CreatePostModal: FC<CreatePostModalParams> = ({ closeModal }): ReactElement => {
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
-    const createPost = () => {
-        alert(`Waiting for tekena to do this...\ntitle:${title}\ncontent:${content}`);
+    const dispatch = useAppDispatch();
+
+    const submitNewPost = () => {
+        if (!title.length || !content.length) return;
+        dispatch(createPost(title.trim(), content.trim()));
+        closeModal();
     };
 
     return (
-        <StyledBackground
-            onClick={(event) => {
-                if (event.target === event.currentTarget) closeModal();
-            }}
-        >
+        <StyledBackground onClick={(e) => e.target === e.currentTarget && closeModal()}>
             <StyledModal>
                 <StyledCloseBtnWrapper>
                     <CloseBtn size={40} onClick={closeModal} />
@@ -39,7 +41,7 @@ const CreatePostModal: FC<CreatePostModalParams> = ({ closeModal }): ReactElemen
                     rows={5}
                     placeholder={"What's on your mind?"}
                 ></textarea>
-                <div onClick={createPost} className='createpost-btn'>
+                <div onClick={submitNewPost} className='createpost-btn'>
                     Post
                 </div>
             </StyledModal>
