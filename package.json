@@ -12,8 +12,8 @@
     "scripts": {
         "start": "cross-env node index.js",
         "start:client": "cd client && cross-env SKIP_PREFLIGHT_CHECK=true yarn dev",
-        "build": "cd client && cross-env SKIP_PREFLIGHT_CHECK=true yarn build",
         "install:client": "cd client && yarn",
+        "build": "cd client && yarn install:client && cross-env SKIP_PREFLIGHT_CHECK=true yarn build",
         "dev": "dotenv -e .env -- nodemon index.js",
         "db:up": "dotenv -e .env -- prisma db push --preview-feature --accept-data-loss --force-reset && yarn db:seed",
         "test:db:up": "dotenv -e .env.test.local -- prisma db push --preview-feature --accept-data-loss --force-reset",
